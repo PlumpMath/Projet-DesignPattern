@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ProjetDesignPattern
 {
-    public partial class Form1 : Form
+    public partial class FenPrincipale : Form
     {
-        public Form1()
+        public FenPrincipale()
         {
             InitializeComponent();
         }

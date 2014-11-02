@@ -1,6 +1,6 @@
 ﻿namespace ProjetDesignPattern
 {
-    partial class Form1
+    partial class FenPrincipale
     {
         /// <summary>
         /// Variable nécessaire au concepteur.
