@@ -1,98 +1,24 @@
-using System;
+﻿using System;
 
-namespace AbstractClass.FabriqueAbstraite
+namespace ProjetDesignPattern
 {
-    //-----------------------------------------------------------------------------
-    internal abstract class FabriqueAbstraite
+    public abstract class FabriqueAbstraite
     {
-        public abstract ProduitAbstraitA CreerProduitA();
-        public abstract ProduitAbstraitB CreerProduitB();
-    }
+        public enum eTypePersonnage { };
 
-    //-----------------------------------------------------------------------------
-    internal class FabriqueConcrete1 : FabriqueAbstraite
-    {
-        public override ProduitAbstraitA CreerProduitA()
+        public PersonnageAbstrait CreerPersonnage(FabriqueAbstraite.eTypePersonnage typePerso, SujetObserveAbstrait unEtatMajor, string unNom)
         {
-            return new ProduitA1();
+            return null;
         }
 
-        public override ProduitAbstraitB CreerProduitB()
+        public ZoneAbstraite CreerZone()
         {
-            return new ProduitB1();
-        }
-    }
-
-    //-----------------------------------------------------------------------------
-    internal class FabriqueConcrete2 : FabriqueAbstraite
-    {
-        public override ProduitAbstraitA CreerProduitA()
-        {
-            return new ProduitA2();
+            return null;
         }
 
-        public override ProduitAbstraitB CreerProduitB()
+        public AccesAbstrait CreerAcces()
         {
-            return new ProduitB2();
-        }
-    }
-
-    //-----------------------------------------------------------------------------
-    internal abstract class ProduitAbstraitA
-    {
-    }
-
-
-    //-----------------------------------------------------------------------------
-    internal abstract class ProduitAbstraitB
-    {
-        public abstract void Interagit(ProduitAbstraitA a);
-    }
-
-    //-----------------------------------------------------------------------------
-    internal class ProduitA1 : ProduitAbstraitA
-    {
-    }
-
-    //-----------------------------------------------------------------------------
-    internal class ProduitB1 : ProduitAbstraitB
-    {
-        public override void Interagit(ProduitAbstraitA a)
-        {
-            Console.WriteLine(GetType().Name + " interagit avec " + a.GetType().Name);
-        }
-    }
-
-    //-----------------------------------------------------------------------------
-    internal class ProduitA2 : ProduitAbstraitA
-    {
-    }
-
-    //-----------------------------------------------------------------------------
-    internal class ProduitB2 : ProduitAbstraitB
-    {
-        public override void Interagit(ProduitAbstraitA a)
-        {
-            Console.WriteLine(GetType().Name + " interagit avec " + a.GetType().Name);
-        }
-    }
-
-
-    //-----------------------------------------------------------------------------
-    internal class Client
-    {
-        private readonly ProduitAbstraitA produitAbstraitA;
-        private readonly ProduitAbstraitB produitAbstraitB;
-
-        public Client(FabriqueAbstraite factory)
-        {
-            produitAbstraitA = factory.CreerProduitA();
-            produitAbstraitB = factory.CreerProduitB();
-        }
-
-        public void Run()
-        {
-            produitAbstraitB.Interagit(produitAbstraitA);
+            return null;
         }
     }
 }
