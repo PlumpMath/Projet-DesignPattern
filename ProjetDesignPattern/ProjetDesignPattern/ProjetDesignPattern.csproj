@@ -44,8 +44,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AbstractClass\FabriqueAbstraitePersonnage.cs" />
+    <Compile Include="AbstractClass\FabriqueAbstraite.cs" />
     <Compile Include="AbstractClass\ConflitAbstrait.cs" />
+    <Compile Include="AbstractClass\AccesAbstrait.cs" />
+    <Compile Include="AbstractClass\ModuleIHMAbstrait.cs" />
+    <Compile Include="AbstractClass\ModuleStatsAbstrait.cs" />
     <Compile Include="FenPrincipale.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -54,12 +57,24 @@
     </Compile>
     <Compile Include="GestionnaireJeu.cs" />
     <Compile Include="AbstractClass\ObservateurAbstrait.cs" />
-    <Compile Include="AbstractClass\Personnage.cs" />
+    <Compile Include="AbstractClass\PersonnageAbstrait.cs" />
     <Compile Include="AbstractClass\JeuAbstrait.cs" />
     <Compile Include="AbstractClass\ObjetAbstrait.cs" />
+    <Compile Include="JeuEchecs\FabriqueJeuEchecs.cs" />
+    <Compile Include="JeuEchecs\Personnages\Cavalier.cs" />
+    <Compile Include="JeuEchecs\Personnages\Fou.cs" />
+    <Compile Include="JeuEchecs\Personnages\Pion.cs" />
+    <Compile Include="JeuEchecs\Personnages\Reine.cs" />
+    <Compile Include="JeuEchecs\Personnages\Roi.cs" />
+    <Compile Include="JeuEchecs\Personnages\Tour.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="AbstractClass\SujetObserveAbstrait.cs" />
+    <Compile Include="AbstractClass\ZoneAbstraite.cs" />
+    <Compile Include="JeuDefenceTower\JeuDefenceTower.cs" />
+    <Compile Include="JeuEchecs\JeuEchecs.cs" />
+    <Compile Include="JeuEchecs\Personnages\Comportement\ComportementSeDeplacer.cs" />
+    <Compile Include="JeuEchecs\Personnages\PieceEchec.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -82,7 +97,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Scenario3\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

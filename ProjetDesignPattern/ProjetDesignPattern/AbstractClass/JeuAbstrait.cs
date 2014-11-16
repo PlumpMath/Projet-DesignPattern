@@ -5,6 +5,8 @@ namespace ProjetDesignPattern
 {
     public abstract class JeuAbstrait
     {
+        public String Nom { get; set; }
+
         public int numTour;
         public List<PersonnageAbstrait> listePersonnages;
         public List<ConflitAbstrait> listeConflits;
