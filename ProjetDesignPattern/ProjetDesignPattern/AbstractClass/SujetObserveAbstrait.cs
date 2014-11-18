@@ -8,21 +8,21 @@ namespace ProjetDesignPattern
 
         private List<ObservateurAbstrait> observateurList = new List<ObservateurAbstrait>();
 
-        public void Attach(ObservateurAbstrait unObservateur)
+        public void AjouterObservateur(ObservateurAbstrait unObservateur)
         {
             observateurList.Add(unObservateur);
         }
 
-        public void DeAttach(ObservateurAbstrait unObservateur)
+        public void EnleverObservateur(ObservateurAbstrait unObservateur)
         {
             observateurList.Remove(unObservateur);
         }
 
-        public void Notify()
+        public void Notifier()
         {
             foreach (ObservateurAbstrait observateur in observateurList)
             {
-                observateur.Update();
+                observateur.MiseAJour();
             }
         }
     }

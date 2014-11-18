@@ -4,6 +4,6 @@ namespace ProjetDesignPattern
 {
     public abstract class ObservateurAbstrait
     {
-        public abstract void Update();
+        public abstract void MiseAJour();
     }
 }
