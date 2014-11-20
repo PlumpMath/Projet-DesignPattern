@@ -6,17 +6,17 @@ namespace ProjetDesignPattern
     {
         public enum eTypePersonnage { };
 
-        public PersonnageAbstrait CreerPersonnage(FabriqueAbstraite.eTypePersonnage typePerso, SujetObserveAbstrait unEtatMajor, string unNom)
+        public abstract PersonnageAbstrait CreerPersonnage(FabriqueAbstraite.eTypePersonnage typePerso, SujetObserveAbstrait unEtatMajor, string unNom)
         {
             return null;
         }
 
-        public ZoneAbstraite CreerZone()
+        public abstract ZoneAbstraite CreerZone()
         {
             return null;
         }
 
-        public AccesAbstrait CreerAcces()
+        public abstract AccesAbstrait CreerAcces()
         {
             return null;
         }
