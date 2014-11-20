@@ -7,5 +7,7 @@ namespace ProjetDesignPattern
     {
         public List<PersonnageAbstrait> listePersonnages;
         public List<ObjetAbstrait> listeObjets;
+        public int positionX;
+        public int positionY;
     }
 }
