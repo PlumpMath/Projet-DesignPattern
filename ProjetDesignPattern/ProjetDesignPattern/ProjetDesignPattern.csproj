@@ -44,6 +44,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AbstractClass\ComportementCombattreAbstrait.cs" />
+    <Compile Include="AbstractClass\ComportementSeDeplacerAbstrait.cs" />
     <Compile Include="AbstractClass\FabriqueAbstraite.cs" />
     <Compile Include="AbstractClass\ConflitAbstrait.cs" />
     <Compile Include="AbstractClass\AccesAbstrait.cs" />
