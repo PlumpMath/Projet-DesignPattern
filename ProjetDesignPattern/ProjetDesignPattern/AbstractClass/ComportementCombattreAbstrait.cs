@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace ProjetDesignPattern.AbstractClass
+namespace ProjetDesignPattern
 {
-    class ComportementCombattreAbstrait 
+    public abstract class ComportementCombattreAbstrait 
     {
         public ComportementCombattreAbstrait() 
         {

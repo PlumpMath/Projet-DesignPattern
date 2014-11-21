@@ -65,7 +65,8 @@
     <Compile Include="AbstractClass\PersonnageAbstrait.cs" />
     <Compile Include="AbstractClass\JeuAbstrait.cs" />
     <Compile Include="AbstractClass\ObjetAbstrait.cs" />
-    <Compile Include="JeuDefenceTower\ComportementSeDeplacerDT.cs" />
+    <Compile Include="JeuDefenceTower\Personnages\Comportement\ComportementCombattreDT.cs" />
+    <Compile Include="JeuDefenceTower\Personnages\Comportement\ComportementSeDeplacerDT.cs" />
     <Compile Include="JeuDefenceTower\Personnages\Chateau.cs" />
     <Compile Include="JeuDefenceTower\Personnages\Ennemi.cs" />
     <Compile Include="JeuDefenceTower\FabriqueJeuDT.cs" />
@@ -93,6 +94,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="JeuDefenceTower\ClassFabriqueDT.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

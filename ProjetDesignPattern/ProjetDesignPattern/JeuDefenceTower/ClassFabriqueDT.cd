@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="ProjetDesignPattern.JeuDefenceTower.FabriqueJeuDT">
+    <Position X="3.75" Y="3" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAQAAAAAAIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>JeuDefenceTower\FabriqueJeuDT.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProjetDesignPattern.FabriqueAbstraite">
+    <Position X="3.75" Y="0.5" Width="1.5" />
+    <NestedTypes>
+      <Enum Name="ProjetDesignPattern.FabriqueAbstraite.eTypePersonnage" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>AbstractClass\FabriqueAbstraite.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAQAAAAAAIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>AbstractClass\FabriqueAbstraite.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
