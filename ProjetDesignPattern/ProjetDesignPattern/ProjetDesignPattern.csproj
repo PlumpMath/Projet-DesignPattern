@@ -32,6 +32,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Xna.Framework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86" />
+    <Reference Include="Microsoft.Xna.Framework.Content.Pipeline, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86" />
+    <Reference Include="Microsoft.Xna.Framework.Game, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -44,6 +47,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AbstractClass\ComportementCombattreAbstrait.cs" />
+    <Compile Include="AbstractClass\ComportementSeDeplacerAbstrait.cs" />
     <Compile Include="AbstractClass\FabriqueAbstraite.cs" />
     <Compile Include="AbstractClass\ConflitAbstrait.cs" />
     <Compile Include="AbstractClass\AccesAbstrait.cs" />
@@ -60,6 +65,10 @@
     <Compile Include="AbstractClass\PersonnageAbstrait.cs" />
     <Compile Include="AbstractClass\JeuAbstrait.cs" />
     <Compile Include="AbstractClass\ObjetAbstrait.cs" />
+    <Compile Include="JeuDefenceTower\ComportementSeDeplacerDT.cs" />
+    <Compile Include="JeuDefenceTower\Personnages\Chateau.cs" />
+    <Compile Include="JeuDefenceTower\Personnages\Ennemi.cs" />
+    <Compile Include="JeuDefenceTower\FabriqueJeuDT.cs" />
     <Compile Include="JeuEchecs\FabriqueJeuEchecs.cs" />
     <Compile Include="JeuEchecs\Personnages\Cavalier.cs" />
     <Compile Include="JeuEchecs\Personnages\Fou.cs" />
