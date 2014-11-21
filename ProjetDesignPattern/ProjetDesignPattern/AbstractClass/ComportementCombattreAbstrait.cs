@@ -4,7 +4,7 @@ namespace ProjetDesignPattern.AbstractClass
 {
     class ComportementCombattreAbstrait 
     {
-        public abstract ComportementCombattreAbstrait() 
+        public ComportementCombattreAbstrait() 
         {
             
         }

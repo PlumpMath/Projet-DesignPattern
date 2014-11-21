@@ -4,7 +4,7 @@ namespace ProjetDesignPattern.AbstractClass
 {
     class ComportementSeDeplacerAbstrait
     {
-        public abstract ComportementSeDeplacerAbstrait()
+        public ComportementSeDeplacerAbstrait()
         {
 
         }
