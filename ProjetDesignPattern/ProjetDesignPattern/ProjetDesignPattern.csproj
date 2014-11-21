@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="AbstractClass\ComportementCombattreAbstrait.cs" />
     <Compile Include="AbstractClass\ComportementSeDeplacerAbstrait.cs" />
+    <Compile Include="AbstractClass\EtatAbstrait.cs" />
     <Compile Include="AbstractClass\FabriqueAbstraite.cs" />
     <Compile Include="AbstractClass\ConflitAbstrait.cs" />
     <Compile Include="AbstractClass\AccesAbstrait.cs" />
@@ -109,6 +110,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="JeuDefenceTower\Etat\" />
     <Folder Include="Scenario3\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
