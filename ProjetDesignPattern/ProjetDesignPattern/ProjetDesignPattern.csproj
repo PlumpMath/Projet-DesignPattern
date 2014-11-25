@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -11,6 +11,8 @@
     <AssemblyName>ProjetDesignPattern</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <ProductVersion>12.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -84,7 +86,6 @@
     <Compile Include="AbstractClass\ZoneAbstraite.cs" />
     <Compile Include="JeuDefenceTower\JeuDefenceTower.cs" />
     <Compile Include="JeuEchecs\JeuEchecs.cs" />
-    <Compile Include="JeuEchecs\Personnages\Comportement\ComportementSeDeplacer.cs" />
     <Compile Include="JeuEchecs\Personnages\PieceEchec.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -105,6 +106,20 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="JeuEchecs\Environnement\Plateau.cs" />
+    <Compile Include="JeuEchecs\Environnement\Case.cs" />
+    <Compile Include="JeuEchecs\Personnages\Comportement\Deplacement\DeplacementCavalier.cs" />
+    <Compile Include="JeuEchecs\Personnages\Comportement\Deplacement\DeplacementFou.cs" />
+    <Compile Include="JeuEchecs\Personnages\Comportement\Deplacement\DeplacementPion.cs" />
+    <Compile Include="JeuEchecs\Personnages\Comportement\Deplacement\DeplacementReine.cs" />
+    <Compile Include="JeuEchecs\Personnages\Comportement\Deplacement\DeplacementRoi.cs" />
+    <Compile Include="JeuEchecs\Personnages\Comportement\Deplacement\DeplacementTour.cs" />
+    <Compile Include="JeuEchecs\Personnages\Comportement\ComportementAttaquer.cs" />
+    <Compile Include="AbstractClass\ComporterSeDefendreAbstrait.cs" />
+    <Compile Include="JeuEchecs\Personnages\Comportement\Attaque\AttaqueBasique.cs" />
+    <Compile Include="JeuEchecs\Personnages\Comportement\Defense\AucuneDefense.cs" />
+    <Compile Include="JeuEchecs\Personnages\Comportement\ComportementSeDefendre.cs" />
+    <Compile Include="JeuEchecs\Personnages\Comportement\ComportementSeDeplacer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -112,6 +127,10 @@
   <ItemGroup>
     <Folder Include="JeuDefenceTower\Etat\" />
     <Folder Include="Scenario3\" />
+    <Folder Include="JeuEchecs\Environnement\" />
+    <Folder Include="JeuEchecs\Personnages\Comportement\Deplacement\" />
+    <Folder Include="JeuEchecs\Personnages\Comportement\Attaque\" />
+    <Folder Include="JeuEchecs\Personnages\Comportement\Defense\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
