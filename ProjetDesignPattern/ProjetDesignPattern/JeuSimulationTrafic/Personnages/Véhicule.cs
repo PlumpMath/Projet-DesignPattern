@@ -2,7 +2,7 @@
 
 namespace ProjetDesignPattern.JeuSimulationTrafic
 {
-    class Véhicule : PersonnageAbstrait
+    public abstract class Véhicule : PersonnageAbstrait
     {
 
     }
