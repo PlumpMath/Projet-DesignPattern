@@ -1,10 +1,10 @@
 ﻿using System;
 
-namespace ProjetDesignPattern.AbstractClass
+namespace ProjetDesignPattern
 {
-    class ComportementSeDeplacerAbstrait
+    public abstract class ComportementSeDeplacerAbstrait
     {
-        public abstract ComportementSeDeplacerAbstrait()
+        public ComportementSeDeplacerAbstrait()
         {
 
         }

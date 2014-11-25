@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="AbstractClass\ComportementCombattreAbstrait.cs" />
     <Compile Include="AbstractClass\ComportementSeDeplacerAbstrait.cs" />
+    <Compile Include="AbstractClass\EtatAbstrait.cs" />
     <Compile Include="AbstractClass\FabriqueAbstraite.cs" />
     <Compile Include="AbstractClass\ConflitAbstrait.cs" />
     <Compile Include="AbstractClass\AccesAbstrait.cs" />
@@ -62,6 +63,11 @@
     <Compile Include="AbstractClass\PersonnageAbstrait.cs" />
     <Compile Include="AbstractClass\JeuAbstrait.cs" />
     <Compile Include="AbstractClass\ObjetAbstrait.cs" />
+    <Compile Include="JeuDefenceTower\Personnages\Comportement\ComportementCombattreDT.cs" />
+    <Compile Include="JeuDefenceTower\Personnages\Comportement\ComportementSeDeplacerDT.cs" />
+    <Compile Include="JeuDefenceTower\Personnages\Chateau.cs" />
+    <Compile Include="JeuDefenceTower\Personnages\Ennemi.cs" />
+    <Compile Include="JeuDefenceTower\FabriqueJeuDT.cs" />
     <Compile Include="JeuEchecs\FabriqueJeuEchecs.cs" />
     <Compile Include="JeuEchecs\Personnages\Cavalier.cs" />
     <Compile Include="JeuEchecs\Personnages\Fou.cs" />
@@ -69,6 +75,11 @@
     <Compile Include="JeuEchecs\Personnages\Reine.cs" />
     <Compile Include="JeuEchecs\Personnages\Roi.cs" />
     <Compile Include="JeuEchecs\Personnages\Tour.cs" />
+    <Compile Include="JeuSimulationTrafic\Camion.cs" />
+    <Compile Include="JeuSimulationTrafic\JeuSimulationTrafic.cs" />
+    <Compile Include="JeuSimulationTrafic\Moto.cs" />
+    <Compile Include="JeuSimulationTrafic\Voiture.cs" />
+    <Compile Include="JeuSimulationTrafic\Véhicule.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="AbstractClass\SujetObserveAbstrait.cs" />
@@ -86,6 +97,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="JeuDefenceTower\ClassFabriqueDT.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
