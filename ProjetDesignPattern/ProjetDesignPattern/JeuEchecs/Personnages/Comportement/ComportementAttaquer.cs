@@ -7,6 +7,8 @@ namespace ProjetDesignPattern.JeuEchecs
 		public ComportementAttaquer ()
 		{
 		}
+
+		public void attaquer(
 	}
 }
 
