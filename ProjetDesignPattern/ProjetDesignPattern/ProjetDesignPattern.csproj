@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="AbstractClass\ComportementCombattreAbstrait.cs" />
     <Compile Include="AbstractClass\ComportementSeDeplacerAbstrait.cs" />
+    <Compile Include="AbstractClass\EtatAbstrait.cs" />
     <Compile Include="AbstractClass\FabriqueAbstraite.cs" />
     <Compile Include="AbstractClass\ConflitAbstrait.cs" />
     <Compile Include="AbstractClass\AccesAbstrait.cs" />
@@ -65,11 +66,20 @@
     <Compile Include="AbstractClass\PersonnageAbstrait.cs" />
     <Compile Include="AbstractClass\JeuAbstrait.cs" />
     <Compile Include="AbstractClass\ObjetAbstrait.cs" />
+    <Compile Include="JeuDefenceTower\AccesDT.cs" />
+    <Compile Include="JeuDefenceTower\ConflitDT.cs" />
+    <Compile Include="JeuDefenceTower\Etat\EChargeurNonVide.cs" />
+    <Compile Include="JeuDefenceTower\Etat\EPlusDégat.cs" />
+    <Compile Include="JeuDefenceTower\Etat\EPlusMunitions.cs" />
+    <Compile Include="JeuDefenceTower\Etat\ERechargement.cs" />
+    <Compile Include="JeuDefenceTower\Etat\EtatAbstraitDT.cs" />
     <Compile Include="JeuDefenceTower\Personnages\Comportement\ComportementCombattreDT.cs" />
     <Compile Include="JeuDefenceTower\Personnages\Comportement\ComportementSeDeplacerDT.cs" />
     <Compile Include="JeuDefenceTower\Personnages\Chateau.cs" />
     <Compile Include="JeuDefenceTower\Personnages\Ennemi.cs" />
     <Compile Include="JeuDefenceTower\FabriqueJeuDT.cs" />
+    <Compile Include="JeuDefenceTower\StatDT.cs" />
+    <Compile Include="JeuDefenceTower\ZoneDT.cs" />
     <Compile Include="JeuEchecs\FabriqueJeuEchecs.cs" />
     <Compile Include="JeuEchecs\Personnages\Cavalier.cs" />
     <Compile Include="JeuEchecs\Personnages\Fou.cs" />
