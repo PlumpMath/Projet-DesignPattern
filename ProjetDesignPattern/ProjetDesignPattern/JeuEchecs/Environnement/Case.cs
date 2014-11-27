@@ -14,10 +14,12 @@ namespace ProjetDesignPattern.JeuEchecs
 
 		public PieceEchec getPièce(){
 			// TODO retourner la pièce, sinon null
+            return null;
 		}
 
 		public bool possèdeUnePièce (){
 			// TODO indique si la case possède une pièce
+            return false;
 		}
 	}
 }
