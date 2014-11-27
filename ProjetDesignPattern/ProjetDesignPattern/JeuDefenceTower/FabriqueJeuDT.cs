@@ -4,17 +4,17 @@ namespace ProjetDesignPattern.JeuDefenceTower
 {
     class FabriqueJeuDT : FabriqueAbstraite
     {
-        public abstract override PersonnageAbstrait CreerPersonnage(FabriqueAbstraite.eTypePersonnage typePerso, SujetObserveAbstrait unEtatMajor, string unNom)
+        public override PersonnageAbstrait CreerPersonnage(FabriqueAbstraite.eTypePersonnage typePerso, SujetObserveAbstrait unEtatMajor, string unNom)
         {
             throw new NotImplementedException();
         }
 
-        public abstract override ZoneAbstraite CreerZone()
+        public override ZoneAbstraite CreerZone()
         {
             throw new NotImplementedException();
         }
 
-        public abstract override AccesAbstrait CreerAcces()
+        public override AccesAbstrait CreerAcces()
         {
             throw new NotImplementedException();
         }
