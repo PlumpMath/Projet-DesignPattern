@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ProjetDesignPattern.JeuEchecs.Personnages
+namespace ProjetDesignPattern.JeuEchecs
 {
     class Pion : PieceEchec
     {
