@@ -2,7 +2,12 @@
 
 namespace ProjetDesignPattern.JeuDefenceTower
 {
-    class ComportementCombattreDT : ComportementCombattreAbstrait
+    public class ComportementCombattreDT : ComportementCombattreAbstrait
     {
+
+        public override string Combattre()
+        {
+            return "tape";
+        }
     }
 }
