@@ -1,9 +1,10 @@
 ﻿using System;
 
-namespace ProjetDesignPattern.JeuEchecs
+namespace ProjetDesignPattern.JeuSimulationTrafic
 {
-    class Cavalier : PieceEchec
+    class Camion : Véhicule
     {
+
         public override void AnalyserSituation()
         {
             throw new NotImplementedException();

@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace ProjetDesignPattern.JeuEchecs
+namespace ProjetDesignPattern.JeuSimulationTrafic
 {
-    class JeuEchecs : JeuAbstrait
+    class JeuSimulationTrafic : JeuAbstrait
     {
 
         public override void TourDeJeu()

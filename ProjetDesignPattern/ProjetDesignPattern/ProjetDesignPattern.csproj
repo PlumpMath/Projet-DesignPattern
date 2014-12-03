@@ -11,6 +11,8 @@
     <AssemblyName>ProjetDesignPattern</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <ProductVersion>12.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -32,9 +34,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.Xna.Framework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86" />
-    <Reference Include="Microsoft.Xna.Framework.Content.Pipeline, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86" />
-    <Reference Include="Microsoft.Xna.Framework.Game, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -87,13 +86,24 @@
     <Compile Include="JeuEchecs\Personnages\Reine.cs" />
     <Compile Include="JeuEchecs\Personnages\Roi.cs" />
     <Compile Include="JeuEchecs\Personnages\Tour.cs" />
+    <Compile Include="JeuSimulationTrafic\AccesRoute.cs" />
+    <Compile Include="JeuSimulationTrafic\ConflitRoutier.cs" />
+    <Compile Include="JeuSimulationTrafic\Personnages\Comportements\ComportementSeDeplacerCamion.cs" />
+    <Compile Include="JeuSimulationTrafic\Personnages\Comportements\ComportementSeDeplacerMoto.cs" />
+    <Compile Include="JeuSimulationTrafic\Personnages\Comportements\ComportementSeDeplacerVoiture.cs" />
+    <Compile Include="JeuSimulationTrafic\FabriqueSimuTrafic.cs" />
+    <Compile Include="JeuSimulationTrafic\Personnages\Camion.cs" />
+    <Compile Include="JeuSimulationTrafic\JeuSimulationTrafic.cs" />
+    <Compile Include="JeuSimulationTrafic\Personnages\Moto.cs" />
+    <Compile Include="JeuSimulationTrafic\Personnages\Voiture.cs" />
+    <Compile Include="JeuSimulationTrafic\Personnages\Véhicule.cs" />
+    <Compile Include="JeuSimulationTrafic\PortionDeRoute.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="AbstractClass\SujetObserveAbstrait.cs" />
     <Compile Include="AbstractClass\ZoneAbstraite.cs" />
     <Compile Include="JeuDefenceTower\JeuDefenceTower.cs" />
     <Compile Include="JeuEchecs\JeuEchecs.cs" />
-    <Compile Include="JeuEchecs\Personnages\Comportement\ComportementSeDeplacer.cs" />
     <Compile Include="JeuEchecs\Personnages\PieceEchec.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -114,12 +124,26 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="JeuEchecs\Environnement\Plateau.cs" />
+    <Compile Include="JeuEchecs\Environnement\Case.cs" />
+    <Compile Include="JeuEchecs\Personnages\Comportement\Deplacement\DeplacementCavalier.cs" />
+    <Compile Include="JeuEchecs\Personnages\Comportement\Deplacement\DeplacementFou.cs" />
+    <Compile Include="JeuEchecs\Personnages\Comportement\Deplacement\DeplacementPion.cs" />
+    <Compile Include="JeuEchecs\Personnages\Comportement\Deplacement\DeplacementReine.cs" />
+    <Compile Include="JeuEchecs\Personnages\Comportement\Deplacement\DeplacementRoi.cs" />
+    <Compile Include="JeuEchecs\Personnages\Comportement\Deplacement\DeplacementTour.cs" />
+    <Compile Include="JeuEchecs\Personnages\Comportement\ComportementAttaquer.cs" />
+    <Compile Include="AbstractClass\ComporterSeDefendreAbstrait.cs" />
+    <Compile Include="JeuEchecs\Personnages\Comportement\Attaque\AttaqueBasique.cs" />
+    <Compile Include="JeuEchecs\Personnages\Comportement\Defense\AucuneDefense.cs" />
+    <Compile Include="JeuEchecs\Personnages\Comportement\ComportementSeDefendre.cs" />
+    <Compile Include="JeuEchecs\Personnages\Comportement\ComportementSeDeplacer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Scenario3\" />
+    <Folder Include="JeuDefenceTower\Etat\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

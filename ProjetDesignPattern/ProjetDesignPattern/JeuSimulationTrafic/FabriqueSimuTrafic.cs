@@ -1,22 +1,22 @@
-﻿using System;
-
-namespace ProjetDesignPattern.JeuDefenceTower
+﻿
+namespace ProjetDesignPattern.JeuSimulationTrafic
 {
-    class FabriqueJeuDT : FabriqueAbstraite
+    public class FabriqueSimuTrafic : FabriqueAbstraite
     {
+
         public override PersonnageAbstrait CreerPersonnage(FabriqueAbstraite.eTypePersonnage typePerso, SujetObserveAbstrait unEtatMajor, string unNom)
         {
-            throw new NotImplementedException();
+            throw new System.NotImplementedException();
         }
 
         public override ZoneAbstraite CreerZone()
         {
-            throw new NotImplementedException();
+            throw new System.NotImplementedException();
         }
 
         public override AccesAbstrait CreerAcces()
         {
-            throw new NotImplementedException();
+            throw new System.NotImplementedException();
         }
     }
 }

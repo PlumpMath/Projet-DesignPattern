@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace ProjetDesignPattern.JeuEchecs
+namespace ProjetDesignPattern.JeuSimulationTrafic
 {
-    class Cavalier : PieceEchec
+    class Voiture : Véhicule
     {
         public override void AnalyserSituation()
         {
