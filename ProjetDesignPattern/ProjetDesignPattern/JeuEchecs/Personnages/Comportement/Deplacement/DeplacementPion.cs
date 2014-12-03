@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace ProjetDesignPattern.JeuEchecs
 {
@@ -8,12 +9,12 @@ namespace ProjetDesignPattern.JeuEchecs
 		{
 		}
 
-        public override void SeDeplacer(Case c)
+		public override void seDeplacer(Case arrivée)
         {
             throw new NotImplementedException();
         }
 
-        public override System.Collections.Generic.List<Case> deplacementPossible()
+        public override List<Case> deplacementPossible()
         {
             throw new NotImplementedException();
         }

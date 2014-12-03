@@ -132,12 +132,16 @@
     <Compile Include="JeuEchecs\Personnages\Comportement\Deplacement\DeplacementReine.cs" />
     <Compile Include="JeuEchecs\Personnages\Comportement\Deplacement\DeplacementRoi.cs" />
     <Compile Include="JeuEchecs\Personnages\Comportement\Deplacement\DeplacementTour.cs" />
-    <Compile Include="JeuEchecs\Personnages\Comportement\ComportementAttaquer.cs" />
     <Compile Include="AbstractClass\ComporterSeDefendreAbstrait.cs" />
     <Compile Include="JeuEchecs\Personnages\Comportement\Attaque\AttaqueBasique.cs" />
     <Compile Include="JeuEchecs\Personnages\Comportement\Defense\AucuneDefense.cs" />
     <Compile Include="JeuEchecs\Personnages\Comportement\ComportementSeDefendre.cs" />
     <Compile Include="JeuEchecs\Personnages\Comportement\ComportementSeDeplacer.cs" />
+    <Compile Include="JeuEchecs\Environnement\CaseAbstraite.cs" />
+    <Compile Include="JeuEchecs\Environnement\AccesCaseAbstraite.cs" />
+    <Compile Include="JeuEchecs\Personnages\Comportement\ComportementCombattre.cs" />
+    <Compile Include="JeuEchecs\Environnement\eTypeDéplacement.cs" />
+    <Compile Include="JeuEchecs\Personnages\eTypePersonnage.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

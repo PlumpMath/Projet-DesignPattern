@@ -6,7 +6,8 @@ namespace ProjetDesignPattern.JeuEchecs
 	{
 		public int defense { get; set;}
 
-		public abstract int seDefendre (int degat);
+		public abstract int seDefendre(int attaque);
+
 	}
 }
 
