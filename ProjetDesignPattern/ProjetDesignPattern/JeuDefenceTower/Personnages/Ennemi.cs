@@ -15,7 +15,7 @@ namespace ProjetDesignPattern.JeuDefenceTower
         }
 
         private int ptAttaque;
-
+        private PersonnageAbstrait chateau;
 
         public Ennemi(int _pv, string _nom, int _atq)
         {
@@ -36,7 +36,7 @@ namespace ProjetDesignPattern.JeuDefenceTower
             //avancer ou attaquer
             if (action == eMode.Attaque)
             {
-                Console.WriteLine("Ennemi " + Nom + this.Combattre());
+                Console.WriteLine("Ennemi " + Nom + this.Combattre(ptAttaque, chateau));
             }
             if (action == eMode.Avance)
             {
