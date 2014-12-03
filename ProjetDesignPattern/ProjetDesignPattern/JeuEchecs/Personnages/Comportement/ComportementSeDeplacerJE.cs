@@ -1,18 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace ProjetDesignPattern.JeuDefenceTower
+namespace ProjetDesignPattern.JeuEchecs
 {
-    public class ComportementSeDeplacerAPiedDT : ComportementSeDeplacerAbstrait
+	public abstract class ComportementSeDeplacerJE : ComportementSeDeplacerAbstrait
     {
+		Case actuelle { get; set;}
+
 		public override void deplacer(ZoneAbstraite zone){
-			//TODO Mettre dans les log
-			//"se déplace vers l'avant";
+
 		}
 
 		public override List<ZoneAbstraite> déplacementPossible(ZoneAbstraite zone){
 			throw new NotImplementedException ();
 		}
+
 
     }
 }

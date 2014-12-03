@@ -21,8 +21,8 @@ namespace ProjetDesignPattern.JeuDefenceTower
         {
             init(_pv,_nom);
             ptAttaque = _atq;
-            ComportementSeDeplacer = new ComportementSeDeplacerAPiedDT();
-            ComportementCombattre = new ComportementCombattreDT();
+            comportementSeDeplacer = new ComportementSeDeplacerAPiedDT();
+            comportementCombattre = new ComportementCombattreDT();
         }
 
         public override void AnalyserSituation()
