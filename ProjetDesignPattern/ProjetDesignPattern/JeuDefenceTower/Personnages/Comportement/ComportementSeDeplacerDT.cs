@@ -2,7 +2,8 @@
 
 namespace ProjetDesignPattern.JeuDefenceTower
 {
-    class ComportementSeDeplacerDT : ComportementSeDeplacerAbstrait
+    public abstract class ComportementSeDeplacerDT : ComportementSeDeplacerAbstrait
     {
+        public abstract string Avancer();
     }
 }

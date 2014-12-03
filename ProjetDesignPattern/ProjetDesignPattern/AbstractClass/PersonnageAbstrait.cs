@@ -17,6 +17,34 @@ namespace ProjetDesignPattern
         public abstract void AnalyserSituation();
         public abstract void Execution();
 
+        public string Combattre()
+        {
+            if (ComportementCombattre != null)
+                return ComportementCombattre.Combattre();
+            return "Je ne combat pas";
+        }
+
+        public string SeDeplacer()
+        {
+            if (ComportementSeDeplacer != null)
+                return ComportementSeDeplacer.Deplacer();
+            return "Je ne bouge pas";
+        }
+
+        public string SeDefendre()
+        {
+            if (ComporterSeDefendre != null)
+                return ComporterSeDefendre.Defendre();
+            return "Je ne me défend pas";
+        }
+
+        public PersonnageAbstrait()
+        {
+            ComportementCombattre = null;
+            ComportementSeDeplacer = null;
+            ComporterSeDefendre = null;
+        }
+
 
     }
 }

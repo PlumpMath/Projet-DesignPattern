@@ -7,6 +7,8 @@ namespace ProjetDesignPattern
 		public ComporterSeDefendreAbstrait ()
 		{
 		}
+
+        public abstract string Defendre();
 	}
 }
 

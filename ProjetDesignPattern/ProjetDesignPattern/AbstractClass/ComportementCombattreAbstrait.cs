@@ -8,5 +8,7 @@ namespace ProjetDesignPattern
         {
             
         }
+
+        public abstract string Combattre();
     }
 }
