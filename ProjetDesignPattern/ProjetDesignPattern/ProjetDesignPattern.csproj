@@ -63,7 +63,7 @@
     <Compile Include="GestionnaireJeu.cs" />
     <Compile Include="AbstractClass\ObservateurAbstrait.cs" />
     <Compile Include="AbstractClass\PersonnageAbstrait.cs" />
-    <Compile Include="AbstractClass\JeuAbstrait.cs" />
+    <Compile Include="Simulation.cs" />
     <Compile Include="AbstractClass\ObjetAbstrait.cs" />
     <Compile Include="JeuDefenceTower\AccesDT.cs" />
     <Compile Include="JeuDefenceTower\ConflitDT.cs" />
@@ -73,6 +73,7 @@
     <Compile Include="JeuDefenceTower\Etat\ERechargement.cs" />
     <Compile Include="JeuDefenceTower\Etat\EtatAbstraitDT.cs" />
     <Compile Include="JeuDefenceTower\Personnages\Comportement\ComportementCombattreDT.cs" />
+    <Compile Include="JeuDefenceTower\Personnages\Comportement\ComportementSeDeplacerDT.cs" />
     <Compile Include="JeuDefenceTower\Personnages\Chateau.cs" />
     <Compile Include="JeuDefenceTower\Personnages\Ennemi.cs" />
     <Compile Include="JeuDefenceTower\FabriqueJeuDT.cs" />
@@ -92,7 +93,6 @@
     <Compile Include="JeuSimulationTrafic\Personnages\Comportements\ComportementSeDeplacerVoiture.cs" />
     <Compile Include="JeuSimulationTrafic\FabriqueSimuTrafic.cs" />
     <Compile Include="JeuSimulationTrafic\Personnages\Camion.cs" />
-    <Compile Include="JeuSimulationTrafic\JeuSimulationTrafic.cs" />
     <Compile Include="JeuSimulationTrafic\Personnages\Moto.cs" />
     <Compile Include="JeuSimulationTrafic\Personnages\Voiture.cs" />
     <Compile Include="JeuSimulationTrafic\Personnages\Véhicule.cs" />
@@ -101,8 +101,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="AbstractClass\SujetObserveAbstrait.cs" />
     <Compile Include="AbstractClass\ZoneAbstraite.cs" />
-    <Compile Include="JeuDefenceTower\JeuDefenceTower.cs" />
-    <Compile Include="JeuEchecs\JeuEchecs.cs" />
     <Compile Include="JeuEchecs\Personnages\PieceEchec.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
