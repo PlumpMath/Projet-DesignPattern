@@ -9,6 +9,6 @@ namespace ProjetDesignPattern
 
         }
 
-        public abstract string Deplacer();
+        public abstract string deplacer();
     }
 }

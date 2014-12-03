@@ -8,7 +8,7 @@ namespace ProjetDesignPattern.JeuDefenceTower
 {
     class Ennemi : PersonnageAbstrait
     {
-        private enum eMode
+        public enum eMode
         {
             Avance,
             Attaque
@@ -31,17 +31,17 @@ namespace ProjetDesignPattern.JeuDefenceTower
             throw new NotImplementedException();
         }
 
-        public override void Execution(eMode action)
+        public override void Execution()
         {
             //avancer ou attaquer
-            if (action == eMode.Attaque)
+            /*if (action == eMode.Attaque)
             {
                 Console.WriteLine("Ennemi " + Nom + this.Combattre(ptAttaque, chateau));
             }
             if (action == eMode.Avance)
             {
                 Console.WriteLine("Ennemi " + Nom + this.SeDeplacer());
-            }
+            }*/
         }
 
         public override void MiseAJour()

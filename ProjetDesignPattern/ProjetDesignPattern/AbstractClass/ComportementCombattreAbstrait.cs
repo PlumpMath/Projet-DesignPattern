@@ -9,6 +9,6 @@ namespace ProjetDesignPattern
             
         }
 
-        public abstract string Combattre(int degat, PersonnageAbstrait cible);
+        public abstract string combattre(int degat, PersonnageAbstrait cible);
     }
 }

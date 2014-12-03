@@ -20,14 +20,14 @@ namespace ProjetDesignPattern
         public string Combattre(int degat, PersonnageAbstrait cible)
         {
             if (ComportementCombattre != null)
-                return ComportementCombattre.Combattre(degat,cible);
+                return ComportementCombattre.combattre(degat,cible);
             return "Je ne combat pas";
         }
 
         public string SeDeplacer()
         {
             if (ComportementSeDeplacer != null)
-                return ComportementSeDeplacer.Deplacer();
+                return ComportementSeDeplacer.deplacer();
             return "Je ne bouge pas";
         }
 
