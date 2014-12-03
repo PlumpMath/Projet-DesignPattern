@@ -3,12 +3,9 @@
 namespace ProjetDesignPattern
 {
     public abstract class ComportementSeDeplacerAbstrait
-    {
-        public ComportementSeDeplacerAbstrait()
-        {
+	{
+		public PersonnageAbstrait personnage { get; set;}
 
-        }
-
-        public abstract string Deplacer();
+        public abstract void deplacer(ZoneAbstraite zone);
     }
 }
