@@ -2,7 +2,7 @@ using System;
 
 namespace ProjetDesignPattern.JeuEchecs
 {
-	public class AucuneDefense:ComportementSeDefendre
+	public class AucuneDefense:ComportementSeDefendreJE
 	{
 
 		public AucuneDefense ()
@@ -10,8 +10,9 @@ namespace ProjetDesignPattern.JeuEchecs
 			defense = 0;
 		}
 
-		public override int seDefendre(int degat){
-			return degat - defense;
+		public override void defendre(int degat){
+			//TODO a modifier
+			// degat - defense;
 		}
 	}
 }

@@ -5,9 +5,10 @@ namespace ProjetDesignPattern.JeuDefenceTower
     public class ComportementCombattreDT : ComportementCombattreAbstrait
     {
 
-        public override string combattre(int degat, PersonnageAbstrait cible)
+        public override void combattre(int degat, PersonnageAbstrait cible)
         {
-            return "inflige " + degat + " dégats à " + cible.Nom;
+			//TODO Mettre dans les logs
+            //"inflige " + degat + " dégats à " + cible.Nom;
         }
     }
 }

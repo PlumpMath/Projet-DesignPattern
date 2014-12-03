@@ -73,7 +73,6 @@
     <Compile Include="JeuDefenceTower\Etat\ERechargement.cs" />
     <Compile Include="JeuDefenceTower\Etat\EtatAbstraitDT.cs" />
     <Compile Include="JeuDefenceTower\Personnages\Comportement\ComportementCombattreDT.cs" />
-    <Compile Include="JeuDefenceTower\Personnages\Comportement\ComportementSeDeplacerDT.cs" />
     <Compile Include="JeuDefenceTower\Personnages\Chateau.cs" />
     <Compile Include="JeuDefenceTower\Personnages\Ennemi.cs" />
     <Compile Include="JeuDefenceTower\FabriqueJeuDT.cs" />
@@ -136,13 +135,14 @@
     <Compile Include="AbstractClass\ComporterSeDefendreAbstrait.cs" />
     <Compile Include="JeuEchecs\Personnages\Comportement\Attaque\AttaqueBasique.cs" />
     <Compile Include="JeuEchecs\Personnages\Comportement\Defense\AucuneDefense.cs" />
-    <Compile Include="JeuEchecs\Personnages\Comportement\ComportementSeDefendre.cs" />
-    <Compile Include="JeuEchecs\Personnages\Comportement\ComportementSeDeplacer.cs" />
     <Compile Include="JeuEchecs\Environnement\CaseAbstraite.cs" />
     <Compile Include="JeuEchecs\Environnement\AccesCaseAbstraite.cs" />
-    <Compile Include="JeuEchecs\Personnages\Comportement\ComportementCombattre.cs" />
     <Compile Include="JeuEchecs\Environnement\eTypeDéplacement.cs" />
     <Compile Include="JeuEchecs\Personnages\eTypePersonnage.cs" />
+    <Compile Include="JeuEchecs\Personnages\Comportement\ComportementCombattreJE.cs" />
+    <Compile Include="JeuEchecs\Personnages\Comportement\ComportementSeDefendreJE.cs" />
+    <Compile Include="JeuEchecs\Personnages\Comportement\ComportementSeDeplacerJE.cs" />
+    <Compile Include="JeuDefenceTower\Personnages\Comportement\ComportementSeDeplacerAPiedDT.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -5,25 +5,25 @@ namespace ProjetDesignPattern.JeuEchecs
 {
     public abstract class PieceEchec : PersonnageAbstrait
     {
-        public ComportementSeDeplacer comportementSeDeplacer { get; set; }
-		public ComportementCombattre comportementCombattre{ get; set; }
-		public ComportementSeDefendre comportementSeDefendre{ get; set;}
+        public ComportementSeDeplacerJE comportementSeDeplacer { get; set; }
+		public ComportementCombattreJE comportementCombattre{ get; set; }
+		public ComportementSeDefendreJE comportementSeDefendre{ get; set;}
 
 		int equipe { get; set; }
 
-		public int combattre(){
-			return comportementCombattre.combattre ();
+		public void combattre(int degat, PieceEchec cible){
+			comportementCombattre.combattre (degat, cible);
 		}
 
-		public int seDefendre(int attaque){
-			return comportementSeDefendre.seDefendre(attaque);
+		public void seDefendre(int attaque){
+			comportementSeDefendre.defendre(attaque);
 		}
 
-		public void seDeplacer(Case c){
-			comportementSeDeplacer.seDeplacer (c);
+		public void deplacer(Case c){
+			comportementSeDeplacer.deplacer (c);
 		}
-		public List<Case> deplacementPossible (){
-			return comportementSeDeplacer.deplacementPossible ();
+		public List<ZoneAbstraite> deplacementPossible (ZoneAbstraite zone){
+			return comportementSeDeplacer.déplacementPossible (zone);
 		}
 
     }
