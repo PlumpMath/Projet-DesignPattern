@@ -3,10 +3,24 @@ namespace ProjetDesignPattern.JeuSimulationTrafic
 {
     public class FabriqueSimuTrafic : FabriqueAbstraite
     {
-
-        public override PersonnageAbstrait CreerPersonnage(FabriqueAbstraite.eTypePersonnage typePerso, SujetObserveAbstrait unEtatMajor, string unNom)
+        enum eTypePersonnage
         {
-            throw new System.NotImplementedException();
+            Camion,
+            Voiture,
+            Moto
+        }
+
+        public override PersonnageAbstrait CreerPersonnage(eTypePersonnage typePerso, SujetObserveAbstrait unEtatMajor, string unNom)
+        {
+            switch(typePerso){
+                case eTypePersonnage.Camion:
+                    return new Camion();
+                case eTypePersonnage.Voiture:
+                    return new Voiture();
+                case eTypePersonnage.Moto:
+                default:
+                    return new Moto();
+            }
         }
 
         public override ZoneAbstraite CreerZone()
