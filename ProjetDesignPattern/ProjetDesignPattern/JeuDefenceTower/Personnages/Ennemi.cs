@@ -17,8 +17,10 @@ namespace ProjetDesignPattern.JeuDefenceTower
         private int ptAttaque;
 
 
-        public Ennemi() : base()
+        public Ennemi(int _pv, string _nom, int _atq)
         {
+            init(_pv,_nom);
+            ptAttaque = _atq;
             ComportementSeDeplacer = new ComportementSeDeplacerAPiedDT();
             ComportementCombattre = new ComportementCombattreDT();
         }
@@ -34,11 +36,11 @@ namespace ProjetDesignPattern.JeuDefenceTower
             //avancer ou attaquer
             if (action == eMode.Attaque)
             {
-                Console.WriteLine("Ennemi " + this.Combattre());
+                Console.WriteLine("Ennemi " + Nom + this.Combattre());
             }
             if (action == eMode.Avance)
             {
-                Console.WriteLine("Ennemi " + this.SeDeplacer());
+                Console.WriteLine("Ennemi " + Nom + this.SeDeplacer());
             }
         }
 
