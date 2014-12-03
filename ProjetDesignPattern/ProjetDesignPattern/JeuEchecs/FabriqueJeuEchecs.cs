@@ -4,8 +4,6 @@ namespace ProjetDesignPattern.JeuEchecs
 {
     class FabriqueJeuEchecs : FabriqueAbstraite
     {
-        enum eTypePersonnage { Pion, Fou, Tour, Cavalier, Reine, Roi}
-
 
         public override PersonnageAbstrait CreerPersonnage(FabriqueAbstraite.eTypePersonnage typePerso, SujetObserveAbstrait unEtatMajor, string unNom)
         {

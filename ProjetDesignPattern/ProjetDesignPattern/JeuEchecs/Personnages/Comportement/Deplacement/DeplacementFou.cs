@@ -9,7 +9,7 @@ namespace ProjetDesignPattern.JeuEchecs
 		{
 		}
 
-        public override void SeDeplacer(Case c)
+        public override void seDeplacer(Case c)
         {
             throw new NotImplementedException();
         }

@@ -2,11 +2,11 @@ using System;
 
 namespace ProjetDesignPattern.JeuEchecs
 {
-	public class ComportementSeDefendre:ComporterSeDefendreAbstrait
+	public abstract class ComportementSeDefendre:ComporterSeDefendreAbstrait
 	{
-		public ComportementSeDefendre ()
-		{
-		}
+		public int defense { get; set;}
+
+		public abstract int seDefendre (int degat);
 	}
 }
 

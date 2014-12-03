@@ -3,13 +3,13 @@ using System.Collections.Generic;
 
 namespace ProjetDesignPattern.JeuEchecs
 {
-	public class DeplacementReine : ComportementSeDeplacerAbstrait
+	public class DeplacementReine : ComportementSeDeplacer
 	{
 		public DeplacementReine ()
 		{
 		}
 
-        public override void SeDeplacer(Case c)
+        public override void seDeplacer(Case c)
         {
             throw new NotImplementedException();
         }

@@ -2,8 +2,11 @@ using System;
 
 namespace ProjetDesignPattern.JeuEchecs
 {
-	public abstract class ComportementCombattre
+	public abstract class ComportementCombattre:ComportementCombattreAbstrait
 	{
-		public abstract void combattre();
+		public int attaque { get; set;}
+
+		public abstract int combattre();
 	}
 }
+
