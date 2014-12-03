@@ -5,7 +5,9 @@ namespace ProjetDesignPattern.JeuEchecs
 {
 	public abstract class ComportementSeDeplacer : ComportementSeDeplacerAbstrait
     {
-        public abstract void SeDeplacer(Case c);
+		Case actuelle { get; set;}
+
+        public abstract void seDeplacer(Case arrivée);
 
 		public abstract List<Case> deplacementPossible ();
 
