@@ -2,12 +2,13 @@
 
 namespace ProjetDesignPattern.JeuDefenceTower
 {
-    public class ComportementSeDeplacerAPiedDT : ComportementSeDeplacerDT
+    public class ComportementSeDeplacerAPiedDT : ComportementSeDeplacerAbstrait
     {
 
-        public override string Avancer()
+        public override string deplacer()
         {
-            return "se déplace ver l'avant";
+            return "se déplace vers l'avant";
+            
         }
     }
 }

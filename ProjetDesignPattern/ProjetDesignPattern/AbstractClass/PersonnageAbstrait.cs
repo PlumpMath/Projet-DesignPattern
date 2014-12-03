@@ -17,17 +17,17 @@ namespace ProjetDesignPattern
         public abstract void AnalyserSituation();
         public abstract void Execution();
 
-        public string Combattre()
+        public string Combattre(int degat, PersonnageAbstrait cible)
         {
             if (ComportementCombattre != null)
-                return ComportementCombattre.Combattre();
+                return ComportementCombattre.combattre(degat,cible);
             return "Je ne combat pas";
         }
 
         public string SeDeplacer()
         {
             if (ComportementSeDeplacer != null)
-                return ComportementSeDeplacer.Deplacer();
+                return ComportementSeDeplacer.deplacer();
             return "Je ne bouge pas";
         }
 
@@ -45,7 +45,6 @@ namespace ProjetDesignPattern
             ComporterSeDefendre = null;
             Nom = _nom;
             PV = _pv;
-
         }
 
 

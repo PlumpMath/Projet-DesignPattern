@@ -8,9 +8,21 @@ namespace ProjetDesignPattern.JeuDefenceTower
 {
     class Ennemi : PersonnageAbstrait
     {
-
-        public Ennemi() : base()
+        public enum eMode
         {
+            Avance,
+            Attaque
+        }
+
+        private int ptAttaque;
+        private PersonnageAbstrait chateau;
+
+        public Ennemi(int _pv, string _nom, int _atq)
+        {
+            init(_pv,_nom);
+            ptAttaque = _atq;
+            ComportementSeDeplacer = new ComportementSeDeplacerAPiedDT();
+            ComportementCombattre = new ComportementCombattreDT();
         }
 
         public override void AnalyserSituation()
@@ -22,7 +34,14 @@ namespace ProjetDesignPattern.JeuDefenceTower
         public override void Execution()
         {
             //avancer ou attaquer
-            throw new NotImplementedException();
+            /*if (action == eMode.Attaque)
+            {
+                Console.WriteLine("Ennemi " + Nom + this.Combattre(ptAttaque, chateau));
+            }
+            if (action == eMode.Avance)
+            {
+                Console.WriteLine("Ennemi " + Nom + this.SeDeplacer());
+            }*/
         }
 
         public override void MiseAJour()
