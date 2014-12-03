@@ -38,11 +38,14 @@ namespace ProjetDesignPattern
             return "Je ne me défend pas";
         }
 
-        public PersonnageAbstrait()
+        public void init (int _pv, string _nom)
         {
             ComportementCombattre = null;
             ComportementSeDeplacer = null;
             ComporterSeDefendre = null;
+            Nom = _nom;
+            PV = _pv;
+
         }
 
 
