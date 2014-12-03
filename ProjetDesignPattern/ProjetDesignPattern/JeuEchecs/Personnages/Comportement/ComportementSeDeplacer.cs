@@ -7,7 +7,7 @@ namespace ProjetDesignPattern.JeuEchecs
     {
 		Case actuelle { get; set;}
 
-        public abstract void seDeplacer(Case arrivée);
+        public abstract void deplacer(Case arrivée);
 
 		public abstract List<Case> deplacementPossible ();
 
