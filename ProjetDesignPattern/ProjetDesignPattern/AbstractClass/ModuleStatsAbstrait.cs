@@ -4,6 +4,6 @@ namespace ProjetDesignPattern
 {
     public abstract class ModuleStatsAbstrait
     {
-        public JeuAbstrait jeu { get; set; }
+        public Simulation jeu { get; set; }
     }
 }
