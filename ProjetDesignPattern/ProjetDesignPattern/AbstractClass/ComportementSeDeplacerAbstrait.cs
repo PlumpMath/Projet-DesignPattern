@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace ProjetDesignPattern
 {
@@ -8,5 +9,6 @@ namespace ProjetDesignPattern
 
         public abstract void deplacer(ZoneAbstraite zone);
 
+		public abstract List<ZoneAbstraite> déplacementPossible(ZoneAbstraite zone);
     }
 }
