@@ -6,7 +6,7 @@ namespace ProjetDesignPattern
 	{
 		public PersonnageAbstrait personnage { get; set;}
 
-        public abstract void Defendre(int attaque);
+        public abstract void defendre(int attaque);
 	}
 }
 

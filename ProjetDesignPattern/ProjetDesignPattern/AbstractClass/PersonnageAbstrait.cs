@@ -10,39 +10,40 @@ namespace ProjetDesignPattern
         public SujetObserveAbstrait EtatMajor { get; set; }
         public ZoneAbstraite Position { get; set; }
         public EtatAbstrait etatCourant { get; set; }
-        public ComportementCombattreAbstrait ComportementCombattre { get; set; }
-        public ComportementSeDeplacerAbstrait ComportementSeDeplacer { get; set; }
-        public ComporterSeDefendreAbstrait ComporterSeDefendre { get; set; }
+        public ComportementCombattreAbstrait comportementCombattre { get; set; }
+        public ComportementSeDeplacerAbstrait comportementSeDeplacer { get; set; }
+        public ComporterSeDefendreAbstrait comporterSeDefendre { get; set; }
 
         public abstract void AnalyserSituation();
         public abstract void Execution();
 
-        public string Combattre(int degat, PersonnageAbstrait cible)
+        public void Combattre(int degat, PersonnageAbstrait cible)
         {
-            if (ComportementCombattre != null)
-                return ComportementCombattre.combattre(degat,cible);
-            return "Je ne combat pas";
+            if (comportementCombattre != null)
+                comportementCombattre.combattre(degat,cible);
+            //TODO Mettre dans les log
+			//"Je ne combat pas";
         }
 
-        public string SeDeplacer()
+        public void SeDeplacer(ZoneAbstraite zone)
         {
-            if (ComportementSeDeplacer != null)
-                return ComportementSeDeplacer.deplacer();
-            return "Je ne bouge pas";
+            if (comportementSeDeplacer != null){
+                comportementSeDeplacer.deplacer(zone);
+			}
         }
 
-        public string SeDefendre()
+        public string SeDefendre(int attaque)
         {
-            if (ComporterSeDefendre != null)
-                return ComporterSeDefendre.Defendre();
+            if (comporterSeDefendre != null)
+                comporterSeDefendre.defendre(attaque);
             return "Je ne me défend pas";
         }
 
         public void init (int _pv, string _nom)
         {
-            ComportementCombattre = null;
-            ComportementSeDeplacer = null;
-            ComporterSeDefendre = null;
+            comportementCombattre = null;
+            comportementSeDeplacer = null;
+            comporterSeDefendre = null;
             Nom = _nom;
             PV = _pv;
         }

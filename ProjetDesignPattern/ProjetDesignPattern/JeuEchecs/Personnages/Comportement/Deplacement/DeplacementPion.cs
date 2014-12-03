@@ -3,18 +3,18 @@ using System.Collections.Generic;
 
 namespace ProjetDesignPattern.JeuEchecs
 {
-	public class DeplacementPion : ComportementSeDeplacer
+	public class DeplacementPion : ComportementSeDeplacerJE
 	{
 		public DeplacementPion ()
 		{
 		}
 
-		public override void seDeplacer(Case arrivée)
+		public override void deplacer(ZoneAbstraite zone)
         {
             throw new NotImplementedException();
         }
 
-        public override List<Case> deplacementPossible()
+		public override List<ZoneAbstraite> déplacementPossible(ZoneAbstraite zone)
         {
             throw new NotImplementedException();
         }
