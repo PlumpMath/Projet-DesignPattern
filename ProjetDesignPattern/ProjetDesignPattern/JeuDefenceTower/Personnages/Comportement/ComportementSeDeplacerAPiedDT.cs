@@ -8,7 +8,7 @@ namespace ProjetDesignPattern.JeuDefenceTower
         public override string deplacer()
         {
             return "se déplace vers l'avant";
-            
+        
         }
     }
 }

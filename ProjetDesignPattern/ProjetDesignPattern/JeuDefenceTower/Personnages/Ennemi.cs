@@ -21,7 +21,7 @@ namespace ProjetDesignPattern.JeuDefenceTower
         {
             init(_pv,_nom);
             ptAttaque = _atq;
-            ComportementSeDeplacer = new ComportementSeDeplacerAPiedDT();
+            ComportementSeDeplacer = new Com
             ComportementCombattre = new ComportementCombattreDT();
         }
 
