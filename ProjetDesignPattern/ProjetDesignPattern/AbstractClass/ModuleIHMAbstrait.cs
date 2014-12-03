@@ -4,6 +4,8 @@ namespace ProjetDesignPattern
 {
     public abstract class ModuleIHMAbstrait
     {
-        public JeuAbstrait jeu { get; set; }
+        public Simulation jeu { get; set; }
+
+        public abstract void afficher();
     }
 }

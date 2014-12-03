@@ -7,7 +7,7 @@ namespace ProjetDesignPattern
     /// </summary>
     class GestionnaireJeu
     {
-        public JeuAbstrait jeu { get; set; }
+        public Simulation jeu { get; set; }
 
         public void CreerNouveauJeu()
         {
