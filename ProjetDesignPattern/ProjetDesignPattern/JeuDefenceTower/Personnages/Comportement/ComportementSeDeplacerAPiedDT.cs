@@ -13,14 +13,5 @@ namespace ProjetDesignPattern.JeuDefenceTower
 		public override List<ZoneAbstraite> déplacementPossible(ZoneAbstraite zone){
 			throw new NotImplementedException ();
 		}
-
-<<<<<<< HEAD
-        public override string deplacer()
-        {
-            return "se déplace vers l'avant";
-        
-        }
-=======
->>>>>>> remotes/origin/master
     }
 }

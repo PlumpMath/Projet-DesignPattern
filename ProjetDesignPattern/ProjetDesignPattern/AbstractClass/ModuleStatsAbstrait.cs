@@ -1,4 +1,5 @@
 ﻿using System;
+using ProjetDesignPattern.AbstractClass;
 
 namespace ProjetDesignPattern
 {
