@@ -4,11 +4,9 @@ namespace ProjetDesignPattern
 {
 	public abstract class ComporterSeDefendreAbstrait
 	{
-		public ComporterSeDefendreAbstrait ()
-		{
-		}
+		public PersonnageAbstrait personnage { get; set;}
 
-        public abstract string Defendre();
+        public abstract void defendre(int attaque);
 	}
 }
 

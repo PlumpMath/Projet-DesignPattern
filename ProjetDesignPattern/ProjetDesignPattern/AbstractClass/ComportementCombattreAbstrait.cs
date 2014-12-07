@@ -4,11 +4,8 @@ namespace ProjetDesignPattern
 {
     public abstract class ComportementCombattreAbstrait 
     {
-        public ComportementCombattreAbstrait() 
-        {
-            
-        }
+		public int attaque { get; set;}
 
-        public abstract string combattre(int degat, PersonnageAbstrait cible);
+        public abstract void combattre(int degat, PersonnageAbstrait cible);
     }
 }

@@ -1,14 +1,14 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace ProjetDesignPattern
 {
     public abstract class ComportementSeDeplacerAbstrait
-    {
-        public ComportementSeDeplacerAbstrait()
-        {
+	{
+		public PersonnageAbstrait personnage { get; set;}
 
-        }
+		public abstract void deplacer(ZoneAbstraite zone);
 
-        public abstract string deplacer();
+		public abstract List<ZoneAbstraite> déplacementPossible(ZoneAbstraite zone);
     }
 }
