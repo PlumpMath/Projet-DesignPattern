@@ -3,7 +3,7 @@ namespace ProjetDesignPattern.JeuSimulationTrafic
 {
     public class FabriqueSimuTrafic : FabriqueAbstraite
     {
-        enum eTypePersonnage
+        public enum eTypePersonnage
         {
             Camion,
             Voiture,
