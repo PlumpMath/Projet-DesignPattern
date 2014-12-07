@@ -19,5 +19,6 @@ namespace ProjetDesignPattern
         public abstract void Sauvegarder();
         public abstract void RecupererInformation();
         public abstract void CalculStatistiques();
+        
     }
 }

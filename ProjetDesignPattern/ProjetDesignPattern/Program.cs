@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProjetDesignPattern.AbstractClass;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -17,6 +18,7 @@ namespace ProjetDesignPattern
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new FenPrincipale());
+            ChargementJeu c = new ChargementJeu();
         }
     }
 }
