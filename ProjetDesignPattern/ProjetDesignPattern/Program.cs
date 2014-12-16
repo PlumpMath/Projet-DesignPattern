@@ -15,9 +15,9 @@ namespace ProjetDesignPattern
         [STAThread]
         static void Main()
         {
-            Application.EnableVisualStyles();
+            /*Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FenPrincipale());
+            Application.Run(new FenPrincipale());*/
             ChargementJeu c = new ChargementJeu();
         }
     }
