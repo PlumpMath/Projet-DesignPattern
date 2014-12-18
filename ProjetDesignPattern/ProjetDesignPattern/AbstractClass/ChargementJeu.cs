@@ -12,7 +12,9 @@ namespace ProjetDesignPattern.AbstractClass
     public class ChargementJeu
     {
 
+        public Simulation maSimulation;
         private static System.Xml.XmlTextReader txtReader = null;
+
 
         public ChargementJeu ()
         {
@@ -33,25 +35,41 @@ namespace ProjetDesignPattern.AbstractClass
 
                     //Fabrique du jeu
                     var jeu = monDoc.Element("Simulateur").Element("Jeu").Attribute("nom");
-                    if (jeu.ToString() == "echec")
-                    {
-                        FabriqueJeuDT fDT = new FabriqueJeuDT();
-                    }
-                    if (jeu.ToString() == "echec")
-                    {
-                        FabriqueJeuDT fDT = new FabriqueJeuDT();
-                    }
-                    if (jeu.ToString() == "echec")
-                    {
-                        FabriqueJeuDT fDT = new FabriqueJeuDT();
-                    }
+                    
+                    maSimulation =  new Simulation(jeu.ToString());
+
                           
                     //Fabrique des zones
-                    /*var zones = monDoc.Element("Simulateur").Element("Jeu").Element("Zones").Element("zone").Descendants();
+                    var zones = monDoc.Element("Simulateur").Element("Jeu").Element("Zones").Element("zone").Descendants();
 
                     foreach (XElement el in zones)
-                        ZoneAbstraite d = new ZoneAbstraite();
-                    */
+                    {
+                        maSimulation.ajoutZone(int.Parse(el.Element("x").ToString()), 
+                            int.Parse(el.Element("y").ToString()));
+
+                        var acces = from ac in monDoc.Element("Simulateur").Element("Jeu").Element("Access").Element("acces").Descendants()
+                                    join zo in monDoc.Element("Simulateur").Element("Jeu").Element("Zones").Element("zone").Descendants()
+                                         on (string)ac.Attribute("idzone") equals (string)zo.Attribute("idzone")
+                                    select new 
+                                    {
+                                        accesX = (int)zo.Element("x"),
+                                        accesY = (int)zo.Element("y")
+                                    };
+
+                        foreach (var ele in acces)
+                        MessageBox.Show(ele.ToString());
+                        
+                    }
+                    
+                    //Fabrique des acces
+                    //var acces = monDoc.Element("Simulateur").Element("Jeu").Element("Access").Element("acces").Descendants();
+
+                    /*foreach (XElement el in zones)
+                    {
+                        maSimulation.ajoutZone(int.Parse(el.Element("x").ToString()),
+                            int.Parse(el.Element("y").ToString()));
+                    }
+
 
                     ////////////////////////EXEMPLES/////////////////////////////////////////
 
@@ -67,9 +85,9 @@ namespace ProjetDesignPattern.AbstractClass
                                 acc = (string)b.Element("acces")
                             };
                     */
-                    var result = monDoc.Element("Simulateur").Descendants();
-                    foreach (XElement el in result)
-                    MessageBox.Show(el.Name.ToString());
+                    //var result = monDoc.Element("Simulateur").Descendants();
+                    //foreach (XElement el in result)
+                    //MessageBox.Show(el.Name.ToString());
                    
                 }
                 catch (Exception ex)
