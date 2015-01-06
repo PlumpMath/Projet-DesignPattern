@@ -10,5 +10,10 @@ namespace ProjetDesignPattern
         {
             throw new NotImplementedException();
         }
+
+        internal void CalculStatistiques()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

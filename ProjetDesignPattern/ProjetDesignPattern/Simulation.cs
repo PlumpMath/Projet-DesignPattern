@@ -8,8 +8,10 @@ namespace ProjetDesignPattern
         public String Nom { get; set; }
 
         public int numTour;
+        public List<SujetObserveAbstrait> listeSujetsObserves;
         public List<PersonnageAbstrait> listePersonnages;
         public List<ConflitAbstrait> listeConflits;
+        public List<ObjetAbstrait> listeObjets;
 
         public ModuleStatsAbstrait ModuleStats { get; set; }
         public ModuleIHMAbstrait ModuleIHM { get; set; }
@@ -22,16 +24,25 @@ namespace ProjetDesignPattern
 
         public void TourDeJeu()
         {
+            foreach (SujetObserveAbstrait sujet in listeSujetsObserves)
+            {
+                sujet.Notifier();
+            }
             foreach (PersonnageAbstrait perso in listePersonnages)
             {
                 perso.AnalyserSituation();
                 perso.Execution();
             }
-            foreach(ConflitAbstrait conflit in listeConflits)
+            foreach (ConflitAbstrait conflit in listeConflits)
             {
                 conflit.Mediation();
             }
+            foreach (ObjetAbstrait objet in listeObjets)
+            {
+                objet.MiseAJour();
+            }
             RecupererInformation();
+            CalculStatistiques();
             Afficher();
         }
 
@@ -52,7 +63,7 @@ namespace ProjetDesignPattern
 
         public void CalculStatistiques()
         {
-
+            ModuleStats.CalculStatistiques();
         }
 
     }
