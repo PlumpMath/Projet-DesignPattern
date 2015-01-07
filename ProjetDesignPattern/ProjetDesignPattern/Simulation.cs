@@ -31,6 +31,8 @@ namespace ProjetDesignPattern
             {
                 conflit.Mediation();
             }
+            RecupererInformation();
+            Afficher();
         }
 
         public void Afficher()
@@ -45,7 +47,7 @@ namespace ProjetDesignPattern
 
         public void RecupererInformation()
         {
-
+            ModuleStats.RecupererInformation();
         }
 
         public void CalculStatistiques()

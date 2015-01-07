@@ -5,16 +5,38 @@ namespace ProjetDesignPattern.JeuEchecs
 {
 	public abstract class ComportementSeDeplacerJE : ComportementSeDeplacerAbstrait
     {
-		Case actuelle { get; set;}
+		public int[][] déplacements;
+		public bool déplacementInfinie;
 
 		public override void deplacer(ZoneAbstraite zone){
 
 		}
 
 		public override List<ZoneAbstraite> déplacementPossible(ZoneAbstraite zone){
-			throw new NotImplementedException ();
+			List<ZoneAbstraite> zones = new List<ZoneAbstraite> ();
+			initDéplacement (zones, zone);
+			return zones;
 		}
 
+		private void initDéplacement(List<ZoneAbstraite> zones, ZoneAbstraite zone){
+			for (int i = 0; i < déplacements.Length; i++){
+				ZoneAbstraite tmp = accessible (zone, déplacements [i]);
+				if (tmp != null && !zones.Contains(tmp)) {
+					zones.Add (tmp);
+					if (déplacementInfinie) {
+						initDéplacement (zones, tmp);
+					}
+				}
+			}
+		}
 
+		private ZoneAbstraite accessible(ZoneAbstraite zone, int[] a){
+			for (int index = 0; index < a.Length; index++) {
+				if (!zone.zonesAdjacentes.ContainsKey(a[index]))
+					return null;
+				zone = zone.zonesAdjacentes[a[index]];
+			}
+			return zone;
+		}
     }
 }

@@ -7,6 +7,8 @@ namespace ProjetDesignPattern.JeuEchecs
 	{
 		public DeplacementRoi ()
 		{
+			this.déplacements = new int[,] { {1}, {2}, {3}, {4}, {6}, {7}, {8}, {9} };
+			this.déplacementInfinie = false;
 		}
 
 		public override void deplacer(ZoneAbstraite zone)

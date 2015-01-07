@@ -137,6 +137,7 @@
     <Compile Include="JeuEchecs\Personnages\Comportement\ComportementSeDefendreJE.cs" />
     <Compile Include="JeuEchecs\Personnages\Comportement\ComportementSeDeplacerJE.cs" />
     <Compile Include="JeuDefenceTower\Personnages\Comportement\ComportementSeDeplacerAPiedDT.cs" />
+    <Compile Include="JeuEchecs\Personnages\Comportement\Deplacement\Permutation.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
