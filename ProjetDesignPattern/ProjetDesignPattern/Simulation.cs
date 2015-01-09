@@ -10,6 +10,7 @@ namespace ProjetDesignPattern
         public int numTour;
         public List<SujetObserveAbstrait> listeSujetsObserves;
         public List<PersonnageAbstrait> listePersonnages;
+        public List<ZoneAbstraite> listeZones;
         public List<ConflitAbstrait> listeConflits;
         public List<ObjetAbstrait> listeObjets;
 
@@ -23,6 +24,7 @@ namespace ProjetDesignPattern
             Nom = unNom;
             listePersonnages = new List<PersonnageAbstrait>();
             listeSujetsObserves = new List<SujetObserveAbstrait>();
+            listeZones = new List<ZoneAbstraite>();
             listeConflits = new List<ConflitAbstrait>();
             listeObjets = new List<ObjetAbstrait>();
         }
