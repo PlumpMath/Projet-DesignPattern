@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using ProjetDesignPattern.JeuSimulationTrafic;
+
 namespace ProjetDesignPattern
 {
     static class Program
@@ -14,9 +16,14 @@ namespace ProjetDesignPattern
         [STAThread]
         static void Main()
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FenPrincipale());
+            Simulation jeu = new Simulation("Simulation traffic");
+            jeu.fab = new FabriqueSimuTrafic();
+            jeu.ModuleIHM = new ModuleIHM_Traffic();
+            jeu.ModuleIHM.jeu = jeu;
+
+            jeu.listePersonnages.Add(jeu.fab.CreerPersonnage(1, null, "voiture"));
+
+            jeu.Afficher();
         }
     }
 }

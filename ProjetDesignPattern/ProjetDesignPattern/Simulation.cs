@@ -15,11 +15,16 @@ namespace ProjetDesignPattern
 
         public ModuleStatsAbstrait ModuleStats { get; set; }
         public ModuleIHMAbstrait ModuleIHM { get; set; }
+        public FabriqueAbstraite fab { get; set; }
 
 
         public Simulation(String unNom)
         {
             Nom = unNom;
+            listePersonnages = new List<PersonnageAbstrait>();
+            listeSujetsObserves = new List<SujetObserveAbstrait>();
+            listeConflits = new List<ConflitAbstrait>();
+            listeObjets = new List<ObjetAbstrait>();
         }
 
         public void TourDeJeu()

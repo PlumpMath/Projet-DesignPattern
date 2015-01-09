@@ -63,6 +63,14 @@
     <Compile Include="GestionnaireJeu.cs" />
     <Compile Include="AbstractClass\ObservateurAbstrait.cs" />
     <Compile Include="AbstractClass\PersonnageAbstrait.cs" />
+    <Compile Include="JeuSimulationTrafic\FeuSignalisation.cs" />
+    <Compile Include="JeuSimulationTrafic\IHM_Traffic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JeuSimulationTrafic\IHM_Traffic.Designer.cs">
+      <DependentUpon>IHM_Traffic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JeuSimulationTrafic\ModuleIHM_Traffic.cs" />
     <Compile Include="Simulation.cs" />
     <Compile Include="AbstractClass\ObjetAbstrait.cs" />
     <Compile Include="JeuDefenceTower\AccesDT.cs" />
@@ -101,6 +109,9 @@
     <Compile Include="AbstractClass\SujetObserveAbstrait.cs" />
     <Compile Include="AbstractClass\ZoneAbstraite.cs" />
     <Compile Include="JeuEchecs\Personnages\PieceEchec.cs" />
+    <EmbeddedResource Include="JeuSimulationTrafic\IHM_Traffic.resx">
+      <DependentUpon>IHM_Traffic.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -143,9 +154,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="JeuDefenceTower\Etat\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

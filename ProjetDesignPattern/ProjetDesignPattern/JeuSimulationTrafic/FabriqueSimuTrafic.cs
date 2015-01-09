@@ -3,21 +3,20 @@ namespace ProjetDesignPattern.JeuSimulationTrafic
 {
     public class FabriqueSimuTrafic : FabriqueAbstraite
     {
-        public enum eTypePersonnage
-        {
-            Camion,
-            Voiture,
-            Moto
-        }
+        public const int typeCamion = 1;
+        public const int typeVoiture = 2;
+        public const int typeMoto = 3;
 
-        public override PersonnageAbstrait CreerPersonnage(eTypePersonnage typePerso, SujetObserveAbstrait unEtatMajor, string unNom)
+        public override PersonnageAbstrait CreerPersonnage(int typePerso, SujetObserveAbstrait unEtatMajor, string unNom)
         {
             switch(typePerso){
-                case eTypePersonnage.Camion:
-                    return new Camion();
-                case eTypePersonnage.Voiture:
+                case typeCamion:
+                    Camion cam = new Camion();
+                    cam.Nom = unNom;
+                    return cam;
+                case typeVoiture:
                     return new Voiture();
-                case eTypePersonnage.Moto:
+                case typeMoto:
                 default:
                     return new Moto();
             }
@@ -25,12 +24,12 @@ namespace ProjetDesignPattern.JeuSimulationTrafic
 
         public override ZoneAbstraite CreerZone()
         {
-            throw new System.NotImplementedException();
+            return new PortionDeRoute();
         }
 
         public override AccesAbstrait CreerAcces()
         {
-            throw new System.NotImplementedException();
+            return new AccesRoute();
         }
     }
 }

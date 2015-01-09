@@ -8,11 +8,11 @@ namespace ProjetDesignPattern.JeuSimulationTrafic
 
 		public override void deplacer(ZoneAbstraite zone)
         {
-            throw new NotImplementedException();
+            personnage.Position = zone;
 		}
 
 		public override List<ZoneAbstraite> déplacementPossible(ZoneAbstraite zone){
-			throw new NotImplementedException ();
+            return null;
 		}
     }
 }

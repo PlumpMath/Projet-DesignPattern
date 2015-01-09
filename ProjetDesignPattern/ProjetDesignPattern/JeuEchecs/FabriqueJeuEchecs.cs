@@ -5,7 +5,7 @@ namespace ProjetDesignPattern.JeuEchecs
     class FabriqueJeuEchecs : FabriqueAbstraite
     {
 
-        public override PersonnageAbstrait CreerPersonnage(FabriqueAbstraite.eTypePersonnage typePerso, SujetObserveAbstrait unEtatMajor, string unNom)
+        public override PersonnageAbstrait CreerPersonnage(int typePerso, SujetObserveAbstrait unEtatMajor, string unNom)
         {
             throw new NotImplementedException();
         }
