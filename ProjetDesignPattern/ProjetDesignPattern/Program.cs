@@ -16,14 +16,9 @@ namespace ProjetDesignPattern
         [STAThread]
         static void Main()
         {
-            Simulation jeu = new Simulation("Simulation traffic");
-            jeu.fab = new FabriqueSimuTrafic();
-            jeu.ModuleIHM = new ModuleIHM_Traffic();
-            jeu.ModuleIHM.jeu = jeu;
-
-            jeu.listePersonnages.Add(jeu.fab.CreerPersonnage(1, null, "voiture"));
-
-            jeu.Afficher();
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new FenPrincipale());
         }
     }
 }

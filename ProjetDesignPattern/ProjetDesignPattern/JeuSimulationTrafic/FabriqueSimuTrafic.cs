@@ -9,17 +9,21 @@ namespace ProjetDesignPattern.JeuSimulationTrafic
 
         public override PersonnageAbstrait CreerPersonnage(int typePerso, SujetObserveAbstrait unEtatMajor, string unNom)
         {
+            PersonnageAbstrait perso;
             switch(typePerso){
                 case typeCamion:
-                    Camion cam = new Camion();
-                    cam.Nom = unNom;
-                    return cam;
+                    perso = new Camion();
+                    break;
                 case typeVoiture:
-                    return new Voiture();
+                    perso =  new Voiture();
+                    break;
                 case typeMoto:
                 default:
-                    return new Moto();
+                    perso = new Moto();
+                    break;
             }
+            perso.Nom = unNom;
+            return perso;
         }
 
         public override ZoneAbstraite CreerZone()

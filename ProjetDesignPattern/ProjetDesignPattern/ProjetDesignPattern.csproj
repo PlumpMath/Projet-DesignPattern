@@ -109,6 +109,9 @@
     <Compile Include="AbstractClass\SujetObserveAbstrait.cs" />
     <Compile Include="AbstractClass\ZoneAbstraite.cs" />
     <Compile Include="JeuEchecs\Personnages\PieceEchec.cs" />
+    <EmbeddedResource Include="FenPrincipale.resx">
+      <DependentUpon>FenPrincipale.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="JeuSimulationTrafic\IHM_Traffic.resx">
       <DependentUpon>IHM_Traffic.cs</DependentUpon>
     </EmbeddedResource>
