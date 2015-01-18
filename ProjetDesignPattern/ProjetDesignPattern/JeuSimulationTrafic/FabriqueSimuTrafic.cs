@@ -1,4 +1,5 @@
 ﻿
+using System.Collections.Generic;
 namespace ProjetDesignPattern.JeuSimulationTrafic
 {
     public class FabriqueSimuTrafic : FabriqueAbstraite
@@ -7,7 +8,7 @@ namespace ProjetDesignPattern.JeuSimulationTrafic
         public const int typeVoiture = 2;
         public const int typeMoto = 3;
 
-        public override PersonnageAbstrait CreerPersonnage(int typePerso, SujetObserveAbstrait unEtatMajor, string unNom)
+        public override PersonnageAbstrait CreerPersonnage(int typePerso, SujetObserveAbstrait unEtatMajor, string unNom, ZoneAbstraite unePosition)
         {
             PersonnageAbstrait perso;
             switch(typePerso){
@@ -16,6 +17,8 @@ namespace ProjetDesignPattern.JeuSimulationTrafic
                     break;
                 case typeVoiture:
                     perso =  new Voiture();
+                    perso.comportementSeDeplacer = new ComportementSeDeplacerVoiture();
+                    perso.comportementSeDeplacer.personnage = perso;
                     break;
                 case typeMoto:
                 default:
@@ -23,17 +26,31 @@ namespace ProjetDesignPattern.JeuSimulationTrafic
                     break;
             }
             perso.Nom = unNom;
+            perso.Position = unePosition;
+            unePosition.listePersonnages.Add(perso);
             return perso;
         }
 
         public override ZoneAbstraite CreerZone()
         {
-            return new PortionDeRoute();
+            ZoneAbstraite zone = new PortionDeRoute();
+            zone.listePersonnages = new List<PersonnageAbstrait>();
+            zone.listeObjets = new List<ObjetAbstrait>();
+            zone.zonesAdjacentes = new Dictionary<int, AccesAbstrait>();
+
+            return zone;
         }
 
-        public override AccesAbstrait CreerAcces()
+        public override AccesAbstrait CreerAcces(ZoneAbstraite départ, ZoneAbstraite arrivée)
         {
-            return new AccesRoute();
+            AccesAbstrait acces = new AccesRoute();
+            acces.départ = départ;
+            acces.arrivée = arrivée;
+
+            //Ajout de l'accès à la zone départ
+            départ.zonesAdjacentes.Add(1, acces);
+
+            return acces;
         }
     }
 }

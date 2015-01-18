@@ -71,6 +71,7 @@
       <DependentUpon>IHM_Traffic.cs</DependentUpon>
     </Compile>
     <Compile Include="JeuSimulationTrafic\ModuleIHM_Traffic.cs" />
+    <Compile Include="JeuSimulationTrafic\ModuleStats_Trafic.cs" />
     <Compile Include="Simulation.cs" />
     <Compile Include="AbstractClass\ObjetAbstrait.cs" />
     <Compile Include="JeuDefenceTower\AccesDT.cs" />

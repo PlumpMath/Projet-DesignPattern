@@ -47,6 +47,7 @@
             this.Controls.Add(this.textBox);
             this.Name = "IHM_Traffic";
             this.Text = "IHM_Traffic";
+            this.Load += new System.EventHandler(this.IHM_Traffic_Load);
             this.ResumeLayout(false);
 
         }

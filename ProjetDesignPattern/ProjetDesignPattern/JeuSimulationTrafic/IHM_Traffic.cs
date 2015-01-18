@@ -22,5 +22,10 @@ namespace ProjetDesignPattern.JeuSimulationTrafic
         {
             textBox.Text = txt;
         }
+
+        private void IHM_Traffic_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -2,18 +2,27 @@
 
 namespace ProjetDesignPattern.JeuSimulationTrafic
 {
-    class ModuleIHM_Traffic : ModuleIHMAbstrait
+    class ModuleIHM_Trafic : ModuleIHMAbstrait
     {
         IHM_Traffic ihm = new IHM_Traffic();
 
         public override void afficher()
         {
-            foreach (PersonnageAbstrait perso in jeu.listePersonnages)
+            String texte = "";
+            int numZone = 1;
+            foreach(ZoneAbstraite zone in jeu.listeZones)
             {
-                ihm.changeTexteBox(perso.Nom);
+                texte += "Zone " + numZone + " :" + "\n";
+                foreach(PersonnageAbstrait persoZone in zone.listePersonnages){
+                    texte += "\t- " + persoZone.Nom + "\n";
+                }
+                numZone++;
             }
 
+            ihm.changeTexteBox(texte);
+
             ihm.Show();
+            ihm.Refresh();
         }
     }
 }
