@@ -63,6 +63,15 @@
     <Compile Include="GestionnaireJeu.cs" />
     <Compile Include="AbstractClass\ObservateurAbstrait.cs" />
     <Compile Include="AbstractClass\PersonnageAbstrait.cs" />
+    <Compile Include="JeuSimulationTrafic\Personnages\FeuSignalisation.cs" />
+    <Compile Include="JeuSimulationTrafic\IHM_Traffic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JeuSimulationTrafic\IHM_Traffic.Designer.cs">
+      <DependentUpon>IHM_Traffic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JeuSimulationTrafic\ModuleIHM_Traffic.cs" />
+    <Compile Include="JeuSimulationTrafic\ModuleStats_Trafic.cs" />
     <Compile Include="Simulation.cs" />
     <Compile Include="AbstractClass\ObjetAbstrait.cs" />
     <Compile Include="JeuDefenceTower\AccesDT.cs" />
@@ -73,7 +82,6 @@
     <Compile Include="JeuDefenceTower\Etat\ERechargement.cs" />
     <Compile Include="JeuDefenceTower\Etat\EtatAbstraitDT.cs" />
     <Compile Include="JeuDefenceTower\Personnages\Comportement\ComportementCombattreDT.cs" />
-    <Compile Include="JeuDefenceTower\Personnages\Comportement\ComportementSeDeplacerDT.cs" />
     <Compile Include="JeuDefenceTower\Personnages\Chateau.cs" />
     <Compile Include="JeuDefenceTower\Personnages\Ennemi.cs" />
     <Compile Include="JeuDefenceTower\FabriqueJeuDT.cs" />
@@ -102,6 +110,12 @@
     <Compile Include="AbstractClass\SujetObserveAbstrait.cs" />
     <Compile Include="AbstractClass\ZoneAbstraite.cs" />
     <Compile Include="JeuEchecs\Personnages\PieceEchec.cs" />
+    <EmbeddedResource Include="FenPrincipale.resx">
+      <DependentUpon>FenPrincipale.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JeuSimulationTrafic\IHM_Traffic.resx">
+      <DependentUpon>IHM_Traffic.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -129,7 +143,6 @@
     <Compile Include="JeuEchecs\Personnages\Comportement\Deplacement\DeplacementReine.cs" />
     <Compile Include="JeuEchecs\Personnages\Comportement\Deplacement\DeplacementRoi.cs" />
     <Compile Include="JeuEchecs\Personnages\Comportement\Deplacement\DeplacementTour.cs" />
-    <Compile Include="JeuEchecs\Personnages\Comportement\ComportementAttaquer.cs" />
     <Compile Include="AbstractClass\ComporterSeDefendreAbstrait.cs" />
     <Compile Include="JeuEchecs\Personnages\Comportement\Attaque\AttaqueBasique.cs" />
     <Compile Include="JeuEchecs\Personnages\Comportement\Defense\AucuneDefense.cs" />
@@ -145,9 +158,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="JeuDefenceTower\Etat\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -4,8 +4,8 @@ namespace ProjetDesignPattern
 {
     public abstract class AccesAbstrait
     {
-		ZoneAbstraite départ { get; set; }
-		ZoneAbstraite arrivée { get; set; }
-		bool accès { get; set; }
+		public ZoneAbstraite départ { get; set; }
+        public ZoneAbstraite arrivée { get; set; }
+        public bool accès { get; set; }
     }
 }
