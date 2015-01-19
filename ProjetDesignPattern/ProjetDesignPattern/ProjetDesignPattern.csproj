@@ -63,7 +63,7 @@
     <Compile Include="GestionnaireJeu.cs" />
     <Compile Include="AbstractClass\ObservateurAbstrait.cs" />
     <Compile Include="AbstractClass\PersonnageAbstrait.cs" />
-    <Compile Include="JeuSimulationTrafic\FeuSignalisation.cs" />
+    <Compile Include="JeuSimulationTrafic\Personnages\FeuSignalisation.cs" />
     <Compile Include="JeuSimulationTrafic\IHM_Traffic.cs">
       <SubType>Form</SubType>
     </Compile>

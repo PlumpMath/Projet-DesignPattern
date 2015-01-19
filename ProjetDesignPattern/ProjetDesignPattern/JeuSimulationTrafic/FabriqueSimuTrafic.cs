@@ -4,6 +4,7 @@ namespace ProjetDesignPattern.JeuSimulationTrafic
 {
     public class FabriqueSimuTrafic : FabriqueAbstraite
     {
+        public const int typeFeu = 0;
         public const int typeCamion = 1;
         public const int typeVoiture = 2;
         public const int typeMoto = 3;
@@ -28,7 +29,18 @@ namespace ProjetDesignPattern.JeuSimulationTrafic
             perso.Nom = unNom;
             perso.Position = unePosition;
             unePosition.listePersonnages.Add(perso);
+
+            if(unEtatMajor != null)
+                unEtatMajor.AjouterObservateur(perso);
+
             return perso;
+        }
+
+        public SujetObserveAbstrait CreerSujetObserve()
+        {
+            SujetObserveAbstrait feu = new FeuSignalisation();
+
+            return feu;
         }
 
         public override ZoneAbstraite CreerZone()
