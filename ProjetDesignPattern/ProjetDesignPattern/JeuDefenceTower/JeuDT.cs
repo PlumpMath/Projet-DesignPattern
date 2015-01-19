@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace ProjetDesignPattern.JeuDefenceTower
 {
-    class JeuDT : JeuAbstrait
+    public class JeuDT : JeuAbstrait
     {
+
         public override void TourDeJeu()
         {
             throw new NotImplementedException();

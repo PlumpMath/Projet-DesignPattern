@@ -7,5 +7,6 @@ namespace ProjetDesignPattern
 		public int attaque { get; set;}
 
         public abstract void combattre(int degat, PersonnageAbstrait cible);
+
     }
 }

@@ -19,7 +19,7 @@ namespace ProjetDesignPattern.AbstractClass
         public ChargementJeu ()
         {
 
-            OpenFileDialog openFileDialog1 = new OpenFileDialog();
+            /*OpenFileDialog openFileDialog1 = new OpenFileDialog();
 
             openFileDialog1.InitialDirectory = "C:\\Users\\Ludwig\\Desktop" ;
             openFileDialog1.Filter = "xml files (*.xml)|*.xml" ;
@@ -89,13 +89,13 @@ namespace ProjetDesignPattern.AbstractClass
                     //foreach (XElement el in result)
                     //MessageBox.Show(el.Name.ToString());
                    
-                }
+              /*  }
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
                 }
-
-            }
+            
+            }*/
            
         }
         

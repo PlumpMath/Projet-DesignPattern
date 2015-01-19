@@ -261,6 +261,7 @@
             this.chateau.Size = new System.Drawing.Size(330, 50);
             this.chateau.TabIndex = 0;
             this.chateau.TabStop = false;
+            this.chateau.Click += new System.EventHandler(this.chateau_Click);
             // 
             // z90
             // 
@@ -269,6 +270,7 @@
             this.z90.Size = new System.Drawing.Size(30, 30);
             this.z90.TabIndex = 1;
             this.z90.TabStop = false;
+            this.z90.Click += new System.EventHandler(this.z90_Click);
             // 
             // z91
             // 
@@ -277,6 +279,7 @@
             this.z91.Size = new System.Drawing.Size(30, 30);
             this.z91.TabIndex = 2;
             this.z91.TabStop = false;
+            this.z91.Click += new System.EventHandler(this.z91_Click);
             // 
             // z92
             // 
@@ -285,6 +288,7 @@
             this.z92.Size = new System.Drawing.Size(30, 30);
             this.z92.TabIndex = 3;
             this.z92.TabStop = false;
+            this.z92.Click += new System.EventHandler(this.z92_Click);
             // 
             // z93
             // 
@@ -293,6 +297,7 @@
             this.z93.Size = new System.Drawing.Size(30, 30);
             this.z93.TabIndex = 4;
             this.z93.TabStop = false;
+            this.z93.Click += new System.EventHandler(this.z93_Click);
             // 
             // z94
             // 
@@ -301,6 +306,7 @@
             this.z94.Size = new System.Drawing.Size(30, 30);
             this.z94.TabIndex = 5;
             this.z94.TabStop = false;
+            this.z94.Click += new System.EventHandler(this.z94_Click);
             // 
             // z95
             // 
@@ -309,6 +315,7 @@
             this.z95.Size = new System.Drawing.Size(30, 30);
             this.z95.TabIndex = 6;
             this.z95.TabStop = false;
+            this.z95.Click += new System.EventHandler(this.z95_Click);
             // 
             // z96
             // 
@@ -317,6 +324,7 @@
             this.z96.Size = new System.Drawing.Size(30, 30);
             this.z96.TabIndex = 7;
             this.z96.TabStop = false;
+            this.z96.Click += new System.EventHandler(this.z96_Click);
             // 
             // z97
             // 
@@ -325,6 +333,7 @@
             this.z97.Size = new System.Drawing.Size(30, 30);
             this.z97.TabIndex = 8;
             this.z97.TabStop = false;
+            this.z97.Click += new System.EventHandler(this.z97_Click);
             // 
             // z98
             // 
@@ -333,6 +342,7 @@
             this.z98.Size = new System.Drawing.Size(30, 30);
             this.z98.TabIndex = 9;
             this.z98.TabStop = false;
+            this.z98.Click += new System.EventHandler(this.z98_Click);
             // 
             // z99
             // 
@@ -341,6 +351,7 @@
             this.z99.Size = new System.Drawing.Size(30, 30);
             this.z99.TabIndex = 10;
             this.z99.TabStop = false;
+            this.z99.Click += new System.EventHandler(this.z99_Click);
             // 
             // z910
             // 
@@ -349,6 +360,7 @@
             this.z910.Size = new System.Drawing.Size(30, 30);
             this.z910.TabIndex = 11;
             this.z910.TabStop = false;
+            this.z910.Click += new System.EventHandler(this.z910_Click);
             // 
             // z810
             // 
@@ -357,6 +369,7 @@
             this.z810.Size = new System.Drawing.Size(30, 30);
             this.z810.TabIndex = 22;
             this.z810.TabStop = false;
+            this.z810.Click += new System.EventHandler(this.z810_Click);
             // 
             // z89
             // 
@@ -365,6 +378,7 @@
             this.z89.Size = new System.Drawing.Size(30, 30);
             this.z89.TabIndex = 21;
             this.z89.TabStop = false;
+            this.z89.Click += new System.EventHandler(this.z89_Click);
             // 
             // z88
             // 
@@ -373,6 +387,7 @@
             this.z88.Size = new System.Drawing.Size(30, 30);
             this.z88.TabIndex = 20;
             this.z88.TabStop = false;
+            this.z88.Click += new System.EventHandler(this.z88_Click);
             // 
             // z87
             // 
@@ -381,6 +396,7 @@
             this.z87.Size = new System.Drawing.Size(30, 30);
             this.z87.TabIndex = 19;
             this.z87.TabStop = false;
+            this.z87.Click += new System.EventHandler(this.z87_Click);
             // 
             // z86
             // 
@@ -389,6 +405,7 @@
             this.z86.Size = new System.Drawing.Size(30, 30);
             this.z86.TabIndex = 18;
             this.z86.TabStop = false;
+            this.z86.Click += new System.EventHandler(this.z86_Click);
             // 
             // z85
             // 
@@ -397,6 +414,7 @@
             this.z85.Size = new System.Drawing.Size(30, 30);
             this.z85.TabIndex = 17;
             this.z85.TabStop = false;
+            this.z85.Click += new System.EventHandler(this.z85_Click);
             // 
             // z84
             // 
@@ -405,6 +423,7 @@
             this.z84.Size = new System.Drawing.Size(30, 30);
             this.z84.TabIndex = 16;
             this.z84.TabStop = false;
+            this.z84.Click += new System.EventHandler(this.z84_Click);
             // 
             // z83
             // 
@@ -413,6 +432,7 @@
             this.z83.Size = new System.Drawing.Size(30, 30);
             this.z83.TabIndex = 15;
             this.z83.TabStop = false;
+            this.z83.Click += new System.EventHandler(this.z83_Click);
             // 
             // z82
             // 
@@ -421,6 +441,7 @@
             this.z82.Size = new System.Drawing.Size(30, 30);
             this.z82.TabIndex = 14;
             this.z82.TabStop = false;
+            this.z82.Click += new System.EventHandler(this.z82_Click);
             // 
             // z81
             // 
@@ -429,6 +450,7 @@
             this.z81.Size = new System.Drawing.Size(30, 30);
             this.z81.TabIndex = 13;
             this.z81.TabStop = false;
+            this.z81.Click += new System.EventHandler(this.z81_Click);
             // 
             // z80
             // 
@@ -437,6 +459,7 @@
             this.z80.Size = new System.Drawing.Size(30, 30);
             this.z80.TabIndex = 12;
             this.z80.TabStop = false;
+            this.z80.Click += new System.EventHandler(this.z80_Click);
             // 
             // z610
             // 
@@ -445,6 +468,7 @@
             this.z610.Size = new System.Drawing.Size(30, 30);
             this.z610.TabIndex = 44;
             this.z610.TabStop = false;
+            this.z610.Click += new System.EventHandler(this.z610_Click);
             // 
             // z69
             // 
@@ -453,6 +477,7 @@
             this.z69.Size = new System.Drawing.Size(30, 30);
             this.z69.TabIndex = 43;
             this.z69.TabStop = false;
+            this.z69.Click += new System.EventHandler(this.z69_Click);
             // 
             // z68
             // 
@@ -461,6 +486,7 @@
             this.z68.Size = new System.Drawing.Size(30, 30);
             this.z68.TabIndex = 42;
             this.z68.TabStop = false;
+            this.z68.Click += new System.EventHandler(this.z68_Click);
             // 
             // z67
             // 
@@ -469,6 +495,7 @@
             this.z67.Size = new System.Drawing.Size(30, 30);
             this.z67.TabIndex = 41;
             this.z67.TabStop = false;
+            this.z67.Click += new System.EventHandler(this.z67_Click);
             // 
             // z66
             // 
@@ -477,6 +504,7 @@
             this.z66.Size = new System.Drawing.Size(30, 30);
             this.z66.TabIndex = 40;
             this.z66.TabStop = false;
+            this.z66.Click += new System.EventHandler(this.z66_Click);
             // 
             // z65
             // 
@@ -485,6 +513,7 @@
             this.z65.Size = new System.Drawing.Size(30, 30);
             this.z65.TabIndex = 39;
             this.z65.TabStop = false;
+            this.z65.Click += new System.EventHandler(this.z65_Click);
             // 
             // z64
             // 
@@ -493,6 +522,7 @@
             this.z64.Size = new System.Drawing.Size(30, 30);
             this.z64.TabIndex = 38;
             this.z64.TabStop = false;
+            this.z64.Click += new System.EventHandler(this.z64_Click);
             // 
             // z63
             // 
@@ -501,6 +531,7 @@
             this.z63.Size = new System.Drawing.Size(30, 30);
             this.z63.TabIndex = 37;
             this.z63.TabStop = false;
+            this.z63.Click += new System.EventHandler(this.z63_Click);
             // 
             // z62
             // 
@@ -509,6 +540,7 @@
             this.z62.Size = new System.Drawing.Size(30, 30);
             this.z62.TabIndex = 36;
             this.z62.TabStop = false;
+            this.z62.Click += new System.EventHandler(this.z62_Click);
             // 
             // z61
             // 
@@ -517,6 +549,7 @@
             this.z61.Size = new System.Drawing.Size(30, 30);
             this.z61.TabIndex = 35;
             this.z61.TabStop = false;
+            this.z61.Click += new System.EventHandler(this.z61_Click);
             // 
             // z60
             // 
@@ -525,6 +558,7 @@
             this.z60.Size = new System.Drawing.Size(30, 30);
             this.z60.TabIndex = 34;
             this.z60.TabStop = false;
+            this.z60.Click += new System.EventHandler(this.z60_Click);
             // 
             // z710
             // 
@@ -533,6 +567,7 @@
             this.z710.Size = new System.Drawing.Size(30, 30);
             this.z710.TabIndex = 33;
             this.z710.TabStop = false;
+            this.z710.Click += new System.EventHandler(this.z710_Click);
             // 
             // z79
             // 
@@ -541,6 +576,7 @@
             this.z79.Size = new System.Drawing.Size(30, 30);
             this.z79.TabIndex = 32;
             this.z79.TabStop = false;
+            this.z79.Click += new System.EventHandler(this.z79_Click);
             // 
             // z78
             // 
@@ -549,6 +585,7 @@
             this.z78.Size = new System.Drawing.Size(30, 30);
             this.z78.TabIndex = 31;
             this.z78.TabStop = false;
+            this.z78.Click += new System.EventHandler(this.z78_Click);
             // 
             // z77
             // 
@@ -557,6 +594,7 @@
             this.z77.Size = new System.Drawing.Size(30, 30);
             this.z77.TabIndex = 30;
             this.z77.TabStop = false;
+            this.z77.Click += new System.EventHandler(this.z77_Click);
             // 
             // z76
             // 
@@ -565,6 +603,7 @@
             this.z76.Size = new System.Drawing.Size(30, 30);
             this.z76.TabIndex = 29;
             this.z76.TabStop = false;
+            this.z76.Click += new System.EventHandler(this.z76_Click);
             // 
             // z75
             // 
@@ -573,6 +612,7 @@
             this.z75.Size = new System.Drawing.Size(30, 30);
             this.z75.TabIndex = 28;
             this.z75.TabStop = false;
+            this.z75.Click += new System.EventHandler(this.z75_Click);
             // 
             // z74
             // 
@@ -581,6 +621,7 @@
             this.z74.Size = new System.Drawing.Size(30, 30);
             this.z74.TabIndex = 27;
             this.z74.TabStop = false;
+            this.z74.Click += new System.EventHandler(this.z74_Click);
             // 
             // z73
             // 
@@ -589,6 +630,7 @@
             this.z73.Size = new System.Drawing.Size(30, 30);
             this.z73.TabIndex = 26;
             this.z73.TabStop = false;
+            this.z73.Click += new System.EventHandler(this.z73_Click);
             // 
             // z72
             // 
@@ -597,6 +639,7 @@
             this.z72.Size = new System.Drawing.Size(30, 30);
             this.z72.TabIndex = 25;
             this.z72.TabStop = false;
+            this.z72.Click += new System.EventHandler(this.z72_Click);
             // 
             // z71
             // 
@@ -605,6 +648,7 @@
             this.z71.Size = new System.Drawing.Size(30, 30);
             this.z71.TabIndex = 24;
             this.z71.TabStop = false;
+            this.z71.Click += new System.EventHandler(this.z71_Click);
             // 
             // z70
             // 
@@ -613,6 +657,7 @@
             this.z70.Size = new System.Drawing.Size(30, 30);
             this.z70.TabIndex = 23;
             this.z70.TabStop = false;
+            this.z70.Click += new System.EventHandler(this.z70_Click);
             // 
             // z210
             // 
@@ -621,6 +666,7 @@
             this.z210.Size = new System.Drawing.Size(30, 30);
             this.z210.TabIndex = 88;
             this.z210.TabStop = false;
+            this.z210.Click += new System.EventHandler(this.z210_Click);
             // 
             // z29
             // 
@@ -629,6 +675,7 @@
             this.z29.Size = new System.Drawing.Size(30, 30);
             this.z29.TabIndex = 87;
             this.z29.TabStop = false;
+            this.z29.Click += new System.EventHandler(this.z29_Click);
             // 
             // z28
             // 
@@ -637,6 +684,7 @@
             this.z28.Size = new System.Drawing.Size(30, 30);
             this.z28.TabIndex = 86;
             this.z28.TabStop = false;
+            this.z28.Click += new System.EventHandler(this.z28_Click);
             // 
             // z27
             // 
@@ -645,6 +693,7 @@
             this.z27.Size = new System.Drawing.Size(30, 30);
             this.z27.TabIndex = 85;
             this.z27.TabStop = false;
+            this.z27.Click += new System.EventHandler(this.z27_Click);
             // 
             // z26
             // 
@@ -653,6 +702,7 @@
             this.z26.Size = new System.Drawing.Size(30, 30);
             this.z26.TabIndex = 84;
             this.z26.TabStop = false;
+            this.z26.Click += new System.EventHandler(this.z26_Click);
             // 
             // z25
             // 
@@ -661,6 +711,7 @@
             this.z25.Size = new System.Drawing.Size(30, 30);
             this.z25.TabIndex = 83;
             this.z25.TabStop = false;
+            this.z25.Click += new System.EventHandler(this.z25_Click);
             // 
             // z24
             // 
@@ -669,6 +720,7 @@
             this.z24.Size = new System.Drawing.Size(30, 30);
             this.z24.TabIndex = 82;
             this.z24.TabStop = false;
+            this.z24.Click += new System.EventHandler(this.z24_Click);
             // 
             // z23
             // 
@@ -677,6 +729,7 @@
             this.z23.Size = new System.Drawing.Size(30, 30);
             this.z23.TabIndex = 81;
             this.z23.TabStop = false;
+            this.z23.Click += new System.EventHandler(this.z23_Click);
             // 
             // z22
             // 
@@ -685,6 +738,7 @@
             this.z22.Size = new System.Drawing.Size(30, 30);
             this.z22.TabIndex = 80;
             this.z22.TabStop = false;
+            this.z22.Click += new System.EventHandler(this.z22_Click);
             // 
             // z21
             // 
@@ -693,6 +747,7 @@
             this.z21.Size = new System.Drawing.Size(30, 30);
             this.z21.TabIndex = 79;
             this.z21.TabStop = false;
+            this.z21.Click += new System.EventHandler(this.z21_Click);
             // 
             // z20
             // 
@@ -701,6 +756,7 @@
             this.z20.Size = new System.Drawing.Size(30, 30);
             this.z20.TabIndex = 78;
             this.z20.TabStop = false;
+            this.z20.Click += new System.EventHandler(this.z20_Click);
             // 
             // z310
             // 
@@ -709,6 +765,7 @@
             this.z310.Size = new System.Drawing.Size(30, 30);
             this.z310.TabIndex = 77;
             this.z310.TabStop = false;
+            this.z310.Click += new System.EventHandler(this.z310_Click);
             // 
             // z39
             // 
@@ -717,6 +774,7 @@
             this.z39.Size = new System.Drawing.Size(30, 30);
             this.z39.TabIndex = 76;
             this.z39.TabStop = false;
+            this.z39.Click += new System.EventHandler(this.z39_Click);
             // 
             // z38
             // 
@@ -725,6 +783,7 @@
             this.z38.Size = new System.Drawing.Size(30, 30);
             this.z38.TabIndex = 75;
             this.z38.TabStop = false;
+            this.z38.Click += new System.EventHandler(this.z38_Click);
             // 
             // z37
             // 
@@ -733,6 +792,7 @@
             this.z37.Size = new System.Drawing.Size(30, 30);
             this.z37.TabIndex = 74;
             this.z37.TabStop = false;
+            this.z37.Click += new System.EventHandler(this.z37_Click);
             // 
             // z36
             // 
@@ -741,6 +801,7 @@
             this.z36.Size = new System.Drawing.Size(30, 30);
             this.z36.TabIndex = 73;
             this.z36.TabStop = false;
+            this.z36.Click += new System.EventHandler(this.z36_Click);
             // 
             // z35
             // 
@@ -749,6 +810,7 @@
             this.z35.Size = new System.Drawing.Size(30, 30);
             this.z35.TabIndex = 72;
             this.z35.TabStop = false;
+            this.z35.Click += new System.EventHandler(this.z35_Click);
             // 
             // z34
             // 
@@ -757,6 +819,7 @@
             this.z34.Size = new System.Drawing.Size(30, 30);
             this.z34.TabIndex = 71;
             this.z34.TabStop = false;
+            this.z34.Click += new System.EventHandler(this.z34_Click);
             // 
             // z33
             // 
@@ -765,6 +828,7 @@
             this.z33.Size = new System.Drawing.Size(30, 30);
             this.z33.TabIndex = 70;
             this.z33.TabStop = false;
+            this.z33.Click += new System.EventHandler(this.z33_Click);
             // 
             // z32
             // 
@@ -773,6 +837,7 @@
             this.z32.Size = new System.Drawing.Size(30, 30);
             this.z32.TabIndex = 69;
             this.z32.TabStop = false;
+            this.z32.Click += new System.EventHandler(this.z32_Click);
             // 
             // z31
             // 
@@ -781,6 +846,7 @@
             this.z31.Size = new System.Drawing.Size(30, 30);
             this.z31.TabIndex = 68;
             this.z31.TabStop = false;
+            this.z31.Click += new System.EventHandler(this.z31_Click);
             // 
             // z30
             // 
@@ -789,6 +855,7 @@
             this.z30.Size = new System.Drawing.Size(30, 30);
             this.z30.TabIndex = 67;
             this.z30.TabStop = false;
+            this.z30.Click += new System.EventHandler(this.z30_Click);
             // 
             // z410
             // 
@@ -797,6 +864,7 @@
             this.z410.Size = new System.Drawing.Size(30, 30);
             this.z410.TabIndex = 66;
             this.z410.TabStop = false;
+            this.z410.Click += new System.EventHandler(this.z410_Click);
             // 
             // z49
             // 
@@ -805,6 +873,7 @@
             this.z49.Size = new System.Drawing.Size(30, 30);
             this.z49.TabIndex = 65;
             this.z49.TabStop = false;
+            this.z49.Click += new System.EventHandler(this.z49_Click);
             // 
             // z48
             // 
@@ -813,6 +882,7 @@
             this.z48.Size = new System.Drawing.Size(30, 30);
             this.z48.TabIndex = 64;
             this.z48.TabStop = false;
+            this.z48.Click += new System.EventHandler(this.z48_Click);
             // 
             // z47
             // 
@@ -821,6 +891,7 @@
             this.z47.Size = new System.Drawing.Size(30, 30);
             this.z47.TabIndex = 63;
             this.z47.TabStop = false;
+            this.z47.Click += new System.EventHandler(this.z47_Click);
             // 
             // z46
             // 
@@ -829,6 +900,7 @@
             this.z46.Size = new System.Drawing.Size(30, 30);
             this.z46.TabIndex = 62;
             this.z46.TabStop = false;
+            this.z46.Click += new System.EventHandler(this.z46_Click);
             // 
             // z45
             // 
@@ -837,6 +909,7 @@
             this.z45.Size = new System.Drawing.Size(30, 30);
             this.z45.TabIndex = 61;
             this.z45.TabStop = false;
+            this.z45.Click += new System.EventHandler(this.z45_Click);
             // 
             // z44
             // 
@@ -845,6 +918,7 @@
             this.z44.Size = new System.Drawing.Size(30, 30);
             this.z44.TabIndex = 60;
             this.z44.TabStop = false;
+            this.z44.Click += new System.EventHandler(this.z44_Click);
             // 
             // z43
             // 
@@ -853,6 +927,7 @@
             this.z43.Size = new System.Drawing.Size(30, 30);
             this.z43.TabIndex = 59;
             this.z43.TabStop = false;
+            this.z43.Click += new System.EventHandler(this.z43_Click);
             // 
             // z42
             // 
@@ -861,6 +936,7 @@
             this.z42.Size = new System.Drawing.Size(30, 30);
             this.z42.TabIndex = 58;
             this.z42.TabStop = false;
+            this.z42.Click += new System.EventHandler(this.z42_Click);
             // 
             // z41
             // 
@@ -869,6 +945,7 @@
             this.z41.Size = new System.Drawing.Size(30, 30);
             this.z41.TabIndex = 57;
             this.z41.TabStop = false;
+            this.z41.Click += new System.EventHandler(this.z41_Click);
             // 
             // z40
             // 
@@ -877,6 +954,7 @@
             this.z40.Size = new System.Drawing.Size(30, 30);
             this.z40.TabIndex = 56;
             this.z40.TabStop = false;
+            this.z40.Click += new System.EventHandler(this.z40_Click);
             // 
             // z510
             // 
@@ -885,6 +963,7 @@
             this.z510.Size = new System.Drawing.Size(30, 30);
             this.z510.TabIndex = 55;
             this.z510.TabStop = false;
+            this.z510.Click += new System.EventHandler(this.z510_Click);
             // 
             // z59
             // 
@@ -893,6 +972,7 @@
             this.z59.Size = new System.Drawing.Size(30, 30);
             this.z59.TabIndex = 54;
             this.z59.TabStop = false;
+            this.z59.Click += new System.EventHandler(this.z59_Click);
             // 
             // z58
             // 
@@ -901,6 +981,7 @@
             this.z58.Size = new System.Drawing.Size(30, 30);
             this.z58.TabIndex = 53;
             this.z58.TabStop = false;
+            this.z58.Click += new System.EventHandler(this.z58_Click);
             // 
             // z57
             // 
@@ -909,6 +990,7 @@
             this.z57.Size = new System.Drawing.Size(30, 30);
             this.z57.TabIndex = 52;
             this.z57.TabStop = false;
+            this.z57.Click += new System.EventHandler(this.z57_Click);
             // 
             // z56
             // 
@@ -917,6 +999,7 @@
             this.z56.Size = new System.Drawing.Size(30, 30);
             this.z56.TabIndex = 51;
             this.z56.TabStop = false;
+            this.z56.Click += new System.EventHandler(this.z56_Click);
             // 
             // z55
             // 
@@ -925,6 +1008,7 @@
             this.z55.Size = new System.Drawing.Size(30, 30);
             this.z55.TabIndex = 50;
             this.z55.TabStop = false;
+            this.z55.Click += new System.EventHandler(this.z55_Click);
             // 
             // z54
             // 
@@ -933,6 +1017,7 @@
             this.z54.Size = new System.Drawing.Size(30, 30);
             this.z54.TabIndex = 49;
             this.z54.TabStop = false;
+            this.z54.Click += new System.EventHandler(this.z54_Click);
             // 
             // z53
             // 
@@ -941,6 +1026,7 @@
             this.z53.Size = new System.Drawing.Size(30, 30);
             this.z53.TabIndex = 48;
             this.z53.TabStop = false;
+            this.z53.Click += new System.EventHandler(this.z53_Click);
             // 
             // z52
             // 
@@ -949,6 +1035,7 @@
             this.z52.Size = new System.Drawing.Size(30, 30);
             this.z52.TabIndex = 47;
             this.z52.TabStop = false;
+            this.z52.Click += new System.EventHandler(this.z52_Click);
             // 
             // z51
             // 
@@ -957,6 +1044,7 @@
             this.z51.Size = new System.Drawing.Size(30, 30);
             this.z51.TabIndex = 46;
             this.z51.TabStop = false;
+            this.z51.Click += new System.EventHandler(this.z51_Click);
             // 
             // z50
             // 
@@ -965,6 +1053,7 @@
             this.z50.Size = new System.Drawing.Size(30, 30);
             this.z50.TabIndex = 45;
             this.z50.TabStop = false;
+            this.z50.Click += new System.EventHandler(this.z50_Click);
             // 
             // z010
             // 
@@ -973,6 +1062,7 @@
             this.z010.Size = new System.Drawing.Size(30, 30);
             this.z010.TabIndex = 110;
             this.z010.TabStop = false;
+            this.z010.Click += new System.EventHandler(this.z010_Click);
             // 
             // z09
             // 
@@ -981,6 +1071,7 @@
             this.z09.Size = new System.Drawing.Size(30, 30);
             this.z09.TabIndex = 109;
             this.z09.TabStop = false;
+            this.z09.Click += new System.EventHandler(this.z09_Click);
             // 
             // z08
             // 
@@ -989,6 +1080,7 @@
             this.z08.Size = new System.Drawing.Size(30, 30);
             this.z08.TabIndex = 108;
             this.z08.TabStop = false;
+            this.z08.Click += new System.EventHandler(this.z08_Click);
             // 
             // z07
             // 
@@ -997,6 +1089,7 @@
             this.z07.Size = new System.Drawing.Size(30, 30);
             this.z07.TabIndex = 107;
             this.z07.TabStop = false;
+            this.z07.Click += new System.EventHandler(this.z07_Click);
             // 
             // z06
             // 
@@ -1005,6 +1098,7 @@
             this.z06.Size = new System.Drawing.Size(30, 30);
             this.z06.TabIndex = 106;
             this.z06.TabStop = false;
+            this.z06.Click += new System.EventHandler(this.z06_Click);
             // 
             // z05
             // 
@@ -1013,6 +1107,7 @@
             this.z05.Size = new System.Drawing.Size(30, 30);
             this.z05.TabIndex = 105;
             this.z05.TabStop = false;
+            this.z05.Click += new System.EventHandler(this.z05_Click);
             // 
             // z04
             // 
@@ -1021,6 +1116,7 @@
             this.z04.Size = new System.Drawing.Size(30, 30);
             this.z04.TabIndex = 104;
             this.z04.TabStop = false;
+            this.z04.Click += new System.EventHandler(this.z04_Click);
             // 
             // z03
             // 
@@ -1029,6 +1125,7 @@
             this.z03.Size = new System.Drawing.Size(30, 30);
             this.z03.TabIndex = 103;
             this.z03.TabStop = false;
+            this.z03.Click += new System.EventHandler(this.z03_Click);
             // 
             // z02
             // 
@@ -1037,6 +1134,7 @@
             this.z02.Size = new System.Drawing.Size(30, 30);
             this.z02.TabIndex = 102;
             this.z02.TabStop = false;
+            this.z02.Click += new System.EventHandler(this.z02_Click);
             // 
             // z01
             // 
@@ -1045,6 +1143,7 @@
             this.z01.Size = new System.Drawing.Size(30, 30);
             this.z01.TabIndex = 101;
             this.z01.TabStop = false;
+            this.z01.Click += new System.EventHandler(this.z01_Click);
             // 
             // z00
             // 
@@ -1053,6 +1152,7 @@
             this.z00.Size = new System.Drawing.Size(30, 30);
             this.z00.TabIndex = 100;
             this.z00.TabStop = false;
+            this.z00.Click += new System.EventHandler(this.z00_Click);
             // 
             // z110
             // 
@@ -1061,6 +1161,7 @@
             this.z110.Size = new System.Drawing.Size(30, 30);
             this.z110.TabIndex = 99;
             this.z110.TabStop = false;
+            this.z110.Click += new System.EventHandler(this.z110_Click);
             // 
             // z19
             // 
@@ -1069,6 +1170,7 @@
             this.z19.Size = new System.Drawing.Size(30, 30);
             this.z19.TabIndex = 98;
             this.z19.TabStop = false;
+            this.z19.Click += new System.EventHandler(this.z19_Click);
             // 
             // z18
             // 
@@ -1077,6 +1179,7 @@
             this.z18.Size = new System.Drawing.Size(30, 30);
             this.z18.TabIndex = 97;
             this.z18.TabStop = false;
+            this.z18.Click += new System.EventHandler(this.z18_Click);
             // 
             // z17
             // 
@@ -1085,6 +1188,7 @@
             this.z17.Size = new System.Drawing.Size(30, 30);
             this.z17.TabIndex = 96;
             this.z17.TabStop = false;
+            this.z17.Click += new System.EventHandler(this.z17_Click);
             // 
             // z16
             // 
@@ -1093,6 +1197,7 @@
             this.z16.Size = new System.Drawing.Size(30, 30);
             this.z16.TabIndex = 95;
             this.z16.TabStop = false;
+            this.z16.Click += new System.EventHandler(this.z16_Click);
             // 
             // z15
             // 
@@ -1101,6 +1206,7 @@
             this.z15.Size = new System.Drawing.Size(30, 30);
             this.z15.TabIndex = 94;
             this.z15.TabStop = false;
+            this.z15.Click += new System.EventHandler(this.z15_Click);
             // 
             // z14
             // 
@@ -1109,6 +1215,7 @@
             this.z14.Size = new System.Drawing.Size(30, 30);
             this.z14.TabIndex = 93;
             this.z14.TabStop = false;
+            this.z14.Click += new System.EventHandler(this.z14_Click);
             // 
             // z13
             // 
@@ -1117,6 +1224,7 @@
             this.z13.Size = new System.Drawing.Size(30, 30);
             this.z13.TabIndex = 92;
             this.z13.TabStop = false;
+            this.z13.Click += new System.EventHandler(this.z13_Click);
             // 
             // z12
             // 
@@ -1125,6 +1233,7 @@
             this.z12.Size = new System.Drawing.Size(30, 30);
             this.z12.TabIndex = 91;
             this.z12.TabStop = false;
+            this.z12.Click += new System.EventHandler(this.z12_Click);
             // 
             // z11
             // 
@@ -1133,6 +1242,7 @@
             this.z11.Size = new System.Drawing.Size(30, 30);
             this.z11.TabIndex = 90;
             this.z11.TabStop = false;
+            this.z11.Click += new System.EventHandler(this.z11_Click);
             // 
             // z10
             // 
@@ -1141,6 +1251,7 @@
             this.z10.Size = new System.Drawing.Size(30, 30);
             this.z10.TabIndex = 89;
             this.z10.TabStop = false;
+            this.z10.Click += new System.EventHandler(this.z10_Click);
             // 
             // zoneApparition
             // 
@@ -1268,7 +1379,7 @@
             this.Controls.Add(this.z90);
             this.Controls.Add(this.chateau);
             this.Name = "FormDT";
-            this.Text = "Form1";
+            this.Text = "Defense Tower";
             ((System.ComponentModel.ISupportInitialize)(this.chateau)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.z90)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.z91)).EndInit();
@@ -1387,117 +1498,117 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox chateau;
-        private System.Windows.Forms.PictureBox z90;
-        private System.Windows.Forms.PictureBox z91;
-        private System.Windows.Forms.PictureBox z92;
-        private System.Windows.Forms.PictureBox z93;
-        private System.Windows.Forms.PictureBox z94;
-        private System.Windows.Forms.PictureBox z95;
-        private System.Windows.Forms.PictureBox z96;
-        private System.Windows.Forms.PictureBox z97;
-        private System.Windows.Forms.PictureBox z98;
-        private System.Windows.Forms.PictureBox z99;
-        private System.Windows.Forms.PictureBox z910;
-        private System.Windows.Forms.PictureBox z810;
-        private System.Windows.Forms.PictureBox z89;
-        private System.Windows.Forms.PictureBox z88;
-        private System.Windows.Forms.PictureBox z87;
-        private System.Windows.Forms.PictureBox z86;
-        private System.Windows.Forms.PictureBox z85;
-        private System.Windows.Forms.PictureBox z84;
-        private System.Windows.Forms.PictureBox z83;
-        private System.Windows.Forms.PictureBox z82;
-        private System.Windows.Forms.PictureBox z81;
-        private System.Windows.Forms.PictureBox z80;
-        private System.Windows.Forms.PictureBox z610;
-        private System.Windows.Forms.PictureBox z69;
-        private System.Windows.Forms.PictureBox z68;
-        private System.Windows.Forms.PictureBox z67;
-        private System.Windows.Forms.PictureBox z66;
-        private System.Windows.Forms.PictureBox z65;
-        private System.Windows.Forms.PictureBox z64;
-        private System.Windows.Forms.PictureBox z63;
-        private System.Windows.Forms.PictureBox z62;
-        private System.Windows.Forms.PictureBox z61;
-        private System.Windows.Forms.PictureBox z60;
-        private System.Windows.Forms.PictureBox z710;
-        private System.Windows.Forms.PictureBox z79;
-        private System.Windows.Forms.PictureBox z78;
-        private System.Windows.Forms.PictureBox z77;
-        private System.Windows.Forms.PictureBox z76;
-        private System.Windows.Forms.PictureBox z75;
-        private System.Windows.Forms.PictureBox z74;
-        private System.Windows.Forms.PictureBox z73;
-        private System.Windows.Forms.PictureBox z72;
-        private System.Windows.Forms.PictureBox z71;
-        private System.Windows.Forms.PictureBox z70;
-        private System.Windows.Forms.PictureBox z210;
-        private System.Windows.Forms.PictureBox z29;
-        private System.Windows.Forms.PictureBox z28;
-        private System.Windows.Forms.PictureBox z27;
-        private System.Windows.Forms.PictureBox z26;
-        private System.Windows.Forms.PictureBox z25;
-        private System.Windows.Forms.PictureBox z24;
-        private System.Windows.Forms.PictureBox z23;
-        private System.Windows.Forms.PictureBox z22;
-        private System.Windows.Forms.PictureBox z21;
-        private System.Windows.Forms.PictureBox z20;
-        private System.Windows.Forms.PictureBox z310;
-        private System.Windows.Forms.PictureBox z39;
-        private System.Windows.Forms.PictureBox z38;
-        private System.Windows.Forms.PictureBox z37;
-        private System.Windows.Forms.PictureBox z36;
-        private System.Windows.Forms.PictureBox z35;
-        private System.Windows.Forms.PictureBox z34;
-        private System.Windows.Forms.PictureBox z33;
-        private System.Windows.Forms.PictureBox z32;
-        private System.Windows.Forms.PictureBox z31;
-        private System.Windows.Forms.PictureBox z30;
-        private System.Windows.Forms.PictureBox z410;
-        private System.Windows.Forms.PictureBox z49;
-        private System.Windows.Forms.PictureBox z48;
-        private System.Windows.Forms.PictureBox z47;
-        private System.Windows.Forms.PictureBox z46;
-        private System.Windows.Forms.PictureBox z45;
-        private System.Windows.Forms.PictureBox z44;
-        private System.Windows.Forms.PictureBox z43;
-        private System.Windows.Forms.PictureBox z42;
-        private System.Windows.Forms.PictureBox z41;
-        private System.Windows.Forms.PictureBox z40;
-        private System.Windows.Forms.PictureBox z510;
-        private System.Windows.Forms.PictureBox z59;
-        private System.Windows.Forms.PictureBox z58;
-        private System.Windows.Forms.PictureBox z57;
-        private System.Windows.Forms.PictureBox z56;
-        private System.Windows.Forms.PictureBox z55;
-        private System.Windows.Forms.PictureBox z54;
-        private System.Windows.Forms.PictureBox z53;
-        private System.Windows.Forms.PictureBox z52;
-        private System.Windows.Forms.PictureBox z51;
-        private System.Windows.Forms.PictureBox z50;
-        private System.Windows.Forms.PictureBox z010;
-        private System.Windows.Forms.PictureBox z09;
-        private System.Windows.Forms.PictureBox z08;
-        private System.Windows.Forms.PictureBox z07;
-        private System.Windows.Forms.PictureBox z06;
-        private System.Windows.Forms.PictureBox z05;
-        private System.Windows.Forms.PictureBox z04;
-        private System.Windows.Forms.PictureBox z03;
-        private System.Windows.Forms.PictureBox z02;
-        private System.Windows.Forms.PictureBox z01;
-        private System.Windows.Forms.PictureBox z00;
-        private System.Windows.Forms.PictureBox z110;
-        private System.Windows.Forms.PictureBox z19;
-        private System.Windows.Forms.PictureBox z18;
-        private System.Windows.Forms.PictureBox z17;
-        private System.Windows.Forms.PictureBox z16;
-        private System.Windows.Forms.PictureBox z15;
-        private System.Windows.Forms.PictureBox z14;
-        private System.Windows.Forms.PictureBox z13;
-        private System.Windows.Forms.PictureBox z12;
-        private System.Windows.Forms.PictureBox z11;
-        private System.Windows.Forms.PictureBox z10;
-        private System.Windows.Forms.PictureBox zoneApparition;
+        public System.Windows.Forms.PictureBox chateau;
+        public System.Windows.Forms.PictureBox z90;
+        public System.Windows.Forms.PictureBox z91;
+        public System.Windows.Forms.PictureBox z92;
+        public System.Windows.Forms.PictureBox z93;
+        public System.Windows.Forms.PictureBox z94;
+        public System.Windows.Forms.PictureBox z95;
+        public System.Windows.Forms.PictureBox z96;
+        public System.Windows.Forms.PictureBox z97;
+        public System.Windows.Forms.PictureBox z98;
+        public System.Windows.Forms.PictureBox z99;
+        public System.Windows.Forms.PictureBox z910;
+        public System.Windows.Forms.PictureBox z810;
+        public System.Windows.Forms.PictureBox z89;
+        public System.Windows.Forms.PictureBox z88;
+        public System.Windows.Forms.PictureBox z87;
+        public System.Windows.Forms.PictureBox z86;
+        public System.Windows.Forms.PictureBox z85;
+        public System.Windows.Forms.PictureBox z84;
+        public System.Windows.Forms.PictureBox z83;
+        public System.Windows.Forms.PictureBox z82;
+        public System.Windows.Forms.PictureBox z81;
+        public System.Windows.Forms.PictureBox z80;
+        public System.Windows.Forms.PictureBox z610;
+        public System.Windows.Forms.PictureBox z69;
+        public System.Windows.Forms.PictureBox z68;
+        public System.Windows.Forms.PictureBox z67;
+        public System.Windows.Forms.PictureBox z66;
+        public System.Windows.Forms.PictureBox z65;
+        public System.Windows.Forms.PictureBox z64;
+        public System.Windows.Forms.PictureBox z63;
+        public System.Windows.Forms.PictureBox z62;
+        public System.Windows.Forms.PictureBox z61;
+        public System.Windows.Forms.PictureBox z60;
+        public System.Windows.Forms.PictureBox z710;
+        public System.Windows.Forms.PictureBox z79;
+        public System.Windows.Forms.PictureBox z78;
+        public System.Windows.Forms.PictureBox z77;
+        public System.Windows.Forms.PictureBox z76;
+        public System.Windows.Forms.PictureBox z75;
+        public System.Windows.Forms.PictureBox z74;
+        public System.Windows.Forms.PictureBox z73;
+        public System.Windows.Forms.PictureBox z72;
+        public System.Windows.Forms.PictureBox z71;
+        public System.Windows.Forms.PictureBox z70;
+        public System.Windows.Forms.PictureBox z210;
+        public System.Windows.Forms.PictureBox z29;
+        public System.Windows.Forms.PictureBox z28;
+        public System.Windows.Forms.PictureBox z27;
+        public System.Windows.Forms.PictureBox z26;
+        public System.Windows.Forms.PictureBox z25;
+        public System.Windows.Forms.PictureBox z24;
+        public System.Windows.Forms.PictureBox z23;
+        public System.Windows.Forms.PictureBox z22;
+        public System.Windows.Forms.PictureBox z21;
+        public System.Windows.Forms.PictureBox z20;
+        public System.Windows.Forms.PictureBox z310;
+        public System.Windows.Forms.PictureBox z39;
+        public System.Windows.Forms.PictureBox z38;
+        public System.Windows.Forms.PictureBox z37;
+        public System.Windows.Forms.PictureBox z36;
+        public System.Windows.Forms.PictureBox z35;
+        public System.Windows.Forms.PictureBox z34;
+        public System.Windows.Forms.PictureBox z33;
+        public System.Windows.Forms.PictureBox z32;
+        public System.Windows.Forms.PictureBox z31;
+        public System.Windows.Forms.PictureBox z30;
+        public System.Windows.Forms.PictureBox z410;
+        public System.Windows.Forms.PictureBox z49;
+        public System.Windows.Forms.PictureBox z48;
+        public System.Windows.Forms.PictureBox z47;
+        public System.Windows.Forms.PictureBox z46;
+        public System.Windows.Forms.PictureBox z45;
+        public System.Windows.Forms.PictureBox z44;
+        public System.Windows.Forms.PictureBox z43;
+        public System.Windows.Forms.PictureBox z42;
+        public System.Windows.Forms.PictureBox z41;
+        public System.Windows.Forms.PictureBox z40;
+        public System.Windows.Forms.PictureBox z510;
+        public System.Windows.Forms.PictureBox z59;
+        public System.Windows.Forms.PictureBox z58;
+        public System.Windows.Forms.PictureBox z57;
+        public System.Windows.Forms.PictureBox z56;
+        public System.Windows.Forms.PictureBox z55;
+        public System.Windows.Forms.PictureBox z54;
+        public System.Windows.Forms.PictureBox z53;
+        public System.Windows.Forms.PictureBox z52;
+        public System.Windows.Forms.PictureBox z51;
+        public System.Windows.Forms.PictureBox z50;
+        public System.Windows.Forms.PictureBox z010;
+        public System.Windows.Forms.PictureBox z09;
+        public System.Windows.Forms.PictureBox z08;
+        public System.Windows.Forms.PictureBox z07;
+        public System.Windows.Forms.PictureBox z06;
+        public System.Windows.Forms.PictureBox z05;
+        public System.Windows.Forms.PictureBox z04;
+        public System.Windows.Forms.PictureBox z03;
+        public System.Windows.Forms.PictureBox z02;
+        public System.Windows.Forms.PictureBox z01;
+        public System.Windows.Forms.PictureBox z00;
+        public System.Windows.Forms.PictureBox z110;
+        public System.Windows.Forms.PictureBox z19;
+        public System.Windows.Forms.PictureBox z18;
+        public System.Windows.Forms.PictureBox z17;
+        public System.Windows.Forms.PictureBox z16;
+        public System.Windows.Forms.PictureBox z15;
+        public System.Windows.Forms.PictureBox z14;
+        public System.Windows.Forms.PictureBox z13;
+        public System.Windows.Forms.PictureBox z12;
+        public System.Windows.Forms.PictureBox z11;
+        public System.Windows.Forms.PictureBox z10;
+        public System.Windows.Forms.PictureBox zoneApparition;
     }
 }

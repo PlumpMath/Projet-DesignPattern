@@ -55,7 +55,8 @@
     <Compile Include="AbstractClass\AccesAbstrait.cs" />
     <Compile Include="AbstractClass\ModuleIHMAbstrait.cs" />
     <Compile Include="AbstractClass\ModuleStatsAbstrait.cs" />
-    <Compile Include="AbstractClass\Simulation.cs" />
+    <Compile Include="JeuDefenceTower\Personnages\Comportement\ComportementSeDefendreDT.cs" />
+    <Compile Include="Simulation.cs" />
     <Compile Include="FenPrincipale.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +81,7 @@
     <Compile Include="JeuDefenceTower\Etat\EPlusMunitions.cs" />
     <Compile Include="JeuDefenceTower\Etat\ERechargement.cs" />
     <Compile Include="JeuDefenceTower\Etat\EtatAbstraitDT.cs" />
+    <Compile Include="JeuDefenceTower\JeuDT.cs" />
     <Compile Include="JeuDefenceTower\Personnages\Comportement\ComportementCombattreDT.cs" />
     <Compile Include="JeuDefenceTower\Personnages\Comportement\ComportementSeDeplacerAPiedDT.cs" />
     <Compile Include="JeuDefenceTower\Personnages\Chateau.cs" />
