@@ -47,7 +47,5 @@ namespace ProjetDesignPattern
             Nom = _nom;
             PV = _pv;
         }
-
-
     }
 }

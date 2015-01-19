@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace ProjetDesignPattern
 {
-    public abstract class SujetObserveAbstrait
+    public abstract class SujetObserveAbstrait : PersonnageAbstrait
     {
 
         private List<ObservateurAbstrait> observateurList = new List<ObservateurAbstrait>();

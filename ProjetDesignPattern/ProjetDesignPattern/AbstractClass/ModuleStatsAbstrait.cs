@@ -6,9 +6,7 @@ namespace ProjetDesignPattern
     {
         public Simulation jeu { get; set; }
 
-        internal void RecupererInformation()
-        {
-            throw new NotImplementedException();
-        }
+        public abstract void RecupererInformation();
+        public abstract void CalculStatistiques();
     }
 }

@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ProjetDesignPattern.JeuDefenceTower;
 
+using ProjetDesignPattern.JeuSimulationTrafic;
+
 namespace ProjetDesignPattern
 {
     static class Program
