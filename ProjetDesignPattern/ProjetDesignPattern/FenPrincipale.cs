@@ -69,7 +69,7 @@ namespace ProjetDesignPattern
 
             jeu.Afficher();
 
-            for (int i = 0; i < 100; i++)
+            for (int i = 0; i < 20; i++)
             {
                 System.Threading.Thread.Sleep(500);
                 jeu.TourDeJeu();
