@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
+
 namespace ProjetDesignPattern
 {
     public class Simulation
@@ -65,13 +66,30 @@ namespace ProjetDesignPattern
 
         public void RecupererInformation()
         {
-            ModuleStats.RecupererInformation();
+            //ModuleStats.RecupererInformation();
         }
 
         public void CalculStatistiques()
         {
-            ModuleStats.CalculStatistiques();
+            //ModuleStats.CalculStatistiques();
         }
+
+		/*
+		 * Alex
+		 * Fonction d'entrée pour le chargement d'une simulation sauvegarder au format XML, 
+		 * retourne une simulation complète, cette méthode doit être appelé par l'action de l'utilisateur
+		 * qui cliquera sur fichier/charger simulation dans l'IHM, avant l'appel de cette 
+		 * fonction une popUp doit lui permetre de selectionner le fichier XML de sauvegarde.
+		 * Il prend donc en entré un fichier.
+		 * 
+		*/
+		public void chargerSimulation(String _emplacementFichierXML ){
+
+			ChargerSimulation chargement = new ChargerSimulation (this, _emplacementFichierXML);
+
+			chargement.extractionDesDonnes ();
+
+		}
 
     }
 }

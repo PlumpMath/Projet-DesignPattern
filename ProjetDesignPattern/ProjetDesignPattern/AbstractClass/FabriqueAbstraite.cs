@@ -4,7 +4,9 @@ namespace ProjetDesignPattern
 {
     public abstract class FabriqueAbstraite
     {
-        public abstract PersonnageAbstrait CreerPersonnage(int typePerso, SujetObserveAbstrait unEtatMajor, string unNom);
+
+
+		public abstract PersonnageAbstrait CreerPersonnage(string _type, string _nom,string _pv, string _etat, string zonePresent, SujetObserveAbstrait EtatMajor);
 
         public abstract ZoneAbstraite CreerZone();
 

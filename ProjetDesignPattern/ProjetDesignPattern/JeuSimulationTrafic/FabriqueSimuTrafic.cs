@@ -10,9 +10,9 @@ namespace ProjetDesignPattern.JeuSimulationTrafic
             Moto
         }
 
-        public override PersonnageAbstrait CreerPersonnage(eTypePersonnage typePerso, SujetObserveAbstrait unEtatMajor, string unNom)
+		public override PersonnageAbstrait CreerPersonnage(string _type, string _nom,string _pv, string _etat, string zonePresent, SujetObserveAbstrait EtatMajor)
         {
-            switch(typePerso){
+            /*switch(typePerso){
                 case eTypePersonnage.Camion:
                     return new Camion();
                 case eTypePersonnage.Voiture:
@@ -20,7 +20,8 @@ namespace ProjetDesignPattern.JeuSimulationTrafic
                 case eTypePersonnage.Moto:
                 default:
                     return new Moto();
-            }
+            }*/
+			return null;
         }
 
         public override ZoneAbstraite CreerZone()
