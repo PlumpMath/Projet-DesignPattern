@@ -62,10 +62,13 @@ namespace ProjetDesignPattern
             jeu.listeZones.Add(zone8);
 
             PersonnageAbstrait feu = jeu.fab.CreerPersonnage(FabriqueSimuTrafic.typeFeu, null, "Feu", zone3);
-            PersonnageAbstrait voiture1 = jeu.fab.CreerPersonnage(FabriqueSimuTrafic.typeVoiture, null, "voiture", zone1);
-            PersonnageAbstrait voiture2 = jeu.fab.CreerPersonnage(FabriqueSimuTrafic.typeVoiture, null, "voiture2", zone2);
+            feu.PV = 20;
+            ((FeuSignalisation)feu).Etat = FeuSignalisation.rouge;
+            PersonnageAbstrait voiture1 = jeu.fab.CreerPersonnage(FabriqueSimuTrafic.typeVoiture, (SujetObserveAbstrait) feu, "voiture", zone1);
+            PersonnageAbstrait voiture2 = jeu.fab.CreerPersonnage(FabriqueSimuTrafic.typeVoiture, (SujetObserveAbstrait)feu, "voiture2", zone2);
             jeu.listePersonnages.Add(voiture1);
             jeu.listePersonnages.Add(voiture2);
+            jeu.listePersonnages.Add(feu);
 
             jeu.Afficher();
 
@@ -74,6 +77,7 @@ namespace ProjetDesignPattern
                 System.Threading.Thread.Sleep(500);
                 jeu.TourDeJeu();
             }
+
         }
     }
 }

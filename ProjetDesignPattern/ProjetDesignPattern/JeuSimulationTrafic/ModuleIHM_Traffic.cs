@@ -14,7 +14,19 @@ namespace ProjetDesignPattern.JeuSimulationTrafic
             {
                 texte += "Zone " + numZone + " :" + "\n";
                 foreach(PersonnageAbstrait persoZone in zone.listePersonnages){
-                    texte += "\t- " + persoZone.Nom + "\n";
+                    texte += "\t- " + persoZone.Nom ;
+                    if (persoZone.GetType() == typeof(FeuSignalisation))
+                    {
+                        if (((FeuSignalisation)persoZone).Etat == FeuSignalisation.vert)
+                        {
+                            texte += " vert";
+                        }
+                        else
+                        {
+                            texte += " rouge";
+                        }
+                    }
+                    texte += "\n";
                 }
                 numZone++;
             }

@@ -10,7 +10,6 @@ namespace ProjetDesignPattern.JeuSimulationTrafic
 
         public override void AnalyserSituation()
         {
-            feuEstVert = true;
             //Si feu vert et personne devant
             if (feuEstVert)
             {
@@ -35,7 +34,14 @@ namespace ProjetDesignPattern.JeuSimulationTrafic
 
         public override void MiseAJour()
         {
-
+            if (EtatMajor.Etat == FeuSignalisation.vert)
+            {
+                feuEstVert = true;
+            }
+            else
+            {
+                feuEstVert = false;
+            }
         }
     }
 }
