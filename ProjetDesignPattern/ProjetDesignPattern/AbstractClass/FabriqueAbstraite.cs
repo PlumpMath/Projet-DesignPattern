@@ -9,5 +9,6 @@ namespace ProjetDesignPattern
         public abstract ZoneAbstraite CreerZone();
 
         public abstract AccesAbstrait CreerAcces(ZoneAbstraite départ, ZoneAbstraite arrivée);
+
     }
 }

@@ -12,26 +12,27 @@ namespace ProjetDesignPattern.JeuDefenceTower
 {
     public partial class FormDT : Form
     {
-        public FormDT()
+        Simulation simDT;
+        public FormDT(Simulation _s)
         {
             InitializeComponent();
+            simDT = _s;
         }
 
-        private void attaqueUnEnnemi(ZoneDT z)
+        private void attaqueUnEnnemi(string z)
         {
             //si y a un perso sur la case il est touché
+
+            //if(simDT.listeZones.Single(z => z.positionX==2){
             //leperso.touché = true
+            //}
             //monjeu.listePerso.cherche(1,2).touché = true
         }
 
-        private void chateau_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void z90_Click(object sender, EventArgs e)
         {
-
+            attaqueUnEnnemi(Name);
         }
 
         private void z91_Click(object sender, EventArgs e)
@@ -577,6 +578,11 @@ namespace ProjetDesignPattern.JeuDefenceTower
         private void z010_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+        {
+            System.Threading.Thread.Sleep(50);
         }
 
 

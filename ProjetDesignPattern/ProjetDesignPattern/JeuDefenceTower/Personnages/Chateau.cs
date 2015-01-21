@@ -18,7 +18,8 @@ namespace ProjetDesignPattern.JeuDefenceTower
 
         public Chateau(string _nom, int _pv, int _atq)
         {
-            init(_pv, _nom);
+            PV=_pv;
+            Nom = _nom;
             ptAttaque = _atq;
             comportementSeDeplacer = new ComportementSeDeplacerAPiedDT();
             comportementCombattre = new ComportementCombattreDT();
@@ -27,6 +28,24 @@ namespace ProjetDesignPattern.JeuDefenceTower
             Position.positionX = 10;
             Position.positionY = 10;
         }
+
+        public Chateau(string _nom)
+        {
+            Nom = Nom;
+            comportementSeDeplacer = new ComportementSeDeplacerAPiedDT();
+            comportementCombattre = new ComportementCombattreDT();
+            comporterSeDefendre = new ComportementSeDefendreDT();
+            Position = new ZoneDT();
+            Position.positionX = 10;
+            Position.positionY = 10;
+        }
+
+        public void initChateau(int _pv, int _atq)
+        {
+            PV = _pv;
+            ptAttaque = _atq;
+        }
+
         public override void AnalyserSituation()
         {
             //est-tu mort

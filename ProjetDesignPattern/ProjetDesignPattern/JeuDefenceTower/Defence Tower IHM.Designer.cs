@@ -140,6 +140,8 @@
             this.z11 = new System.Windows.Forms.PictureBox();
             this.z10 = new System.Windows.Forms.PictureBox();
             this.zoneApparition = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)(this.chateau)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.z90)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.z91)).BeginInit();
@@ -256,12 +258,12 @@
             // 
             // chateau
             // 
+            this.chateau.BackgroundImage = global::ProjetDesignPattern.Properties.Resources.Chateau;
             this.chateau.Location = new System.Drawing.Point(12, 12);
             this.chateau.Name = "chateau";
             this.chateau.Size = new System.Drawing.Size(330, 50);
             this.chateau.TabIndex = 0;
             this.chateau.TabStop = false;
-            this.chateau.Click += new System.EventHandler(this.chateau_Click);
             // 
             // z90
             // 
@@ -1261,11 +1263,25 @@
             this.zoneApparition.TabIndex = 111;
             this.zoneApparition.TabStop = false;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(422, 122);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(62, 29);
+            this.button1.TabIndex = 112;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // backgroundWorker1
+            // 
+            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
+            // 
             // FormDT
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(364, 412);
+            this.ClientSize = new System.Drawing.Size(555, 412);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.zoneApparition);
             this.Controls.Add(this.z010);
             this.Controls.Add(this.z09);
@@ -1610,5 +1626,7 @@
         public System.Windows.Forms.PictureBox z11;
         public System.Windows.Forms.PictureBox z10;
         public System.Windows.Forms.PictureBox zoneApparition;
+        private System.Windows.Forms.Button button1;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }

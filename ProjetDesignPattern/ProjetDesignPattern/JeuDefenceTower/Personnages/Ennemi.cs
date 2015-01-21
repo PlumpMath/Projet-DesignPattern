@@ -15,7 +15,6 @@ namespace ProjetDesignPattern.JeuDefenceTower
         }
 
         public Chateau chateau;
-        public Simulation simulation;
         private int ptAttaque;
         private bool mort=false;
         private bool touché = false;
@@ -24,12 +23,31 @@ namespace ProjetDesignPattern.JeuDefenceTower
 
         public Ennemi(int _pv, string _nom, int _atq,ZoneAbstraite z)
         {
-            init(_pv,_nom);
+            PV = _pv;
+            Nom = _nom;
             ptAttaque = _atq;
             comportementSeDeplacer = new ComportementSeDeplacerAPiedDT();
             comportementCombattre = new ComportementCombattreDT();
             comporterSeDefendre = new ComportementSeDefendreDT();
             Position = z;
+        }
+
+        public Ennemi(string _nom, ZoneAbstraite z)
+        {
+            Nom = _nom;
+            Position = z;
+            comportementSeDeplacer = new ComportementSeDeplacerAPiedDT();
+            comportementSeDeplacer.personnage = this;
+            comportementCombattre = new ComportementCombattreDT();
+            comporterSeDefendre = new ComportementSeDefendreDT();
+            comporterSeDefendre.personnage = this;
+        }
+
+        public void initEnnemi(Chateau c,int _pv, int _atq)
+        {
+            chateau = c;
+            PV = _pv;
+            ptAttaque = _atq;
         }
 
         public override void AnalyserSituation()
@@ -53,17 +71,26 @@ namespace ProjetDesignPattern.JeuDefenceTower
                 //si tu t'es pris un dégât -> baisse tes points de vie
                 PV -= chateau.ptAttaque;
                 //si tu est prêt du château -> attaque
-                if (arrivéChateau) comportementCombattre.combattre(ptAttaque, (PersonnageAbstrait)chateau);
-                //si il y a qqun sur ta prochaine zone -> defend toi
-                if (!zoneSuivLibre)
+                if (arrivéChateau)
                 {
-                    comporterSeDefendre.defendre(chateau.ptAttaque);
+                    comportementCombattre.combattre(ptAttaque, (PersonnageAbstrait)chateau);
                 }
                 else
                 {
+                    //si il y a qqun sur ta prochaine zone -> defend toi
+                    if (!zoneSuivLibre)
+                    {
+                        comporterSeDefendre.defendre(chateau.ptAttaque);
+                    }
+                    else
+                    {
+                        List<ZoneAbstraite> listeZones = comportementSeDeplacer.déplacementPossible(Position);
+                        if(listeZones.Count > 0)
+                            comportementSeDeplacer.deplacer(listeZones[0]);                                                                                                           
                     
-                    //comportementSeDeplacer.deplacer(simulation.listeZones.Where("")
+                    }
                 }
+                
             }
         }
 
