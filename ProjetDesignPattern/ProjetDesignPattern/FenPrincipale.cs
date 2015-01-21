@@ -61,20 +61,26 @@ namespace ProjetDesignPattern
             jeu.listeZones.Add(zone7);
             jeu.listeZones.Add(zone8);
 
-            PersonnageAbstrait feu = jeu.fab.CreerPersonnage(FabriqueSimuTrafic.typeFeu, null, "Feu", zone3);
-            feu.PV = 20;
-            ((FeuSignalisation)feu).Etat = FeuSignalisation.rouge;
-            PersonnageAbstrait voiture1 = jeu.fab.CreerPersonnage(FabriqueSimuTrafic.typeVoiture, (SujetObserveAbstrait) feu, "voiture", zone1);
-            PersonnageAbstrait voiture2 = jeu.fab.CreerPersonnage(FabriqueSimuTrafic.typeVoiture, (SujetObserveAbstrait)feu, "voiture2", zone2);
+            PersonnageAbstrait feu1 = jeu.fab.CreerPersonnage(FabriqueSimuTrafic.typeFeu, null, "Feu", zone3);
+
+            PersonnageAbstrait feu2 = jeu.fab.CreerPersonnage(FabriqueSimuTrafic.typeFeu, (SujetObserveAbstrait)feu1, "Feu", zone7);
+            
+            ((SujetObserveAbstrait)feu2).AjouterObservateur(feu1);
+            feu1.EtatMajor = (SujetObserveAbstrait)feu2;
+            ((FeuSignalisation)feu1).Etat = FeuSignalisation.vert;
+
+            PersonnageAbstrait voiture1 = jeu.fab.CreerPersonnage(FabriqueSimuTrafic.typeVoiture, null, "voiture", zone1);
+            PersonnageAbstrait voiture2 = jeu.fab.CreerPersonnage(FabriqueSimuTrafic.typeVoiture, null, "voiture2", zone5);
             jeu.listePersonnages.Add(voiture1);
             jeu.listePersonnages.Add(voiture2);
-            jeu.listePersonnages.Add(feu);
+            jeu.listePersonnages.Add(feu1);
+            jeu.listePersonnages.Add(feu2);
 
             jeu.Afficher();
 
             for (int i = 0; i < 100; i++)
             {
-                System.Threading.Thread.Sleep(500);
+                System.Threading.Thread.Sleep(250);
                 jeu.TourDeJeu();
             }
 

@@ -11,14 +11,13 @@
         {
             // Si autre feu est rouge et soi même vert
             // on doit passer rouge
-
-            if (PV == 0)
+            if (Etat == FeuSignalisation.vert)
             {
-                PV = 10;
-                doitPasserAuRouge = !doitPasserAuRouge;
-            }
-            else
-            {
+                if (PV == 0)
+                {
+                    PV = 10;
+                    doitPasserAuRouge = true;
+                }
                 PV--;
             }
         }
@@ -41,7 +40,14 @@
 
         public override void MiseAJour()
         {
-            // Si autre feu est rouge, on passe au vert
+            if (EtatMajor.Etat == FeuSignalisation.vert)
+            {
+                doitPasserAuRouge = true;
+            }
+            else
+            {
+                doitPasserAuRouge = false;
+            }
         }
     }
 }

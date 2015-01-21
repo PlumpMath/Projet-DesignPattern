@@ -19,11 +19,11 @@ namespace ProjetDesignPattern.JeuSimulationTrafic
                     {
                         if (((FeuSignalisation)persoZone).Etat == FeuSignalisation.vert)
                         {
-                            texte += " vert";
+                            texte += " vert ("+ persoZone.PV + ")";
                         }
                         else
                         {
-                            texte += " rouge";
+                            texte += " rouge (" + persoZone.PV + ")";
                         }
                     }
                     texte += "\n";

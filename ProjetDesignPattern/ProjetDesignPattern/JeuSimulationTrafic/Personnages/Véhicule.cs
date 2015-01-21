@@ -6,12 +6,13 @@ namespace ProjetDesignPattern.JeuSimulationTrafic
     public abstract class Véhicule : PersonnageAbstrait
     {
         bool peutAvancer;
-        bool feuEstVert;
+        public bool feuEstVert;
 
         public override void AnalyserSituation()
         {
-            //Si feu vert et personne devant
-            if (feuEstVert)
+            List<ZoneAbstraite> listeZones = comportementSeDeplacer.déplacementPossible(Position);
+            //Si zone libre devant ou contient un feu vert
+            if (listeZones.Count > 0)
             {
                 peutAvancer = true;
             }
@@ -27,8 +28,7 @@ namespace ProjetDesignPattern.JeuSimulationTrafic
             if (peutAvancer)
             {
                 List<ZoneAbstraite> listeZones = comportementSeDeplacer.déplacementPossible(Position);
-                if(listeZones.Count > 0)
-                    SeDeplacer(listeZones[0]);
+                SeDeplacer(listeZones[0]);
             }
         }
 
