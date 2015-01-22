@@ -55,6 +55,8 @@
     <Compile Include="AbstractClass\AccesAbstrait.cs" />
     <Compile Include="AbstractClass\ModuleIHMAbstrait.cs" />
     <Compile Include="AbstractClass\ModuleStatsAbstrait.cs" />
+    <Compile Include="JeuDefenceTower\ModuleIHMDT.cs" />
+    <Compile Include="JeuDefenceTower\ModuleStat_DT.cs" />
     <Compile Include="JeuDefenceTower\Personnages\Comportement\ComportementSeDefendreDT.cs" />
     <Compile Include="Simulation.cs" />
     <Compile Include="FenPrincipale.cs">
@@ -93,6 +95,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="AbstractClass\SujetObserveAbstrait.cs" />
     <Compile Include="AbstractClass\ZoneAbstraite.cs" />
+    <EmbeddedResource Include="FenPrincipale.resx">
+      <DependentUpon>FenPrincipale.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="JeuDefenceTower\Defence Tower IHM.resx">
       <DependentUpon>Defence Tower IHM.cs</DependentUpon>
     </EmbeddedResource>
@@ -104,6 +109,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="JeuDefenceTower\ClassFabriqueDT.cd" />
     <None Include="Properties\Settings.settings">
@@ -120,7 +126,14 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\EnnemiVide.png" />
+    <None Include="Resources\EnnemiAttaque.png" />
+    <None Include="Resources\EnnemiMarche.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Chateau.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

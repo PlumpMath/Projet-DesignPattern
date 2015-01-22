@@ -17,7 +17,7 @@ namespace ProjetDesignPattern.JeuDefenceTower
         public Chateau chateau;
         private int ptAttaque;
         private bool mort=false;
-        private bool touché = false;
+        public bool touché = false;
         private bool arrivéChateau = false;
         private bool zoneSuivLibre = false;
 
@@ -56,6 +56,7 @@ namespace ProjetDesignPattern.JeuDefenceTower
             if (PV == 0)
             {
                 mort = true;
+                ((ZoneDT)Position).enleverEnnemi(this);
             }
             //est-tu près du château
             if (((ZoneDT)Position).jeSuisArrivéAuChateau()) arrivéChateau = true;
@@ -69,7 +70,7 @@ namespace ProjetDesignPattern.JeuDefenceTower
             if (!mort)
             {
                 //si tu t'es pris un dégât -> baisse tes points de vie
-                PV -= chateau.ptAttaque;
+                if(touché) PV -= chateau.ptAttaque;
                 //si tu est prêt du château -> attaque
                 if (arrivéChateau)
                 {

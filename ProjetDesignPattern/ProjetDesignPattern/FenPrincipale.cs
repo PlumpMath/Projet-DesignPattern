@@ -101,7 +101,7 @@ namespace ProjetDesignPattern
 
 
             Chateau chateau = (Chateau)jeu.fab.CreerPersonnage(1, null, "chateau", zonechateau);
-            chateau.initChateau(100, 1);
+            chateau.initChateau(100, 10);
             Ennemi ennemi = (Ennemi)jeu.fab.CreerPersonnage(2,null,"ennemi",zone1);
             ennemi.initEnnemi(chateau, 10, 10);
             jeu.listePersonnages.Add(chateau);

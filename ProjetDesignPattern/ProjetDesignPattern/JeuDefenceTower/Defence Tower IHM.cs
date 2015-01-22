@@ -19,20 +19,23 @@ namespace ProjetDesignPattern.JeuDefenceTower
             simDT = _s;
         }
 
-        private void attaqueUnEnnemi(string z)
+        private void attaqueUnEnnemi(string nom)
         {
+            int posX = (int)Char.GetNumericValue(nom[1]);
+            int posY = (int)Char.GetNumericValue(nom[2]);
             //si y a un perso sur la case il est touché
-
-            //if(simDT.listeZones.Single(z => z.positionX==2){
-            //leperso.touché = true
-            //}
-            //monjeu.listePerso.cherche(1,2).touché = true
+            ZoneDT zoneCliquée = (ZoneDT)simDT.listeZones.Find(it => it.positionX==posX && it.positionY==posY);
+            if (zoneCliquée.listePersonnages.Count > 0)
+            {
+                Ennemi e = (Ennemi)zoneCliquée.listePersonnages[0];
+                e.touché = true;
+            }
         }
 
 
         private void z90_Click(object sender, EventArgs e)
         {
-            attaqueUnEnnemi(Name);
+            attaqueUnEnnemi(z90.Name);
         }
 
         private void z91_Click(object sender, EventArgs e)
@@ -497,7 +500,7 @@ namespace ProjetDesignPattern.JeuDefenceTower
 
         private void z15_Click(object sender, EventArgs e)
         {
-
+            attaqueUnEnnemi(z15.Name);
         }
 
         private void z16_Click(object sender, EventArgs e)
@@ -552,7 +555,7 @@ namespace ProjetDesignPattern.JeuDefenceTower
 
         private void z05_Click(object sender, EventArgs e)
         {
-
+            attaqueUnEnnemi(z05.Name);
         }
 
         private void z06_Click(object sender, EventArgs e)
