@@ -7,7 +7,6 @@ namespace ProjetDesignPattern
     {
         public String Nom { get; set; }
 
-        public int numTour;
         public List<SujetObserveAbstrait> listeSujetsObserves;
         public List<PersonnageAbstrait> listePersonnages;
         public List<ZoneAbstraite> listeZones;
@@ -50,7 +49,7 @@ namespace ProjetDesignPattern
             }
             RecupererInformation();
             CalculStatistiques();
-            Afficher();
+            //Afficher();
         }
 
         public void Afficher()

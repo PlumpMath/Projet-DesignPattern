@@ -8,18 +8,14 @@ namespace ProjetDesignPattern.JeuDefenceTower
 {
     public class Ennemi : PersonnageAbstrait
     {
-        public enum eMode
-        {
-            Avance,
-            Attaque
-        }
-
         public Chateau chateau;
         private int ptAttaque;
-        private bool mort=false;
+        public bool mort=false;
         public bool touché = false;
-        private bool arrivéChateau = false;
+        public bool arrivéChateau = false;
         private bool zoneSuivLibre = false;
+        public int totalAttaque = 0;
+        public bool apparu=false;
 
         public Ennemi(int _pv, string _nom, int _atq,ZoneAbstraite z)
         {
@@ -43,7 +39,7 @@ namespace ProjetDesignPattern.JeuDefenceTower
             comporterSeDefendre.personnage = this;
         }
 
-        public void initEnnemi(Chateau c,int _pv, int _atq)
+        public void initEnnemi(Chateau c,int _pv, int _atq,int tour)
         {
             chateau = c;
             PV = _pv;
@@ -52,6 +48,9 @@ namespace ProjetDesignPattern.JeuDefenceTower
 
         public override void AnalyserSituation()
         {
+            zoneSuivLibre = false;
+            arrivéChateau = false;
+            touché = false;
             //est-tu mort
             if (PV == 0)
             {
@@ -63,11 +62,16 @@ namespace ProjetDesignPattern.JeuDefenceTower
             //a tu pris un dégât -> défini à l'evenement Onclick
             //y a t'il quun sur ta prochaine zone
             if (((ZoneDT)Position).laZoneDapresEstLibre()) zoneSuivLibre = true;
+            //apparition aléatoire si un ennemi n'est pas déjà apparu
+            if (!EnnemiDejaApparu(Position.listePersonnages))
+            {
+                apparu = true;
+            }
         }
 
         public override void Execution()
         {
-            if (!mort)
+            if (!mort && apparu)
             {
                 //si tu t'es pris un dégât -> baisse tes points de vie
                 if(touché) PV -= chateau.ptAttaque;
@@ -97,9 +101,17 @@ namespace ProjetDesignPattern.JeuDefenceTower
 
         public override void MiseAJour()
         {
-            throw new NotImplementedException();
+
         }
 
+        public bool EnnemiDejaApparu(List<PersonnageAbstrait> list)
+        {
+            foreach (Ennemi e in list)
+            {
+                if (e.apparu) return true;
+            }
+            return false;
+        }
         
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace ProjetDesignPattern.JeuDefenceTower
 {
@@ -10,10 +11,8 @@ namespace ProjetDesignPattern.JeuDefenceTower
     public class Chateau : PersonnageAbstrait
     {
         public int ptAttaque;
-
         private bool mort = false;
         public int dégatsreçus = 0;
-        public bool clicAtk = false;
         public Ennemi ennemiAtk;
 
         public Chateau(string _nom, int _pv, int _atq)
@@ -48,6 +47,7 @@ namespace ProjetDesignPattern.JeuDefenceTower
 
         public override void AnalyserSituation()
         {
+            dégatsreçus = 0;
             //est-tu mort
             if (PV == 0) mort = true;
             //a tu pris un dégât -> défini à l'attaque des ennemis
@@ -57,18 +57,19 @@ namespace ProjetDesignPattern.JeuDefenceTower
         {
 
             //si tu es mort -> game over
+            if (mort) MessageBox.Show("Château détruit");
             //if (mort) -> lance la fin du jeu
             //si tu t'es pris un dégât -> baisse tes points de vie
             if (dégatsreçus > 0) PV -= dégatsreçus;
             //si tu a cliquer sur un ennemi -> attaque
-            if (clicAtk) comportementCombattre.combattre(ptAttaque, (PersonnageAbstrait)ennemiAtk);
+            //if (clicAtk) comportementCombattre.combattre(ptAttaque, (PersonnageAbstrait)ennemiAtk);
             //si sort : change d'état le tire
             
         }
 
         public override void MiseAJour()
         {
-            throw new NotImplementedException();
+            
         }
     }
 }

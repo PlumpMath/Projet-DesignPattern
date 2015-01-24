@@ -6,7 +6,6 @@ namespace ProjetDesignPattern.JeuDefenceTower
     {
         public override void Mediation()
         {
-            throw new NotImplementedException();
         }
     }
 }

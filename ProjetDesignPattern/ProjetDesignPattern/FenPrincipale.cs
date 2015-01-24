@@ -14,19 +14,53 @@ namespace ProjetDesignPattern
 {
     public partial class FenPrincipale : Form
     {
+
+        BackgroundWorker m_oWorker;
+        Simulation jeu;
+
         public FenPrincipale()
         {
             InitializeComponent();
+
+            m_oWorker = new BackgroundWorker();
+            m_oWorker.DoWork += new DoWorkEventHandler(m_oWorker_DoWork);
+            m_oWorker.ProgressChanged += new ProgressChangedEventHandler
+                    (m_oWorker_ProgressChanged);
+            m_oWorker.RunWorkerCompleted += new RunWorkerCompletedEventHandler
+                    (m_oWorker_RunWorkerCompleted);
+            m_oWorker.WorkerReportsProgress = true;
+            m_oWorker.WorkerSupportsCancellation = true;
         }
 
-        private void FenPrincipale_Load(object sender, EventArgs e)
+        private void FenPrincipale_Load(object sender, System.EventArgs e)
         {
+        }
 
+
+        private void m_oWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            MessageBox.Show("C'est la fin du jeu");
+
+        }
+
+        private void m_oWorker_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+            jeu.Afficher();
+        }
+
+        private void m_oWorker_DoWork(object sender, DoWorkEventArgs e)
+        {
+            for (int i = 0; i < 20; i++)
+            {
+                System.Threading.Thread.Sleep(1500);
+                jeu.TourDeJeu();
+                m_oWorker.ReportProgress(i);
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Simulation jeu = new Simulation("Defence Tower");
+            jeu = new Simulation("Defence Tower");
             jeu.fab = new FabriqueJeuDT();
             jeu.ModuleIHM = new ModuleIHMDT(jeu);
             jeu.ModuleIHM.jeu = jeu;
@@ -101,18 +135,25 @@ namespace ProjetDesignPattern
 
 
             Chateau chateau = (Chateau)jeu.fab.CreerPersonnage(1, null, "chateau", zonechateau);
-            chateau.initChateau(100, 10);
+            chateau.initChateau(10, 10);
             Ennemi ennemi = (Ennemi)jeu.fab.CreerPersonnage(2,null,"ennemi",zone1);
-            ennemi.initEnnemi(chateau, 10, 10);
+            ennemi.initEnnemi(chateau, 10, 10,2);
+            zone1.attacherEnnemi(ennemi);
+            Ennemi ennemi2 = (Ennemi)jeu.fab.CreerPersonnage(2, null, "ennemi2", zone1);
+            ennemi2.initEnnemi(chateau, 10, 10, 2);
+            zone1.attacherEnnemi(ennemi2);
+
             jeu.listePersonnages.Add(chateau);
             jeu.listePersonnages.Add(ennemi);
-            jeu.Afficher();
-
-            for (int i = 0; i < 20; i++)
-            {
-                System.Threading.Thread.Sleep(50);
-                jeu.TourDeJeu();
-            }
+            jeu.listePersonnages.Add(ennemi2);
+            //jeu.Afficher();
+            m_oWorker.RunWorkerAsync();
+            
+            //for (int i = 0; i < 20; i++)
+            //{
+            //    System.Threading.Thread.Sleep(50);
+            //    jeu.TourDeJeu();
+            //}
 
         }
 

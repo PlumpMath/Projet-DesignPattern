@@ -83,13 +83,11 @@
     <Compile Include="JeuDefenceTower\Etat\EPlusMunitions.cs" />
     <Compile Include="JeuDefenceTower\Etat\ERechargement.cs" />
     <Compile Include="JeuDefenceTower\Etat\EtatAbstraitDT.cs" />
-    <Compile Include="JeuDefenceTower\JeuDT.cs" />
     <Compile Include="JeuDefenceTower\Personnages\Comportement\ComportementCombattreDT.cs" />
     <Compile Include="JeuDefenceTower\Personnages\Comportement\ComportementSeDeplacerAPiedDT.cs" />
     <Compile Include="JeuDefenceTower\Personnages\Chateau.cs" />
     <Compile Include="JeuDefenceTower\Personnages\Ennemi.cs" />
     <Compile Include="JeuDefenceTower\FabriqueJeuDT.cs" />
-    <Compile Include="JeuDefenceTower\StatDT.cs" />
     <Compile Include="JeuDefenceTower\ZoneDT.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -111,7 +109,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="JeuDefenceTower\ClassFabriqueDT.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
