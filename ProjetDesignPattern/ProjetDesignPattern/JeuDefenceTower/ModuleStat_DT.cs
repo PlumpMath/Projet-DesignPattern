@@ -17,6 +17,7 @@ namespace ProjetDesignPattern.JeuDefenceTower
         public override void RecupererInformation()
         {
             nbMorts = 0;
+            totalDégâtsAuxEnnemis = 0;
             foreach (PersonnageAbstrait perso in jeu.listePersonnages)
             {
                 if (perso.GetType() == typeof(Chateau))
@@ -26,8 +27,8 @@ namespace ProjetDesignPattern.JeuDefenceTower
                 }
                 if (perso.GetType() == typeof(Ennemi))
                 {
-                if(((Ennemi)perso).mort) nbMorts += 1;
-                if (((Ennemi)perso).touché) totalDégâtsAuxEnnemis += ((Ennemi)perso).chateau.ptAttaque;
+                    if(((Ennemi)perso).mort) nbMorts += 1;
+                    totalDégâtsAuxEnnemis += ((Ennemi)perso).dégatreçus;
                 }
             }
         }

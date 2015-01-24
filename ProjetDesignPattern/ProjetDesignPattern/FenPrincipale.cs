@@ -50,9 +50,9 @@ namespace ProjetDesignPattern
 
         private void m_oWorker_DoWork(object sender, DoWorkEventArgs e)
         {
-            for (int i = 0; i < 20; i++)
+            for (int i = 0; i < 30; i++)
             {
-                System.Threading.Thread.Sleep(1500);
+                System.Threading.Thread.Sleep(1000);
                 jeu.TourDeJeu();
                 m_oWorker.ReportProgress(i);
             }
@@ -137,10 +137,10 @@ namespace ProjetDesignPattern
             Chateau chateau = (Chateau)jeu.fab.CreerPersonnage(1, null, "chateau", zonechateau);
             chateau.initChateau(10, 10);
             Ennemi ennemi = (Ennemi)jeu.fab.CreerPersonnage(2,null,"ennemi",zone1);
-            ennemi.initEnnemi(chateau, 10, 10,2);
+            ennemi.initEnnemi(chateau, 10, 1,2);
             zone1.attacherEnnemi(ennemi);
             Ennemi ennemi2 = (Ennemi)jeu.fab.CreerPersonnage(2, null, "ennemi2", zone1);
-            ennemi2.initEnnemi(chateau, 10, 10, 2);
+            ennemi2.initEnnemi(chateau, 10, 1, 2);
             zone1.attacherEnnemi(ennemi2);
 
             jeu.listePersonnages.Add(chateau);

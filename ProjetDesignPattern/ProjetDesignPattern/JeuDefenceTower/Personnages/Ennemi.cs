@@ -14,7 +14,7 @@ namespace ProjetDesignPattern.JeuDefenceTower
         public bool touché = false;
         public bool arrivéChateau = false;
         private bool zoneSuivLibre = false;
-        public int totalAttaque = 0;
+        public int dégatreçus = 0;
         public bool apparu=false;
 
         public Ennemi(int _pv, string _nom, int _atq,ZoneAbstraite z)
@@ -48,9 +48,9 @@ namespace ProjetDesignPattern.JeuDefenceTower
 
         public override void AnalyserSituation()
         {
+            Random rdm = new Random();
             zoneSuivLibre = false;
             arrivéChateau = false;
-            touché = false;
             //est-tu mort
             if (PV == 0)
             {
@@ -63,10 +63,8 @@ namespace ProjetDesignPattern.JeuDefenceTower
             //y a t'il quun sur ta prochaine zone
             if (((ZoneDT)Position).laZoneDapresEstLibre()) zoneSuivLibre = true;
             //apparition aléatoire si un ennemi n'est pas déjà apparu
-            if (!EnnemiDejaApparu(Position.listePersonnages))
-            {
-                apparu = true;
-            }
+            if (!EnnemiDejaApparu(Position.listePersonnages) && rdm.Next(0,100)<=25) apparu = true;
+
         }
 
         public override void Execution()
@@ -74,7 +72,12 @@ namespace ProjetDesignPattern.JeuDefenceTower
             if (!mort && apparu)
             {
                 //si tu t'es pris un dégât -> baisse tes points de vie
-                if(touché) PV -= chateau.ptAttaque;
+                if (touché)
+                {
+                    PV -= chateau.ptAttaque;
+                    dégatreçus += chateau.ptAttaque;
+                    touché = false;
+                }
                 //si tu est prêt du château -> attaque
                 if (arrivéChateau)
                 {

@@ -1302,7 +1302,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(129, 13);
             this.label2.TabIndex = 118;
-            this.label2.Text = "Total dégât des ennemis :";
+            this.label2.Text = "Total dégât aux ennemis :";
             // 
             // degatEnnemi
             // 
@@ -1318,7 +1318,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(129, 13);
             this.label3.TabIndex = 120;
-            this.label3.Text = "Total dégâts du château :";
+            this.label3.Text = "Total dégâts au château :";
             // 
             // degatChateau
             // 
