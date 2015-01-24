@@ -5,6 +5,11 @@ namespace ProjetDesignPattern.JeuEchecs
 {
     public abstract class PieceEchec : PersonnageAbstrait
     {
+		public bool etatRoi = false;
+
+		public bool etatDéplacement = false;
+		public ZoneAbstraite futureZone;
+
         public ComportementSeDeplacerJE comportementSeDeplacer { get; set; }
 		public ComportementCombattreJE comportementCombattre{ get; set; }
 		public ComportementSeDefendreJE comportementSeDefendre{ get; set;}
@@ -22,9 +27,9 @@ namespace ProjetDesignPattern.JeuEchecs
 		public void deplacer(Case c){
 			comportementSeDeplacer.deplacer (c);
 		}
+
 		public List<ZoneAbstraite> deplacementPossible (ZoneAbstraite zone){
 			return comportementSeDeplacer.déplacementPossible (zone);
 		}
-
     }
 }

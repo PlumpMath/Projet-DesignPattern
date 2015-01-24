@@ -7,23 +7,23 @@ namespace ProjetDesignPattern.JeuEchecs
 	{
 		public DeplacementPion ()
 		{
-			this.déplacements = new int[,] { {1} };
+			this.déplacements = new int[][] { {7}, {8}, {9} };
 			this.déplacementInfinie = false;
 		}
 
-		public override void deplacer(ZoneAbstraite zone)
-        {
-			this.personnage.Position = zone;
-        }
-
-		public override List<ZoneAbstraite> déplacementPossible(ZoneAbstraite zone)
-        {
-			List<ZoneAbstraite> zones = new List<ZoneAbstraite> ();
-			if (zone.zonesAdjacentes.ContainsKey (8)) {
-				zones.Add (zone.zonesAdjacentes [8]);
+		public override ZoneAbstraite accessible(ZoneAbstraite zone, int[] a){
+			if (!zone.zonesAdjacentes.ContainsKey (a [0])) {
+				if (a [0] == 8) {
+					return zone.zonesAdjacentes [8];
+				} else {
+					zone = zone.zonesAdjacentes [a [0]];
+					if(zone.listePersonnages.Count > 0){
+						return zone;
+					}
+				}
+				return null;			
 			}
-			return zones;
-        }
+		}
     }
 }
 

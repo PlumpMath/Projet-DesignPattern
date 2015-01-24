@@ -9,7 +9,7 @@ namespace ProjetDesignPattern.JeuEchecs
 		public bool déplacementInfinie;
 
 		public override void deplacer(ZoneAbstraite zone){
-
+			this.personnage.Position = zone;
 		}
 
 		public override List<ZoneAbstraite> déplacementPossible(ZoneAbstraite zone){
@@ -30,7 +30,7 @@ namespace ProjetDesignPattern.JeuEchecs
 			}
 		}
 
-		private ZoneAbstraite accessible(ZoneAbstraite zone, int[] a){
+		public ZoneAbstraite accessible(ZoneAbstraite zone, int[] a){
 			for (int index = 0; index < a.Length; index++) {
 				if (!zone.zonesAdjacentes.ContainsKey(a[index]))
 					return null;
