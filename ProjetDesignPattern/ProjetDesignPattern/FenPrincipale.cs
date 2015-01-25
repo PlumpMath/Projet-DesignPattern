@@ -13,9 +13,41 @@ namespace ProjetDesignPattern
 {
     public partial class FenPrincipale : Form
     {
+        BackgroundWorker m_oWorker;
+        Simulation jeu;
+
         public FenPrincipale()
         {
             InitializeComponent();
+
+            m_oWorker = new BackgroundWorker();
+            m_oWorker.DoWork += new DoWorkEventHandler(m_oWorker_DoWork);
+            m_oWorker.ProgressChanged += new ProgressChangedEventHandler
+                    (m_oWorker_ProgressChanged);
+            m_oWorker.RunWorkerCompleted += new RunWorkerCompletedEventHandler
+                    (m_oWorker_RunWorkerCompleted);
+            m_oWorker.WorkerReportsProgress = true;
+            m_oWorker.WorkerSupportsCancellation = true;
+        }
+        private void m_oWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            MessageBox.Show("C'est la fin du jeu");
+
+        }
+
+        private void m_oWorker_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+            jeu.Afficher();
+        }
+
+        private void m_oWorker_DoWork(object sender, DoWorkEventArgs e)
+        {
+            for (int i = 0; i < 30; i++)
+            {
+                System.Threading.Thread.Sleep(1000);
+                jeu.TourDeJeu();
+                m_oWorker.ReportProgress(i);
+            }
         }
 
         private void FenPrincipale_Load(object sender, EventArgs e)
@@ -26,22 +58,38 @@ namespace ProjetDesignPattern
         private void button3_Click(object sender, EventArgs e)
         {
 
-            Simulation jeu = new Simulation("Simulation traffic");
+            jeu = new Simulation("Simulation traffic");
             jeu.fab = new FabriqueSimuTrafic();
             jeu.ModuleIHM = new ModuleIHM_Trafic();
             jeu.ModuleIHM.jeu = jeu;
 
             jeu.ModuleStats = new ModuleStats_Trafic();
             jeu.ModuleStats.jeu = jeu;
-            
+
             ZoneAbstraite zone1 = jeu.fab.CreerZone();
+            zone1.positionX = 0;
+            zone1.positionY = 0;
             ZoneAbstraite zone2 = jeu.fab.CreerZone();
+            zone2.positionX = 1;
+            zone2.positionY = 0;
             ZoneAbstraite zone3 = jeu.fab.CreerZone();
+            zone3.positionX = 2;
+            zone3.positionY = 0;
             ZoneAbstraite zone4 = jeu.fab.CreerZone();
+            zone4.positionX = 2;
+            zone4.positionY = 1;
             ZoneAbstraite zone5 = jeu.fab.CreerZone();
+            zone5.positionX = 2;
+            zone5.positionY = 2;
             ZoneAbstraite zone6 = jeu.fab.CreerZone();
+            zone6.positionX = 1;
+            zone6.positionY = 2;
             ZoneAbstraite zone7 = jeu.fab.CreerZone();
+            zone7.positionX = 0;
+            zone7.positionY = 2;
             ZoneAbstraite zone8 = jeu.fab.CreerZone();
+            zone8.positionX = 0;
+            zone8.positionY = 1;
 
             jeu.fab.CreerAcces(zone1, zone2);
             jeu.fab.CreerAcces(zone2, zone3);
@@ -74,13 +122,16 @@ namespace ProjetDesignPattern
             jeu.listePersonnages.Add(feu1);
             jeu.listePersonnages.Add(feu2);
 
+            
             jeu.Afficher();
 
-            for (int i = 0; i < 100; i++)
+            for (int i = 0; i < 30; i++)
             {
                 System.Threading.Thread.Sleep(250);
                 jeu.TourDeJeu();
             }
+
+            //m_oWorker.RunWorkerAsync();
 
         }
     }

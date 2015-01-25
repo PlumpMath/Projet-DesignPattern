@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Windows.Forms;
 
 namespace ProjetDesignPattern.JeuSimulationTrafic
 {
@@ -32,6 +35,33 @@ namespace ProjetDesignPattern.JeuSimulationTrafic
             }
 
             ihm.changeTexteBox(texte);
+
+
+            foreach (ZoneAbstraite zone in jeu.listeZones)
+            {
+                String nomImageZone = "z" + zone.positionY + zone.positionX;
+                if (zone.listePersonnages.Count > 0)
+                {
+                    foreach (PersonnageAbstrait persoZone in zone.listePersonnages)
+                    {
+                        if (persoZone.GetType() == typeof(Voiture))
+                        {
+                            PictureBox p = ihm.Controls.Find(nomImageZone, true).FirstOrDefault() as PictureBox;
+                            p.BackgroundImage = ProjetDesignPattern.Properties.Resources.voiture;
+                        }
+                        else
+                        {
+                            PictureBox p = ihm.Controls.Find(nomImageZone, true).FirstOrDefault() as PictureBox;
+                            p.BackgroundImage = ProjetDesignPattern.Properties.Resources.vide;
+                        }
+                    }
+                }
+                else
+                {
+                    PictureBox p = ihm.Controls.Find(nomImageZone, true).FirstOrDefault() as PictureBox;
+                    p.BackgroundImage = ProjetDesignPattern.Properties.Resources.vide;
+                }
+            }
 
             ihm.Show();
             ihm.Refresh();
