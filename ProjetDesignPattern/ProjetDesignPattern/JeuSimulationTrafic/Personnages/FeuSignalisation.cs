@@ -9,8 +9,13 @@
 
         public override void AnalyserSituation()
         {
-            // Si autre feu est rouge et soi même vert
-            // on doit passer rouge
+            if (EtatMajor != null && EtatMajor.EtatMajor == null)
+            {
+                EtatMajor.EtatMajor = this;
+                this.AjouterObservateur(EtatMajor);
+
+            }
+
             if (Etat == FeuSignalisation.vert)
             {
                 if (PV == 0)
@@ -24,9 +29,6 @@
 
         public override void Execution()
         {
-            // S'il doit passer au rouge
-            // on passe rouge
-            // on notifie les observateurs
             if (doitPasserAuRouge)
             {
                 Etat = FeuSignalisation.rouge;

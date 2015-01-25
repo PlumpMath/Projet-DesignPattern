@@ -62,12 +62,10 @@ namespace ProjetDesignPattern
             jeu.listeZones.Add(zone8);
 
             PersonnageAbstrait feu1 = jeu.fab.CreerPersonnage(FabriqueSimuTrafic.typeFeu, null, "Feu", zone3);
+            ((FeuSignalisation)feu1).Etat = FeuSignalisation.vert;
 
             PersonnageAbstrait feu2 = jeu.fab.CreerPersonnage(FabriqueSimuTrafic.typeFeu, (SujetObserveAbstrait)feu1, "Feu", zone7);
             
-            ((SujetObserveAbstrait)feu2).AjouterObservateur(feu1);
-            feu1.EtatMajor = (SujetObserveAbstrait)feu2;
-            ((FeuSignalisation)feu1).Etat = FeuSignalisation.vert;
 
             PersonnageAbstrait voiture1 = jeu.fab.CreerPersonnage(FabriqueSimuTrafic.typeVoiture, null, "voiture", zone1);
             PersonnageAbstrait voiture2 = jeu.fab.CreerPersonnage(FabriqueSimuTrafic.typeVoiture, null, "voiture2", zone5);
