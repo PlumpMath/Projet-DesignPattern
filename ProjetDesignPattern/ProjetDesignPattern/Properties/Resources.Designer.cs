@@ -63,6 +63,26 @@ namespace ProjetDesignPattern.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap feuR {
+            get {
+                object obj = ResourceManager.GetObject("feuR", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap feuV {
+            get {
+                object obj = ResourceManager.GetObject("feuV", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap vide {
             get {
                 object obj = ResourceManager.GetObject("vide", resourceCulture);
@@ -76,6 +96,26 @@ namespace ProjetDesignPattern.Properties {
         internal static System.Drawing.Bitmap voiture {
             get {
                 object obj = ResourceManager.GetObject("voiture", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap voiture_feuR {
+            get {
+                object obj = ResourceManager.GetObject("voiture_feuR", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap voiture_feuV {
+            get {
+                object obj = ResourceManager.GetObject("voiture_feuV", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -160,7 +160,12 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\voiture11.png" />
+    <None Include="Resources\voiture1.png" />
     <None Include="Resources\vide.png" />
+    <None Include="Resources\feuV.bmp" />
+    <None Include="Resources\feuV.png" />
+    <None Include="Resources\feuV1.png" />
     <Content Include="Resources\voiture.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
