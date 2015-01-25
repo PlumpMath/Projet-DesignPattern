@@ -40,7 +40,6 @@
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
@@ -63,15 +62,6 @@
     <Compile Include="GestionnaireJeu.cs" />
     <Compile Include="AbstractClass\ObservateurAbstrait.cs" />
     <Compile Include="AbstractClass\PersonnageAbstrait.cs" />
-    <Compile Include="JeuSimulationTrafic\Personnages\FeuSignalisation.cs" />
-    <Compile Include="JeuSimulationTrafic\IHM_Traffic.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="JeuSimulationTrafic\IHM_Traffic.Designer.cs">
-      <DependentUpon>IHM_Traffic.cs</DependentUpon>
-    </Compile>
-    <Compile Include="JeuSimulationTrafic\ModuleIHM_Traffic.cs" />
-    <Compile Include="JeuSimulationTrafic\ModuleStats_Trafic.cs" />
     <Compile Include="Simulation.cs" />
     <Compile Include="AbstractClass\ObjetAbstrait.cs" />
     <Compile Include="JeuDefenceTower\AccesDT.cs" />
@@ -87,34 +77,12 @@
     <Compile Include="JeuDefenceTower\FabriqueJeuDT.cs" />
     <Compile Include="JeuDefenceTower\StatDT.cs" />
     <Compile Include="JeuDefenceTower\ZoneDT.cs" />
-    <Compile Include="JeuEchecs\FabriqueJeuEchecs.cs" />
-    <Compile Include="JeuEchecs\Personnages\Cavalier.cs" />
-    <Compile Include="JeuEchecs\Personnages\Fou.cs" />
-    <Compile Include="JeuEchecs\Personnages\Pion.cs" />
-    <Compile Include="JeuEchecs\Personnages\Reine.cs" />
-    <Compile Include="JeuEchecs\Personnages\Roi.cs" />
-    <Compile Include="JeuEchecs\Personnages\Tour.cs" />
-    <Compile Include="JeuSimulationTrafic\AccesRoute.cs" />
-    <Compile Include="JeuSimulationTrafic\ConflitRoutier.cs" />
-    <Compile Include="JeuSimulationTrafic\Personnages\Comportements\ComportementSeDeplacerCamion.cs" />
-    <Compile Include="JeuSimulationTrafic\Personnages\Comportements\ComportementSeDeplacerMoto.cs" />
-    <Compile Include="JeuSimulationTrafic\Personnages\Comportements\ComportementSeDeplacerVoiture.cs" />
-    <Compile Include="JeuSimulationTrafic\FabriqueSimuTrafic.cs" />
-    <Compile Include="JeuSimulationTrafic\Personnages\Camion.cs" />
-    <Compile Include="JeuSimulationTrafic\Personnages\Moto.cs" />
-    <Compile Include="JeuSimulationTrafic\Personnages\Voiture.cs" />
-    <Compile Include="JeuSimulationTrafic\Personnages\Véhicule.cs" />
-    <Compile Include="JeuSimulationTrafic\PortionDeRoute.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="AbstractClass\SujetObserveAbstrait.cs" />
     <Compile Include="AbstractClass\ZoneAbstraite.cs" />
-    <Compile Include="JeuEchecs\Personnages\PieceEchec.cs" />
     <EmbeddedResource Include="FenPrincipale.resx">
       <DependentUpon>FenPrincipale.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="JeuSimulationTrafic\IHM_Traffic.resx">
-      <DependentUpon>IHM_Traffic.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -135,23 +103,94 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="JeuEchecs\Environnement\Plateau.cs" />
+    <Compile Include="AbstractClass\ComporterSeDefendreAbstrait.cs" />
+    <Compile Include="JeuDefenceTower\Personnages\Comportement\ComportementSeDeplacerAPiedDT.cs" />
+    <!--<Compile Include="AbstractClass\ChargementJeu.cs" />-->
+    <!--<Compile Include="JeuDefenceTower\ModuleIHMDT.cs" />-->
+    <!--<Compile Include="JeuDefenceTower\ModuleStat_DT.cs" />-->
+    <!--<Compile Include="JeuDefenceTower\Personnages\Comportement\ComportementSeDefendreDT.cs" />-->
+    <!--<Compile Include="AbstractClass\JeuAbstrait.cs" />-->
+    <!--<Compile Include="JeuDefenceTower\Defence Tower IHM.cs">
+      <SubType>Form</SubType>
+    </Compile>-->
+    <!--<Compile Include="JeuDefenceTower\Defence Tower IHM.Designer.cs">
+      <DependentUpon>Defence Tower IHM.cs</DependentUpon>
+    </Compile>-->
+    <!--<Compile Include="JeuDefenceTower\JeuDT.cs" />-->
+    <EmbeddedResource Include="JeuDefenceTower\Defence Tower IHM.resx">
+      <DependentUpon>Defence Tower IHM.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Resources\EnnemiVide.png" />
+    <None Include="Resources\EnnemiAttaque.png" />
+    <None Include="Resources\EnnemiMarche.png" />
+    <None Include="Resources\Chateau.png" />
+    <Compile Include="JeuEchecs\FabriqueJeuEchecs.cs" />
+    <Compile Include="JeuEchecs\Environnement\AccesCaseAbstraite.cs" />
     <Compile Include="JeuEchecs\Environnement\Case.cs" />
+    <Compile Include="JeuEchecs\Environnement\CaseAbstraite.cs" />
+    <Compile Include="JeuEchecs\Environnement\Plateau.cs" />
+    <Compile Include="JeuEchecs\Environnement\eTypeDéplacement.cs" />
+    <Compile Include="JeuEchecs\Personnages\Cavalier.cs" />
+    <Compile Include="JeuEchecs\Personnages\Fou.cs" />
+    <Compile Include="JeuEchecs\Personnages\PieceEchec.cs" />
+    <Compile Include="JeuEchecs\Personnages\Pion.cs" />
+    <Compile Include="JeuEchecs\Personnages\Reine.cs" />
+    <Compile Include="JeuEchecs\Personnages\Roi.cs" />
+    <Compile Include="JeuEchecs\Personnages\Tour.cs" />
+    <Compile Include="JeuEchecs\Personnages\eTypePersonnage.cs" />
+    <Compile Include="JeuEchecs\Personnages\Comportement\ComportementCombattreJE.cs" />
+    <Compile Include="JeuEchecs\Personnages\Comportement\ComportementSeDefendreJE.cs" />
+    <Compile Include="JeuEchecs\Personnages\Comportement\ComportementSeDeplacerJE.cs" />
+    <Compile Include="JeuEchecs\Personnages\Comportement\Attaque\AttaqueBasique.cs" />
+    <Compile Include="JeuEchecs\Personnages\Comportement\Attaque\ComportementCombattre.cs" />
+    <Compile Include="JeuEchecs\Personnages\Comportement\Defense\AucuneDefense.cs" />
+    <Compile Include="JeuEchecs\Personnages\Comportement\Defense\ComportementSeDefendre.cs" />
+    <Compile Include="JeuEchecs\Personnages\Comportement\Deplacement\ComportementSeDeplacer.cs" />
     <Compile Include="JeuEchecs\Personnages\Comportement\Deplacement\DeplacementCavalier.cs" />
     <Compile Include="JeuEchecs\Personnages\Comportement\Deplacement\DeplacementFou.cs" />
     <Compile Include="JeuEchecs\Personnages\Comportement\Deplacement\DeplacementPion.cs" />
     <Compile Include="JeuEchecs\Personnages\Comportement\Deplacement\DeplacementReine.cs" />
     <Compile Include="JeuEchecs\Personnages\Comportement\Deplacement\DeplacementRoi.cs" />
     <Compile Include="JeuEchecs\Personnages\Comportement\Deplacement\DeplacementTour.cs" />
-    <Compile Include="AbstractClass\ComporterSeDefendreAbstrait.cs" />
-    <Compile Include="JeuEchecs\Personnages\Comportement\Attaque\AttaqueBasique.cs" />
-    <Compile Include="JeuEchecs\Personnages\Comportement\Defense\AucuneDefense.cs" />
-    <Compile Include="JeuEchecs\Personnages\eTypePersonnage.cs" />
-    <Compile Include="JeuEchecs\Personnages\Comportement\ComportementCombattreJE.cs" />
-    <Compile Include="JeuEchecs\Personnages\Comportement\ComportementSeDefendreJE.cs" />
-    <Compile Include="JeuEchecs\Personnages\Comportement\ComportementSeDeplacerJE.cs" />
-    <Compile Include="JeuDefenceTower\Personnages\Comportement\ComportementSeDeplacerAPiedDT.cs" />
     <Compile Include="JeuEchecs\Personnages\Comportement\Deplacement\Permutation.cs" />
+    <Compile Include="JeuEchecs\Personnages\Deplacement\Position.cs" />
+    <Compile Include="JeuEchecs\Personnages\Etat\Etat.cs" />
+    <None Include="JeuDefenceTower\Defence Tower IHM.resources" />
+    <Compile Include="JeuDefenceTower\Form1.Designer.cs" />
+    <Compile Include="JeuDefenceTower\Form1.cs" />
+    <None Include="JeuDefenceTower\Form1.resx" />
+    <Compile Include="JeuSimulationTrafic\AccesRoute.cs" />
+    <Compile Include="JeuSimulationTrafic\ConflitRoutier.cs" />
+    <Compile Include="JeuSimulationTrafic\FabriqueSimuTrafic.cs" />
+    <Compile Include="JeuSimulationTrafic\IHM_Traffic.Designer.cs" />
+    <Compile Include="JeuSimulationTrafic\IHM_Traffic.cs" />
+    <None Include="JeuSimulationTrafic\IHM_Traffic.resx" />
+    <Compile Include="JeuSimulationTrafic\ModuleIHM_Traffic.cs" />
+    <Compile Include="JeuSimulationTrafic\ModuleStats_Trafic.cs" />
+    <Compile Include="JeuSimulationTrafic\PortionDeRoute.cs" />
+    <Compile Include="JeuSimulationTrafic\Personnages\Camion.cs" />
+    <Compile Include="JeuSimulationTrafic\Personnages\FeuSignalisation.cs" />
+    <Compile Include="JeuSimulationTrafic\Personnages\Moto.cs" />
+    <Compile Include="JeuSimulationTrafic\Personnages\Voiture.cs" />
+    <Compile Include="JeuSimulationTrafic\Personnages\Véhicule.cs" />
+    <Compile Include="JeuSimulationTrafic\Personnages\Comportements\ComportementSeDeplacerCamion.cs" />
+    <Compile Include="JeuSimulationTrafic\Personnages\Comportements\ComportementSeDeplacerMoto.cs" />
+    <Compile Include="JeuSimulationTrafic\Personnages\Comportements\ComportementSeDeplacerVoiture.cs" />
+    <Compile Include="JeuEchecs\ModuleIHM_Echecs.cs" />
+    <Compile Include="JeuEchecs\ModuleStats_Echecs.cs" />
+    <Compile Include="JeuEchecs\Environnement\AccesCase.cs" />
+    <None Include="Resources\JeuEchecs\BB.png" />
+    <None Include="Resources\JeuEchecs\BC.png" />
+    <None Include="Resources\JeuEchecs\BK.png" />
+    <None Include="Resources\JeuEchecs\BP.png" />
+    <None Include="Resources\JeuEchecs\BQ.png" />
+    <None Include="Resources\JeuEchecs\BR.png" />
+    <None Include="Resources\JeuEchecs\WB.png" />
+    <None Include="Resources\JeuEchecs\WC.png" />
+    <None Include="Resources\JeuEchecs\WK.png" />
+    <None Include="Resources\JeuEchecs\WP.png" />
+    <None Include="Resources\JeuEchecs\WQ.png" />
+    <None Include="Resources\JeuEchecs\WR.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -165,4 +204,11 @@
   <Target Name="AfterBuild">
   </Target>
   -->
+  <ItemGroup>
+    <Folder Include="JeuEchecs\" />
+    <Folder Include="ProjetDesignPattern\" />
+    <Folder Include="JeuDefenceTower\" />
+    <Folder Include="JeuSimulationTrafic\" />
+    <Folder Include="Resources\JeuEchecs\" />
+  </ItemGroup>
 </Project>

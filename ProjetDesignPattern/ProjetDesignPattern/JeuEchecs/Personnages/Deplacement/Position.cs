@@ -5,8 +5,8 @@ namespace ProjetDesignPattern
 	public class Position
 	{
 
-		int x { get; set; };
-		int y { get; set; };
+		int x { get; set; }
+		int y { get; set; }
 
 		public Position (int x, int y)
 		{

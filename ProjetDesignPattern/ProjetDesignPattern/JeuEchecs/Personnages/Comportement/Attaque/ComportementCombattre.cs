@@ -4,7 +4,7 @@ namespace ProjetDesignPattern.JeuEchecs
 {
 	public abstract class ComportementCombattre:ComportementCombattreAbstrait
 	{
-		public int attaque {get;set;}
+		//public int attaque {get;set;}
 
 		public abstract int combattre();
 	}

@@ -49,7 +49,7 @@ namespace ProjetDesignPattern.JeuEchecs
 			for (int index = 0; index < a.Length; index++) {
 				if (!zone.zonesAdjacentes.ContainsKey(a[index]))
 					return null;
-				zone = zone.zonesAdjacentes[a[index]];
+				zone = zone.zonesAdjacentes[a[index]].arrivée;
 			}
 			return zone;
 		}

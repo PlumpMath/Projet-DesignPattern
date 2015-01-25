@@ -7,7 +7,7 @@ namespace ProjetDesignPattern.JeuEchecs
 	{
 		public DeplacementRoi ()
 		{
-			this.déplacements = new int[][] { {1}, {2}, {3}, {4}, {6}, {7}, {8}, {9} };
+			this.déplacements = new int[][] { new int[] {1}, new int[] {2}, new int[] {3}, new int[] {4}, new int[] {6}, new int[] {7}, new int[] {8}, new int[] {9} };
 			this.déplacementInfinie = false;
 		}
     }

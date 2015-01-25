@@ -30,13 +30,14 @@ namespace ProjetDesignPattern.JeuEchecs
 			}
 		}
 
-		public ZoneAbstraite accessible(ZoneAbstraite zone, int[] a){
+		public virtual ZoneAbstraite accessible(ZoneAbstraite zone, int[] a){
 			for (int index = 0; index < a.Length; index++) {
 				if (!zone.zonesAdjacentes.ContainsKey(a[index]))
 					return null;
-				zone = zone.zonesAdjacentes[a[index]];
+				if(zone.zonesAdjacentes[a[index]].accès)
+					return zone.zonesAdjacentes[a[index]].arrivée;
 			}
-			return zone;
+			return null;
 		}
     }
 }

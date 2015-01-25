@@ -10,8 +10,8 @@ namespace ProjetDesignPattern.JeuEchecs
 		public bool etatDéplacement = false;
 		public ZoneAbstraite futureZone;
 
-        public ComportementSeDeplacerJE comportementSeDeplacer { get; set; }
-		public ComportementCombattreJE comportementCombattre{ get; set; }
+       // public ComportementSeDeplacerJE comportementSeDeplacer { get; set; }
+	//	public ComportementCombattreJE comportementCombattre{ get; set; }
 		public ComportementSeDefendreJE comportementSeDefendre{ get; set;}
 
 		int equipe { get; set; }
