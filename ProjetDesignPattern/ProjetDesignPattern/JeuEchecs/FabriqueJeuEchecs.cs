@@ -1,15 +1,17 @@
 ﻿using System;
+using System.Collections.Generic;
+
 
 namespace ProjetDesignPattern.JeuEchecs
 {
     class FabriqueJeuEchecs : FabriqueAbstraite
     {
-		public override PersonnageAbstrait CreerPersonnage(string _type, string _nom,string _pv, string _etat, string zonePresent, SujetObserveAbstrait EtatMajor)
+		public override PersonnageAbstrait CreerPersonnage(int _id,string _type, string _nom,string _pv, string _etat, ZoneAbstraite _position, SujetObserveAbstrait EtatMajor)
         {
 			PersonnageAbstrait personnage;
 
 			//Definition du type du personnage pour la simulation echec
-			switch (_type) {
+			switch (_type){
 			case "Pion":
 				personnage = new JeuEchecs.Pion ();
 				personnage.comportementCombattre = new JeuEchecs.AttaqueBasique ();
@@ -54,6 +56,10 @@ namespace ProjetDesignPattern.JeuEchecs
 			if (null != personnage) {
 				personnage.Nom = _nom;
 				personnage.PV = Convert.ToInt32 (_pv);
+				personnage.Position = _position;
+				personnage.idPersonnage = _id;
+				personnage.EtatMajor = new SujetObserveEchec ();
+
 				//personnage.etatCourant = _etat;
 			}
 
@@ -67,14 +73,30 @@ namespace ProjetDesignPattern.JeuEchecs
         }
 
 
-        public override ZoneAbstraite CreerZone()
+	
+
+
+		public override ZoneAbstraite CreerZone(int _idzone, List<PersonnageAbstrait> _listePersonnages, List<ObjetAbstrait> _listeObjets,int _positionX, int positionY)
+		{
+			ZoneAbstraite zone = new ZoneE ();
+			zone.idZone = _idzone;
+			zone.positionX = _positionX;
+			zone.positionY = positionY;
+			return zone;
+		}
+
+		public override AccesAbstrait CreerAcces(ZoneAbstraite _zoneDepart,ZoneAbstraite _zoneArrivee,Boolean _acces)
         {
-            throw new NotImplementedException();
+			AccesAbstrait acces = new AccesE ();
+			acces.départ = _zoneDepart;
+			acces.arrivée = _zoneArrivee;
+			acces.accès = _acces;
+
+			return acces;
         }
 
-        public override AccesAbstrait CreerAcces()
-        {
-            throw new NotImplementedException();
-        }
+		public override ObjetAbstrait CreerObjet(string _nom,ZoneAbstraite _position){
+			return null;
+		}
     }
 }

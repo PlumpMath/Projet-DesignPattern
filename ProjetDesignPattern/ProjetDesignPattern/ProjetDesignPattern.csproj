@@ -73,7 +73,6 @@
     <Compile Include="JeuDefenceTower\Personnages\Ennemi.cs" />
     <Compile Include="JeuDefenceTower\FabriqueJeuDT.cs" />
     <Compile Include="JeuDefenceTower\StatDT.cs" />
-    <Compile Include="JeuDefenceTower\ZoneDT.cs" />
     <Compile Include="JeuEchecs\FabriqueJeuEchecs.cs" />
     <Compile Include="JeuEchecs\Personnages\Cavalier.cs" />
     <Compile Include="JeuEchecs\Personnages\Fou.cs" />
@@ -137,7 +136,10 @@
     <Compile Include="JeuDefenceTower\Personnages\Comportement\ComportementSeDeplacerAPiedDT.cs" />
     <Compile Include="AbstractClass\ComportementChargerSimulationAbstrait.cs" />
     <Compile Include="SauvegardeChargementSimulation\ChargerSimulation.cs" />
-    <Compile Include="SauvegardeChargementSimulation\ComportementChargerSimulationJeuEchecs.cs" />
+    <Compile Include="SauvegardeChargementSimulation\ComportementChargerSimulation.cs" />
+    <Compile Include="JeuEchecs\AccesE.cs" />
+    <Compile Include="JeuEchecs\ZoneE.cs" />
+    <Compile Include="JeuEchecs\Personnages\Observateur\SujetObserveEchec.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -145,6 +147,7 @@
   <ItemGroup>
     <Folder Include="JeuDefenceTower\Etat\" />
     <Folder Include="SauvegardeChargementSimulation\" />
+    <Folder Include="JeuEchecs\Personnages\Observateur\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

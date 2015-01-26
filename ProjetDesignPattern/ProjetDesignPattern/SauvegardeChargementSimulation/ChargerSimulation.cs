@@ -9,14 +9,14 @@ namespace ProjetDesignPattern
 	public class ChargerSimulation
 	{
 		private String emplacementFichierSauvegarde;
-		private Simulation Simulation;
+		private Simulation simulation;
 		private ComportementChargerSimulationAbstrait comportementChargement;
 
 
 		public ChargerSimulation (Simulation _simulation,String _emplacementFichier)
 		{
 			emplacementFichierSauvegarde = _emplacementFichier;
-			Simulation = _simulation;
+			simulation = _simulation;
 		}
 
 		/*
@@ -37,37 +37,25 @@ namespace ProjetDesignPattern
 					typeJeu = item.Value;
 				}
 
-				this.initialisationDuComportementDeChargement(typeJeu,document); 
+				 
+				comportementChargement = new ComportementChargerSimulation (this.simulation, document,typeJeu);
 
 				if(comportementChargement != null){
 					this.comportementChargement.chargerLesZones();
 					this.comportementChargement.chargerLesAcces();
 					this.comportementChargement.chargerLesPersonnages();
+					this.comportementChargement.chargerListePersonnageParZone();
+					this.comportementChargement.chargerListeObjetParZoneEtPourSimulation();
+					this.comportementChargement.chargerListeObjervateurParPersonnage();
 				}
+
+				Console.WriteLine(simulation);
 
 			}catch(Exception e){
 				Console.WriteLine("Erreur lors du chargement de la simulation, Exception: {0}", e.Source);
 			}
 		}
 
-
-		private void initialisationDuComportementDeChargement(String _typeJeu, XPathDocument _document){
-
-			switch(_typeJeu){
-			case "JeuEchecs":
-				comportementChargement = new ComportementChargerSimulationJeuEchecs (this.Simulation, _document);
-				break;
-			/*case "JeuDefenceTower":
-				//return null;
-			case "JeuSimulationTrafic":*/
-				//return null;
-			default:
-				comportementChargement = null;
-				break;
-
-			}
-
-		}
 	}
 }
 

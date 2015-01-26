@@ -27,7 +27,8 @@ namespace ProjetDesignPattern
 			Simulation sim = new Simulation ("zea");
 
 			//sim.chargerSimulation("Users/alexandredubois/workspace_C/CS/ProjetPattern/ProjetDesignPattern/ProjetDesignPattern/sauvegardes/structure_sauvegarde.xml");
-			sim.chargerSimulation (@"structure_sauvegarde.xml");
+			//sim.chargerSimulation (@"structure_sauvegarde.xml");
+			sim.chargerSimulation (@"structure_sauvegardeSimulationTraffic.xml");
 
 //"/Users/alexandredubois/workspace_C/CS/ProjetPattern/ProjetDesignPattern/ProjetDesignPattern/bin/Debug/sauvegardes/structure_sauvegarde.xml".
 			Console.WriteLine("Press any key to exit.");

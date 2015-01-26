@@ -4,7 +4,7 @@ namespace ProjetDesignPattern
 {
     public abstract class ObjetAbstrait
     {
-        public String Nom { get; set; }
+        public string Nom { get; set; }
         public ZoneAbstraite Position { get; set; }
 
 
