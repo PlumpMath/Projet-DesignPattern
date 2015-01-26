@@ -1,44 +1,68 @@
-﻿using System;
+﻿
 using System.Collections.Generic;
-
-
 namespace ProjetDesignPattern.JeuSimulationTrafic
 {
     public class FabriqueSimuTrafic : FabriqueAbstraite
     {
-        enum eTypePersonnage
-        {
-            Camion,
-            Voiture,
-            Moto
-        }
+        public const int typeFeu = 0;
+        public const int typeCamion = 1;
+        public const int typeVoiture = 2;
+        public const int typeMoto = 3;
 
-		public override PersonnageAbstrait CreerPersonnage(int _id,string _type, string _nom,string _pv, string _etat, ZoneAbstraite _position, SujetObserveAbstrait EtatMajor)
+        public override PersonnageAbstrait CreerPersonnage(int typePerso, SujetObserveAbstrait unEtatMajor, string unNom, ZoneAbstraite unePosition)
         {
-            /*switch(typePerso){
-                case eTypePersonnage.Camion:
-                    return new Camion();
-                case eTypePersonnage.Voiture:
-                    return new Voiture();
-                case eTypePersonnage.Moto:
+            PersonnageAbstrait perso;
+            switch(typePerso){
+                case typeCamion:
+                    perso = new Camion();
+                    break;
+                case typeVoiture:
+                    perso =  new Voiture();
+                    perso.comportementSeDeplacer = new ComportementSeDeplacerVoiture();
+                    perso.comportementSeDeplacer.personnage = perso;
+                    break;
+                case typeMoto:
                 default:
-                    return new Moto();
-            }*/
-			return null;
+                    perso = new Moto();
+                    break;
+            }
+            perso.Nom = unNom;
+            perso.Position = unePosition;
+            unePosition.listePersonnages.Add(perso);
+
+            if(unEtatMajor != null)
+                unEtatMajor.AjouterObservateur(perso);
+
+            return perso;
         }
 
-		public override ZoneAbstraite CreerZone(int _idzone, List<PersonnageAbstrait> _listePersonnages, List<ObjetAbstrait> _listeObjets,int _positionX, int positionY)
+        public SujetObserveAbstrait CreerSujetObserve()
         {
-            throw new System.NotImplementedException();
+            SujetObserveAbstrait feu = new FeuSignalisation();
+
+            return feu;
         }
 
-		public override AccesAbstrait CreerAcces(ZoneAbstraite _zoneDepart,ZoneAbstraite _zoneArrivee,Boolean _acces)
+        public override ZoneAbstraite CreerZone()
         {
-            throw new System.NotImplementedException();
+            ZoneAbstraite zone = new PortionDeRoute();
+            zone.listePersonnages = new List<PersonnageAbstrait>();
+            zone.listeObjets = new List<ObjetAbstrait>();
+            zone.zonesAdjacentes = new Dictionary<int, AccesAbstrait>();
+
+            return zone;
         }
 
-		public override ObjetAbstrait CreerObjet(string _nom,ZoneAbstraite _position){
-			return null;
-		}
+        public override AccesAbstrait CreerAcces(ZoneAbstraite départ, ZoneAbstraite arrivée)
+        {
+            AccesAbstrait acces = new AccesRoute();
+            acces.départ = départ;
+            acces.arrivée = arrivée;
+
+            //Ajout de l'accès à la zone départ
+            départ.zonesAdjacentes.Add(1, acces);
+
+            return acces;
+        }
     }
 }
