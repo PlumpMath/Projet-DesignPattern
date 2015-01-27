@@ -16,10 +16,10 @@ namespace ProjetDesignPattern.JeuSimulationTrafic
 		public override List<ZoneAbstraite> déplacementPossible(ZoneAbstraite zone)
         {
             List<ZoneAbstraite> listeZones = new List<ZoneAbstraite>();
-            foreach(KeyValuePair<int,AccesAbstrait> pair in zone.zonesAdjacentes)
+            /*foreach(KeyValuePair<int,AccesAbstrait> pair in zone.zonesAdjacentes)
             {
                 listeZones.Add(pair.Value.arrivée);
-            }
+            }*/
             return listeZones;
 		}
     }

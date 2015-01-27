@@ -26,7 +26,7 @@ namespace ProjetDesignPattern
         private void button3_Click(object sender, EventArgs e)
         {
 
-            Simulation jeu = new Simulation("Simulation traffic");
+            /*Simulation jeu = new Simulation("Simulation traffic");
             jeu.fab = new FabriqueSimuTrafic();
             jeu.ModuleIHM = new ModuleIHM_Trafic();
             jeu.ModuleIHM.jeu = jeu;
@@ -73,7 +73,7 @@ namespace ProjetDesignPattern
             {
                 System.Threading.Thread.Sleep(500);
                 jeu.TourDeJeu();
-            }
+            }*/
         }
     }
 }

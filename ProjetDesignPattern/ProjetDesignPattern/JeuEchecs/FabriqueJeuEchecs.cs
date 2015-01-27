@@ -58,9 +58,9 @@ namespace ProjetDesignPattern.JeuEchecs
 				personnage.PV = Convert.ToInt32 (_pv);
 				personnage.Position = _position;
 				personnage.idPersonnage = _id;
-				personnage.EtatMajor = new SujetObserveEchec ();
+				personnage.EtatMajor = (SujetObserveAbstrait) personnage;
+				personnage.EtatMajor.observateurList = new List <ObservateurAbstrait>();
 
-				//personnage.etatCourant = _etat;
 			}
 
 			//FAIRE UNE BOUCLE SUR LA LISTE DES ZONNE POUR DEFINIR LA ZONNE 

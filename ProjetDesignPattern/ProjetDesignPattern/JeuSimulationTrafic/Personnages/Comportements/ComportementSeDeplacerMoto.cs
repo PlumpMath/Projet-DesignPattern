@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace ProjetDesignPattern.JeuSimulationTrafic.Personnages
+namespace ProjetDesignPattern.JeuSimulationTrafic
 {
     class ComportementSeDeplacerMoto : ComportementSeDeplacerAbstrait
     {

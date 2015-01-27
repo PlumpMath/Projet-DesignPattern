@@ -1,68 +1,71 @@
 ﻿
 using System.Collections.Generic;
+using System;
+
 namespace ProjetDesignPattern.JeuSimulationTrafic
 {
     public class FabriqueSimuTrafic : FabriqueAbstraite
     {
-        public const int typeFeu = 0;
-        public const int typeCamion = 1;
-        public const int typeVoiture = 2;
-        public const int typeMoto = 3;
+        
 
-        public override PersonnageAbstrait CreerPersonnage(int typePerso, SujetObserveAbstrait unEtatMajor, string unNom, ZoneAbstraite unePosition)
-        {
-            PersonnageAbstrait perso;
-            switch(typePerso){
-                case typeCamion:
-                    perso = new Camion();
-                    break;
-                case typeVoiture:
-                    perso =  new Voiture();
-                    perso.comportementSeDeplacer = new ComportementSeDeplacerVoiture();
-                    perso.comportementSeDeplacer.personnage = perso;
-                    break;
-                case typeMoto:
-                default:
-                    perso = new Moto();
-                    break;
-            }
-            perso.Nom = unNom;
-            perso.Position = unePosition;
-            unePosition.listePersonnages.Add(perso);
+		public override PersonnageAbstrait CreerPersonnage(int _id, string _type, string _nom,string _pv, string _etat,ZoneAbstraite _position, SujetObserveAbstrait EtatMajor)
+		{
+		
+			PersonnageAbstrait personnage;
+			switch(_type){
+			case  "Camion":
+				personnage = new Camion ();
+				personnage.comportementSeDeplacer = new ComportementSeDeplacerCamion ();
+				break;
+			case "Voiture":
+				personnage =  new Voiture();
+				personnage.comportementSeDeplacer = new ComportementSeDeplacerVoiture();
+				break;
+			case "Moto":
+				personnage = new Moto ();
+				personnage.comportementSeDeplacer = new ComportementSeDeplacerMoto ();
+				break;
+			default:
+				personnage = null;
+				break;
+			}
 
-            if(unEtatMajor != null)
-                unEtatMajor.AjouterObservateur(perso);
+			if (personnage != null) {
+				personnage.Nom = _nom;
+				personnage.Position = _position;
+				//personnage.EtatMajor = new SujetObserveEchec ();
+			}
 
-            return perso;
-        }
+			return personnage;
+		}
 
-        public SujetObserveAbstrait CreerSujetObserve()
-        {
-            SujetObserveAbstrait feu = new FeuSignalisation();
+        
 
-            return feu;
-        }
+		public override ZoneAbstraite CreerZone(int _idzone, List<PersonnageAbstrait> _listePersonnages, List<ObjetAbstrait> _listeObjets,int _positionX, int positionY){
+			ZoneAbstraite zone = new PortionDeRoute ();
+			zone.idZone = _idzone;
+			zone.positionX = _positionX;
+			zone.positionY = positionY;
+			return zone;
+		}
 
-        public override ZoneAbstraite CreerZone()
-        {
-            ZoneAbstraite zone = new PortionDeRoute();
-            zone.listePersonnages = new List<PersonnageAbstrait>();
-            zone.listeObjets = new List<ObjetAbstrait>();
-            zone.zonesAdjacentes = new Dictionary<int, AccesAbstrait>();
+        
+		public override AccesAbstrait CreerAcces(ZoneAbstraite _zoneDepart,ZoneAbstraite _zoneArrivee,Boolean _acces)
+		{
+			AccesAbstrait acces = new AccesRoute ();
+			acces.départ = _zoneDepart;
+			acces.arrivée = _zoneArrivee;
+			acces.accès = _acces;
 
-            return zone;
-        }
+			return acces;
+		
+		}
 
-        public override AccesAbstrait CreerAcces(ZoneAbstraite départ, ZoneAbstraite arrivée)
-        {
-            AccesAbstrait acces = new AccesRoute();
-            acces.départ = départ;
-            acces.arrivée = arrivée;
+		public override ObjetAbstrait CreerObjet(string _nom,ZoneAbstraite _position){
+			return null;
+		}
 
-            //Ajout de l'accès à la zone départ
-            départ.zonesAdjacentes.Add(1, acces);
 
-            return acces;
-        }
+
     }
 }
