@@ -58,6 +58,11 @@
     <Compile Include="JeuDefenceTower\ModuleIHMDT.cs" />
     <Compile Include="JeuDefenceTower\ModuleStat_DT.cs" />
     <Compile Include="JeuDefenceTower\Personnages\Comportement\ComportementSeDefendreDT.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Simulation.cs" />
     <Compile Include="FenPrincipale.cs">
       <SubType>Form</SubType>
@@ -100,14 +105,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -123,14 +123,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
     <None Include="Resources\EnnemiVide.png" />
     <None Include="Resources\EnnemiAttaque.png" />
     <None Include="Resources\EnnemiMarche.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Chateau.png" />
-=======
     <None Include="Resources\voiture11.png" />
     <None Include="Resources\voiture1.png" />
     <None Include="Resources\vide.png" />
@@ -138,7 +134,6 @@
     <None Include="Resources\feuV.png" />
     <None Include="Resources\feuV1.png" />
     <Content Include="Resources\voiture.png" />
->>>>>>> remotes/origin/JeuSimulationTrafic
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

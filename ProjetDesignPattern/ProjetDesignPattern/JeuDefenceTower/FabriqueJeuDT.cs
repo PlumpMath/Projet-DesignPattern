@@ -6,14 +6,11 @@ namespace ProjetDesignPattern.JeuDefenceTower
 {
     class FabriqueJeuDT : FabriqueAbstraite
     {
-<<<<<<< HEAD
         public const int typeChateau = 1;
         public const int typeEnnemi = 2;
 
         public override PersonnageAbstrait CreerPersonnage(int typePerso, SujetObserveAbstrait unEtatMajor, string unNom, ZoneAbstraite unePosition)
-=======
-		public override PersonnageAbstrait CreerPersonnage(int _id,string _type, string _nom,string _pv, string _etat, ZoneAbstraite _position, SujetObserveAbstrait EtatMajor)
->>>>>>> remotes/origin/moduleSauvegarde
+
         {
             //château
             if (typePerso == 1)
