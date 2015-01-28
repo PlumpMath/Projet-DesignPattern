@@ -13,6 +13,7 @@ namespace ProjetDesignPattern.JeuDefenceTower
         public int nbMorts;
         public int totalDégâtsAuChâteau;
         public int totalDégâtsAuxEnnemis;
+        public int nbBalles;
 
         public override void RecupererInformation()
         {
@@ -24,6 +25,7 @@ namespace ProjetDesignPattern.JeuDefenceTower
                 {
                     totalDégâtsAuChâteau += ((Chateau)perso).dégatsreçus;
                     vieChateau = perso.PV;
+                    nbBalles = ((Chateau)perso).nbBallesCourant;
                 }
                 if (perso.GetType() == typeof(Ennemi))
                 {

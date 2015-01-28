@@ -1,12 +1,17 @@
 ﻿using System;
 namespace ProjetDesignPattern.JeuDefenceTower
 {
-    abstract class EtatAbstraitDT : EtatAbstrait
+    public abstract class EtatAbstraitDT : EtatAbstrait
     {
-        public abstract void Tirer();
-        public abstract void PlusDeMunitions();
-        public abstract void FinRechargement();
-        public abstract void AttaqueSpecialePlusDégat();
-        public abstract void AttaqueSpecialePlusDeMunitions();
+        
+        public Chateau chateau;
+
+        public EtatAbstraitDT(Chateau lechateau)
+        {
+            chateau = lechateau;
+        }
+
+        public abstract int Tirer();
+        public abstract int AttaqueSpecialePlusDégat();
     }
 }

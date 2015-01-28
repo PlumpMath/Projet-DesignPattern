@@ -4,29 +4,35 @@ namespace ProjetDesignPattern.JeuDefenceTower.Etat
 {
     class EPlusDégat : EtatAbstraitDT
     {
-        public override void Tirer()
+        public EPlusDégat(Chateau c) : base(c) { }
+
+        public override int Tirer()
         {
-            throw new NotImplementedException();
+            if (chateau.nbBallesCourant > 0)
+            {
+                chateau.nbBallesCourant--;
+                return (chateau.ptAttaque * 2);
+            }
+            else
+            {
+                chateau.etatTir = new ERechargement(chateau);
+                return (0);
+            }
         }
 
-        public override void PlusDeMunitions()
+        public override int AttaqueSpecialePlusDégat()
         {
-            throw new NotImplementedException();
+            if (chateau.nbBallesCourant > 0)
+            {
+                chateau.nbBallesCourant--;
+                return (chateau.ptAttaque * 2);
+            }
+            else
+            {
+                chateau.etatTir = new ERechargement(chateau);
+                return (0);
+            }
         }
 
-        public override void FinRechargement()
-        {
-            throw new NotImplementedException();
-        }
-
-        public override void AttaqueSpecialePlusDégat()
-        {
-            throw new NotImplementedException();
-        }
-
-        public override void AttaqueSpecialePlusDeMunitions()
-        {
-            throw new NotImplementedException();
-        }
     }
 }

@@ -1,32 +1,23 @@
 ﻿using System;
+using System.Windows.Forms;
 
 namespace ProjetDesignPattern.JeuDefenceTower.Etat
 {
     class ERechargement : EtatAbstraitDT
     {
-        public override void Tirer()
+        public ERechargement(Chateau c) : base(c) { }
+
+        public override int Tirer()
         {
-            throw new NotImplementedException();
+            MessageBox.Show("Plus de balles");
+            return 0;
         }
 
-        public override void PlusDeMunitions()
+        public override int AttaqueSpecialePlusDégat()
         {
-            throw new NotImplementedException();
+            MessageBox.Show("Plus de balles");
+            return 0;
         }
 
-        public override void FinRechargement()
-        {
-            throw new NotImplementedException();
-        }
-
-        public override void AttaqueSpecialePlusDégat()
-        {
-            throw new NotImplementedException();
-        }
-
-        public override void AttaqueSpecialePlusDeMunitions()
-        {
-            throw new NotImplementedException();
-        }
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ProjetDesignPattern.JeuDefenceTower.Etat;
 
 namespace ProjetDesignPattern.JeuDefenceTower
 {
@@ -74,8 +75,17 @@ namespace ProjetDesignPattern.JeuDefenceTower
                 //si tu t'es pris un dégât -> baisse tes points de vie
                 if (touché)
                 {
-                    PV -= chateau.ptAttaque;
-                    dégatreçus += chateau.ptAttaque;
+                    //PV -= chateau.ptAttaque;
+                    PV -= chateau.Tirer();
+                    if (chateau.etatTir.GetType() == typeof(EPlusDégat))
+                    {
+                        dégatreçus += chateau.ptAttaque*2;
+                    }
+                    else
+                    {
+                        dégatreçus += chateau.ptAttaque;
+                    }
+                    
                     touché = false;
                 }
                 //si tu est prêt du château -> attaque

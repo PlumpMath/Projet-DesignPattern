@@ -135,17 +135,25 @@ namespace ProjetDesignPattern
 
 
             Chateau chateau = (Chateau)jeu.fab.CreerPersonnage(1, null, "chateau", zonechateau);
-            chateau.initChateau(10, 10);
+            chateau.initChateau(10, 10,1);
             Ennemi ennemi = (Ennemi)jeu.fab.CreerPersonnage(2,null,"ennemi",zone1);
             ennemi.initEnnemi(chateau, 10, 1,2);
             zone1.attacherEnnemi(ennemi);
             Ennemi ennemi2 = (Ennemi)jeu.fab.CreerPersonnage(2, null, "ennemi2", zone1);
             ennemi2.initEnnemi(chateau, 10, 1, 2);
             zone1.attacherEnnemi(ennemi2);
+            Ennemi ennemi3 = (Ennemi)jeu.fab.CreerPersonnage(2, null, "ennemi3", zone1);
+            ennemi3.initEnnemi(chateau, 10, 1, 2);
+            zone1.attacherEnnemi(ennemi3);
+            Ennemi ennemi4 = (Ennemi)jeu.fab.CreerPersonnage(2, null, "ennemi4", zone1);
+            ennemi4.initEnnemi(chateau, 10, 1, 2);
+            zone1.attacherEnnemi(ennemi4);
 
             jeu.listePersonnages.Add(chateau);
             jeu.listePersonnages.Add(ennemi);
             jeu.listePersonnages.Add(ennemi2);
+            jeu.listePersonnages.Add(ennemi3);
+            jeu.listePersonnages.Add(ennemi4);
             //jeu.Afficher();
             m_oWorker.RunWorkerAsync();
             

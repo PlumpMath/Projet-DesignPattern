@@ -30,6 +30,11 @@ namespace ProjetDesignPattern.JeuDefenceTower
             }
         }
 
+        private void Recharger_Click(object sender, EventArgs e)
+        {
+            Chateau chateau = (Chateau)simDT.listePersonnages.Find(c => c.GetType() == typeof(Chateau));
+            chateau.Recharger();
+        }
 
         private void z90_Click(object sender, EventArgs e)
         {

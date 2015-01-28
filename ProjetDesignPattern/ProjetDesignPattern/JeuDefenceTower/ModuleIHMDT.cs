@@ -61,6 +61,7 @@ namespace ProjetDesignPattern.JeuDefenceTower
             ihm.degatEnnemi.Text = ((ModuleStat_DT)jeu.ModuleStats).totalDégâtsAuxEnnemis.ToString();
             ihm.degatChateau.Text = ((ModuleStat_DT)jeu.ModuleStats).totalDégâtsAuChâteau.ToString();
             ihm.morts.Text = ((ModuleStat_DT)jeu.ModuleStats).nbMorts.ToString();
+            ihm.nbBalles.Text = ((ModuleStat_DT)jeu.ModuleStats).nbBalles.ToString();
 
             //ihm.ShowDialog();
             ihm.Show();

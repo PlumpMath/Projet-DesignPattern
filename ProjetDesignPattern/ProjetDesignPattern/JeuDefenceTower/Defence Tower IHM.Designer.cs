@@ -139,8 +139,7 @@
             this.z12 = new System.Windows.Forms.PictureBox();
             this.z11 = new System.Windows.Forms.PictureBox();
             this.z10 = new System.Windows.Forms.PictureBox();
-            this.zoneApparition = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.Recharger = new System.Windows.Forms.Button();
             this.vieChateau = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -149,6 +148,8 @@
             this.degatChateau = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.morts = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.nbBalles = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.chateau)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.z90)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.z91)).BeginInit();
@@ -260,7 +261,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.z12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.z11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.z10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.zoneApparition)).BeginInit();
             this.SuspendLayout();
             // 
             // chateau
@@ -1262,22 +1262,15 @@
             this.z10.TabStop = false;
             this.z10.Click += new System.EventHandler(this.z10_Click);
             // 
-            // zoneApparition
+            // Recharger
             // 
-            this.zoneApparition.Location = new System.Drawing.Point(12, 362);
-            this.zoneApparition.Name = "zoneApparition";
-            this.zoneApparition.Size = new System.Drawing.Size(330, 50);
-            this.zoneApparition.TabIndex = 111;
-            this.zoneApparition.TabStop = false;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(401, 362);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(62, 29);
-            this.button1.TabIndex = 112;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.Recharger.Location = new System.Drawing.Point(358, 153);
+            this.Recharger.Name = "Recharger";
+            this.Recharger.Size = new System.Drawing.Size(73, 29);
+            this.Recharger.TabIndex = 112;
+            this.Recharger.Text = "Recharger";
+            this.Recharger.UseVisualStyleBackColor = true;
+            this.Recharger.Click += new System.EventHandler(this.Recharger_Click);
             // 
             // vieChateau
             // 
@@ -1298,7 +1291,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(353, 65);
+            this.label2.Location = new System.Drawing.Point(353, 89);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(129, 13);
             this.label2.TabIndex = 118;
@@ -1306,7 +1299,7 @@
             // 
             // degatEnnemi
             // 
-            this.degatEnnemi.Location = new System.Drawing.Point(486, 62);
+            this.degatEnnemi.Location = new System.Drawing.Point(486, 86);
             this.degatEnnemi.Name = "degatEnnemi";
             this.degatEnnemi.Size = new System.Drawing.Size(62, 20);
             this.degatEnnemi.TabIndex = 117;
@@ -1314,7 +1307,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(353, 92);
+            this.label3.Location = new System.Drawing.Point(353, 116);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(129, 13);
             this.label3.TabIndex = 120;
@@ -1322,7 +1315,7 @@
             // 
             // degatChateau
             // 
-            this.degatChateau.Location = new System.Drawing.Point(486, 92);
+            this.degatChateau.Location = new System.Drawing.Point(486, 116);
             this.degatChateau.Name = "degatChateau";
             this.degatChateau.Size = new System.Drawing.Size(62, 20);
             this.degatChateau.TabIndex = 119;
@@ -1330,7 +1323,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(355, 38);
+            this.label4.Location = new System.Drawing.Point(355, 62);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(39, 13);
             this.label4.TabIndex = 122;
@@ -1338,16 +1331,34 @@
             // 
             // morts
             // 
-            this.morts.Location = new System.Drawing.Point(421, 35);
+            this.morts.Location = new System.Drawing.Point(421, 59);
             this.morts.Name = "morts";
             this.morts.Size = new System.Drawing.Size(62, 20);
             this.morts.TabIndex = 121;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(349, 36);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(41, 13);
+            this.label5.TabIndex = 124;
+            this.label5.Text = "Balles :";
+            // 
+            // nbBalles
+            // 
+            this.nbBalles.Location = new System.Drawing.Point(420, 33);
+            this.nbBalles.Name = "nbBalles";
+            this.nbBalles.Size = new System.Drawing.Size(62, 20);
+            this.nbBalles.TabIndex = 123;
             // 
             // FormDT
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(551, 412);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.nbBalles);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.morts);
             this.Controls.Add(this.label3);
@@ -1356,8 +1367,7 @@
             this.Controls.Add(this.degatEnnemi);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.vieChateau);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.zoneApparition);
+            this.Controls.Add(this.Recharger);
             this.Controls.Add(this.z010);
             this.Controls.Add(this.z09);
             this.Controls.Add(this.z08);
@@ -1582,7 +1592,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.z12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.z11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.z10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.zoneApparition)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1709,8 +1718,9 @@
         public System.Windows.Forms.PictureBox z12;
         public System.Windows.Forms.PictureBox z11;
         public System.Windows.Forms.PictureBox z10;
-        public System.Windows.Forms.PictureBox zoneApparition;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button Recharger;
+        private System.Windows.Forms.Label label5;
+        public System.Windows.Forms.TextBox nbBalles;
 
     }
 }

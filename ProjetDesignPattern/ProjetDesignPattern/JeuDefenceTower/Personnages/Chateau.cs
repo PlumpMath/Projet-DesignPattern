@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProjetDesignPattern.JeuDefenceTower.Etat;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,36 +14,44 @@ namespace ProjetDesignPattern.JeuDefenceTower
         public int ptAttaque;
         private bool mort = false;
         public int dégatsreçus = 0;
-        public Ennemi ennemiAtk;
+        public int nbBallesTotal;
+        public int nbBallesCourant = 0;
+        public EtatAbstraitDT etatTir;
 
         public Chateau(string _nom, int _pv, int _atq)
         {
             PV=_pv;
             Nom = _nom;
             ptAttaque = _atq;
-            comportementSeDeplacer = new ComportementSeDeplacerAPiedDT();
+            /*comportementSeDeplacer = new ComportementSeDeplacerAPiedDT();
             comportementCombattre = new ComportementCombattreDT();
-            comporterSeDefendre = new ComportementSeDefendreDT();
+            comporterSeDefendre = new ComportementSeDefendreDT();*/
             Position = new ZoneDT();
             Position.positionX = 10;
             Position.positionY = 10;
+            etatTir= new EChargeurNonVide(this);
+            nbBallesTotal = 10;
         }
 
         public Chateau(string _nom)
         {
             Nom = Nom;
-            comportementSeDeplacer = new ComportementSeDeplacerAPiedDT();
+            /*comportementSeDeplacer = new ComportementSeDeplacerAPiedDT();
             comportementCombattre = new ComportementCombattreDT();
-            comporterSeDefendre = new ComportementSeDefendreDT();
+            comporterSeDefendre = new ComportementSeDefendreDT();*/
             Position = new ZoneDT();
             Position.positionX = 10;
             Position.positionY = 10;
+            etatTir = new EChargeurNonVide(this);
+            nbBallesTotal = 10;
         }
 
-        public void initChateau(int _pv, int _atq)
+        public void initChateau(int _pv, int _atq,int nbballes)
         {
             PV = _pv;
             ptAttaque = _atq;
+            nbBallesTotal = nbballes;
+            nbBallesCourant = nbBallesTotal;
         }
 
         public override void AnalyserSituation()
@@ -65,8 +74,6 @@ namespace ProjetDesignPattern.JeuDefenceTower
 
                 dégatsreçus = 0;
             }
-            //si tu a cliquer sur un ennemi -> attaque
-            //if (clicAtk) comportementCombattre.combattre(ptAttaque, (PersonnageAbstrait)ennemiAtk);
             //si sort : change d'état le tire
             
         }
@@ -74,6 +81,22 @@ namespace ProjetDesignPattern.JeuDefenceTower
         public override void MiseAJour()
         {
             
+        }
+
+        public int Tirer()
+        {
+            return etatTir.Tirer();
+        }
+
+        public void Recharger()
+        {
+            etatTir = new ERechargement(this);
+            for (int i = 0; i < nbBallesTotal; i++)
+            {
+                System.Threading.Thread.Sleep(100);
+                nbBallesCourant++;
+            }
+            etatTir = new EChargeurNonVide(this);
         }
     }
 }
