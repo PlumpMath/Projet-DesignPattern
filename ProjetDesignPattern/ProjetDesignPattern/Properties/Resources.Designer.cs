@@ -44,6 +44,91 @@ namespace ProjetDesignPattern {
             set {
                 resourceCulture = value;
             }
-        }
+		}
+
+		internal static System.Drawing.Bitmap BB {
+			get {
+				object obj = ResourceManager.GetObject("BB", resourceCulture);
+				return ((System.Drawing.Bitmap)(obj));
+			}
+		}
+
+		internal static System.Drawing.Bitmap BC {
+			get {
+				object obj = ResourceManager.GetObject("BC", resourceCulture);
+				return ((System.Drawing.Bitmap)(obj));
+			}
+		}
+
+		internal static System.Drawing.Bitmap BK {
+			get {
+				object obj = ResourceManager.GetObject("BK", resourceCulture);
+				return ((System.Drawing.Bitmap)(obj));
+			}
+		}
+
+		internal static System.Drawing.Bitmap BP {
+			get {
+				object obj = ResourceManager.GetObject("BP", resourceCulture);
+				return ((System.Drawing.Bitmap)(obj));
+			}
+		}
+
+		internal static System.Drawing.Bitmap BQ {
+			get {
+				object obj = ResourceManager.GetObject("BQ", resourceCulture);
+				return ((System.Drawing.Bitmap)(obj));
+			}
+		}
+
+		internal static System.Drawing.Bitmap BR {
+			get {
+				object obj = ResourceManager.GetObject("BR", resourceCulture);
+				return ((System.Drawing.Bitmap)(obj));
+			}
+		}
+		//////////////////////
+
+		internal static System.Drawing.Bitmap WB {
+			get {
+				object obj = ResourceManager.GetObject("WB", resourceCulture);
+				return ((System.Drawing.Bitmap)(obj));
+			}
+		}
+
+		internal static System.Drawing.Bitmap WC {
+			get {
+				object obj = ResourceManager.GetObject("WC", resourceCulture);
+				return ((System.Drawing.Bitmap)(obj));
+			}
+		}
+
+		internal static System.Drawing.Bitmap WK {
+			get {
+				object obj = ResourceManager.GetObject("WK", resourceCulture);
+				return ((System.Drawing.Bitmap)(obj));
+			}
+		}
+
+		internal static System.Drawing.Bitmap WP {
+			get {
+				object obj = ResourceManager.GetObject("WP", resourceCulture);
+				return ((System.Drawing.Bitmap)(obj));
+			}
+		}
+
+		internal static System.Drawing.Bitmap WQ {
+			get {
+				object obj = ResourceManager.GetObject("WQ", resourceCulture);
+				return ((System.Drawing.Bitmap)(obj));
+			}
+		}
+
+		internal static System.Drawing.Bitmap WR {
+			get {
+				object obj = ResourceManager.GetObject("WR", resourceCulture);
+				return ((System.Drawing.Bitmap)(obj));
+			}
+		}
     }
 }
