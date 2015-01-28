@@ -163,6 +163,9 @@
     <Compile Include="JeuSimulationTrafic\Personnages\Véhicule.cs" />
     <Compile Include="JeuSimulationTrafic\Personnages\Comportements\ComportementSeDeplacerVoiture.cs" />
     <Compile Include="JeuSimulationTrafic\FabriqueSimuTrafic.cs" />
+    <None Include="Properties\Resources.resources" />
+    <Compile Include="JeuSimulationTrafic\AccesRoute.cs" />
+    <Compile Include="JeuSimulationTrafic\PortionDeRoute.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
