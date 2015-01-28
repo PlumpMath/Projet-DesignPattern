@@ -5,18 +5,18 @@ namespace ProjetDesignPattern.JeuEchecs
 {
     class FabriqueJeuEchecs : FabriqueAbstraite
 	{
-		public const int typePion = 0;
-		public const int typeTour = 1;
-		public const int typeCavalier = 2;
-		public const int typeFou = 3;
-		public const int typeRoi = 4;
-		public const int typeReine = 5;
+		public const string typePion = "0";
+		public const string typeTour = "1";
+		public const string typeCavalier = "2";
+		public const string typeFou = "3";
+		public const string typeRoi = "4";
+		public const string typeReine = "5";
 
         
 		public override PersonnageAbstrait CreerPersonnage(int _id, string _type, string _nom,string _pv, string _etat,ZoneAbstraite _position, SujetObserveAbstrait EtatMajor)
         {
 			PersonnageAbstrait piece = null;
-			switch (typePerso) {
+			switch (_type) {
 			case typePion:
 				piece = new Pion ();
 				piece.comportementCombattre = new AttaqueBasique ();
@@ -55,41 +55,50 @@ namespace ProjetDesignPattern.JeuEchecs
 				break;
 			}
 			if (piece != null) {
-				piece.Nom = unNom;
-				piece.Position = unePosition;
-				unePosition.listePersonnages.Add(piece);
+				piece.Nom = _nom;
+				piece.Position = _position;
+				_position.listePersonnages.Add(piece);
 			}
 			return piece;
         }
 
-		public override ZoneAbstraite CreerZone(int _idzone, List<PersonnageAbstrait> _listePersonnages, List<ObjetAbstrait> _listeObjets,int _positionX, int positionY)
+		public override ZoneAbstraite CreerZone(int _idzone, List<PersonnageAbstrait> _listePersonnages, List<ObjetAbstrait> _listeObjets,int _positionX, int _positionY)
         {
 			ZoneAbstraite zone = new Case ();
+			zone.listePersonnages = _listePersonnages;
+			zone.listeObjets = _listeObjets;
+			zone.positionX = _positionX;
+			zone.positionY = _positionY;
+
 			return zone;
         }
 		public override AccesAbstrait CreerAcces(ZoneAbstraite _zoneDepart,ZoneAbstraite _zoneArrivee,Boolean _acces)
         {
 			AccesAbstrait acces = new AccesCase();
-			acces.départ = départ;
-			acces.arrivée = arrivée;
+			acces.départ = _zoneDepart;
+			acces.arrivée = _zoneArrivee;
 			acces.accès = true;
 
 			int id;
-			if (départ.positionX != arrivée.positionX) {
-				if (départ.positionX < arrivée.positionX)
+			if (_zoneDepart.positionX != _zoneArrivee.positionX) {
+				if (_zoneDepart.positionX < _zoneArrivee.positionX)
 					id = 6;
 				else
 					id = 4;
 			} else {
-				if (départ.positionY < arrivée.positionY)
+				if (_zoneDepart.positionY < _zoneArrivee.positionY)
 					id = 8;
 				else
 					id = 2;
 			}
 			//Ajout de l'accès à la zone départ
-			départ.zonesAdjacentes.Add(id, acces);
+			_zoneDepart.zonesAdjacentes.Add(id, acces);
 
 			return acces;
         }
+
+		public override ObjetAbstrait CreerObjet(string _nom,ZoneAbstraite _position){
+			return null;
+		}
     }
 }

@@ -32,6 +32,7 @@ namespace ProjetDesignPattern.JeuEchecs
 					cases[i].TabIndex = i;
 					cases[i].TabStop = false;
 					cases[i].Click += new System.EventHandler(this.imageClick);
+					cases[i].BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
 					if (jeu.listeZones [i].positionX % 2 == 0) {
 						if (jeu.listeZones [i].positionY % 2 == 0) {
 							cases [i].BackColor = System.Drawing.Color.DarkGray;
@@ -49,29 +50,29 @@ namespace ProjetDesignPattern.JeuEchecs
 					if (jeu.listeZones [i].listePersonnages.Count > 0) {
 						PersonnageAbstrait p = jeu.listeZones [i].listePersonnages [0];
 						 if (p.Nom == "BB") {
-							cases [i].BackgroundImage = ProjetDesignPattern.Resources.BB;
+							cases [i].BackgroundImage = ProjetDesignPattern.Properties.Resources.BB;
 						} else if (p.Nom == "BC") {
-							cases [i].BackgroundImage = ProjetDesignPattern.Resources.BC;
+							cases [i].BackgroundImage = ProjetDesignPattern.Properties.Resources.BC;
 						} else if (p.Nom == "BK") {
-							cases [i].BackgroundImage = ProjetDesignPattern.Resources.BK;
+							cases [i].BackgroundImage = ProjetDesignPattern.Properties.Resources.BK;
 						} else if (p.Nom == "BP") {
-							cases [i].BackgroundImage = ProjetDesignPattern.Resources.BP;
+							cases [i].BackgroundImage = ProjetDesignPattern.Properties.Resources.BP;
 						} else if (p.Nom == "BQ") {
-							cases [i].BackgroundImage = ProjetDesignPattern.Resources.BQ;
+							cases [i].BackgroundImage = ProjetDesignPattern.Properties.Resources.BQ;
 						} else if (p.Nom == "BR") {
-							cases [i].BackgroundImage = ProjetDesignPattern.Resources.BR;
+							cases [i].BackgroundImage = ProjetDesignPattern.Properties.Resources.BR;
 						} else if (p.Nom == "WB") {
-							cases [i].BackgroundImage = ProjetDesignPattern.Resources.WB;
+							cases [i].BackgroundImage = ProjetDesignPattern.Properties.Resources.WB;
 						} else if (p.Nom == "WC") {
-							cases [i].BackgroundImage = ProjetDesignPattern.Resources.WC;
+							cases [i].BackgroundImage = ProjetDesignPattern.Properties.Resources.WC;
 						} else if (p.Nom == "WK") {
-							cases [i].BackgroundImage = ProjetDesignPattern.Resources.WK;
+							cases [i].BackgroundImage = ProjetDesignPattern.Properties.Resources.WK;
 						} else if (p.Nom == "WP") {
-							cases [i].BackgroundImage = ProjetDesignPattern.Resources.WP;
+							cases [i].BackgroundImage = ProjetDesignPattern.Properties.Resources.WP;
 						} else if (p.Nom == "WQ") {
-							cases [i].BackgroundImage = ProjetDesignPattern.Resources.WQ;
+							cases [i].BackgroundImage = ProjetDesignPattern.Properties.Resources.WQ;
 						} else if (p.Nom == "WR") {
-							cases [i].BackgroundImage = ProjetDesignPattern.Resources.WR;
+							cases [i].BackgroundImage = ProjetDesignPattern.Properties.Resources.WR;
 						} 
 					}
 
