@@ -2,8 +2,9 @@
 
 namespace ProjetDesignPattern
 {
-    public abstract class PersonnageAbstrait : ObservateurAbstrait
+     public abstract class PersonnageAbstrait : ObservateurAbstrait
     {
+		public int idPersonnage { get; set; }
         public String Nom { get; set; }
         public int PV { get; set; }
 
