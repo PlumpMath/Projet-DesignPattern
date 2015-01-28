@@ -2,23 +2,54 @@
 {
     class FeuSignalisation : SujetObserveAbstrait
     {
+        public const int vert = 0;
+        public const int rouge = 1;
+
+        bool doitPasserAuRouge;
 
         public override void AnalyserSituation()
         {
-            // Si autre feu est rouge et soi même vert
-            // on doit passer rouge
+            if (EtatMajor != null && EtatMajor.EtatMajor == null)
+            {
+                EtatMajor.EtatMajor = this;
+                this.AjouterObservateur(EtatMajor);
+
+            }
+
+            if (Etat == FeuSignalisation.vert)
+            {
+                if (PV == 0)
+                {
+                    PV = 10;
+                    doitPasserAuRouge = true;
+                }
+                PV--;
+            }
         }
 
         public override void Execution()
         {
-            // S'il doit passer au rouge
-            // on passe rouge
-            // on notifie les observateurs
+            if (doitPasserAuRouge)
+            {
+                Etat = FeuSignalisation.rouge;
+            }
+            else
+            {
+                Etat = FeuSignalisation.vert;
+            }
+            Notifier();
         }
 
         public override void MiseAJour()
         {
-            // Si autre feu est rouge, on passe au vert
+            if (EtatMajor.Etat == FeuSignalisation.vert)
+            {
+                doitPasserAuRouge = true;
+            }
+            else
+            {
+                doitPasserAuRouge = false;
+            }
         }
     }
 }

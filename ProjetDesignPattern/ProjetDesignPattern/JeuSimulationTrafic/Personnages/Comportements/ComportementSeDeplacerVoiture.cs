@@ -18,7 +18,20 @@ namespace ProjetDesignPattern.JeuSimulationTrafic
             List<ZoneAbstraite> listeZones = new List<ZoneAbstraite>();
             foreach(KeyValuePair<int,AccesAbstrait> pair in zone.zonesAdjacentes)
             {
-                listeZones.Add(pair.Value.arrivée);
+                List<PersonnageAbstrait> persos = pair.Value.arrivée.listePersonnages;
+                bool emplacementLibre = true;
+                foreach(PersonnageAbstrait p in persos){
+                    if (p.GetType() != typeof(FeuSignalisation))
+                    {
+                        emplacementLibre = false;
+                    }
+                    else
+                    {
+                        emplacementLibre = ((FeuSignalisation)p).Etat == FeuSignalisation.vert;
+                    }
+                }
+                if (emplacementLibre)
+                    listeZones.Add(pair.Value.arrivée);
             }
             return listeZones;
 		}

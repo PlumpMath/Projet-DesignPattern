@@ -5,7 +5,7 @@ namespace ProjetDesignPattern
 {
     public abstract class SujetObserveAbstrait : PersonnageAbstrait
     {
-
+        public int Etat;
         private List<ObservateurAbstrait> observateurList = new List<ObservateurAbstrait>();
 
         public void AjouterObservateur(ObservateurAbstrait unObservateur)

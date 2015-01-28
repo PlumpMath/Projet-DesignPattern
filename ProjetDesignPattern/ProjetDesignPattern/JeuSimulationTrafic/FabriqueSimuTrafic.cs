@@ -12,9 +12,13 @@ namespace ProjetDesignPattern.JeuSimulationTrafic
         public override PersonnageAbstrait CreerPersonnage(int typePerso, SujetObserveAbstrait unEtatMajor, string unNom, ZoneAbstraite unePosition)
         {
             PersonnageAbstrait perso;
-            switch(typePerso){
+            switch (typePerso)
+            {
                 case typeCamion:
                     perso = new Camion();
+                    break;
+                case typeFeu:
+                    perso = new FeuSignalisation();
                     break;
                 case typeVoiture:
                     perso =  new Voiture();
@@ -30,8 +34,11 @@ namespace ProjetDesignPattern.JeuSimulationTrafic
             perso.Position = unePosition;
             unePosition.listePersonnages.Add(perso);
 
-            if(unEtatMajor != null)
+            if (unEtatMajor != null)
+            {
                 unEtatMajor.AjouterObservateur(perso);
+                perso.EtatMajor = unEtatMajor;
+            }
 
             return perso;
         }
