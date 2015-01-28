@@ -9,14 +9,15 @@ namespace ProjetDesignPattern.JeuEchecs
 {
 	public class ModuleIHM_Echecs : ModuleIHMAbstrait
 	{
-		FormDT ihm;
+		IHM_Echecs ihm;
 
-		public ModuleIHM_Echecs ()
-		{
+		public ModuleIHM_Echecs(){
 		}
 
 		public override void afficher(){
-
+			ihm = new IHM_Echecs(this.jeu);
+			ihm.Show();
+			ihm.Refresh();
 		}
 	}
 }

@@ -37,8 +37,11 @@ namespace ProjetDesignPattern
 
 			for (int i = 0; i < 8; i++) {
 				zones[i] = new ZoneAbstraite[8];
-				for(int j = 0 ; j < 8 ; j++)
-					zones[i][j] = jeu.fab.CreerZone();
+				for (int j = 0; j < 8; j++) {
+					zones [i] [j] = jeu.fab.CreerZone ();
+					zones [i] [j].positionX = i;
+					zones [i] [j].positionY = j;
+				}
 			}
 
 			for (int i = 0; i < 8; i++) {
@@ -95,7 +98,6 @@ namespace ProjetDesignPattern
 		}
         private void button3_Click(object sender, EventArgs e)
         {
-
             /*Simulation jeu = new Simulation("Simulation traffic");
             jeu.fab = new FabriqueSimuTrafic();
             jeu.ModuleIHM = new ModuleIHM_Trafic();
