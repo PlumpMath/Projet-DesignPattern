@@ -13,12 +13,15 @@ namespace ProjetDesignPattern
 		{
 			setName (name);
 		}
+		public Location(int x, int y){
+			this.x = x;
+			this.y = y;
+			name = x + "," + y;
+		}
 
 		public void setName(string value){
 			this.name = value;
 			String[] tmp = this.name.Split(',');
-			Console.WriteLine (tmp [0]);
-			Console.WriteLine (tmp [1]);
 			this.x = int.Parse (tmp [0]);
 			this.y = int.Parse (tmp [1]);
 		}

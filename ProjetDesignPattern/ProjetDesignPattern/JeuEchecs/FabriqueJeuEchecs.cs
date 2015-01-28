@@ -20,7 +20,7 @@ namespace ProjetDesignPattern.JeuEchecs
 			case typePion:
 				piece = new Pion ();
 				piece.comportementCombattre = new AttaqueBasique ();
-				piece.comportementSeDeplacer = new DeplacementPion ();
+				piece.comportementSeDeplacer = new DeplacementPion (_nom[0] == 'W');
 				piece.comporterSeDefendre = new AucuneDefense ();
 				break;
 			case typeTour:
