@@ -34,11 +34,11 @@ namespace ProjetDesignPattern.JeuDefenceTower
 		public override AccesAbstrait CreerAcces(ZoneAbstraite _zoneDepart,ZoneAbstraite _zoneArrivee,Boolean _acces)
         {
             AccesAbstrait acces = new AccesDT();
-            acces.départ = départ;
-            acces.arrivée = arrivée;
+            acces.départ = _zoneDepart;
+            acces.arrivée = _zoneArrivee;
 
             //Ajout de l'accès à la zone départ
-            départ.zonesAdjacentes.Add(1, acces);
+            acces.départ.zonesAdjacentes.Add(1, acces);
 
             return acces;
         }

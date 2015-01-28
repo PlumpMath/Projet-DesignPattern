@@ -17,24 +17,17 @@ namespace ProjetDesignPattern
       /*  [STAThread]
         static void Main()
         {
-<<<<<<< HEAD
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new FenPrincipale());
             //ChargementJeu c = new ChargementJeu();
            
         }
-=======
-            //Application.EnableVisualStyles();
-            //Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new FenPrincipale());
-			Console.WriteLine ("Hello World!");
 
         }*/
 
 		public static void Main (string[] args)
 		{
-
 			Simulation sim = new Simulation ("zea");
 
 			//sim.chargerSimulation("Users/alexandredubois/workspace_C/CS/ProjetPattern/ProjetDesignPattern/ProjetDesignPattern/sauvegardes/structure_sauvegarde.xml");
@@ -45,6 +38,5 @@ namespace ProjetDesignPattern
 			Console.WriteLine("Press any key to exit.");
 			Console.ReadKey();
 		}
->>>>>>> remotes/origin/moduleSauvegarde
     }
 }

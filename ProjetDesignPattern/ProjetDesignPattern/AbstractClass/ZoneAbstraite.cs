@@ -10,7 +10,7 @@ namespace ProjetDesignPattern
         public List<ObjetAbstrait> listeObjets;
 		public List<AccesAbstrait> listeAccess;
 
-		//Dictionary<int, AccesAbstrait> zonesAdjacentes { get; set; }
+        public Dictionary<int, AccesAbstrait> zonesAdjacentes { get; set; }
         public int positionX;
         public int positionY;
 	
