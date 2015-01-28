@@ -2,7 +2,6 @@
 using System.Xml.XPath;
 using System.Xml;
 using System.IO;
-using System.Xml;
 
 namespace ProjetDesignPattern
 {

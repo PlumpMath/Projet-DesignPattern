@@ -1,14 +1,9 @@
 ﻿using ProjetDesignPattern.JeuDefenceTower;
-using ProjetDesignPattern.JeuSimulationTrafic;
 using ProjetDesignPattern.JeuEchecs;
+using ProjetDesignPattern.JeuSimulationTrafic;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ProjetDesignPattern
@@ -217,10 +212,19 @@ namespace ProjetDesignPattern
             jeu.listePersonnages.Add(feu2);
 
 
-            m_oWorker.RunWorkerAsync();
-
+           m_oWorker.RunWorkerAsync();
+/*
+            for (int i = 0; i < 30; i++)
+            {
+                System.Console.WriteLine("test");
+                System.Threading.Thread.Sleep(1000);
+                jeu.TourDeJeu();
+                jeu.Afficher();
+            }
+*/
         }
-private void button2_Click(object sender, EventArgs e)
+
+        private void button2_Click(object sender, EventArgs e)
 		{
 			Simulation jeu = new Simulation ("Simulation echec");
 			jeu.fab = new FabriqueJeuEchecs ();
