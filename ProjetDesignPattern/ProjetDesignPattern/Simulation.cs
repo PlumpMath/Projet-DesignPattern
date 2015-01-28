@@ -44,6 +44,7 @@ namespace ProjetDesignPattern
             {
                 conflit.Mediation();
             }
+
             foreach (ObjetAbstrait objet in listeObjets)
             {
                 objet.MiseAJour();

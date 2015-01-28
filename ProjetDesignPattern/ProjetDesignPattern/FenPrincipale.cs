@@ -1,5 +1,8 @@
+
 ﻿//using ProjetDesignPattern.JeuSimulationTrafic;
 using ProjetDesignPattern.JeuDefenceTower;
+using ProjetDesignPattern.JeuEchecs;
+
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -237,7 +240,78 @@ namespace ProjetDesignPattern
             
             */
         }
+private void button2_Click(object sender, EventArgs e)
+		{
+			Simulation jeu = new Simulation ("Simulation echec");
+			jeu.fab = new FabriqueJeuEchecs ();
+			jeu.ModuleIHM = new ModuleIHM_Echecs ();
+			jeu.ModuleIHM.jeu = jeu;
 
+			jeu.ModuleStats = new ModuleStats_Echecs ();
+			jeu.ModuleStats.jeu = jeu;
+
+
+			ZoneAbstraite[][] zones = new ZoneAbstraite [8][];
+
+			for (int i = 0; i < 8; i++) {
+				zones[i] = new ZoneAbstraite[8];
+				for (int j = 0; j < 8; j++) {
+					zones [i] [j] = jeu.fab.CreerZone (0, new List<PersonnageAbstrait> (), null, i, j);
+				}
+			}
+
+			for (int i = 0; i < 8; i++) {
+				for (int j = 0; j < 8; j++) {
+					if( i - 1 >= 0)
+						jeu.fab.CreerAcces(zones[i][j], zones[i - 1][j], true);
+					if( i + 1 <= 7)
+						jeu.fab.CreerAcces(zones[i][j], zones[i + 1][j], true);
+					if( j - 1 >= 0)
+						jeu.fab.CreerAcces(zones[i][j], zones[i][j - 1], true);
+					if( j + 1 <= 7)
+						jeu.fab.CreerAcces(zones[i][j], zones[i][j + 1], true);
+				}
+			}
+			for (int i = 0; i < 8; i++) 
+				for (int j = 0; j < 8; j++) 
+					jeu.listeZones.Add(zones[i][j]);
+			int y;
+			String color, piece, type;
+			for (int i = 0; i < 2; i++) {
+				if (i == 0) {
+					color = "W";
+					y = 0;
+				} else {
+					color = "B";
+					y = 7;
+				}
+				for (int j = 0; j < 8; j++) {
+					if (i == 0) {
+						jeu.listePersonnages.Add(jeu.fab.CreerPersonnage (0, FabriqueJeuEchecs.typePion, "WP", null, null, zones [j] [1], null));
+					} else {
+						jeu.listePersonnages.Add(jeu.fab.CreerPersonnage (0, FabriqueJeuEchecs.typePion, "BP", null, null, zones [j] [6], null));
+					}
+					if (j == 0 || j == 7) {
+						piece = "R";
+						type = FabriqueJeuEchecs.typeTour;
+					} else if(j == 1 || j == 6){
+						piece = "C";
+						type = FabriqueJeuEchecs.typeCavalier;
+					} else if(j == 2 || j == 5){
+						piece = "B";
+						type = FabriqueJeuEchecs.typeFou;
+					} else if(j == 3){
+						piece = "K";
+						type = FabriqueJeuEchecs.typeRoi;
+					} else {
+						piece = "Q";
+						type = FabriqueJeuEchecs.typeReine;
+					}
+					jeu.listePersonnages.Add(jeu.fab.CreerPersonnage (0, type, color + piece, null, null, zones [j] [y], null));
+				}
+			}
+			jeu.Afficher ();
+		}
 
     }
 }

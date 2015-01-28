@@ -13,6 +13,5 @@ namespace ProjetDesignPattern
         public Dictionary<int, AccesAbstrait> zonesAdjacentes { get; set; }
         public int positionX;
         public int positionY;
-	
     }
 }

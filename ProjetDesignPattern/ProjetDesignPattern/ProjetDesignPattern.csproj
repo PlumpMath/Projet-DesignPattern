@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -40,7 +40,6 @@
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
@@ -59,24 +58,6 @@
     <Compile Include="JeuDefenceTower\ModuleIHMDT.cs" />
     <Compile Include="JeuDefenceTower\ModuleStat_DT.cs" />
     <Compile Include="JeuDefenceTower\Personnages\Comportement\ComportementSeDefendreDT.cs" />
-    <Compile Include="JeuEchecs\AccesE.cs" />
-    <Compile Include="JeuEchecs\FabriqueJeuEchecs.cs" />
-    <Compile Include="JeuEchecs\Personnages\Observateur\SujetObserveEchec.cs" />
-    <Compile Include="JeuEchecs\ZoneE.cs" />
-    <Compile Include="JeuSimulationTrafic\FabriqueSimuTrafic.cs" />
-    <Compile Include="JeuSimulationTrafic\IHM_Traffic.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="JeuSimulationTrafic\IHM_Traffic.Designer.cs">
-      <DependentUpon>IHM_Traffic.cs</DependentUpon>
-    </Compile>
-    <Compile Include="JeuSimulationTrafic\ModuleIHM_Traffic.cs" />
-    <Compile Include="JeuSimulationTrafic\ModuleStats_Trafic.cs" />
-    <Compile Include="JeuSimulationTrafic\Personnages\Comportements\ComportementSeDeplacerVoiture.cs" />
-    <Compile Include="JeuSimulationTrafic\Personnages\FeuSignalisation.cs" />
-    <Compile Include="JeuSimulationTrafic\Personnages\Voiture.cs" />
-    <Compile Include="JeuSimulationTrafic\Personnages\Véhicule.cs" />
-    <Compile Include="JeuSimulationTrafic\PortionDeRoute.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -124,9 +105,6 @@
     <EmbeddedResource Include="JeuDefenceTower\Defence Tower IHM.resx">
       <DependentUpon>Defence Tower IHM.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="JeuSimulationTrafic\IHM_Traffic.resx">
-      <DependentUpon>IHM_Traffic.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
@@ -142,6 +120,49 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="AbstractClass\ComporterSeDefendreAbstrait.cs" />
+    <Compile Include="JeuEchecs\JeuEchecs\FabriqueJeuEchecs.cs" />
+    <Compile Include="JeuEchecs\JeuEchecs\IHM_Echecs.Designer.cs" />
+    <Compile Include="JeuEchecs\JeuEchecs\IHM_Echecs.cs" />
+    <Compile Include="JeuEchecs\JeuEchecs\ModuleIHM_Echecs.cs" />
+    <Compile Include="JeuEchecs\JeuEchecs\ModuleStats_Echecs.cs" />
+    <Compile Include="JeuEchecs\JeuEchecs\Environnement\AccesCase.cs" />
+    <Compile Include="JeuEchecs\JeuEchecs\Environnement\AccesCaseAbstraite.cs" />
+    <Compile Include="JeuEchecs\JeuEchecs\Environnement\Case.cs" />
+    <Compile Include="JeuEchecs\JeuEchecs\Environnement\CaseAbstraite.cs" />
+    <Compile Include="JeuEchecs\JeuEchecs\Environnement\Plateau.cs" />
+    <Compile Include="JeuEchecs\JeuEchecs\Environnement\eTypeDéplacement.cs" />
+    <Compile Include="JeuEchecs\JeuEchecs\Personnages\Cavalier.cs" />
+    <Compile Include="JeuEchecs\JeuEchecs\Personnages\Fou.cs" />
+    <Compile Include="JeuEchecs\JeuEchecs\Personnages\PieceEchec.cs" />
+    <Compile Include="JeuEchecs\JeuEchecs\Personnages\Pion.cs" />
+    <Compile Include="JeuEchecs\JeuEchecs\Personnages\Reine.cs" />
+    <Compile Include="JeuEchecs\JeuEchecs\Personnages\Roi.cs" />
+    <Compile Include="JeuEchecs\JeuEchecs\Personnages\Tour.cs" />
+    <Compile Include="JeuEchecs\JeuEchecs\Personnages\eTypePersonnage.cs" />
+    <Compile Include="JeuEchecs\JeuEchecs\Personnages\Comportement\ComportementCombattreJE.cs" />
+    <Compile Include="JeuEchecs\JeuEchecs\Personnages\Comportement\ComportementSeDefendreJE.cs" />
+    <Compile Include="JeuEchecs\JeuEchecs\Personnages\Comportement\ComportementSeDeplacerJE.cs" />
+    <Compile Include="JeuEchecs\JeuEchecs\Personnages\Comportement\Attaque\AttaqueBasique.cs" />
+    <Compile Include="JeuEchecs\JeuEchecs\Personnages\Comportement\Attaque\ComportementCombattre.cs" />
+    <Compile Include="JeuEchecs\JeuEchecs\Personnages\Comportement\Defense\AucuneDefense.cs" />
+    <Compile Include="JeuEchecs\JeuEchecs\Personnages\Comportement\Defense\ComportementSeDefendre.cs" />
+    <Compile Include="JeuEchecs\JeuEchecs\Personnages\Comportement\Deplacement\ComportementSeDeplacer.cs" />
+    <Compile Include="JeuEchecs\JeuEchecs\Personnages\Comportement\Deplacement\DeplacementCavalier.cs" />
+    <Compile Include="JeuEchecs\JeuEchecs\Personnages\Comportement\Deplacement\DeplacementFou.cs" />
+    <Compile Include="JeuEchecs\JeuEchecs\Personnages\Comportement\Deplacement\DeplacementPion.cs" />
+    <Compile Include="JeuEchecs\JeuEchecs\Personnages\Comportement\Deplacement\DeplacementReine.cs" />
+    <Compile Include="JeuEchecs\JeuEchecs\Personnages\Comportement\Deplacement\DeplacementRoi.cs" />
+    <Compile Include="JeuEchecs\JeuEchecs\Personnages\Comportement\Deplacement\DeplacementTour.cs" />
+    <Compile Include="JeuEchecs\JeuEchecs\Personnages\Comportement\Deplacement\Permutation.cs" />
+    <Compile Include="JeuEchecs\JeuEchecs\Personnages\Deplacement\Position.cs" />
+    <Compile Include="JeuEchecs\JeuEchecs\Personnages\Etat\Etat.cs" />
+    <Compile Include="JeuSimulationTrafic\Personnages\Camion.cs" />
+    <Compile Include="JeuSimulationTrafic\Personnages\FeuSignalisation.cs" />
+    <Compile Include="JeuSimulationTrafic\Personnages\Moto.cs" />
+    <Compile Include="JeuSimulationTrafic\Personnages\Voiture.cs" />
+    <Compile Include="JeuSimulationTrafic\Personnages\Véhicule.cs" />
+    <Compile Include="JeuSimulationTrafic\Personnages\Comportements\ComportementSeDeplacerVoiture.cs" />
+    <Compile Include="JeuSimulationTrafic\FabriqueSimuTrafic.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -167,4 +188,14 @@
   <Target Name="AfterBuild">
   </Target>
   -->
+  <ItemGroup>
+    <Folder Include="JeuEchecs\" />
+    <Folder Include="ProjetDesignPattern\" />
+    <Folder Include="JeuDefenceTower\" />
+    <Folder Include="JeuSimulationTrafic\" />
+    <Folder Include="Resources\JeuEchecs\" />
+    <Folder Include="JeuEchecs\Personnages\Observateur\" />
+    <Folder Include="JeuEchecs\JeuEchecs\" />
+    <Folder Include="JeuSimulationTrafic\Personnages\" />
+  </ItemGroup>
 </Project>
