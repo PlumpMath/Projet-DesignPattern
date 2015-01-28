@@ -14,7 +14,7 @@ namespace ProjetDesignPattern
         /// <summary>
         /// Point d'entrée principal de l'application.
         /// </summary>
-      /*  [STAThread]
+        [STAThread]
         static void Main()
         {
             Application.EnableVisualStyles();
@@ -24,8 +24,9 @@ namespace ProjetDesignPattern
            
         }
 
-        }*/
+        
 
+        /*
 		public static void Main (string[] args)
 		{
 			Simulation sim = new Simulation ("zea");
@@ -38,5 +39,7 @@ namespace ProjetDesignPattern
 			Console.WriteLine("Press any key to exit.");
 			Console.ReadKey();
 		}
+
+        */
     }
 }

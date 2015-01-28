@@ -8,36 +8,37 @@ namespace ProjetDesignPattern.JeuSimulationTrafic
         public const int typeCamion = 1;
         public const int typeVoiture = 2;
         public const int typeMoto = 3;
-
-        public override PersonnageAbstrait CreerPersonnage(int typePerso, SujetObserveAbstrait unEtatMajor, string unNom, ZoneAbstraite unePosition)
+        
+        public override PersonnageAbstrait CreerPersonnage(int _id, string _type, string _nom, string _pv, 
+            string _etat, ZoneAbstraite _position, SujetObserveAbstrait EtatMajor)
         {
             PersonnageAbstrait perso;
-            switch (typePerso)
+            switch (_type)
             {
-                case typeCamion:
+                case "camion":
                     perso = new Camion();
                     break;
-                case typeFeu:
+                case "feu":
                     perso = new FeuSignalisation();
                     break;
-                case typeVoiture:
+                case "voiture":
                     perso =  new Voiture();
                     perso.comportementSeDeplacer = new ComportementSeDeplacerVoiture();
                     perso.comportementSeDeplacer.personnage = perso;
                     break;
-                case typeMoto:
+                case "moto":
                 default:
                     perso = new Moto();
                     break;
             }
-            perso.Nom = unNom;
-            perso.Position = unePosition;
-            unePosition.listePersonnages.Add(perso);
+            perso.Nom = _nom;
+            perso.Position = _position;
+            _position.listePersonnages.Add(perso);
 
-            if (unEtatMajor != null)
+            if (EtatMajor != null)
             {
-                unEtatMajor.AjouterObservateur(perso);
-                perso.EtatMajor = unEtatMajor;
+                EtatMajor.AjouterObservateur(perso);
+                perso.EtatMajor = EtatMajor;
             }
 
             return perso;
@@ -50,26 +51,34 @@ namespace ProjetDesignPattern.JeuSimulationTrafic
             return feu;
         }
 
-        public override ZoneAbstraite CreerZone()
+        public override ZoneAbstraite CreerZone(int _idzone, List<PersonnageAbstrait> _listePersonnages, List<ObjetAbstrait> _listeObjets, int _positionX, int positionY)
         {
             ZoneAbstraite zone = new PortionDeRoute();
-            zone.listePersonnages = new List<PersonnageAbstrait>();
-            zone.listeObjets = new List<ObjetAbstrait>();
+            zone.positionX = _positionX;
+            zone.positionY = positionY;
+            zone.listePersonnages = _listePersonnages;
+            zone.listeObjets = _listeObjets;
             zone.zonesAdjacentes = new Dictionary<int, AccesAbstrait>();
 
             return zone;
         }
 
-        public override AccesAbstrait CreerAcces(ZoneAbstraite départ, ZoneAbstraite arrivée)
+
+        public override AccesAbstrait CreerAcces(ZoneAbstraite _zoneDepart, ZoneAbstraite _zoneArrivee, bool _acces)
         {
             AccesAbstrait acces = new AccesRoute();
-            acces.départ = départ;
-            acces.arrivée = arrivée;
+            acces.départ = _zoneDepart;
+            acces.arrivée = _zoneArrivee;
 
             //Ajout de l'accès à la zone départ
-            départ.zonesAdjacentes.Add(1, acces);
+            _zoneDepart.zonesAdjacentes.Add(1, acces);
 
             return acces;
+        }
+
+        public override ObjetAbstrait CreerObjet(string _nom, ZoneAbstraite _position)
+        {
+            throw new System.NotImplementedException();
         }
     }
 }

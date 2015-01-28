@@ -1,102 +1,114 @@
 ﻿using System;
-using System.Collections.Generic;
-
 
 namespace ProjetDesignPattern.JeuEchecs
 {
     class FabriqueJeuEchecs : FabriqueAbstraite
-    {
-		public override PersonnageAbstrait CreerPersonnage(int _id,string _type, string _nom,string _pv, string _etat, ZoneAbstraite _position, SujetObserveAbstrait EtatMajor)
+	{
+		public const int typePion = 0;
+		public const int typeTour = 1;
+		public const int typeCavalier = 2;
+		public const int typeFou = 3;
+		public const int typeRoi = 4;
+		public const int typeReine = 5;
+
+        /*
+        public override PersonnageAbstrait CreerPersonnage(int typePerso, SujetObserveAbstrait unEtatMajor, string unNom, ZoneAbstraite unePosition)
         {
-			PersonnageAbstrait personnage;
-
-			//Definition du type du personnage pour la simulation echec
-			switch (_type){
-			case "Pion":
-				personnage = new JeuEchecs.Pion ();
-				personnage.comportementCombattre = new JeuEchecs.AttaqueBasique ();
-				personnage.comportementSeDeplacer = new JeuEchecs.DeplacementPion ();
-				personnage.comporterSeDefendre = new JeuEchecs.AucuneDefense ();
+			PersonnageAbstrait piece = null;
+			switch (typePerso) {
+			case typePion:
+				piece = new Pion ();
+				piece.comportementCombattre = new AttaqueBasique ();
+				piece.comportementSeDeplacer = new DeplacementPion ();
+				piece.comporterSeDefendre = new AucuneDefense ();
 				break;
-			case "Tour":
-				personnage = new JeuEchecs.Tour ();
-				personnage.comportementCombattre = new JeuEchecs.AttaqueBasique ();
-				personnage.comportementSeDeplacer = new JeuEchecs.DeplacementTour ();
-				personnage.comporterSeDefendre = new JeuEchecs.AucuneDefense ();
+			case typeTour:
+				piece = new Tour ();
+				piece.comportementCombattre = new AttaqueBasique ();
+				piece.comportementSeDeplacer = new DeplacementTour ();
+				piece.comporterSeDefendre = new AucuneDefense ();
 				break;
-			case "Fou":
-				personnage = new JeuEchecs.Fou ();
-				personnage.comportementCombattre = new JeuEchecs.AttaqueBasique ();
-				personnage.comportementSeDeplacer = new JeuEchecs.DeplacementFou ();
-				personnage.comporterSeDefendre = new JeuEchecs.AucuneDefense ();
+			case typeCavalier:
+				piece = new Cavalier ();
+				piece.comportementCombattre = new AttaqueBasique ();
+				piece.comportementSeDeplacer = new DeplacementCavalier ();
+				piece.comporterSeDefendre = new AucuneDefense ();
 				break;
-			case "Reine":
-				personnage = new JeuEchecs.Reine ();
-				personnage.comportementCombattre = new JeuEchecs.AttaqueBasique ();
-				personnage.comportementSeDeplacer = new JeuEchecs.DeplacementReine ();
-				personnage.comporterSeDefendre = new JeuEchecs.AucuneDefense ();
+			case typeFou:
+				piece = new Fou ();
+				piece.comportementCombattre = new AttaqueBasique ();
+				piece.comportementSeDeplacer = new DeplacementFou ();
+				piece.comporterSeDefendre = new AucuneDefense ();
 				break;
-			case "Cavalier":
-				personnage = new JeuEchecs.Cavalier ();
-				personnage.comportementCombattre = new JeuEchecs.AttaqueBasique ();
-				personnage.comportementSeDeplacer = new JeuEchecs.DeplacementCavalier ();
-				personnage.comporterSeDefendre = new JeuEchecs.AucuneDefense ();
+			case typeRoi:
+				piece = new Roi ();
+				piece.comportementCombattre = new AttaqueBasique ();
+				piece.comportementSeDeplacer = new DeplacementRoi ();
+				piece.comporterSeDefendre = new AucuneDefense ();
 				break;
-			case "Roi":
-				personnage = new JeuEchecs.Roi ();
-				personnage.comportementCombattre = new JeuEchecs.AttaqueBasique ();
-				personnage.comportementSeDeplacer = new JeuEchecs.DeplacementRoi ();
-				personnage.comporterSeDefendre = new JeuEchecs.AucuneDefense ();
-				break;
-			default:
-				personnage = null;
+			case typeReine:
+				piece = new Reine ();
+				piece.comportementCombattre = new AttaqueBasique ();
+				piece.comportementSeDeplacer = new DeplacementReine ();
+				piece.comporterSeDefendre = new AucuneDefense ();
 				break;
 			}
-			//Set des autres attributs d'un personnage
-			if (null != personnage) {
-				personnage.Nom = _nom;
-				personnage.PV = Convert.ToInt32 (_pv);
-				personnage.Position = _position;
-				personnage.idPersonnage = _id;
-				personnage.EtatMajor = new SujetObserveEchec ();
-
-				//personnage.etatCourant = _etat;
+			if (piece != null) {
+				piece.Nom = unNom;
+				piece.Position = unePosition;
+				unePosition.listePersonnages.Add(piece);
 			}
-
-			//FAIRE UNE BOUCLE SUR LA LISTE DES ZONNE POUR DEFINIR LA ZONNE 
-			//personnage.zonne
-
-			return personnage;
-			//switch
-			//PieceEchec personnageEchec = new JeuEchecs.PieceEchec ();
-
+			return piece;
         }
 
-
-	
-
-
-		public override ZoneAbstraite CreerZone(int _idzone, List<PersonnageAbstrait> _listePersonnages, List<ObjetAbstrait> _listeObjets,int _positionX, int positionY)
-		{
-			ZoneAbstraite zone = new ZoneE ();
-			zone.idZone = _idzone;
-			zone.positionX = _positionX;
-			zone.positionY = positionY;
-			return zone;
-		}
-
-		public override AccesAbstrait CreerAcces(ZoneAbstraite _zoneDepart,ZoneAbstraite _zoneArrivee,Boolean _acces)
+        public override ZoneAbstraite CreerZone()
         {
-			AccesAbstrait acces = new AccesE ();
-			acces.départ = _zoneDepart;
-			acces.arrivée = _zoneArrivee;
-			acces.accès = _acces;
+			ZoneAbstraite zone = new Case ();
+			return zone;
+        }
+        public override AccesAbstrait CreerAcces(ZoneAbstraite départ, ZoneAbstraite arrivée)
+        {
+			AccesAbstrait acces = new AccesCase();
+			acces.départ = départ;
+			acces.arrivée = arrivée;
+			acces.accès = true;
+
+			int id;
+			if (départ.positionX != arrivée.positionX) {
+				if (départ.positionX < arrivée.positionX)
+					id = 6;
+				else
+					id = 4;
+			} else {
+				if (départ.positionY < arrivée.positionY)
+					id = 8;
+				else
+					id = 2;
+			}
+			//Ajout de l'accès à la zone départ
+			départ.zonesAdjacentes.Add(id, acces);
 
 			return acces;
         }
+        */
+        public override PersonnageAbstrait CreerPersonnage(int _id, string _type, string _nom, string _pv, string _etat, ZoneAbstraite _position, SujetObserveAbstrait EtatMajor)
+        {
+            throw new NotImplementedException();
+        }
 
-		public override ObjetAbstrait CreerObjet(string _nom,ZoneAbstraite _position){
-			return null;
-		}
+        public override ZoneAbstraite CreerZone(int _idzone, System.Collections.Generic.List<PersonnageAbstrait> _listePersonnages, System.Collections.Generic.List<ObjetAbstrait> _listeObjets, int _positionX, int positionY)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override AccesAbstrait CreerAcces(ZoneAbstraite _zoneDepart, ZoneAbstraite _zoneArrivee, bool _acces)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override ObjetAbstrait CreerObjet(string _nom, ZoneAbstraite _position)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

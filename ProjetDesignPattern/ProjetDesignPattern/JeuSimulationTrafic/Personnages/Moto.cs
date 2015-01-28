@@ -1,13 +1,9 @@
 ﻿using System;
 
-namespace ProjetDesignPattern
+namespace ProjetDesignPattern.JeuSimulationTrafic
 {
-	public class SujetObserveEchec : SujetObserveAbstrait
-	{
-		public SujetObserveEchec ()
-		{
-		}
-
+    class Moto : Véhicule
+    {
         public override void AnalyserSituation()
         {
             throw new NotImplementedException();
@@ -24,4 +20,3 @@ namespace ProjetDesignPattern
         }
     }
 }
-

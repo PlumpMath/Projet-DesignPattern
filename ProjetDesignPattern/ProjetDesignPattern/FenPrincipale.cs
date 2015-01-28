@@ -79,6 +79,8 @@ namespace ProjetDesignPattern
             //acces
             */
 
+
+            /*
             ZoneDT zone1 = (ZoneDT)jeu.fab.CreerZone();
             zone1.créerZoneDT(0, 5);
             ZoneDT zone2 = (ZoneDT)jeu.fab.CreerZone();
@@ -159,10 +161,12 @@ namespace ProjetDesignPattern
             //    jeu.TourDeJeu();
             //}
 
+             * */
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
+            /*
             jeu = new Simulation("Simulation traffic");
             jeu.fab = new FabriqueSimuTrafic();
             jeu.ModuleIHM = new ModuleIHM_Trafic();
@@ -231,7 +235,7 @@ namespace ProjetDesignPattern
             m_oWorker.RunWorkerAsync();
 
             
-
+            */
         }
 
 

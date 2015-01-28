@@ -8,20 +8,19 @@ namespace ProjetDesignPattern.JeuDefenceTower
     {
         public const int typeChateau = 1;
         public const int typeEnnemi = 2;
-
-        public override PersonnageAbstrait CreerPersonnage(int typePerso, SujetObserveAbstrait unEtatMajor, string unNom, ZoneAbstraite unePosition)
-
+        
+        public override PersonnageAbstrait CreerPersonnage(int _id, string _type, string _nom, string _pv, string _etat, ZoneAbstraite _position, SujetObserveAbstrait EtatMajor)
         {
             //château
-            if (typePerso == 1)
+            if (_type == "chateau")
             {
-                Chateau c = new Chateau(unNom);
+                Chateau c = new Chateau(_nom);
                 return c;
             }
             //ennemi
             else
             {
-                Ennemi e = new Ennemi(unNom,unePosition);
+                Ennemi e = new Ennemi(_nom, _position);
                 return e;
             }
         }
