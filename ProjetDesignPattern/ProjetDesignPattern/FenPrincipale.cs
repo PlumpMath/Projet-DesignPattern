@@ -1,8 +1,6 @@
-
-﻿//using ProjetDesignPattern.JeuSimulationTrafic;
-using ProjetDesignPattern.JeuDefenceTower;
+﻿using ProjetDesignPattern.JeuDefenceTower;
+using ProjetDesignPattern.JeuSimulationTrafic;
 using ProjetDesignPattern.JeuEchecs;
-
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -169,7 +167,7 @@ namespace ProjetDesignPattern
 
         private void button3_Click(object sender, EventArgs e)
         {
-            /*
+            
             jeu = new Simulation("Simulation traffic");
             jeu.fab = new FabriqueSimuTrafic();
             jeu.ModuleIHM = new ModuleIHM_Trafic();
@@ -178,39 +176,24 @@ namespace ProjetDesignPattern
             jeu.ModuleStats = new ModuleStats_Trafic();
             jeu.ModuleStats.jeu = jeu;
 
-            ZoneAbstraite zone1 = jeu.fab.CreerZone();
-            zone1.positionX = 0;
-            zone1.positionY = 0;
-            ZoneAbstraite zone2 = jeu.fab.CreerZone();
-            zone2.positionX = 1;
-            zone2.positionY = 0;
-            ZoneAbstraite zone3 = jeu.fab.CreerZone();
-            zone3.positionX = 2;
-            zone3.positionY = 0;
-            ZoneAbstraite zone4 = jeu.fab.CreerZone();
-            zone4.positionX = 2;
-            zone4.positionY = 1;
-            ZoneAbstraite zone5 = jeu.fab.CreerZone();
-            zone5.positionX = 2;
-            zone5.positionY = 2;
-            ZoneAbstraite zone6 = jeu.fab.CreerZone();
-            zone6.positionX = 1;
-            zone6.positionY = 2;
-            ZoneAbstraite zone7 = jeu.fab.CreerZone();
-            zone7.positionX = 0;
-            zone7.positionY = 2;
-            ZoneAbstraite zone8 = jeu.fab.CreerZone();
-            zone8.positionX = 0;
-            zone8.positionY = 1;
+            ZoneAbstraite zone1 = jeu.fab.CreerZone(1, new List<PersonnageAbstrait>(), new List<ObjetAbstrait>(), 0, 0);
+            ZoneAbstraite zone2 = jeu.fab.CreerZone(2, new List<PersonnageAbstrait>(), new List<ObjetAbstrait>(), 1, 0);
+            ZoneAbstraite zone3 = jeu.fab.CreerZone(3, new List<PersonnageAbstrait>(), new List<ObjetAbstrait>(), 2, 0);
+            ZoneAbstraite zone4 = jeu.fab.CreerZone(4, new List<PersonnageAbstrait>(), new List<ObjetAbstrait>(), 2, 1);
+            ZoneAbstraite zone5 = jeu.fab.CreerZone(5, new List<PersonnageAbstrait>(), new List<ObjetAbstrait>(), 2, 2);
+            ZoneAbstraite zone6 = jeu.fab.CreerZone(6, new List<PersonnageAbstrait>(), new List<ObjetAbstrait>(), 1, 2);
+            ZoneAbstraite zone7 = jeu.fab.CreerZone(7, new List<PersonnageAbstrait>(), new List<ObjetAbstrait>(), 0, 2);
+            ZoneAbstraite zone8 = jeu.fab.CreerZone(8, new List<PersonnageAbstrait>(), new List<ObjetAbstrait>(), 0, 1);
+        
 
-            jeu.fab.CreerAcces(zone1, zone2);
-            jeu.fab.CreerAcces(zone2, zone3);
-            jeu.fab.CreerAcces(zone3, zone4);
-            jeu.fab.CreerAcces(zone4, zone5);
-            jeu.fab.CreerAcces(zone5, zone6);
-            jeu.fab.CreerAcces(zone6, zone7);
-            jeu.fab.CreerAcces(zone7, zone8);
-            jeu.fab.CreerAcces(zone8, zone1);
+            jeu.fab.CreerAcces(zone1, zone2, true);
+            jeu.fab.CreerAcces(zone2, zone3, true);
+            jeu.fab.CreerAcces(zone3, zone4, true);
+            jeu.fab.CreerAcces(zone4, zone5, true);
+            jeu.fab.CreerAcces(zone5, zone6, true);
+            jeu.fab.CreerAcces(zone6, zone7, true);
+            jeu.fab.CreerAcces(zone7, zone8, true);
+            jeu.fab.CreerAcces(zone8, zone1, true);
 
             jeu.listeZones.Add(zone1);
             jeu.listeZones.Add(zone2);
@@ -221,14 +204,13 @@ namespace ProjetDesignPattern
             jeu.listeZones.Add(zone7);
             jeu.listeZones.Add(zone8);
 
-            PersonnageAbstrait feu1 = jeu.fab.CreerPersonnage(FabriqueSimuTrafic.typeFeu, null, "Feu", zone3);
-            ((FeuSignalisation)feu1).Etat = FeuSignalisation.vert;
 
-            PersonnageAbstrait feu2 = jeu.fab.CreerPersonnage(FabriqueSimuTrafic.typeFeu, (SujetObserveAbstrait)feu1, "Feu", zone7);
+            PersonnageAbstrait feu1 = jeu.fab.CreerPersonnage(1, "feu", "Feu 1", "10", "vert", zone3, null);
+            PersonnageAbstrait feu2 = jeu.fab.CreerPersonnage(2, "feu", "Feu 2", "10", "rouge", zone7, (SujetObserveAbstrait)feu1);
 
-
-            PersonnageAbstrait voiture1 = jeu.fab.CreerPersonnage(FabriqueSimuTrafic.typeVoiture, null, "voiture", zone1);
-            PersonnageAbstrait voiture2 = jeu.fab.CreerPersonnage(FabriqueSimuTrafic.typeVoiture, null, "voiture2", zone5);
+            PersonnageAbstrait voiture1 = jeu.fab.CreerPersonnage(3, "voiture", "Voiture 1", "", "", zone1, null);
+            PersonnageAbstrait voiture2 = jeu.fab.CreerPersonnage(4, "voiture", "Voiture 2", "", "", zone5, null);
+            
             jeu.listePersonnages.Add(voiture1);
             jeu.listePersonnages.Add(voiture2);
             jeu.listePersonnages.Add(feu1);
@@ -237,8 +219,6 @@ namespace ProjetDesignPattern
 
             m_oWorker.RunWorkerAsync();
 
-            
-            */
         }
 private void button2_Click(object sender, EventArgs e)
 		{
@@ -312,6 +292,5 @@ private void button2_Click(object sender, EventArgs e)
 			}
 			jeu.Afficher ();
 		}
-
     }
 }
