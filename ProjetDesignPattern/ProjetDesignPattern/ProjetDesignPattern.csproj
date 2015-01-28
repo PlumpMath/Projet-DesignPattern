@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AbstractClass\ChargementJeu.cs" />
+    <Compile Include="AbstractClass\ComportementChargerSimulationAbstrait.cs" />
     <Compile Include="AbstractClass\ComportementCombattreAbstrait.cs" />
     <Compile Include="AbstractClass\ComportementSeDeplacerAbstrait.cs" />
     <Compile Include="AbstractClass\EtatAbstrait.cs" />
@@ -58,11 +59,31 @@
     <Compile Include="JeuDefenceTower\ModuleIHMDT.cs" />
     <Compile Include="JeuDefenceTower\ModuleStat_DT.cs" />
     <Compile Include="JeuDefenceTower\Personnages\Comportement\ComportementSeDefendreDT.cs" />
+    <Compile Include="JeuEchecs\AccesE.cs" />
+    <Compile Include="JeuEchecs\FabriqueJeuEchecs.cs" />
+    <Compile Include="JeuEchecs\Personnages\Observateur\SujetObserveEchec.cs" />
+    <Compile Include="JeuEchecs\ZoneE.cs" />
+    <Compile Include="JeuSimulationTrafic\FabriqueSimuTrafic.cs" />
+    <Compile Include="JeuSimulationTrafic\IHM_Traffic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JeuSimulationTrafic\IHM_Traffic.Designer.cs">
+      <DependentUpon>IHM_Traffic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JeuSimulationTrafic\ModuleIHM_Traffic.cs" />
+    <Compile Include="JeuSimulationTrafic\ModuleStats_Trafic.cs" />
+    <Compile Include="JeuSimulationTrafic\Personnages\Comportements\ComportementSeDeplacerVoiture.cs" />
+    <Compile Include="JeuSimulationTrafic\Personnages\FeuSignalisation.cs" />
+    <Compile Include="JeuSimulationTrafic\Personnages\Voiture.cs" />
+    <Compile Include="JeuSimulationTrafic\Personnages\Véhicule.cs" />
+    <Compile Include="JeuSimulationTrafic\PortionDeRoute.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="SauvegardeChargementSimulation\ChargerSimulation.cs" />
+    <Compile Include="SauvegardeChargementSimulation\ComportementChargerSimulation.cs" />
     <Compile Include="Simulation.cs" />
     <Compile Include="FenPrincipale.cs">
       <SubType>Form</SubType>
@@ -102,6 +123,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="JeuDefenceTower\Defence Tower IHM.resx">
       <DependentUpon>Defence Tower IHM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JeuSimulationTrafic\IHM_Traffic.resx">
+      <DependentUpon>IHM_Traffic.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

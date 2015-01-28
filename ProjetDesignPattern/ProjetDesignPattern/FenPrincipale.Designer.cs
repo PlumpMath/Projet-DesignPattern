@@ -85,7 +85,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FenPrincipale";
             this.Text = "Meta Simulateur";
-            this.Load += new System.EventHandler(this.FenPrincipale_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
