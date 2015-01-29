@@ -59,62 +59,82 @@ namespace ProjetDesignPattern
 
             jeu.ModuleStats = new ModuleStat_DT();
             jeu.ModuleStats.jeu = jeu;
+/*
 
-
-            /*
+            //chateau
+            ZoneDT zonechateau = (ZoneDT)jeu.fab.CreerZone(1, new List<PersonnageAbstrait>(), new List<ObjetAbstrait>(), 10, 5);
+            zonechateau.nomImageZone = "chateau";
+            Chateau chateau = (Chateau)jeu.fab.CreerPersonnage(1, "chateau", "chateau","", "10", zonechateau,null);
+            chateau.initChateau(10, 10, 1);
+            jeu.listePersonnages.Add(chateau);
             //zones
+            int k = 2;
             for (int i = 0; i < 10; i++)//x
             {
                 for (int j = 0; j < 11; j++)//y
                 {
-                    ZoneDT z = (ZoneDT)jeu.fab.CreerZone();
+                    ZoneDT z = (ZoneDT)jeu.fab.CreerZone(k, new List<PersonnageAbstrait>(), new List<ObjetAbstrait>(), i, j);
                     z.créerZoneDT(i, j);
                     jeu.listeZones.Add(z);
+                    Ennemi ennemi = (Ennemi)jeu.fab.CreerPersonnage(k,"ennemi","ennemi"+k,"","1", z,null);
+                    ennemi.initEnnemi(chateau, 10, 1);
+                    z.attacherEnnemi(ennemi);
+                    jeu.listePersonnages.Add(ennemi);
+                    k++;
                 }
             }
             //acces
-            */
+            foreach (ZoneAbstraite zone1 in jeu.listeZones)
+            {
+                if (zone1.positionX < 10)
+                {
+                    ZoneAbstraite zone2 = jeu.listeZones.Find(z => z.positionY == zone1.positionY + 1);
+                    jeu.fab.CreerAcces(zone1, zone2, true);
+                }
+            }
 
+            
 
-            /*
-            ZoneDT zone1 = (ZoneDT)jeu.fab.CreerZone();
-            zone1.créerZoneDT(0, 5);
-            ZoneDT zone2 = (ZoneDT)jeu.fab.CreerZone();
-            zone2.créerZoneDT(1, 5);
-            ZoneDT zone3 = (ZoneDT)jeu.fab.CreerZone();
-            zone3.créerZoneDT(2, 5);
-            ZoneDT zone4 = (ZoneDT)jeu.fab.CreerZone();
-            zone4.créerZoneDT(3, 5);
-            ZoneDT zone5 = (ZoneDT)jeu.fab.CreerZone();
-            zone5.créerZoneDT(4, 5);
-            ZoneDT zone6 = (ZoneDT)jeu.fab.CreerZone();
-            zone6.créerZoneDT(5, 5);
-            ZoneDT zone7 = (ZoneDT)jeu.fab.CreerZone();
-            zone7.créerZoneDT(6, 5);
-            ZoneDT zone8 = (ZoneDT)jeu.fab.CreerZone();
-            zone8.créerZoneDT(7, 5);
-            ZoneDT zone9 = (ZoneDT)jeu.fab.CreerZone();
-            zone9.créerZoneDT(8, 5);
-            ZoneDT zone10 = (ZoneDT)jeu.fab.CreerZone();
-            zone10.créerZoneDT(9, 5);
+            m_oWorker.RunWorkerAsync();
+*/
+            
+            ZoneDT zone1 = (ZoneDT)jeu.fab.CreerZone(1, new List<PersonnageAbstrait>(), new List<ObjetAbstrait>(), 0, 5);
+            zone1.nomImageZone = "z05";
+            ZoneDT zone2 = (ZoneDT)jeu.fab.CreerZone(2, new List<PersonnageAbstrait>(), new List<ObjetAbstrait>(), 1, 5);
+            zone2.nomImageZone = "z15";
+            ZoneDT zone3 = (ZoneDT)jeu.fab.CreerZone(3, new List<PersonnageAbstrait>(), new List<ObjetAbstrait>(), 2, 5);
+            zone3.nomImageZone = "z25";
+            ZoneDT zone4 = (ZoneDT)jeu.fab.CreerZone(4, new List<PersonnageAbstrait>(), new List<ObjetAbstrait>(), 3, 5);
+            zone4.nomImageZone = "z35";
+            ZoneDT zone5 = (ZoneDT)jeu.fab.CreerZone(5, new List<PersonnageAbstrait>(), new List<ObjetAbstrait>(), 4, 5);
+            zone5.nomImageZone = "z45";
+            ZoneDT zone6 = (ZoneDT)jeu.fab.CreerZone(6, new List<PersonnageAbstrait>(), new List<ObjetAbstrait>(), 5, 5);
+            zone6.nomImageZone = "z55";
+            ZoneDT zone7 = (ZoneDT)jeu.fab.CreerZone(7, new List<PersonnageAbstrait>(), new List<ObjetAbstrait>(), 6, 5);
+            zone7.nomImageZone = "z65";
+            ZoneDT zone8 = (ZoneDT)jeu.fab.CreerZone(8, new List<PersonnageAbstrait>(), new List<ObjetAbstrait>(), 7, 5);
+            zone8.nomImageZone = "z75";
+            ZoneDT zone9 = (ZoneDT)jeu.fab.CreerZone(9, new List<PersonnageAbstrait>(), new List<ObjetAbstrait>(), 8, 5);
+            zone9.nomImageZone = "z85";
+            ZoneDT zone10 = (ZoneDT)jeu.fab.CreerZone(10, new List<PersonnageAbstrait>(), new List<ObjetAbstrait>(), 9, 5);
+            zone10.nomImageZone = "z95";
 
             //chateau
-            ZoneDT zonechateau = (ZoneDT)jeu.fab.CreerZone();
-            zonechateau.créerZoneDT(10, 5);
+            ZoneDT zonechateau = (ZoneDT)jeu.fab.CreerZone(1, new List<PersonnageAbstrait>(), new List<ObjetAbstrait>(), 10, 5);
             zonechateau.nomImageZone = "chateau";
 
-            jeu.fab.CreerAcces(zone1, zone2);
-            jeu.fab.CreerAcces(zone2, zone3);
-            jeu.fab.CreerAcces(zone3, zone4);
-            jeu.fab.CreerAcces(zone4, zone5);
-            jeu.fab.CreerAcces(zone5, zone6);
-            jeu.fab.CreerAcces(zone6, zone7);
-            jeu.fab.CreerAcces(zone7, zone8);
-            jeu.fab.CreerAcces(zone8, zone9);
-            jeu.fab.CreerAcces(zone9, zone10);
+            jeu.fab.CreerAcces(zone1, zone2,false);
+            jeu.fab.CreerAcces(zone2, zone3,false);
+            jeu.fab.CreerAcces(zone3, zone4,false);
+            jeu.fab.CreerAcces(zone4, zone5,false);
+            jeu.fab.CreerAcces(zone5, zone6,false);
+            jeu.fab.CreerAcces(zone6, zone7,false);
+            jeu.fab.CreerAcces(zone7, zone8,false);
+            jeu.fab.CreerAcces(zone8, zone9,false);
+            jeu.fab.CreerAcces(zone9, zone10,false);
 
             //chateau
-            jeu.fab.CreerAcces(zone10, zonechateau);
+            jeu.fab.CreerAcces(zone10, zonechateau,false);
 
             jeu.listeZones.Add(zone1);
             jeu.listeZones.Add(zone2);
@@ -126,21 +146,21 @@ namespace ProjetDesignPattern
             jeu.listeZones.Add(zone8);
             jeu.listeZones.Add(zone9);
             jeu.listeZones.Add(zone10);
-            jeu.listeZones.Add(zonechateau);
+            //jeu.listeZones.Add(zonechateau);
 
-            Chateau chateau = (Chateau)jeu.fab.CreerPersonnage(1, null, "chateau", zonechateau);
-            chateau.initChateau(10, 10,1);
-            Ennemi ennemi = (Ennemi)jeu.fab.CreerPersonnage(2,null,"ennemi",zone1);
-            ennemi.initEnnemi(chateau, 10, 1,2);
+            Chateau chateau = (Chateau)jeu.fab.CreerPersonnage(1, "chateau", "chateau","", "10", zonechateau,null);
+            chateau.initChateau(10, 10,10);
+            Ennemi ennemi = (Ennemi)jeu.fab.CreerPersonnage(2,"ennemi","ennemi1","","1", zone1,null);
+            ennemi.initEnnemi(chateau, 10, 1);
             zone1.attacherEnnemi(ennemi);
-            Ennemi ennemi2 = (Ennemi)jeu.fab.CreerPersonnage(2, null, "ennemi2", zone1);
-            ennemi2.initEnnemi(chateau, 10, 1, 2);
+            Ennemi ennemi2 = (Ennemi)jeu.fab.CreerPersonnage(3,"ennemi","ennemi2","","1", zone1,null);
+            ennemi2.initEnnemi(chateau, 10, 1);
             zone1.attacherEnnemi(ennemi2);
-            Ennemi ennemi3 = (Ennemi)jeu.fab.CreerPersonnage(2, null, "ennemi3", zone1);
-            ennemi3.initEnnemi(chateau, 10, 1, 2);
+            Ennemi ennemi3 = (Ennemi)jeu.fab.CreerPersonnage(4,"ennemi","ennemi3","","1", zone1,null);
+            ennemi3.initEnnemi(chateau, 10, 1);
             zone1.attacherEnnemi(ennemi3);
-            Ennemi ennemi4 = (Ennemi)jeu.fab.CreerPersonnage(2, null, "ennemi4", zone1);
-            ennemi4.initEnnemi(chateau, 10, 1, 2);
+            Ennemi ennemi4 = (Ennemi)jeu.fab.CreerPersonnage(5,"ennemi","ennemi4","","1", zone1,null);
+            ennemi4.initEnnemi(chateau, 10, 1);
             zone1.attacherEnnemi(ennemi4);
 
             jeu.listePersonnages.Add(chateau);
@@ -156,8 +176,6 @@ namespace ProjetDesignPattern
             //    System.Threading.Thread.Sleep(50);
             //    jeu.TourDeJeu();
             //}
-
-             * */
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -296,5 +314,37 @@ namespace ProjetDesignPattern
 			}
 			jeu.Afficher ();
 		}
+
+        private void bChargement_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog1 = new OpenFileDialog();
+
+            openFileDialog1.InitialDirectory = "C:\\" ;
+            openFileDialog1.Filter = "xml files (*.xml)|*.xml" ;
+            openFileDialog1.FilterIndex = 2 ;
+            openFileDialog1.RestoreDirectory = true ;
+
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    cheminXML.Text = openFileDialog1.FileName;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            
+            }
+        }
+
+        private void bLancer_Click(object sender, EventArgs e)
+        {
+            if (cheminXML.TextLength > 0)
+            {
+                ChargerSimulation cg = new ChargerSimulation(jeu, cheminXML.Text);
+                cg.extractionDesDonnes();
+            }
+        }
     }
 }

@@ -22,30 +22,34 @@ namespace ProjetDesignPattern.JeuDefenceTower
             {
                 if (zone.listePersonnages.Count > 0)
                 {
-                    foreach (Ennemi e in zone.listePersonnages)
+                    foreach (PersonnageAbstrait e in zone.listePersonnages)
                     {
-                        if (e.arrivéChateau)
+                        if (e.GetType() == typeof(Ennemi))
                         {
-                            //ennemi arrivé au château -> position attaque
-                            PictureBox p = ihm.Controls.Find(zone.nomImageZone, true).FirstOrDefault() as PictureBox;
-                            p.BackgroundImage = ProjetDesignPattern.Properties.Resources.EnnemiAttaque;
-                        }
-                        else
-                        {
-                            if (e.apparu==true)
+                            if (((Ennemi)e).arrivéChateau)
                             {
-                                //ennemi apparait -> position marche
+                                //ennemi arrivé au château -> position attaque
                                 PictureBox p = ihm.Controls.Find(zone.nomImageZone, true).FirstOrDefault() as PictureBox;
-                                p.BackgroundImage = ProjetDesignPattern.Properties.Resources.EnnemiMarche;
+                                p.BackgroundImage = ProjetDesignPattern.Properties.Resources.EnnemiAttaque;
                             }
                             else
                             {
-                                //case vide
-                                PictureBox p = ihm.Controls.Find(zone.nomImageZone, true).FirstOrDefault() as PictureBox;
-                                p.BackgroundImage = ProjetDesignPattern.Properties.Resources.EnnemiVide;
-                            }
+                                if (((Ennemi)e).apparu == true)
+                                {
+                                    //ennemi apparait -> position marche
+                                    PictureBox p = ihm.Controls.Find(zone.nomImageZone, true).FirstOrDefault() as PictureBox;
+                                    p.BackgroundImage = ProjetDesignPattern.Properties.Resources.EnnemiMarche;
+                                }
+                                else
+                                {
+                                    //case vide
+                                    PictureBox p = ihm.Controls.Find(zone.nomImageZone, true).FirstOrDefault() as PictureBox;
+                                    p.BackgroundImage = ProjetDesignPattern.Properties.Resources.EnnemiVide;
+                                }
                                               
+                            }
                         }
+                        
                     }
                 }
                 else

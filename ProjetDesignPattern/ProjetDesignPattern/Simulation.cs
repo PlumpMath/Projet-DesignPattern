@@ -66,12 +66,12 @@ namespace ProjetDesignPattern
 
         public void RecupererInformation()
         {
-            //ModuleStats.RecupererInformation();
+            ModuleStats.RecupererInformation();
         }
 
         public void CalculStatistiques()
         {
-            //ModuleStats.CalculStatistiques();
+            ModuleStats.CalculStatistiques();
         }
 
 		/*

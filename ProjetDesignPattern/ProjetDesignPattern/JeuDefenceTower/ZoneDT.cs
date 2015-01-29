@@ -14,8 +14,10 @@ namespace ProjetDesignPattern.JeuDefenceTower
             positionY = 0;
         }
 
-        public void créerZoneDT(int _x, int _y)
+        public ZoneDT(List<PersonnageAbstrait> _listePersonnages, List<ObjetAbstrait> _listeObjets, int _x, int _y)
         {
+            listePersonnages = _listePersonnages;
+            zonesAdjacentes = new Dictionary<int, AccesAbstrait>();
             positionX = _x;
             positionY = _y;
             nomImageZone = "z" + _x + _y;
