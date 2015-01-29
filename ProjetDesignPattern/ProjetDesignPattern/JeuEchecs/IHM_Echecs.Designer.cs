@@ -49,31 +49,7 @@ namespace ProjetDesignPattern.JeuEchecs
 
 					if (jeu.listeZones [i].listePersonnages.Count > 0) {
 						PersonnageAbstrait p = jeu.listeZones [i].listePersonnages [0];
-						 if (p.Nom == "BB") {
-							cases [i].BackgroundImage = ProjetDesignPattern.Properties.Resources.BB;
-						} else if (p.Nom == "BC") {
-							cases [i].BackgroundImage = ProjetDesignPattern.Properties.Resources.BC;
-						} else if (p.Nom == "BK") {
-							cases [i].BackgroundImage = ProjetDesignPattern.Properties.Resources.BK;
-						} else if (p.Nom == "BP") {
-							cases [i].BackgroundImage = ProjetDesignPattern.Properties.Resources.BP;
-						} else if (p.Nom == "BQ") {
-							cases [i].BackgroundImage = ProjetDesignPattern.Properties.Resources.BQ;
-						} else if (p.Nom == "BR") {
-							cases [i].BackgroundImage = ProjetDesignPattern.Properties.Resources.BR;
-						} else if (p.Nom == "WB") {
-							cases [i].BackgroundImage = ProjetDesignPattern.Properties.Resources.WB;
-						} else if (p.Nom == "WC") {
-							cases [i].BackgroundImage = ProjetDesignPattern.Properties.Resources.WC;
-						} else if (p.Nom == "WK") {
-							cases [i].BackgroundImage = ProjetDesignPattern.Properties.Resources.WK;
-						} else if (p.Nom == "WP") {
-							cases [i].BackgroundImage = ProjetDesignPattern.Properties.Resources.WP;
-						} else if (p.Nom == "WQ") {
-							cases [i].BackgroundImage = ProjetDesignPattern.Properties.Resources.WQ;
-						} else if (p.Nom == "WR") {
-							cases [i].BackgroundImage = ProjetDesignPattern.Properties.Resources.WR;
-						} 
+						cases [i].BackgroundImage = getImage (p.Nom);						 
 					}
 
 					((System.ComponentModel.ISupportInitialize)(cases[i])).EndInit();
@@ -93,5 +69,45 @@ namespace ProjetDesignPattern.JeuEchecs
 
 		}
 
+		public System.Drawing.Image getImage(string name){
+			if (name == "BB") {
+				return ProjetDesignPattern.Properties.Resources.BB;
+			} else if (name == "BC") {
+				return ProjetDesignPattern.Properties.Resources.BC;
+			} else if (name == "BK") {
+				return ProjetDesignPattern.Properties.Resources.BK;
+			} else if (name == "BP") {
+				return ProjetDesignPattern.Properties.Resources.BP;
+			} else if (name == "BQ") {
+				return ProjetDesignPattern.Properties.Resources.BQ;
+			} else if (name == "BR") {
+				return ProjetDesignPattern.Properties.Resources.BR;
+			} else if (name == "WB") {
+				return ProjetDesignPattern.Properties.Resources.WB;
+			} else if (name == "WC") {
+				return ProjetDesignPattern.Properties.Resources.WC;
+			} else if (name == "WK") {
+				return ProjetDesignPattern.Properties.Resources.WK;
+			} else if (name == "WP") {
+				return ProjetDesignPattern.Properties.Resources.WP;
+			} else if (name == "WQ") {
+				return ProjetDesignPattern.Properties.Resources.WQ;
+			} else if (name == "WR") {
+				return ProjetDesignPattern.Properties.Resources.WR;
+			} 
+			return null;
+		}
+
+		public void setCaseImage(Location l, string imageName){
+			for (int i = 0; i < cases.Length; i++) {
+				if (cases [i].Name == l.name) {
+					if (imageName == null) {
+						cases [i].BackgroundImage = null;
+					} else {
+						cases [i].BackgroundImage = getImage (imageName);
+					}
+				}
+			}
+		}
 	}
 }

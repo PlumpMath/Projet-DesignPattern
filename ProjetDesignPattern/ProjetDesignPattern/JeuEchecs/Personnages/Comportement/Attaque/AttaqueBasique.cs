@@ -10,10 +10,6 @@ namespace ProjetDesignPattern.JeuEchecs
 		{
 			attaque = 1;
 		}
-
-		public override void combattre(int degat, PersonnageAbstrait cible){
-			throw new NotImplementedException ();
-		}
 	}
 }
 

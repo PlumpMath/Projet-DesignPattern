@@ -159,10 +159,7 @@
     <Compile Include="JeuEchecs\Personnages\Comportement\ComportementSeDefendreJE.cs" />
     <Compile Include="JeuEchecs\Personnages\Comportement\ComportementSeDeplacerJE.cs" />
     <Compile Include="JeuEchecs\Personnages\Comportement\Attaque\AttaqueBasique.cs" />
-    <Compile Include="JeuEchecs\Personnages\Comportement\Attaque\ComportementCombattre.cs" />
     <Compile Include="JeuEchecs\Personnages\Comportement\Defense\AucuneDefense.cs" />
-    <Compile Include="JeuEchecs\Personnages\Comportement\Defense\ComportementSeDefendre.cs" />
-    <Compile Include="JeuEchecs\Personnages\Comportement\Deplacement\ComportementSeDeplacer.cs" />
     <Compile Include="JeuEchecs\Personnages\Comportement\Deplacement\DeplacementCavalier.cs" />
     <Compile Include="JeuEchecs\Personnages\Comportement\Deplacement\DeplacementFou.cs" />
     <Compile Include="JeuEchecs\Personnages\Comportement\Deplacement\DeplacementPion.cs" />

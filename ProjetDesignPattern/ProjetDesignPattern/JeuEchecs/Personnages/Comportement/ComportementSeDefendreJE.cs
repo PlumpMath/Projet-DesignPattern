@@ -7,7 +7,12 @@ namespace ProjetDesignPattern.JeuEchecs
 		public int defense { get; set;}
 
 		public override void defendre(int attaque){
-			throw new NotImplementedException ();
+			this.personnage.PV -= attaque;
+			if (this.personnage.PV == 0) {
+				Console.WriteLine (this.personnage.Nom + " meurt");
+				this.personnage.SeDeplacer (null);
+				//TODO set etat mort
+			}
 		}
 	}
 }

@@ -12,6 +12,7 @@ namespace ProjetDesignPattern.JeuEchecs
 			else
 			this.déplacements = new int[][] { new int[] {1}, new int[] {2}, new int[] {3} };
 			this.déplacementInfinie = false;
+			this.déplacementLibre = false;
 
 		}
 

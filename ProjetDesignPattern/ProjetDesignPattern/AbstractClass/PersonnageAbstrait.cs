@@ -20,10 +20,10 @@ namespace ProjetDesignPattern
 
         public void Combattre(int degat, PersonnageAbstrait cible)
         {
-            if (comportementCombattre != null)
-                comportementCombattre.combattre(degat,cible);
-            //TODO Mettre dans les log
-			//"Je ne combat pas";
+			if (comportementCombattre != null) {
+				Console.WriteLine (this.Nom + " attaque " + cible.Nom);
+				comportementCombattre.combattre (degat, cible);
+			}
         }
 
         public void SeDeplacer(ZoneAbstraite zone)

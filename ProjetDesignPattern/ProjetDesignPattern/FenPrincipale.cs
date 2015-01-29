@@ -271,9 +271,9 @@ namespace ProjetDesignPattern
 				}
 				for (int j = 0; j < 8; j++) {
 					if (i == 0) {
-						jeu.listePersonnages.Add(jeu.fab.CreerPersonnage (0, FabriqueJeuEchecs.typePion, "WP", null, null, zones [j] [1], null));
+						jeu.listePersonnages.Add(jeu.fab.CreerPersonnage (0, FabriqueJeuEchecs.typePion, "WP", "1", null, zones [j] [1], null));
 					} else {
-						jeu.listePersonnages.Add(jeu.fab.CreerPersonnage (0, FabriqueJeuEchecs.typePion, "BP", null, null, zones [j] [6], null));
+						jeu.listePersonnages.Add(jeu.fab.CreerPersonnage (0, FabriqueJeuEchecs.typePion, "BP", "1", null, zones [j] [6], null));
 					}
 					if (j == 0 || j == 7) {
 						piece = "R";
@@ -291,7 +291,7 @@ namespace ProjetDesignPattern
 						piece = "Q";
 						type = FabriqueJeuEchecs.typeReine;
 					}
-					jeu.listePersonnages.Add(jeu.fab.CreerPersonnage (0, type, color + piece, null, null, zones [j] [y], null));
+					jeu.listePersonnages.Add(jeu.fab.CreerPersonnage (0, type, color + piece, "1", null, zones [j] [y], null));
 				}
 			}
 			jeu.Afficher ();

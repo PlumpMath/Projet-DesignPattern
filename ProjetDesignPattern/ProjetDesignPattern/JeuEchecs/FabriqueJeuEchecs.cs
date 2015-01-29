@@ -56,6 +56,9 @@ namespace ProjetDesignPattern.JeuEchecs
 			}
 			if (piece != null) {
 				piece.Nom = _nom;
+				piece.PV = int.Parse (_pv);
+				piece.comportementSeDeplacer.personnage = piece;
+				piece.comporterSeDefendre.personnage = piece;
 				piece.Position = _position;
 				_position.listePersonnages.Add(piece);
 			}

@@ -6,38 +6,75 @@ namespace ProjetDesignPattern.JeuEchecs
 	public abstract class ComportementSeDeplacerJE : ComportementSeDeplacerAbstrait
     {
 		public int[][] déplacements;
-		public bool déplacementInfinie;
+		public bool déplacementInfinie, déplacementLibre;
 
 		public override void deplacer(ZoneAbstraite zone){
+			this.personnage.Position.listePersonnages.RemoveAt(0);
 			this.personnage.Position = zone;
+			if (zone != null) {
+				zone.listePersonnages.Add (this.personnage);
+			}
 		}
 
 		public override List<ZoneAbstraite> déplacementPossible(ZoneAbstraite zone){
 			List<ZoneAbstraite> zones = new List<ZoneAbstraite> ();
 			initDéplacement (zones, zone);
+			Console.WriteLine ("Nombre de zone accessible " + zones.Count);
 			return zones;
 		}
 
 		private void initDéplacement(List<ZoneAbstraite> zones, ZoneAbstraite zone){
+			Console.WriteLine (déplacements.Length);
 			for (int i = 0; i < déplacements.Length; i++){
+				Console.Write (déplacements[i].ToString() + " ");
 				ZoneAbstraite tmp = accessible (zone, déplacements [i]);
-				if (tmp != null && !zones.Contains(tmp)) {
-					zones.Add (tmp);
+				if (tmp != null && !containsZone(zones, tmp)) {
+					Console.WriteLine("accessible");
+					ajoutDéplacement (zones, tmp);
 					if (déplacementInfinie) {
-						initDéplacement (zones, tmp);
+						initDéplacement (zones, tmp, déplacements [i]);
 					}
-				}
+				} else
+					Console.WriteLine("inaccessible");
+			}
+		}
+
+		private void initDéplacement(List<ZoneAbstraite> zones, ZoneAbstraite zone, int[] direction){
+			ZoneAbstraite tmp = accessible (zone, direction);
+			if (tmp != null && !containsZone (zones, tmp)) {
+				ajoutDéplacement (zones, tmp);
+				initDéplacement (zones, tmp, direction);
 			}
 		}
 
 		public virtual ZoneAbstraite accessible(ZoneAbstraite zone, int[] a){
+			ZoneAbstraite tmp = zone;
 			for (int index = 0; index < a.Length; index++) {
-				if (!zone.zonesAdjacentes.ContainsKey(a[index]))
+				if (!tmp.zonesAdjacentes.ContainsKey (a [index]))
 					return null;
-				if(zone.zonesAdjacentes[a[index]].accès)
-					return zone.zonesAdjacentes[a[index]].arrivée;
+				else if (tmp.zonesAdjacentes [a [index]].accès)
+					tmp = tmp.zonesAdjacentes [a [index]].arrivée;
+				else
+					return null;
 			}
-			return null;
+			if (!déplacementLibre && tmp.listePersonnages.Count > 0) {
+				return null;
+			}
+			return tmp;
+		}
+
+		private bool containsZone(List<ZoneAbstraite> zones, ZoneAbstraite zone){
+			for (int i = 0; i < zones.Count; i++) {
+				if (zones [i].positionX == zone.positionX &&
+					zones [i].positionY == zone.positionY)
+					return true;
+			}
+			return false;
+		}
+		private void ajoutDéplacement(List<ZoneAbstraite> zones, ZoneAbstraite zone){
+			if (!(zone.listePersonnages.Count > 0 &&
+				zone.listePersonnages [0].Nom [0] == this.personnage.Nom [0]))
+				zones.Add (zone);
 		}
     }
 }

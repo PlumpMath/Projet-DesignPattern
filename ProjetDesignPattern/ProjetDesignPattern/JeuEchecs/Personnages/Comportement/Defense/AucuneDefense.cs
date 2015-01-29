@@ -9,11 +9,6 @@ namespace ProjetDesignPattern.JeuEchecs
 		{
 			defense = 0;
 		}
-
-		public override void defendre(int degat){
-			//TODO a modifier
-			// degat - defense;
-		}
 	}
 }
 

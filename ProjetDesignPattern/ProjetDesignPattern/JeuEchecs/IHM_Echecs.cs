@@ -26,16 +26,17 @@ namespace ProjetDesignPattern.JeuEchecs
 
 		private void imageClick(object sender, EventArgs e){
 			Location current = new Location(((PictureBox)sender).Name);
-			Console.WriteLine (current.name);
+			Console.WriteLine ("Case click : " + current.name);
 			if (caseSelect != null) {
-				Console.WriteLine ("a0 " + caseSelect.name);
+				Console.WriteLine ("Start unselect case");
 				if (caseSelect.Equals (current)) {
-					Console.WriteLine ("Unselect");
+					Console.WriteLine ("Start unselect");
 					unSelectCase (current);
 				} else if (depPossible != null) {
 					for (int i = 0; i < depPossible.Count; i++) {
 						if (current.name == depPossible [i].name) {
-							Console.WriteLine ("Déplacement");
+							Console.WriteLine ("Start Déplacement");
+							déplacement (caseSelect, current);
 							break;
 						}
 					}
@@ -43,6 +44,7 @@ namespace ProjetDesignPattern.JeuEchecs
 			} else {
 				int i = caseContainsPiece (current);
 				if (i != -1) {
+					Console.WriteLine ("Start select case");
 					selectCase (current);
 					colorizeDeplacementPossible (i);
 				}
@@ -51,9 +53,7 @@ namespace ProjetDesignPattern.JeuEchecs
 		}
 
 		private void unSelectCase(Location _case){
-			Console.WriteLine ("p0");
 			if (depPossible != null) {
-				Console.WriteLine ("p1 " + depPossible.Count);
 				for (int j = 0 ; j < depPossible.Count ; j++) {
 					for (int i = 0 ; i < cases.Length ; i++) {
 						if (cases [i].Name == depPossible [j].name) {
@@ -125,9 +125,39 @@ namespace ProjetDesignPattern.JeuEchecs
 				depPossible = new List<Location>();
 				for(int i = 0 ; i < list.Count ; i++){
 					depPossible.Add(new Location(list[i].positionX, list[i].positionY));
-					selectCaseDep (depPossible [0]);
+					selectCaseDep (depPossible [i]);
 				}
 			}
+		}
+		private void déplacement(Location départ, Location arrivé){
+			int indexDépart = -1, indexArrivé = -1;
+			for (int i = 0; i < jeu.listeZones.Count ; i++) {
+				if (jeu.listeZones[i].positionX == départ.x &&
+				    jeu.listeZones[i].positionY == départ.y ) {
+					indexDépart = i;
+				} else if (jeu.listeZones[i].positionX == arrivé.x &&
+				           jeu.listeZones[i].positionY == arrivé.y) {
+					indexArrivé = i;
+				}
+				if (indexArrivé != -1 && indexDépart != -1) {
+					break;
+				}
+			}
+			if (jeu.listeZones [indexArrivé].listePersonnages.Count > 0) {
+				Console.WriteLine ("Start attaque");
+				jeu.listeZones [indexDépart].listePersonnages [0].Combattre (0, 
+					jeu.listeZones [indexArrivé].listePersonnages [0]
+				);
+			} 
+			setCaseImage (départ, null);
+			setCaseImage (arrivé, jeu.listeZones [indexDépart].listePersonnages [0].Nom);
+			jeu.listeZones [indexDépart].listePersonnages [0].SeDeplacer (jeu.listeZones [indexArrivé]);
+
+			Console.WriteLine ("Déplacement " + jeu.listeZones [indexArrivé].listePersonnages [0].Nom + " vers " + arrivé.name);
+
+			unSelectCase (caseSelect);
+
+
 		}
 	}
 }
