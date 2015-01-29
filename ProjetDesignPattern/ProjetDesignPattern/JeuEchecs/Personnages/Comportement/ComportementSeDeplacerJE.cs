@@ -28,14 +28,18 @@ namespace ProjetDesignPattern.JeuEchecs
 			for (int i = 0; i < déplacements.Length; i++){
 				Console.Write (déplacements[i].ToString() + " ");
 				ZoneAbstraite tmp = accessible (zone, déplacements [i]);
-				if (tmp != null && !containsZone(zones, tmp)) {
-					Console.WriteLine("accessible");
+				if (tmp != null && !containsZone (zones, tmp)) {
+					Console.WriteLine ("accessible");
 					ajoutDéplacement (zones, tmp);
 					if (déplacementInfinie) {
 						initDéplacement (zones, tmp, déplacements [i]);
 					}
-				} else
-					Console.WriteLine("inaccessible");
+				} else {
+					tmp = accessibleWithEnemi (zone, déplacements [i]);
+					if (tmp != null) {
+						ajoutDéplacement (zones, tmp);
+					}
+				}
 			}
 		}
 
@@ -44,6 +48,11 @@ namespace ProjetDesignPattern.JeuEchecs
 			if (tmp != null && !containsZone (zones, tmp)) {
 				ajoutDéplacement (zones, tmp);
 				initDéplacement (zones, tmp, direction);
+			} else {
+				tmp = accessibleWithEnemi (zone, direction);
+				if (tmp != null) {
+					ajoutDéplacement (zones, tmp);
+				}
 			}
 		}
 
@@ -61,6 +70,22 @@ namespace ProjetDesignPattern.JeuEchecs
 				return null;
 			}
 			return tmp;
+		}
+
+		public ZoneAbstraite accessibleWithEnemi(ZoneAbstraite zone, int[] a){
+			ZoneAbstraite tmp = zone;
+			for (int index = 0; index < a.Length; index++) {
+				if (!tmp.zonesAdjacentes.ContainsKey (a [index]))
+					return null;
+				else if (tmp.zonesAdjacentes [a [index]].accès)
+					tmp = tmp.zonesAdjacentes [a [index]].arrivée;
+				else
+					return null;
+			}
+			if (tmp.listePersonnages.Count > 0) {
+				return tmp;
+			}
+			return null;
 		}
 
 		private bool containsZone(List<ZoneAbstraite> zones, ZoneAbstraite zone){
