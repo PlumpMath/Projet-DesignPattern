@@ -314,5 +314,37 @@ namespace ProjetDesignPattern
 			}
 			jeu.Afficher ();
 		}
+
+        private void bChargement_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog1 = new OpenFileDialog();
+
+            openFileDialog1.InitialDirectory = "C:\\" ;
+            openFileDialog1.Filter = "xml files (*.xml)|*.xml" ;
+            openFileDialog1.FilterIndex = 2 ;
+            openFileDialog1.RestoreDirectory = true ;
+
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    cheminXML.Text = openFileDialog1.FileName;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            
+            }
+        }
+
+        private void bLancer_Click(object sender, EventArgs e)
+        {
+            if (cheminXML.TextLength > 0)
+            {
+                ChargerSimulation cg = new ChargerSimulation(jeu, cheminXML.Text);
+                cg.extractionDesDonnes();
+            }
+        }
     }
 }
