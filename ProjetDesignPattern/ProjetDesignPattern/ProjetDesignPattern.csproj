@@ -11,8 +11,6 @@
     <AssemblyName>ProjetDesignPattern</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <ProductVersion>12.0.0</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -76,7 +74,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="SauvegardeChargementSimulation\ChargerSimulation.cs" />
-    <Compile Include="SauvegardeChargementSimulation\ComportementChargerSimulation.cs" />
     <Compile Include="Simulation.cs" />
     <Compile Include="FenPrincipale.cs">
       <SubType>Form</SubType>
@@ -179,6 +176,8 @@
     <None Include="Properties\Resources.resources" />
     <Compile Include="JeuSimulationTrafic\AccesRoute.cs" />
     <Compile Include="JeuSimulationTrafic\PortionDeRoute.cs" />
+    <Compile Include="SauvegardeChargementSimulation\ComportementChargerSimulationJeuEchecs.cs" />
+    <Compile Include="SauvegardeChargementSimulation\ComportementChargerSimulationJeuDefenceTower.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

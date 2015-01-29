@@ -60,7 +60,7 @@ namespace ProjetDesignPattern.JeuEchecs
 				piece.comportementSeDeplacer.personnage = piece;
 				piece.comporterSeDefendre.personnage = piece;
 				piece.Position = _position;
-				_position.listePersonnages.Add(piece);
+				//piece.Position.listePersonnages.Add(piece);
 			}
 			return piece;
         }
@@ -68,6 +68,8 @@ namespace ProjetDesignPattern.JeuEchecs
 		public override ZoneAbstraite CreerZone(int _idzone, List<PersonnageAbstrait> _listePersonnages, List<ObjetAbstrait> _listeObjets,int _positionX, int _positionY)
         {
 			ZoneAbstraite zone = new Case ();
+			zone.listeAccess = new List<AccesAbstrait>();
+			zone.idZone = _idzone;
 			zone.listePersonnages = _listePersonnages;
 			zone.listeObjets = _listeObjets;
 			zone.positionX = _positionX;
@@ -81,6 +83,7 @@ namespace ProjetDesignPattern.JeuEchecs
 			acces.départ = _zoneDepart;
 			acces.arrivée = _zoneArrivee;
 			acces.accès = true;
+
 
 			int id;
 			if (_zoneDepart.positionX != _zoneArrivee.positionX) {

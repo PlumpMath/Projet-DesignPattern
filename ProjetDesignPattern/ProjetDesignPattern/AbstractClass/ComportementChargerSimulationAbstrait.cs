@@ -15,7 +15,7 @@ namespace ProjetDesignPattern
 		public abstract void chargerLesAcces();
 
 
-		protected FabriqueAbstraite fabrique;
+		public FabriqueAbstraite fabrique;
 		protected Simulation simulation;
 
 	}

@@ -6,19 +6,19 @@ using System.Collections.Generic;
 
 namespace ProjetDesignPattern
 {
-	public class ComportementChargerSimulation : ComportementChargerSimulationAbstrait
+	public class ComportementChargerSimulationJeuEchecs : ComportementChargerSimulationAbstrait
 	{
 
 
 		private XPathDocument document;
 
 
-		public ComportementChargerSimulation (Simulation _simulation, XPathDocument _document, string _typeJeu)
+		public ComportementChargerSimulationJeuEchecs (Simulation _simulation, XPathDocument _document, string _typeJeu)
 		{
 			this.simulation = _simulation;
 			this.document = _document;
 
-			switch(_typeJeu){
+			/*switch(_typeJeu){
 			case "JeuEchecs":
 				this.fabrique = new JeuEchecs.FabriqueJeuEchecs ();
 				break;
@@ -32,7 +32,7 @@ namespace ProjetDesignPattern
 				fabrique = null;
 				break;
 
-			}
+			}*/
 
 		}
 
@@ -60,10 +60,7 @@ namespace ProjetDesignPattern
 
 				ZoneAbstraite zone = simulation.listeZones.Find(item => item.idZone == _zonePresent);
 
-
 				PersonnageAbstrait personnage = fabrique.CreerPersonnage (_id,type, nom, pv, etat, zone,null);
-
-
 
 				simulation.listePersonnages.Add (personnage);
 
@@ -92,8 +89,6 @@ namespace ProjetDesignPattern
 				ZoneAbstraite zone = fabrique.CreerZone (_idZone, null, null, _x, _y);
 				simulation.listeZones.Add (zone);
 			}
-			//fabrique.CreerZone
-
 		}
 
 		public override void chargerLesAcces()
@@ -125,7 +120,7 @@ namespace ProjetDesignPattern
 
 
 		public override void chargerListeObjetParZoneEtPourSimulation(){
-			XPathNavigator navigator = document.CreateNavigator();
+			/*XPathNavigator navigator = document.CreateNavigator();
 
 			XPathNodeIterator nodeAcess = navigator.Select("/Simulation/Jeu/objets/objet");
 
@@ -145,7 +140,7 @@ namespace ProjetDesignPattern
 						zoneSelectionnee.listeObjets.Add (objet);
 					}
 				}
-			}
+			}*/
 		}
 
 		public override void chargerListeObjervateurParPersonnage(){

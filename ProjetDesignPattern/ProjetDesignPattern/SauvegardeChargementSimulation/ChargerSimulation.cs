@@ -36,8 +36,10 @@ namespace ProjetDesignPattern
 					typeJeu = item.Value;
 				}
 
+				initialisationDuTypeDeChargement(typeJeu,document);
+
 				 
-				comportementChargement = new ComportementChargerSimulation (this.simulation, document,typeJeu);
+				//comportementChargement = new ComportementChargerSimulationJeuEchec (this.simulation, document,typeJeu);
 
 				if(comportementChargement != null){
 					this.comportementChargement.chargerLesZones();
@@ -51,10 +53,32 @@ namespace ProjetDesignPattern
 				Console.WriteLine(simulation);
 
 			}catch(Exception e){
-				Console.WriteLine("Erreur lors du chargement de la simulation, Exception: {0}", e.Source);
+			
+				Console.WriteLine("Erreur lors du chargement de la simulation, Exception: {0}", e.Message);
 			}
 		}
 
+		private void initialisationDuTypeDeChargement(string _type, XPathDocument _document){
+
+			switch(_type){
+			case "JeuEchecs":
+				comportementChargement = new ComportementChargerSimulationJeuDefenceTower (this.simulation,_document,null);
+				comportementChargement.fabrique = new JeuEchecs.FabriqueJeuEchecs ();
+				break;
+			case "JeuDefenceTower":
+				//this.fabrique = new JeuDefenceTower.FabriqueJeuDT ();
+				break;
+			case "JeuSimulationTrafic":
+				comportementChargement = new ComportementChargerSimulationJeuDefenceTower (this.simulation,_document,null);
+				comportementChargement.fabrique = new JeuEchecs.FabriqueJeuEchecs ();
+				break;
+			default:
+				comportementChargement = null;
+				break;
+
+			}
+
+		}
 	}
 }
 
