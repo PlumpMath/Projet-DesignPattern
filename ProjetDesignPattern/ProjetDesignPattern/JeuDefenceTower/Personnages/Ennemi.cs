@@ -40,7 +40,7 @@ namespace ProjetDesignPattern.JeuDefenceTower
             comporterSeDefendre.personnage = this;
         }
 
-        public void initEnnemi(Chateau c,int _pv, int _atq,int tour)
+        public void initEnnemi(Chateau c,int _pv, int _atq)
         {
             chateau = c;
             PV = _pv;

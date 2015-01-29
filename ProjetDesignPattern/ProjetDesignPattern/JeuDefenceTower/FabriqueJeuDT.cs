@@ -6,8 +6,6 @@ namespace ProjetDesignPattern.JeuDefenceTower
 {
     class FabriqueJeuDT : FabriqueAbstraite
     {
-        public const int typeChateau = 1;
-        public const int typeEnnemi = 2;
         
         public override PersonnageAbstrait CreerPersonnage(int _id, string _type, string _nom, string _pv, string _etat, ZoneAbstraite _position, SujetObserveAbstrait EtatMajor)
         {
@@ -25,9 +23,9 @@ namespace ProjetDesignPattern.JeuDefenceTower
             }
         }
 
-		public override ZoneAbstraite CreerZone(int _idzone, List<PersonnageAbstrait> _listePersonnages, List<ObjetAbstrait> _listeObjets,int _positionX, int positionY)
+		public override ZoneAbstraite CreerZone(int _idzone, List<PersonnageAbstrait> _listePersonnages, List<ObjetAbstrait> _listeObjets,int _positionX, int _positionY)
         {
-            return new ZoneDT();
+            return new ZoneDT(_listePersonnages, _listeObjets,_positionX, _positionY);
         }
 
 		public override AccesAbstrait CreerAcces(ZoneAbstraite _zoneDepart,ZoneAbstraite _zoneArrivee,Boolean _acces)

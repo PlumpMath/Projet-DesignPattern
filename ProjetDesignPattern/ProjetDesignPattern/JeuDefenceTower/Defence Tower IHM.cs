@@ -23,11 +23,15 @@ namespace ProjetDesignPattern.JeuDefenceTower
         {
             //si y a un perso sur la case il est touché
             ZoneDT zoneCliquée = (ZoneDT)simDT.listeZones.Find(it => it.positionX==posX && it.positionY==posY);
-            if (zoneCliquée.listePersonnages.Count > 0)
+            if (zoneCliquée != null)
             {
-                Ennemi e = (Ennemi)zoneCliquée.listePersonnages[0];
-                e.touché = true;
+                if (zoneCliquée.listePersonnages.Count > 0)
+                {
+                    Ennemi e = (Ennemi)zoneCliquée.listePersonnages[0];
+                    e.touché = true;
+                }
             }
+
         }
 
         private void Recharger_Click(object sender, EventArgs e)
