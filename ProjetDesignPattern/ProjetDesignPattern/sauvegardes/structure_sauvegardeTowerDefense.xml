@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Simulation nom="ma premier partie d'echec">
+	<Jeu typeJeu="JeuEchecs">
+	<!-- Constantes propre au jeu faut-il vraiment les mètre ici ? --> 
+	<PVmin></PVmin>
+	<PVMax></PVMax>
+	<zones>
+		<zone idzone="1"><!--donner un id-->
+			<x>1</x> 
+			<y>1</y>
+		</zone>
+		<zone idzone="2"><!--donner un id-->
+			<x>1</x> 
+			<y>2</y>
+		</zone>
+		<zone idzone="3"><!--donner un id-->
+			<x>2</x> 
+			<y>1</y>
+		</zone>
+	</zones>
+	<Access><!-- Liste de toutes les zones pouvant êtres accessible par la zone-->
+		<acces>
+			<depart>1</depart> <!-- idZone-->
+			<arrivee>2</arrivee> <!-- idZone-->
+		</acces>
+		<acces>
+			<depart>1</depart>
+			<arrivee>3</arrivee>
+		</acces>
+		<acces>
+			<depart>2</depart>
+			<arrivee>3</arrivee>
+		</acces>
+	</Access>
+	<!-- COMMENTER CAR C EST UNE SIMULATION DU JEU D ECHEC, il n'y a pas d'objet pour le jeu d'echec 
+	<objets> Pour la simulation du jeu trafic, il peut y avoir un obstacle sur la zone 
+		<objet>
+			<nom>objet 1</nom>
+			<zone>1</zone>--><!-- idZone -->
+		<!-- </objet>
+		<objet>
+			<nom>objet 2</nom>
+			<zone>2</zone>
+		</objet>
+	</objets>-->
+	<Personnages>
+		<Personnage idPersonnage="1">
+			<nom>mon nom est Pion</nom>
+			<pv>1</pv>
+			<type>Pion</type>
+			<!--IL EST COMMENTER PARCE QUE LE JEU D ECHEC N A PAS D ETAT MAIS POUR LES AUTRES OUI
+			<etat>0</etat>--><!-- Etat du personnage par exemple pour le jeu d'echec si c'est 0 c'est qu'il est mort, il faut définir des constantes dans le programme pour faire le mapping, autre exemple si dans le deffense tower le chateau possède un buff c'est ici qu'il faut l'intégret -->
+			<zonePresent>1</zonePresent> <!-- Emplacement du personnage lors de la sauvegarde, si c'est une nouvelle partie c'est ça zone de départ-->
+		</Personnage>
+		<Personnage idPersonnage="2">
+			<nom>Je suis un cavalier</nom>
+			<pv>1</pv>
+			<type>Cavalier</type>
+			<!--IL EST COMMENTER PARCE QUE LE JEU D ECHEC N A PAS D ETAT MAIS POUR LES AUTRES OUI
+			<etat>0</etat>--><!-- Etat du personnage par exemple pour le jeu d'echec si c'est 0 c'est qu'il est mort, il faut définir des constantes dans le programme pour faire le mapping, autre exemple si dans le deffense tower le chateau possède un buff c'est ici qu'il faut l'intégret -->
+			<zonePresent>2</zonePresent> <!-- Emplacement du personnage lors de la sauvegarde, si c'est une nouvelle partie c'est ça zone de départ-->
+		</Personnage>
+		<Personnage idPersonnage="3">
+			<nom>my name is Roi</nom>
+			<pv>1</pv>
+			<type>Roi</type>
+			<!--IL EST COMMENTER PARCE QUE LE JEU D ECHEC N A PAS D ETAT MAIS POUR LES AUTRES OUI
+			<etat>0</etat>--><!-- Etat du personnage par exemple pour le jeu d'echec si c'est 0 c'est qu'il est mort, il faut définir des constantes dans le programme pour faire le mapping, autre exemple si dans le deffense tower le chateau possède un buff c'est ici qu'il faut l'intégret -->
+			<zonePresent>3</zonePresent> <!-- Emplacement du personnage lors de la sauvegarde, si c'est une nouvelle partie c'est ça zone de départ-->
+		</Personnage>
+	</Personnages>
+	<observes>
+		<observe>
+			<idPersonnage>1</idPersonnage>
+			<observateurs>
+				<idPersonnage>2</idPersonnage>
+				<idPersonnage>3</idPersonnage>
+			</observateurs>
+		</observe>
+		<observe>
+			<idPersonnage>2</idPersonnage>
+			<observateurs>
+				<idPersonnage>1</idPersonnage>
+			</observateurs>
+		</observe>
+	</observes>
+	</Jeu>
+</Simulation>
