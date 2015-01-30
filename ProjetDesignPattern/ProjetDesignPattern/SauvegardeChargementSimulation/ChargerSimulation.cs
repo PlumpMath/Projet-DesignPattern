@@ -60,17 +60,19 @@ namespace ProjetDesignPattern
 
 		private void initialisationDuTypeDeChargement(string _type, XPathDocument _document){
 
+		
 			switch(_type){
 			case "JeuEchecs":
-				comportementChargement = new ComportementChargerSimulationJeuDefenceTower (this.simulation,_document,null);
+				comportementChargement = new ComportementChargerSimulationJeuEchecs (this.simulation,_document,null);
 				comportementChargement.fabrique = new JeuEchecs.FabriqueJeuEchecs ();
 				break;
 			case "JeuDefenceTower":
-				//this.fabrique = new JeuDefenceTower.FabriqueJeuDT ();
+				comportementChargement = new ComportementChargerSimulationJeuDefenceTower (this.simulation,_document,null);
+				comportementChargement.fabrique = new JeuDefenceTower.FabriqueJeuDT ();
 				break;
 			case "JeuSimulationTrafic":
-				comportementChargement = new ComportementChargerSimulationJeuDefenceTower (this.simulation,_document,null);
-				comportementChargement.fabrique = new JeuEchecs.FabriqueJeuEchecs ();
+				comportementChargement = new ComportementChargerSimulationJeuSimulationTraffic (this.simulation,_document,null);
+				comportementChargement.fabrique = new JeuSimulationTrafic.FabriqueSimuTrafic ();
 				break;
 			default:
 				comportementChargement = null;

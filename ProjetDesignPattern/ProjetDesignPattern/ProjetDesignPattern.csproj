@@ -178,6 +178,7 @@
     <Compile Include="JeuSimulationTrafic\PortionDeRoute.cs" />
     <Compile Include="SauvegardeChargementSimulation\ComportementChargerSimulationJeuEchecs.cs" />
     <Compile Include="SauvegardeChargementSimulation\ComportementChargerSimulationJeuDefenceTower.cs" />
+    <Compile Include="SauvegardeChargementSimulation\ComportementChargerSimulationJeuSimulationTraffic.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

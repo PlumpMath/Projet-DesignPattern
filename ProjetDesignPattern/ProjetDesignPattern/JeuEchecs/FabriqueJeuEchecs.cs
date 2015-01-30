@@ -61,7 +61,12 @@ namespace ProjetDesignPattern.JeuEchecs
 				piece.comporterSeDefendre.personnage = piece;
 				piece.Position = _position;
 				//piece.Position.listePersonnages.Add(piece);
+				if (EtatMajor != null) {
+					EtatMajor.AjouterObservateur (piece);
+					piece.EtatMajor = EtatMajor;
+				}
 			}
+
 			return piece;
         }
 

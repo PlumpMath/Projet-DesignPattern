@@ -4,10 +4,10 @@ namespace ProjetDesignPattern.JeuSimulationTrafic
 {
     public class FabriqueSimuTrafic : FabriqueAbstraite
     {
-        public const int typeFeu = 0;
-        public const int typeCamion = 1;
-        public const int typeVoiture = 2;
-        public const int typeMoto = 3;
+		public const string typeFeu = "0";
+        public const string typeCamion = "1";
+		public const string typeVoiture = "2";
+		public const string typeMoto = "3";
         
         public override PersonnageAbstrait CreerPersonnage(int _id, string _type, string _nom, string _pv, 
             string _etat, ZoneAbstraite _position, SujetObserveAbstrait EtatMajor)
@@ -15,42 +15,49 @@ namespace ProjetDesignPattern.JeuSimulationTrafic
             PersonnageAbstrait perso;
             switch (_type)
             {
-                case "camion":
-                    perso = new Camion();
-                    break;
-                case "feu":
-                    perso = new FeuSignalisation();
-                    switch (_etat)
-                    {
-                        case "vert":
-                            ((FeuSignalisation)perso).Etat = FeuSignalisation.vert;
-                            break;
-                        case "rouge":
-                            ((FeuSignalisation)perso).Etat = FeuSignalisation.vert;
-                            break;
-                    }
-                    break;
-                case "voiture":
-                    perso =  new Voiture();
-                    perso.comportementSeDeplacer = new ComportementSeDeplacerVoiture();
-                    perso.comportementSeDeplacer.personnage = perso;
-                    break;
-                case "moto":
-                default:
-                    perso = new Moto();
-                    break;
-            }
-            perso.Nom = _nom;
-            perso.Position = _position;
-            _position.listePersonnages.Add(perso);
+			case typeCamion:
+				perso = new Camion ();
+				perso.comportementSeDeplacer = new ComportementSeDeplacerVoiture ();
+                break;
+			case typeFeu:
+	            perso = new FeuSignalisation();
+	            switch (_etat)
+	            {
+	                case "vert":
+	                    ((FeuSignalisation)perso).Etat = FeuSignalisation.vert;
+	                    break;
+	                case "rouge":
+	                    ((FeuSignalisation)perso).Etat = FeuSignalisation.vert;
+	                    break;
+	            }
+	            break;
+			case typeVoiture:
+	            perso =  new Voiture();
+	            perso.comportementSeDeplacer = new ComportementSeDeplacerVoiture();
+	            perso.comportementSeDeplacer.personnage = perso;
+	            break;
+			case typeMoto:
+				perso = new Moto ();
+				perso.comportementSeDeplacer = new ComportementSeDeplacerVoiture();
+				break;
+			default:
+				perso = null;
+	            break;
+	    }
 
-            if (EtatMajor != null)
-            {
-                EtatMajor.AjouterObservateur(perso);
-                perso.EtatMajor = EtatMajor;
-            }
+			if (perso != null) {
+				perso.idPersonnage = _id;
+				perso.Nom = _nom;
+				perso.Position = _position;
+			//_position.listePersonnages.Add (perso);
 
-            return perso;
+				if (EtatMajor != null) {
+					EtatMajor.AjouterObservateur (perso);
+					perso.EtatMajor = EtatMajor;
+				}
+			}
+
+        return perso;
         }
 
         public SujetObserveAbstrait CreerSujetObserve()
@@ -63,10 +70,12 @@ namespace ProjetDesignPattern.JeuSimulationTrafic
         public override ZoneAbstraite CreerZone(int _idzone, List<PersonnageAbstrait> _listePersonnages, List<ObjetAbstrait> _listeObjets, int _positionX, int positionY)
         {
             ZoneAbstraite zone = new PortionDeRoute();
+			zone.listeAccess = new List<AccesAbstrait>();
             zone.positionX = _positionX;
             zone.positionY = positionY;
             zone.listePersonnages = _listePersonnages;
             zone.listeObjets = _listeObjets;
+			zone.idZone = _idzone;
             zone.zonesAdjacentes = new Dictionary<int, AccesAbstrait>();
 
             return zone;
