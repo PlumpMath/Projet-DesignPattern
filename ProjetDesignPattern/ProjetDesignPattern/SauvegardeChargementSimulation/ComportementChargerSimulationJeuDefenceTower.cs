@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Xml.XPath;
 using System.Collections.Generic;
-
+using ProjetDesignPattern.JeuDefenceTower;
 
 
 namespace ProjetDesignPattern
@@ -102,6 +102,7 @@ namespace ProjetDesignPattern
 				int _y = Convert.ToInt32 (y);
 
 				ZoneAbstraite zone = fabrique.CreerZone (_idZone, null, null, _x, _y);
+                ((ZoneDT)zone).nomImageZone = "z" + x + y;
 				simulation.listeZones.Add (zone);
 			}
 		}

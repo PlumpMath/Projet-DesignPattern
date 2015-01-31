@@ -348,11 +348,11 @@ namespace ProjetDesignPattern
             if (cheminXML.TextLength > 0)
             {
                 
-				Simulation simulation = new Simulation ("",1000);
+				jeu = new Simulation ("",1000);
 
-				simulation.chargerSimulation (cheminXML.Text);
+				jeu.chargerSimulation (cheminXML.Text);
 
-				simulation.Afficher ();
+                m_oWorker.RunWorkerAsync();
 
             }
         }
