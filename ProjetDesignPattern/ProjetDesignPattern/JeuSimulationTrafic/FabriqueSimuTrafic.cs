@@ -49,7 +49,7 @@ namespace ProjetDesignPattern.JeuSimulationTrafic
 				perso.idPersonnage = _id;
 				perso.Nom = _nom;
 				perso.Position = _position;
-			//_position.listePersonnages.Add (perso);
+			    //_position.listePersonnages.Add (perso);
 
 				if (EtatMajor != null) {
 					EtatMajor.AjouterObservateur (perso);
