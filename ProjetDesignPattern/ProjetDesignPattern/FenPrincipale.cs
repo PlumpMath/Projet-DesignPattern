@@ -230,6 +230,8 @@ namespace ProjetDesignPattern
 
             PersonnageAbstrait feu1 = jeu.fab.CreerPersonnage(1, "0", "Feu 1", "10", "vert", zone3, null);
             PersonnageAbstrait feu2 = jeu.fab.CreerPersonnage(2, "0", "Feu 2", "10", "rouge", zone7, (SujetObserveAbstrait)feu1);
+            zone3.listePersonnages.Add(feu1);
+            zone7.listePersonnages.Add(feu2);
 
             PersonnageAbstrait voiture1 = jeu.fab.CreerPersonnage(3, "2", "Voiture 1", "", "", zone1, null);
             PersonnageAbstrait voiture2 = jeu.fab.CreerPersonnage(4, "2", "Voiture 2", "", "", zone5, null);

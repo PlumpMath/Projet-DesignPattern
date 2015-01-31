@@ -120,6 +120,7 @@
             this.z62 = new System.Windows.Forms.PictureBox();
             this.z61 = new System.Windows.Forms.PictureBox();
             this.z60 = new System.Windows.Forms.PictureBox();
+            this.fermerSimulation = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.z00)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.z01)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.z02)).BeginInit();
@@ -949,11 +950,23 @@
             this.z60.TabIndex = 79;
             this.z60.TabStop = false;
             // 
+            // fermerSimulation
+            // 
+            this.fermerSimulation.Location = new System.Drawing.Point(197, 229);
+            this.fermerSimulation.Name = "fermerSimulation";
+            this.fermerSimulation.Size = new System.Drawing.Size(75, 23);
+            this.fermerSimulation.TabIndex = 92;
+            this.fermerSimulation.Text = "Fermer";
+            this.fermerSimulation.UseVisualStyleBackColor = true;
+            this.fermerSimulation.Click += new System.EventHandler(this.fermerSimulation_Click);
+            // 
             // IHM_Traffic
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(661, 261);
+            this.ControlBox = false;
+            this.Controls.Add(this.fermerSimulation);
             this.Controls.Add(this.z612);
             this.Controls.Add(this.z611);
             this.Controls.Add(this.z610);
@@ -1046,8 +1059,10 @@
             this.Controls.Add(this.z01);
             this.Controls.Add(this.z00);
             this.Controls.Add(this.textBox);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "IHM_Traffic";
-            this.Text = "IHM_Traffic";
+            this.Text = "Simulation Trafic";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.IHM_Traffic_FormClosing);
             this.Load += new System.EventHandler(this.IHM_Traffic_Load);
             ((System.ComponentModel.ISupportInitialize)(this.z00)).EndInit();
@@ -1239,6 +1254,7 @@
         private System.Windows.Forms.PictureBox z62;
         private System.Windows.Forms.PictureBox z61;
         private System.Windows.Forms.PictureBox z60;
+        private System.Windows.Forms.Button fermerSimulation;
 
     }
 }

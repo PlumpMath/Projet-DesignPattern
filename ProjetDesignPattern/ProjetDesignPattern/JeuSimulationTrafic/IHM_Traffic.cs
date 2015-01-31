@@ -33,5 +33,10 @@ namespace ProjetDesignPattern.JeuSimulationTrafic
         {
             simTrafic.finDuJeu = true;
         }
+
+        private void fermerSimulation_Click(object sender, EventArgs e)
+        {
+            simTrafic.finDuJeu = true;
+        }
     }
 }
