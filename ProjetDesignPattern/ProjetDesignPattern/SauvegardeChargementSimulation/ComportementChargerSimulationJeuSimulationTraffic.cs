@@ -165,17 +165,17 @@ namespace ProjetDesignPattern
 					PersonnageAbstrait personnageObservervateur = simulation.listePersonnages.Find(item => item.idPersonnage == _idPersonnageObservateur);
 
 					if (personnageObserve != null) {
-						if (personnageObserve.EtatMajor != null) {
-							personnageObserve.EtatMajor.AjouterObservateur (personnageObservervateur);
+						if (personnageObservervateur.EtatMajor != null) {
+							personnageObservervateur.EtatMajor.AjouterObservateur (personnageObserve);
 						} else {
-							personnageObserve.EtatMajor = (SujetObserveAbstrait) personnageObservervateur;
+							personnageObservervateur.EtatMajor = (SujetObserveAbstrait) personnageObserve;
 
 						}
+						this.simulation.listeSujetsObserves.Add (personnageObservervateur.EtatMajor);
 					}
 
 
 				}
-				this.simulation.listeSujetsObserves.Add (personnageObserve.EtatMajor);
 			}
 		}
 

@@ -37,8 +37,7 @@ namespace ProjetDesignPattern
 				}
 
 				initialisationDuTypeDeChargement(typeJeu,document);
-
-				 
+								 
 				//comportementChargement = new ComportementChargerSimulationJeuEchec (this.simulation, document,typeJeu);
 
 				if(comportementChargement != null){
@@ -61,18 +60,41 @@ namespace ProjetDesignPattern
 		private void initialisationDuTypeDeChargement(string _type, XPathDocument _document){
 
 		
+			simulation.Nom = _type;
+
 			switch(_type){
 			case "JeuEchecs":
 				comportementChargement = new ComportementChargerSimulationJeuEchecs (this.simulation,_document,null);
 				comportementChargement.fabrique = new JeuEchecs.FabriqueJeuEchecs ();
+
+				simulation.ModuleIHM = new JeuEchecs.ModuleIHM_Echecs ();
+				simulation.ModuleIHM.jeu = simulation;
+
+				simulation.ModuleStats = new JeuEchecs.ModuleStats_Echecs ();
+				simulation.ModuleStats.jeu = simulation;
+
 				break;
 			case "JeuDefenceTower":
 				comportementChargement = new ComportementChargerSimulationJeuDefenceTower (this.simulation,_document,null);
 				comportementChargement.fabrique = new JeuDefenceTower.FabriqueJeuDT ();
+
+				simulation.ModuleIHM = new JeuDefenceTower.ModuleIHMDT (simulation);
+				simulation.ModuleIHM.jeu = simulation;
+
+				simulation.ModuleStats = new JeuDefenceTower.ModuleStat_DT ();
+				simulation.ModuleStats.jeu = simulation;
+
 				break;
 			case "JeuSimulationTrafic":
 				comportementChargement = new ComportementChargerSimulationJeuSimulationTraffic (this.simulation,_document,null);
 				comportementChargement.fabrique = new JeuSimulationTrafic.FabriqueSimuTrafic ();
+
+				simulation.ModuleIHM = new JeuSimulationTrafic.ModuleIHM_Trafic ();
+				simulation.ModuleIHM.jeu = simulation;
+
+				simulation.ModuleStats = new JeuSimulationTrafic.ModuleStats_Trafic ();
+				simulation.ModuleStats.jeu = simulation;
+
 				break;
 			default:
 				comportementChargement = null;

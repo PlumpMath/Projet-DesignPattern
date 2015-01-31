@@ -169,6 +169,9 @@ namespace ProjetDesignPattern
             jeu.listePersonnages.Add(ennemi3);
             jeu.listePersonnages.Add(ennemi4);
             //jeu.Afficher();
+
+
+
             m_oWorker.RunWorkerAsync();
             
             //for (int i = 0; i < 20; i++)
@@ -218,11 +221,11 @@ namespace ProjetDesignPattern
             jeu.listeZones.Add(zone8);
 
 
-            PersonnageAbstrait feu1 = jeu.fab.CreerPersonnage(1, "feu", "Feu 1", "10", "vert", zone3, null);
-            PersonnageAbstrait feu2 = jeu.fab.CreerPersonnage(2, "feu", "Feu 2", "10", "rouge", zone7, (SujetObserveAbstrait)feu1);
+            PersonnageAbstrait feu1 = jeu.fab.CreerPersonnage(1, "0", "Feu 1", "10", "vert", zone3, null);
+            PersonnageAbstrait feu2 = jeu.fab.CreerPersonnage(2, "0", "Feu 2", "10", "rouge", zone7, (SujetObserveAbstrait)feu1);
 
-            PersonnageAbstrait voiture1 = jeu.fab.CreerPersonnage(3, "voiture", "Voiture 1", "", "", zone1, null);
-            PersonnageAbstrait voiture2 = jeu.fab.CreerPersonnage(4, "voiture", "Voiture 2", "", "", zone5, null);
+            PersonnageAbstrait voiture1 = jeu.fab.CreerPersonnage(3, "2", "Voiture 1", "", "", zone1, null);
+            PersonnageAbstrait voiture2 = jeu.fab.CreerPersonnage(4, "2", "Voiture 2", "", "", zone5, null);
             
             jeu.listePersonnages.Add(voiture1);
             jeu.listePersonnages.Add(voiture2);
@@ -231,6 +234,11 @@ namespace ProjetDesignPattern
 
 
            m_oWorker.RunWorkerAsync();
+
+			Simulation sim = new Simulation ("");
+			sim.chargerSimulation (@"structure_sauvegardeSimulationTraffic.xml");
+
+
 /*
             for (int i = 0; i < 30; i++)
             {
@@ -342,8 +350,13 @@ namespace ProjetDesignPattern
         {
             if (cheminXML.TextLength > 0)
             {
-                ChargerSimulation cg = new ChargerSimulation(jeu, cheminXML.Text);
-                cg.extractionDesDonnes();
+                
+				Simulation simulation = new Simulation ("");
+
+				simulation.chargerSimulation (cheminXML.Text);
+
+				simulation.Afficher ();
+
             }
         }
     }
