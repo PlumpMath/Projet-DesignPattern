@@ -56,11 +56,6 @@
 			<y>5</y>
 			<nomImage>z95</nomImage>
 		</zone>
-		<zone idzone="11"><!--donner un id-->
-			<x>10</x> 
-			<y>5</y>
-			<nomImage>chateau</nomImage>
-		</zone>
 		
 		
 	</zones>
