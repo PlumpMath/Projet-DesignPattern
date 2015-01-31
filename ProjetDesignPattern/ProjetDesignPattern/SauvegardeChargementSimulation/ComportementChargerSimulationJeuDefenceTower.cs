@@ -50,21 +50,36 @@ namespace ProjetDesignPattern
 				string pv = tempPersonnage.SelectSingleNode("pv")==null ? string.Empty : tempPersonnage.SelectSingleNode("pv").Value;
 				string type = tempPersonnage.SelectSingleNode("type")==null ? string.Empty : tempPersonnage.SelectSingleNode("type").Value;
 				string etat = tempPersonnage.SelectSingleNode("etat")==null ? string.Empty : tempPersonnage.SelectSingleNode("etat").Value;
-
-
-
 				string zonePresent = tempPersonnage.SelectSingleNode("zonePresent")==null ? string.Empty : tempPersonnage.SelectSingleNode("zonePresent").Value;
+
+				string attaque = tempPersonnage.SelectSingleNode("attaque")==null ? string.Empty : tempPersonnage.SelectSingleNode("attaque").Value;
+
+				string nbBalles = tempPersonnage.SelectSingleNode("nbBalles")==null ? null : tempPersonnage.SelectSingleNode("nbBalles").Value;
+
+
 				int _zonePresent = Convert.ToInt32 (zonePresent);
 				int _id = Convert.ToInt32 (id);
+
+				int _pv = Convert.ToInt32 (pv);
+				int _attaque = Convert.ToInt32 (attaque);
+				int _nbBalle = Convert.ToInt32 (nbBalles);
+
 
 
 				ZoneAbstraite zone = simulation.listeZones.Find(item => item.idZone == _zonePresent);
 
-				PersonnageAbstrait personnage = fabrique.CreerPersonnage (_id,type, nom, pv, etat, zone,null);
+				//PersonnageAbstrait personnage = fabrique.CreerPersonnage (_id,type, nom, pv, etat, zone,null);
 
-				simulation.listePersonnages.Add (personnage);
-
-
+				if (nbBalles != null && type.Equals ("chateau")) {
+					JeuDefenceTower.Chateau chateau = (JeuDefenceTower.Chateau)fabrique.CreerPersonnage(_id, type, nom,pv, etat, zone,null);
+					chateau.initChateau(_pv,_attaque ,_nbBalle);
+					simulation.listePersonnages.Add (chateau);
+				} else {
+					JeuDefenceTower.Ennemi ennemi = (JeuDefenceTower.Ennemi)fabrique.CreerPersonnage(_id, type, nom,pv, etat, zone,null);
+					JeuDefenceTower.Chateau chateau = (JeuDefenceTower.Chateau)simulation.listePersonnages.Find (item => item.Nom == "Chateau");
+					ennemi.initEnnemi(chateau, _pv, _attaque);
+					simulation.listePersonnages.Add (ennemi);
+				}
 			}
 		}
 
@@ -144,7 +159,7 @@ namespace ProjetDesignPattern
 		}
 
 		public override void chargerListeObjervateurParPersonnage(){
-			XPathNavigator navigator = document.CreateNavigator();
+			/*XPathNavigator navigator = document.CreateNavigator();
 
 			XPathNodeIterator nodeAcess = navigator.Select("/Simulation/Jeu/observes/observe");
 
@@ -166,7 +181,7 @@ namespace ProjetDesignPattern
 					personnageObserve.EtatMajor.AjouterObservateur (personnageObservervateur);
 				}
 				this.simulation.listeSujetsObserves.Add (personnageObserve.EtatMajor);
-			}
+			}*/
 		}
 
 
