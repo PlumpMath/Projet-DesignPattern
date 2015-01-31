@@ -40,6 +40,12 @@ namespace ProjetDesignPattern.JeuDefenceTower
             chateau.Recharger();
         }
 
+        private void DoubleDegat_Click(object sender, EventArgs e)
+        {
+            Chateau chateau = (Chateau)simDT.listePersonnages.Find(c => c.GetType() == typeof(Chateau));
+            chateau.etatTir.AttaqueSpecialePlusDégat();
+        }
+
         private void z90_Click(object sender, EventArgs e)
         {
             attaqueUnEnnemi(9,0);
@@ -590,7 +596,6 @@ namespace ProjetDesignPattern.JeuDefenceTower
         {
             attaqueUnEnnemi(0, 10);
         }
-
 
     }
 }

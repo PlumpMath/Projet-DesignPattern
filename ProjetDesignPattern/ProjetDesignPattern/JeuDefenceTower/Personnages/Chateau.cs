@@ -91,12 +91,14 @@ namespace ProjetDesignPattern.JeuDefenceTower
         public void Recharger()
         {
             etatTir = new ERechargement(this);
-            for (int i = 0; i < nbBallesTotal; i++)
-            {
-                System.Threading.Thread.Sleep(100);
-                nbBallesCourant++;
-            }
+            System.Threading.Thread.Sleep(1000);
+            nbBallesCourant = nbBallesTotal;
             etatTir = new EChargeurNonVide(this);
+        }
+
+        public void DoubleDegat()
+        {
+            etatTir = new EPlusDégat(this);
         }
     }
 }

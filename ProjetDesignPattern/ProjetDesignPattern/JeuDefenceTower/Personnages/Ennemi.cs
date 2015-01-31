@@ -53,7 +53,7 @@ namespace ProjetDesignPattern.JeuDefenceTower
             zoneSuivLibre = false;
             arrivéChateau = false;
             //est-tu mort
-            if (PV == 0)
+            if (PV <= 0)
             {
                 mort = true;
                 ((ZoneDT)Position).enleverEnnemi(this);
