@@ -1,4 +1,4 @@
-﻿using ProjetDesignPattern.AbstractClass;
+using ProjetDesignPattern.AbstractClass;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +14,7 @@ namespace ProjetDesignPattern
         /// <summary>
         /// Point d'entrée principal de l'application.
         /// </summary>
-       [STAThread]
+        [STAThread]
         static void Main()
         {
             Application.EnableVisualStyles();

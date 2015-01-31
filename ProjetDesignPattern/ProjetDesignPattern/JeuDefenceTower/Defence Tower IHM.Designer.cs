@@ -150,6 +150,7 @@
             this.morts = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.nbBalles = new System.Windows.Forms.TextBox();
+            this.DoubleDegat = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.chateau)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.z90)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.z91)).BeginInit();
@@ -1352,11 +1353,22 @@
             this.nbBalles.Size = new System.Drawing.Size(62, 20);
             this.nbBalles.TabIndex = 123;
             // 
+            // DoubleDegat
+            // 
+            this.DoubleDegat.Location = new System.Drawing.Point(356, 192);
+            this.DoubleDegat.Name = "DoubleDegat";
+            this.DoubleDegat.Size = new System.Drawing.Size(93, 29);
+            this.DoubleDegat.TabIndex = 125;
+            this.DoubleDegat.Text = "DoubleDégât";
+            this.DoubleDegat.UseVisualStyleBackColor = true;
+            this.DoubleDegat.Click += new System.EventHandler(this.DoubleDegat_Click);
+            // 
             // FormDT
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(551, 412);
+            this.Controls.Add(this.DoubleDegat);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.nbBalles);
             this.Controls.Add(this.label4);
@@ -1721,6 +1733,7 @@
         private System.Windows.Forms.Button Recharger;
         private System.Windows.Forms.Label label5;
         public System.Windows.Forms.TextBox nbBalles;
+        private System.Windows.Forms.Button DoubleDegat;
 
     }
 }
