@@ -9,7 +9,7 @@ namespace ProjetDesignPattern.JeuEchecs
 {
 	public class ModuleIHM_Echecs : ModuleIHMAbstrait
 	{
-		IHM_Echecs ihm;
+		public IHM_Echecs ihm;
 
 		public ModuleIHM_Echecs(){
 		}

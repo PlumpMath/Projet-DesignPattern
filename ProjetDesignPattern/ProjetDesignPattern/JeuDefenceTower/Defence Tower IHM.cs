@@ -19,6 +19,11 @@ namespace ProjetDesignPattern.JeuDefenceTower
             simDT = _s;
         }
 
+        private void Fermeture_Click(object sender, EventArgs e)
+        {
+            simDT.finDuJeu = true;
+        }
+
         private void attaqueUnEnnemi(int posX, int posY)
         {
             //si y a un perso sur la case il est touché

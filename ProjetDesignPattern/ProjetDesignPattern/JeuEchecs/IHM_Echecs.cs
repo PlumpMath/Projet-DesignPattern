@@ -159,5 +159,23 @@ namespace ProjetDesignPattern.JeuEchecs
 
 
 		}
+
+        private void InitializeComponent()
+        {
+            this.SuspendLayout();
+            // 
+            // IHM_Echecs
+            // 
+            this.ClientSize = new System.Drawing.Size(284, 262);
+            this.Name = "IHM_Echecs";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.IHM_Echecs_FormClosing);
+            this.ResumeLayout(false);
+
+        }
+
+        private void IHM_Echecs_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            jeu.finDuJeu = true;
+        }
 	}
 }

@@ -31,7 +31,18 @@ namespace ProjetDesignPattern
         private void m_oWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             MessageBox.Show("C'est la fin du jeu");
-
+            if (jeu.Nom == "Defence Tower")
+            {
+                ((ModuleIHMDT)jeu.ModuleIHM).ihm.Close();
+            }
+            if (jeu.Nom == "Simulation traffic")
+            {
+                ((ModuleIHM_Trafic)jeu.ModuleIHM).ihm.Close();
+            }
+            if (jeu.Nom == "Simulation echec")
+            {
+                ((ModuleIHM_Echecs)jeu.ModuleIHM).ihm.Close();
+            }
         }
 
         private void m_oWorker_ProgressChanged(object sender, ProgressChangedEventArgs e)
@@ -41,18 +52,21 @@ namespace ProjetDesignPattern
 
         private void m_oWorker_DoWork(object sender, DoWorkEventArgs e)
         {
-            for (int i = 0; i < 30; i++)
+            int i = 0;
+            while(true && !jeu.finDuJeu)
             {
-                System.Threading.Thread.Sleep(1000);
+                System.Threading.Thread.Sleep(jeu.vitesse);
                 jeu.TourDeJeu();
                 m_oWorker.ReportProgress(i);
+                i++;
             }
+           
         }
 
 
         private void button1_Click(object sender, EventArgs e)
         {
-            jeu = new Simulation("Defence Tower");
+            jeu = new Simulation("Defence Tower",1000);
             jeu.fab = new FabriqueJeuDT();
             jeu.ModuleIHM = new ModuleIHMDT(jeu);
             jeu.ModuleIHM.jeu = jeu;
@@ -168,22 +182,18 @@ namespace ProjetDesignPattern
             jeu.listePersonnages.Add(ennemi2);
             jeu.listePersonnages.Add(ennemi3);
             jeu.listePersonnages.Add(ennemi4);
-            //jeu.Afficher();
+
             m_oWorker.RunWorkerAsync();
             
-            //for (int i = 0; i < 20; i++)
-            //{
-            //    System.Threading.Thread.Sleep(50);
-            //    jeu.TourDeJeu();
-            //}
+
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             
-            jeu = new Simulation("Simulation traffic");
+            jeu = new Simulation("Simulation traffic",250);
             jeu.fab = new FabriqueSimuTrafic();
-            jeu.ModuleIHM = new ModuleIHM_Trafic();
+            jeu.ModuleIHM = new ModuleIHM_Trafic(jeu);
             jeu.ModuleIHM.jeu = jeu;
 
             jeu.ModuleStats = new ModuleStats_Trafic();
@@ -231,20 +241,12 @@ namespace ProjetDesignPattern
 
 
            m_oWorker.RunWorkerAsync();
-/*
-            for (int i = 0; i < 30; i++)
-            {
-                System.Console.WriteLine("test");
-                System.Threading.Thread.Sleep(1000);
-                jeu.TourDeJeu();
-                jeu.Afficher();
-            }
-*/
+
         }
 
         private void button2_Click(object sender, EventArgs e)
 		{
-			jeu = new Simulation ("Simulation echec");
+			jeu = new Simulation ("Simulation echec",1000);
 			jeu.fab = new FabriqueJeuEchecs ();
 			jeu.ModuleIHM = new ModuleIHM_Echecs ();
 			jeu.ModuleIHM.jeu = jeu;

@@ -113,6 +113,9 @@
     <EmbeddedResource Include="JeuDefenceTower\Defence Tower IHM.resx">
       <DependentUpon>Defence Tower IHM.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="JeuEchecs\IHM_Echecs.resx">
+      <DependentUpon>IHM_Echecs.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="JeuSimulationTrafic\IHM_Traffic.resx">
       <DependentUpon>IHM_Traffic.cs</DependentUpon>
     </EmbeddedResource>

@@ -7,6 +7,8 @@ namespace ProjetDesignPattern
     public class Simulation
     {
         public String Nom { get; set; }
+        public int vitesse=1000;
+        public bool finDuJeu = false;
 
         public List<SujetObserveAbstrait> listeSujetsObserves;
         public List<PersonnageAbstrait> listePersonnages;
@@ -19,9 +21,10 @@ namespace ProjetDesignPattern
         public FabriqueAbstraite fab { get; set; }
 
 
-        public Simulation(String unNom)
+        public Simulation(String unNom, int _vitesse)
         {
             Nom = unNom;
+            vitesse = _vitesse;
             listePersonnages = new List<PersonnageAbstrait>();
             listeSujetsObserves = new List<SujetObserveAbstrait>();
             listeZones = new List<ZoneAbstraite>();

@@ -1048,6 +1048,7 @@
             this.Controls.Add(this.textBox);
             this.Name = "IHM_Traffic";
             this.Text = "IHM_Traffic";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.IHM_Traffic_FormClosing);
             this.Load += new System.EventHandler(this.IHM_Traffic_Load);
             ((System.ComponentModel.ISupportInitialize)(this.z00)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.z01)).EndInit();

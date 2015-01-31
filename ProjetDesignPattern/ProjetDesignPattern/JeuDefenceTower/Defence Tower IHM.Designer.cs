@@ -151,6 +151,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.nbBalles = new System.Windows.Forms.TextBox();
             this.DoubleDegat = new System.Windows.Forms.Button();
+            this.Fermeture = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.chateau)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.z90)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.z91)).BeginInit();
@@ -1363,11 +1364,23 @@
             this.DoubleDegat.UseVisualStyleBackColor = true;
             this.DoubleDegat.Click += new System.EventHandler(this.DoubleDegat_Click);
             // 
+            // Fermeture
+            // 
+            this.Fermeture.Location = new System.Drawing.Point(455, 371);
+            this.Fermeture.Name = "Fermeture";
+            this.Fermeture.Size = new System.Drawing.Size(93, 29);
+            this.Fermeture.TabIndex = 126;
+            this.Fermeture.Text = "Fermer";
+            this.Fermeture.UseVisualStyleBackColor = true;
+            this.Fermeture.Click += new System.EventHandler(this.Fermeture_Click);
+            // 
             // FormDT
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(551, 412);
+            this.ControlBox = false;
+            this.Controls.Add(this.Fermeture);
             this.Controls.Add(this.DoubleDegat);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.nbBalles);
@@ -1492,7 +1505,7 @@
             this.Controls.Add(this.z90);
             this.Controls.Add(this.chateau);
             this.Name = "FormDT";
-            this.Text = "Defense Tower";
+            this.Text = "Defence Tower";
             ((System.ComponentModel.ISupportInitialize)(this.chateau)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.z90)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.z91)).EndInit();
@@ -1734,6 +1747,7 @@
         private System.Windows.Forms.Label label5;
         public System.Windows.Forms.TextBox nbBalles;
         private System.Windows.Forms.Button DoubleDegat;
+        private System.Windows.Forms.Button Fermeture;
 
     }
 }

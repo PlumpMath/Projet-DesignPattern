@@ -9,7 +9,7 @@ namespace ProjetDesignPattern.JeuDefenceTower
 {
     class ModuleIHMDT : ModuleIHMAbstrait
     {
-        FormDT ihm;
+        public FormDT ihm;
 
         public ModuleIHMDT(Simulation _s)
         {

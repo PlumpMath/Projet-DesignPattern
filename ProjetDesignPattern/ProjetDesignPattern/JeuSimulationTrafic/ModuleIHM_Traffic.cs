@@ -7,8 +7,12 @@ namespace ProjetDesignPattern.JeuSimulationTrafic
 {
     class ModuleIHM_Trafic : ModuleIHMAbstrait
     {
-        IHM_Traffic ihm = new IHM_Traffic();
+        public IHM_Traffic ihm;
 
+        public ModuleIHM_Trafic(Simulation _s)
+        {
+            ihm = new IHM_Traffic(_s);
+        }
         public override void afficher()
         {
             String texte = "";

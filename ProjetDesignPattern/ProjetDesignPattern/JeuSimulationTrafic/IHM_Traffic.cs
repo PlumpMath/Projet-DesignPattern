@@ -12,10 +12,11 @@ namespace ProjetDesignPattern.JeuSimulationTrafic
 {
     public partial class IHM_Traffic : Form
     {
-
-        public IHM_Traffic()
+        Simulation simTrafic;
+        public IHM_Traffic(Simulation sim)
         {
             InitializeComponent();
+            simTrafic = sim;
         }
 
         public void changeTexteBox(string txt)
@@ -26,6 +27,11 @@ namespace ProjetDesignPattern.JeuSimulationTrafic
         private void IHM_Traffic_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void IHM_Traffic_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            simTrafic.finDuJeu = true;
         }
     }
 }
