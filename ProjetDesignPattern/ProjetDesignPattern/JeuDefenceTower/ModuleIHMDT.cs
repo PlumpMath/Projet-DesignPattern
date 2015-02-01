@@ -49,14 +49,23 @@ namespace ProjetDesignPattern.JeuDefenceTower
                                               
                             }
                         }
-                        
                     }
                 }
                 else
-                {                   
-                    //case vide
-                    PictureBox p = ihm.Controls.Find(zone.nomImageZone, true).FirstOrDefault() as PictureBox;
-                    p.BackgroundImage = ProjetDesignPattern.Properties.Resources.EnnemiVide;
+                {
+                    if (zone.nomImageZone == "chateau")
+                    {
+                        //chateau
+                        PictureBox p = ihm.Controls.Find(zone.nomImageZone, true).FirstOrDefault() as PictureBox;
+                        p.BackgroundImage = ProjetDesignPattern.Properties.Resources.Chateau;
+                    }
+                    else
+                    {
+                        //case vide
+                        PictureBox p = ihm.Controls.Find(zone.nomImageZone, true).FirstOrDefault() as PictureBox;
+                        p.BackgroundImage = ProjetDesignPattern.Properties.Resources.EnnemiVide;
+                    }
+
                 }
             }
 

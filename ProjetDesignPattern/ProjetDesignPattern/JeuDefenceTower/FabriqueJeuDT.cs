@@ -48,7 +48,7 @@ namespace ProjetDesignPattern.JeuDefenceTower
             acces.arrivée = _zoneArrivee;
 
             //Ajout de l'accès à la zone départ
-            acces.départ.zonesAdjacentes.Add(1, acces);
+            _zoneDepart.zonesAdjacentes.Add(1, acces);
 
             return acces;
         }
