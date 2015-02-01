@@ -17,23 +17,6 @@ namespace ProjetDesignPattern
 		{
 			this.simulation = _simulation;
 			this.document = _document;
-
-			/*switch(_typeJeu){
-			case "JeuEchecs":
-				this.fabrique = new JeuEchecs.FabriqueJeuEchecs ();
-				break;
-			case "JeuDefenceTower":
-				this.fabrique = new JeuDefenceTower.FabriqueJeuDT ();
-				break;
-			case "JeuSimulationTrafic":
-				this.fabrique = new JeuSimulationTrafic.FabriqueSimuTrafic ();
-				break;
-			default:
-				fabrique = null;
-				break;
-
-			}*/
-
 		}
 
 		public override void chargerLesPersonnages()

@@ -48,6 +48,8 @@ namespace ProjetDesignPattern.JeuSimulationTrafic
                 if (zone.listePersonnages.Count > 0)
                 {
                     bool voiture = false;
+                    bool moto = false;
+                    bool camion = false;
                     bool feu = false;
                     bool feuVert = false;
                     foreach (PersonnageAbstrait persoZone in zone.listePersonnages)
@@ -55,6 +57,14 @@ namespace ProjetDesignPattern.JeuSimulationTrafic
                         if (persoZone.GetType() == typeof(Voiture))
                         {
                             voiture = true;
+                        }
+                        else if (persoZone.GetType() == typeof(Moto))
+                        {
+                            moto = true;
+                        }
+                        else if (persoZone.GetType() == typeof(Camion))
+                        {
+                            camion = true;
                         }
                         else if (persoZone.GetType() == typeof(FeuSignalisation))
                         {
@@ -80,6 +90,14 @@ namespace ProjetDesignPattern.JeuSimulationTrafic
                         {
                             p.BackgroundImage = ProjetDesignPattern.Properties.Resources.voiture;
                         }
+                    }
+                    else if (moto)
+                    {
+                        p.BackgroundImage = ProjetDesignPattern.Properties.Resources.moto;
+                    }
+                    else if (camion)
+                    {
+                        p.BackgroundImage = ProjetDesignPattern.Properties.Resources.camion;
                     }
                     else if (feu)
                     {

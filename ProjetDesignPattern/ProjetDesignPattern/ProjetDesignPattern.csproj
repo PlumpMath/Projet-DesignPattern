@@ -46,7 +46,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AbstractClass\ChargementJeu.cs" />
     <Compile Include="AbstractClass\ComportementChargerSimulationAbstrait.cs" />
     <Compile Include="AbstractClass\ComportementCombattreAbstrait.cs" />
     <Compile Include="AbstractClass\ComportementSeDeplacerAbstrait.cs" />
@@ -70,6 +69,8 @@
     </Compile>
     <Compile Include="JeuSimulationTrafic\ModuleIHM_Traffic.cs" />
     <Compile Include="JeuSimulationTrafic\ModuleStats_Trafic.cs" />
+    <Compile Include="JeuSimulationTrafic\Personnages\Comportements\ComportementSeDeplacerCamion.cs" />
+    <Compile Include="JeuSimulationTrafic\Personnages\Comportements\ComportementSeDeplacerMoto.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -86,7 +87,6 @@
     <Compile Include="GestionnaireJeu.cs" />
     <Compile Include="AbstractClass\ObservateurAbstrait.cs" />
     <Compile Include="AbstractClass\PersonnageAbstrait.cs" />
-    <Compile Include="AbstractClass\JeuAbstrait.cs" />
     <Compile Include="AbstractClass\ObjetAbstrait.cs" />
     <Compile Include="JeuDefenceTower\AccesDT.cs" />
     <Compile Include="JeuDefenceTower\ConflitDT.cs" />
@@ -211,6 +211,8 @@
     <None Include="Resources\feuV.bmp" />
     <None Include="Resources\feuV.png" />
     <None Include="Resources\feuV1.png" />
+    <None Include="Resources\moto.png" />
+    <None Include="Resources\camion.png" />
     <Content Include="Resources\voiture.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
@@ -224,6 +226,5 @@
   <ItemGroup>
     <Folder Include="JeuEchecs\Personnages\Observateur\" />
     <Folder Include="ProjetDesignPattern\" />
-    <Folder Include="Resources\JeuEchecs\" />
   </ItemGroup>
 </Project>

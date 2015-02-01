@@ -17,7 +17,8 @@ namespace ProjetDesignPattern.JeuSimulationTrafic
             {
 			case typeCamion:
 				perso = new Camion ();
-				perso.comportementSeDeplacer = new ComportementSeDeplacerVoiture ();
+				perso.comportementSeDeplacer = new ComportementSeDeplacerCamion();
+	            perso.comportementSeDeplacer.personnage = perso;
                 break;
 			case typeFeu:
 	            perso = new FeuSignalisation();
@@ -39,6 +40,7 @@ namespace ProjetDesignPattern.JeuSimulationTrafic
 			case typeMoto:
 				perso = new Moto ();
 				perso.comportementSeDeplacer = new ComportementSeDeplacerVoiture();
+	            perso.comportementSeDeplacer.personnage = perso;
 				break;
 			default:
 				perso = null;
@@ -78,6 +80,16 @@ namespace ProjetDesignPattern.JeuSimulationTrafic
 			zone.idZone = _idzone;
             zone.zonesAdjacentes = new Dictionary<int, AccesAbstrait>();
 
+            if (zone.listePersonnages == null)
+            {
+                zone.listePersonnages = new List<PersonnageAbstrait>();
+            }
+            if (zone.listeObjets == null)
+            {
+                zone.listeObjets = new List<ObjetAbstrait>();
+            }
+
+
             return zone;
         }
 
@@ -89,7 +101,12 @@ namespace ProjetDesignPattern.JeuSimulationTrafic
             acces.arrivée = _zoneArrivee;
 
             //Ajout de l'accès à la zone départ
-            _zoneDepart.zonesAdjacentes.Add(1, acces);
+            int i = 1;
+            while (_zoneDepart.zonesAdjacentes.ContainsKey(i))
+            {
+                i++;
+            }
+            _zoneDepart.zonesAdjacentes.Add(i, acces);
 
             return acces;
         }
