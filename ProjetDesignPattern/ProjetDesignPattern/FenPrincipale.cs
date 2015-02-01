@@ -215,7 +215,7 @@ namespace ProjetDesignPattern
 
         private void button2_Click(object sender, EventArgs e)
 		{
-			jeu = new Simulation ("Simulation echec", 1000);
+            jeu = new Simulation("JeuEchecs", 1000);
 
 			jeu.fab = new FabriqueJeuEchecs (false);
 			jeu.ModuleIHM = new ModuleIHM_Echecs (false);
