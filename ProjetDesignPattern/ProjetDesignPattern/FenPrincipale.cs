@@ -251,9 +251,9 @@ namespace ProjetDesignPattern
 
         private void button2_Click(object sender, EventArgs e)
 		{
-			jeu = new Simulation ("Simulation echec",1000);
+			jeu = new Simulation ("Simulation echec", 1000);
 			jeu.fab = new FabriqueJeuEchecs ();
-			jeu.ModuleIHM = new ModuleIHM_Echecs ();
+			jeu.ModuleIHM = new ModuleIHM_Echecs (true);
 			jeu.ModuleIHM.jeu = jeu;
 
 			jeu.ModuleStats = new ModuleStats_Echecs ();
@@ -318,8 +318,9 @@ namespace ProjetDesignPattern
 					}
 					jeu.listePersonnages.Add(jeu.fab.CreerPersonnage (0, type, color + piece, "1", null, zones [j] [y], null));
 				}
-            }
-            m_oWorker.RunWorkerAsync();
+			}
+			//jeu.Afficher ();
+			m_oWorker.RunWorkerAsync();
 		}
 
         private void bChargement_Click(object sender, EventArgs e)

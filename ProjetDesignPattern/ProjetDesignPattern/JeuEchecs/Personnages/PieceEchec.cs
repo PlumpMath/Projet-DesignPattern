@@ -1,17 +1,17 @@
-﻿using System;
+﻿﻿using System;
 using System.Collections.Generic;
 
 namespace ProjetDesignPattern.JeuEchecs
 {
-    public abstract class PieceEchec : PersonnageAbstrait
-    {
+	public abstract class PieceEchec : PersonnageAbstrait
+	{
 		public bool etatRoi = false;
 
 		public bool etatDéplacement = false;
 		public ZoneAbstraite futureZone;
 
-       // public ComportementSeDeplacerJE comportementSeDeplacer { get; set; }
-	//	public ComportementCombattreJE comportementCombattre{ get; set; }
+		// public ComportementSeDeplacerJE comportementSeDeplacer { get; set; }
+		//	public ComportementCombattreJE comportementCombattre{ get; set; }
 		public ComportementSeDefendreJE comportementSeDefendre{ get; set;}
 
 		int equipe { get; set; }
@@ -31,5 +31,20 @@ namespace ProjetDesignPattern.JeuEchecs
 		public List<ZoneAbstraite> deplacementPossible (ZoneAbstraite zone){
 			return comportementSeDeplacer.déplacementPossible (zone);
 		}
-    }
+
+		public override void AnalyserSituation()
+		{
+			//throw new NotImplementedException();
+		}
+
+		public override void Execution()
+		{
+			//throw new NotImplementedException();
+		}
+
+		public override void MiseAJour()
+		{
+			//throw new NotImplementedException();
+		}
+	}
 }

@@ -4,7 +4,7 @@ namespace ProjetDesignPattern.JeuEchecs
 {
     class Roi : PieceEchec
     {
-        public override void AnalyserSituation()
+        /*public override void AnalyserSituation()
         {
             throw new NotImplementedException();
         }
@@ -17,6 +17,6 @@ namespace ProjetDesignPattern.JeuEchecs
         public override void MiseAJour()
         {
             throw new NotImplementedException();
-        }
+        }*/
     }
 }

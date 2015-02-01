@@ -11,6 +11,8 @@
     <AssemblyName>ProjetDesignPattern</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <ProductVersion>12.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -182,6 +184,18 @@
     <Compile Include="SauvegardeChargementSimulation\ComportementChargerSimulationJeuEchecs.cs" />
     <Compile Include="SauvegardeChargementSimulation\ComportementChargerSimulationJeuDefenceTower.cs" />
     <Compile Include="SauvegardeChargementSimulation\ComportementChargerSimulationJeuSimulationTraffic.cs" />
+    <None Include="Resources\JeuEchecs\BB.png" />
+    <None Include="Resources\JeuEchecs\BC.png" />
+    <None Include="Resources\JeuEchecs\BK.png" />
+    <None Include="Resources\JeuEchecs\BP.png" />
+    <None Include="Resources\JeuEchecs\BQ.png" />
+    <None Include="Resources\JeuEchecs\BR.png" />
+    <None Include="Resources\JeuEchecs\WB.png" />
+    <None Include="Resources\JeuEchecs\WC.png" />
+    <None Include="Resources\JeuEchecs\WK.png" />
+    <None Include="Resources\JeuEchecs\WP.png" />
+    <None Include="Resources\JeuEchecs\WQ.png" />
+    <None Include="Resources\JeuEchecs\WR.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

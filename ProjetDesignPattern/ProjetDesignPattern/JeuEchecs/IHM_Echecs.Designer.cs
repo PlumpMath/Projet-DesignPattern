@@ -5,6 +5,10 @@ namespace ProjetDesignPattern.JeuEchecs
 
 		private System.ComponentModel.IContainer components = null;
 		private System.Windows.Forms.PictureBox[] cases;
+		private System.Windows.Forms.Label indicateur;
+		private System.Windows.Forms.Button abort;
+
+		private int boxSize, maxX, maxY;
 
 		protected override void Dispose(bool disposing)
 		{
@@ -19,33 +23,22 @@ namespace ProjetDesignPattern.JeuEchecs
 		private void InitializeComponent(Simulation jeu)
 		{
 			if (jeu != null) {
-				int len = jeu.listeZones.Count, maxX = 0, maxY = 0;
-				int size = 30;
+				initBoxSize ();
+				int len = jeu.listeZones.Count;
+
 				cases = new System.Windows.Forms.PictureBox[len];
 				for(int i = 0 ; i < len ; i++){
 					cases[i] = new System.Windows.Forms.PictureBox();
 					((System.ComponentModel.ISupportInitialize)(cases[i])).BeginInit();
 					this.SuspendLayout();
-					cases[i].Location = new System.Drawing.Point(size * jeu.listeZones[i].positionX, size * jeu.listeZones[i].positionY);
+					cases[i].Location = new System.Drawing.Point(boxSize * jeu.listeZones[i].positionX, boxSize * jeu.listeZones[i].positionY);
 					cases[i].Name = jeu.listeZones[i].positionX + "," + jeu.listeZones[i].positionY;
-					cases[i].Size = new System.Drawing.Size(size, size);
+					cases[i].Size = new System.Drawing.Size(boxSize, boxSize);
 					cases[i].TabIndex = i;
 					cases[i].TabStop = false;
 					cases[i].Click += new System.EventHandler(this.imageClick);
 					cases[i].BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-					if (jeu.listeZones [i].positionX % 2 == 0) {
-						if (jeu.listeZones [i].positionY % 2 == 0) {
-							cases [i].BackColor = System.Drawing.Color.DarkGray;
-						} else {
-							cases [i].BackColor = System.Drawing.Color.WhiteSmoke;
-						}
-					} else {
-						if (jeu.listeZones [i].positionY % 2 == 0) {
-							cases [i].BackColor = System.Drawing.Color.WhiteSmoke;
-						} else {
-							cases [i].BackColor = System.Drawing.Color.DarkGray;
-						}
-					}
+					resetCaseColor (i, jeu.listeZones [i].positionX, jeu.listeZones [i].positionY);
 
 					if (jeu.listeZones [i].listePersonnages.Count > 0) {
 						PersonnageAbstrait p = jeu.listeZones [i].listePersonnages [0];
@@ -55,18 +48,54 @@ namespace ProjetDesignPattern.JeuEchecs
 					((System.ComponentModel.ISupportInitialize)(cases[i])).EndInit();
 
 					this.Controls.Add(cases[i]);
-					if (maxX < jeu.listeZones [i].positionX)
-						maxX = jeu.listeZones [i].positionX;
-					if (maxY < jeu.listeZones [i].positionY)
-						maxY = jeu.listeZones [i].positionY;
 				}
-	
-				this.AutoScaleDimensions = new System.Drawing.SizeF(1F, 1F);
-				this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-				this.ClientSize = new System.Drawing.Size(size * ++maxX, size * ++maxY);
-				this.ResumeLayout(false);
+				initFenetre ();
 			}
 
+		}
+
+		public void initBoxSize(){
+			int len = jeu.listeZones.Count, a, b;
+			for(int i = 0 ; i < len ; i++){
+				if (maxX < jeu.listeZones [i].positionX)
+					maxX = jeu.listeZones [i].positionX ;
+				if (maxY < jeu.listeZones [i].positionY)
+					maxY = jeu.listeZones [i].positionY;
+			}
+			System.Drawing.Rectangle resolution = System.Windows.Forms.Screen.PrimaryScreen.Bounds;
+			a = ((maxX+3) > (maxY + 3))?(maxX+3):(maxY + 3);
+			b = (resolution.Height < resolution.Width) ? resolution.Height : resolution.Width;
+			b = System.Convert.ToInt32 (b * 0.9);
+			boxSize = b / a;
+		}
+
+		public void initFenetre(){
+			this.indicateur = new System.Windows.Forms.Label ();
+			this.indicateur.Size = new System.Drawing.Size(boxSize * ++maxX, boxSize);
+			this.indicateur.Location = new System.Drawing.Point(0, boxSize * ++maxY);
+			this.indicateur.Text = "Tour blanc";
+			this.indicateur.AutoSize = true;
+			this.indicateur.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.Controls.Add (this.indicateur);
+
+			this.abort = new System.Windows.Forms.Button ();
+			this.abort.Size  = new System.Drawing.Size(boxSize * (maxX-2), boxSize);
+			this.abort.Location = new System.Drawing.Point(boxSize, boxSize * ++maxY);
+			this.abort.Text = "Abandonner";
+			this.abort.AutoSize = true;
+			this.abort.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.abort.Click += new System.EventHandler(this.fin);
+
+			this.Controls.Add (this.abort);
+
+			this.AutoScaleDimensions = new System.Drawing.SizeF(1F, 1F);
+			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.ClientSize = new System.Drawing.Size(boxSize * maxX, boxSize * ++maxY);
+			this.AutoSize = false;
+			this.ResumeLayout(false);
+
+			System.Drawing.Rectangle resolution = System.Windows.Forms.Screen.PrimaryScreen.Bounds;
+			this.Location = new System.Drawing.Point ((resolution.Width /2) - ((boxSize * maxX) /2), (resolution.Height /2) - ((boxSize * maxY) /2));
 		}
 
 		public System.Drawing.Image getImage(string name){
@@ -108,6 +137,38 @@ namespace ProjetDesignPattern.JeuEchecs
 					}
 				}
 			}
+		}
+
+		public void colorCase(int caseIndex, System.Drawing.Color color){
+			cases [caseIndex].BackColor = color;
+		}
+		private void colorCase(Location caseLocation, System.Drawing.Color color){
+			for (int i = 0; i < cases.Length; i++) {
+				if (cases [i].Name == caseLocation.name) {
+					colorCase (i, color);
+					break;
+				}
+			}
+		}
+
+		public void resetCaseColor(int i, Location l){
+			if (l.x % 2 == 0) {
+				if (l.y % 2 == 0) {
+					cases [i].BackColor = System.Drawing.Color.DarkGray;
+				} else {
+					cases [i].BackColor = System.Drawing.Color.WhiteSmoke;
+				}
+			} else {
+				if (l.y % 2 == 0) {
+					cases [i].BackColor = System.Drawing.Color.WhiteSmoke;
+				} else {
+					cases [i].BackColor = System.Drawing.Color.DarkGray;
+				}
+			}
+		}
+
+		private void resetCaseColor(int i, int x, int y){
+			resetCaseColor (i, new ProjetDesignPattern.Location (x, y));
 		}
 	}
 }
