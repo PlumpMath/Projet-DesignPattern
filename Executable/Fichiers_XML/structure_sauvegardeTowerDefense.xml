@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Simulation nom="ma premier partie d'echec">
+	<Jeu typeJeu="JeuDefenceTower">
+	<!-- Constantes propre au jeu faut-il vraiment les mètre ici ? --> 
+	<PVmin></PVmin>
+	<PVMax></PVMax>
+	<zones>
+		<zone idzone="1"><!--donner un id-->
+			<x>0</x> 
+			<y>5</y>
+			<nomImage>z05</nomImage>
+		</zone>
+		<zone idzone="2"><!--donner un id-->
+			<x>1</x> 
+			<y>5</y>
+			<nomImage>z15</nomImage>
+		</zone>
+		<zone idzone="3"><!--donner un id-->
+			<x>2</x> 
+			<y>5</y>
+			<nomImage>z25</nomImage>
+		</zone>
+		<zone idzone="4"><!--donner un id-->
+			<x>3</x> 
+			<y>5</y>
+			<nomImage>z35</nomImage>
+		</zone>
+		<zone idzone="5"><!--donner un id-->
+			<x>4</x> 
+			<y>5</y>
+			<nomImage>z45</nomImage>
+		</zone>
+		<zone idzone="6"><!--donner un id-->
+			<x>5</x> 
+			<y>5</y>
+			<nomImage>z55</nomImage>
+		</zone>
+		<zone idzone="7"><!--donner un id-->
+			<x>6</x> 
+			<y>5</y>
+			<nomImage>z65</nomImage>
+		</zone>
+		<zone idzone="8"><!--donner un id-->
+			<x>7</x> 
+			<y>5</y>
+			<nomImage>z75</nomImage>
+		</zone>
+		<zone idzone="9"><!--donner un id-->
+			<x>8</x> 
+			<y>5</y>
+			<nomImage>z85</nomImage>
+		</zone>
+		<zone idzone="10"><!--donner un id-->
+			<x>9</x> 
+			<y>5</y>
+			<nomImage>z95</nomImage>
+		</zone>
+		
+		
+	</zones>
+	<Access><!-- Liste de toutes les zones pouvant êtres accessible par la zone-->
+		<acces>
+			<depart>1</depart> <!-- idZone-->
+			<arrivee>2</arrivee> <!-- idZone-->
+		</acces>
+		<acces>
+			<depart>2</depart>
+			<arrivee>3</arrivee>
+		</acces>
+		<acces>
+			<depart>3</depart>
+			<arrivee>4</arrivee>
+		</acces>
+		<acces>
+			<depart>4</depart>
+			<arrivee>5</arrivee>
+		</acces>
+		<acces>
+			<depart>5</depart>
+			<arrivee>6</arrivee>
+		</acces>
+		<acces>
+			<depart>6</depart>
+			<arrivee>7</arrivee>
+		</acces>
+		<acces>
+			<depart>7</depart>
+			<arrivee>8</arrivee>
+		</acces>
+		<acces>
+			<depart>8</depart>
+			<arrivee>9</arrivee>
+		</acces>
+		<acces>
+			<depart>9</depart>
+			<arrivee>10</arrivee>
+		</acces>
+		<acces>
+			<depart>10</depart>
+			<arrivee>11</arrivee>
+		</acces>
+	</Access>
+	<!-- COMMENTER CAR C EST UNE SIMULATION DU JEU D ECHEC, il n'y a pas d'objet pour le jeu d'echec 
+	<objets> Pour la simulation du jeu trafic, il peut y avoir un obstacle sur la zone 
+		<objet>
+			<nom>objet 1</nom>
+			<zone>1</zone>--><!-- idZone -->
+		<!-- </objet>
+		<objet>
+			<nom>objet 2</nom>
+			<zone>2</zone>
+		</objet>
+	</objets>-->
+	<Personnages>
+		<Personnage idPersonnage="1">
+			<!-- IMPORTANT LE CHATEAU DOIT TOUJOURS S'APPELER Chateau -->
+			<nom>Chateau</nom>
+			<pv>10</pv>
+			<type>chateau</type>
+			<etat>10</etat>
+			<zonePresent>11</zonePresent> <!-- Emplacement du personnage lors de la sauvegarde, si c'est une nouvelle partie c'est ça zone de départ-->
+			<attaque>10</attaque>
+			<nbBalles>10</nbBalles>
+		</Personnage>
+		<Personnage idPersonnage="2">
+			<nom>ennemi 1</nom>
+			<pv>10</pv>
+			<type>ennemi</type>
+			<etat>1</etat>
+			<zonePresent>1</zonePresent> <!-- Emplacement du personnage lors de la sauvegarde, si c'est une nouvelle partie c'est ça zone de départ-->
+			<attaque>10</attaque>
+		</Personnage>
+		<Personnage idPersonnage="3">
+			<nom>ennemi 2</nom>
+			<pv>10</pv>
+			<type>ennemi</type>
+			<etat>1</etat>
+			<zonePresent>1</zonePresent> <!-- Emplacement du personnage lors de la sauvegarde, si c'est une nouvelle partie c'est ça zone de départ-->
+			<attaque>10</attaque>
+		</Personnage>
+		<Personnage idPersonnage="4">
+			<nom>ennemi 3</nom>
+			<pv>10</pv>
+			<type>ennemi</type>
+			<etat>1</etat>
+			<zonePresent>1</zonePresent> <!-- Emplacement du personnage lors de la sauvegarde, si c'est une nouvelle partie c'est ça zone de départ-->
+			<attaque>10</attaque>
+		</Personnage>
+		<Personnage idPersonnage="5">
+			<nom>ennemi 4</nom>
+			<pv>10</pv>
+			<type>ennemi</type>
+			<etat>1</etat>
+			<zonePresent>1</zonePresent> <!-- Emplacement du personnage lors de la sauvegarde, si c'est une nouvelle partie c'est ça zone de départ-->
+			<attaque>10</attaque>
+		</Personnage>
+	</Personnages>
+	</Jeu>
+</Simulation>
