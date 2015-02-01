@@ -253,8 +253,8 @@ namespace ProjetDesignPattern
 		{
 			jeu = new Simulation ("Simulation echec", 1000);
 
-			jeu.fab = new FabriqueJeuEchecs ();
-			jeu.ModuleIHM = new ModuleIHM_Echecs (true);
+			jeu.fab = new FabriqueJeuEchecs (false);
+			jeu.ModuleIHM = new ModuleIHM_Echecs (false);
 			jeu.ModuleIHM.jeu = jeu;
 
 			jeu.ModuleStats = new ModuleStats_Echecs ();

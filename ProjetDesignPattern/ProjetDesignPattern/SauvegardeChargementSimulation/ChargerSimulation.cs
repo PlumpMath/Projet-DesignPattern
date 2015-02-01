@@ -52,7 +52,8 @@ namespace ProjetDesignPattern
 				Console.WriteLine(simulation);
 
 			}catch(Exception e){
-			
+				Console.WriteLine(e.Message);
+				Console.WriteLine(e.StackTrace);
 				Console.WriteLine("Erreur lors du chargement de la simulation, Exception: {0}", e.Message);
 			}
 		}

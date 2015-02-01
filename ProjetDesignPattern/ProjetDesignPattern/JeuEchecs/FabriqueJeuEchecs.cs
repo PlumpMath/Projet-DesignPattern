@@ -12,7 +12,15 @@ namespace ProjetDesignPattern.JeuEchecs
 		public const string typeRoi = "4";
 		public const string typeReine = "5";
 
-        
+		public bool xml;
+		
+		public FabriqueJeuEchecs(){
+			xml = true;
+		}
+		public FabriqueJeuEchecs(bool b){
+			xml = b;
+		}
+
 		public override PersonnageAbstrait CreerPersonnage(int _id, string _type, string _nom,string _pv, string _etat,ZoneAbstraite _position, SujetObserveAbstrait EtatMajor)
         {
 			PersonnageAbstrait piece = null;
@@ -60,7 +68,8 @@ namespace ProjetDesignPattern.JeuEchecs
 				piece.comportementSeDeplacer.personnage = piece;
 				piece.comporterSeDefendre.personnage = piece;
 				piece.Position = _position;
-				piece.Position.listePersonnages.Add(piece);
+				if(!xml)
+					piece.Position.listePersonnages.Add(piece);
 				if (EtatMajor != null) {
 					EtatMajor.AjouterObservateur (piece);
 					piece.EtatMajor = EtatMajor;
