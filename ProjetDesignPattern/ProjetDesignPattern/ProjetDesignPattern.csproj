@@ -84,7 +84,6 @@
     <Compile Include="FenPrincipale.Designer.cs">
       <DependentUpon>FenPrincipale.cs</DependentUpon>
     </Compile>
-    <Compile Include="GestionnaireJeu.cs" />
     <Compile Include="AbstractClass\ObservateurAbstrait.cs" />
     <Compile Include="AbstractClass\PersonnageAbstrait.cs" />
     <Compile Include="AbstractClass\ObjetAbstrait.cs" />

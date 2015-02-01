@@ -1062,6 +1062,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "IHM_Traffic";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Simulation Trafic";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.IHM_Traffic_FormClosing);
             this.Load += new System.EventHandler(this.IHM_Traffic_Load);

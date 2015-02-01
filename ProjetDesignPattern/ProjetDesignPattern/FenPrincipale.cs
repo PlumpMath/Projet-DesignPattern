@@ -4,6 +4,7 @@ using ProjetDesignPattern.JeuSimulationTrafic;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.IO;
 using System.Windows.Forms;
 
 namespace ProjetDesignPattern
@@ -13,6 +14,8 @@ namespace ProjetDesignPattern
 
         BackgroundWorker m_oWorker;
         Simulation jeu;
+        OpenFileDialog openFileDialog1;
+        string location_fileDialog;
 
         public FenPrincipale()
         {
@@ -26,6 +29,11 @@ namespace ProjetDesignPattern
                     (m_oWorker_RunWorkerCompleted);
             m_oWorker.WorkerReportsProgress = true;
             m_oWorker.WorkerSupportsCancellation = true;
+
+            openFileDialog1 = new OpenFileDialog();
+
+            location_fileDialog = @"c:\";
+            openFileDialog1.InitialDirectory = location_fileDialog;
         }
 
         private void m_oWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
@@ -63,7 +71,6 @@ namespace ProjetDesignPattern
            
         }
 
-
         private void button1_Click(object sender, EventArgs e)
         {
             jeu = new Simulation("JeuDefenceTower", 1000);
@@ -73,44 +80,6 @@ namespace ProjetDesignPattern
 
             jeu.ModuleStats = new ModuleStat_DT();
             jeu.ModuleStats.jeu = jeu;
-/*
-
-            //chateau
-            ZoneDT zonechateau = (ZoneDT)jeu.fab.CreerZone(1, new List<PersonnageAbstrait>(), new List<ObjetAbstrait>(), 10, 5);
-            zonechateau.nomImageZone = "chateau";
-            Chateau chateau = (Chateau)jeu.fab.CreerPersonnage(1, "chateau", "chateau","", "10", zonechateau,null);
-            chateau.initChateau(10, 10, 1);
-            jeu.listePersonnages.Add(chateau);
-            //zones
-            int k = 2;
-            for (int i = 0; i < 10; i++)//x
-            {
-                for (int j = 0; j < 11; j++)//y
-                {
-                    ZoneDT z = (ZoneDT)jeu.fab.CreerZone(k, new List<PersonnageAbstrait>(), new List<ObjetAbstrait>(), i, j);
-                    z.créerZoneDT(i, j);
-                    jeu.listeZones.Add(z);
-                    Ennemi ennemi = (Ennemi)jeu.fab.CreerPersonnage(k,"ennemi","ennemi"+k,"","1", z,null);
-                    ennemi.initEnnemi(chateau, 10, 1);
-                    z.attacherEnnemi(ennemi);
-                    jeu.listePersonnages.Add(ennemi);
-                    k++;
-                }
-            }
-            //acces
-            foreach (ZoneAbstraite zone1 in jeu.listeZones)
-            {
-                if (zone1.positionX < 10)
-                {
-                    ZoneAbstraite zone2 = jeu.listeZones.Find(z => z.positionY == zone1.positionY + 1);
-                    jeu.fab.CreerAcces(zone1, zone2, true);
-                }
-            }
-
-            
-
-            m_oWorker.RunWorkerAsync();
-*/
             
             ZoneDT zone1 = (ZoneDT)jeu.fab.CreerZone(1, new List<PersonnageAbstrait>(), new List<ObjetAbstrait>(), 0, 5);
             zone1.nomImageZone = "z05";
@@ -183,8 +152,7 @@ namespace ProjetDesignPattern
             jeu.listePersonnages.Add(ennemi3);
             jeu.listePersonnages.Add(ennemi4);
 
-            m_oWorker.RunWorkerAsync();
-            
+            m_oWorker.RunWorkerAsync();  
 
         }
 
@@ -243,10 +211,6 @@ namespace ProjetDesignPattern
 
 
            m_oWorker.RunWorkerAsync();
-
-            //Simulation sim = new Simulation ("");
-            //sim.chargerSimulation (@"structure_sauvegardeSimulationTraffic.xml");
-
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -320,21 +284,21 @@ namespace ProjetDesignPattern
 					jeu.listePersonnages.Add(jeu.fab.CreerPersonnage (0, type, color + piece, "1", null, zones [j] [y], null));
 				}
 			}
-			//jeu.Afficher ();
+
 			m_oWorker.RunWorkerAsync();
 		}
 
         private void bChargement_Click(object sender, EventArgs e)
         {
-            OpenFileDialog openFileDialog1 = new OpenFileDialog();
-
-            openFileDialog1.InitialDirectory = "C:\\" ;
             openFileDialog1.Filter = "xml files (*.xml)|*.xml" ;
             openFileDialog1.FilterIndex = 2 ;
             openFileDialog1.RestoreDirectory = true ;
 
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
+                openFileDialog1.InitialDirectory = openFileDialog1.FileName.Remove(openFileDialog1.FileName.LastIndexOf("\\"));
+                location_fileDialog = Path.GetDirectoryName(openFileDialog1.FileName);
+
                 try
                 {
                     cheminXML.Text = openFileDialog1.FileName;
@@ -354,7 +318,7 @@ namespace ProjetDesignPattern
                 
 				jeu = new Simulation ("",1000);
 
-				jeu.chargerSimulation (cheminXML.Text);
+                jeu.chargerSimulation(cheminXML.Text);
 
                 m_oWorker.RunWorkerAsync();
 
