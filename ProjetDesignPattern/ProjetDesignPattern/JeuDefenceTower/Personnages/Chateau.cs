@@ -17,15 +17,13 @@ namespace ProjetDesignPattern.JeuDefenceTower
         public int nbBallesTotal;
         public int nbBallesCourant = 0;
         public EtatAbstraitDT etatTir;
+        public Simulation simuEnCours;
 
         public Chateau(string _nom, int _pv, int _atq)
         {
             PV=_pv;
             Nom = _nom;
             ptAttaque = _atq;
-            /*comportementSeDeplacer = new ComportementSeDeplacerAPiedDT();
-            comportementCombattre = new ComportementCombattreDT();
-            comporterSeDefendre = new ComportementSeDefendreDT();*/
             Position = new ZoneDT();
             Position.positionX = 10;
             Position.positionY = 10;
@@ -36,9 +34,6 @@ namespace ProjetDesignPattern.JeuDefenceTower
         public Chateau(string _nom)
         {
             Nom = Nom;
-            /*comportementSeDeplacer = new ComportementSeDeplacerAPiedDT();
-            comportementCombattre = new ComportementCombattreDT();
-            comporterSeDefendre = new ComportementSeDefendreDT();*/
             Position = new ZoneDT();
             Position.positionX = 10;
             Position.positionY = 10;
@@ -46,18 +41,19 @@ namespace ProjetDesignPattern.JeuDefenceTower
             nbBallesTotal = 10;
         }
 
-        public void initChateau(int _pv, int _atq,int nbballes)
+        public void initChateau(int _pv, int _atq,int nbballes,Simulation simu)
         {
             PV = _pv;
             ptAttaque = _atq;
             nbBallesTotal = nbballes;
             nbBallesCourant = nbBallesTotal;
+            simuEnCours = simu;
         }
 
         public override void AnalyserSituation()
         {
             //est-tu mort
-            if (PV == 0) mort = true;
+            if (PV <= 0) mort = true;
             //a tu pris un dégât -> défini à l'attaque des ennemis
         }
 
@@ -65,7 +61,11 @@ namespace ProjetDesignPattern.JeuDefenceTower
         {
 
             //si tu es mort -> game over
-            if (mort) MessageBox.Show("Château détruit");
+            if (mort)
+            {
+                simuEnCours.finDuJeu = true;
+                MessageBox.Show("Château détruit");
+            }
             //if (mort) -> lance la fin du jeu
             //si tu t'es pris un dégât -> baisse tes points de vie
             if (dégatsreçus > 0)

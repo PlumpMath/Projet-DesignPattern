@@ -72,7 +72,7 @@ namespace ProjetDesignPattern
 
 				if (nbBalles != null && type.Equals ("chateau")) {
 					JeuDefenceTower.Chateau chateau = (JeuDefenceTower.Chateau)fabrique.CreerPersonnage(_id, type, nom,pv, etat, zone,null);
-					chateau.initChateau(_pv,_attaque ,_nbBalle);
+					chateau.initChateau(_pv,_attaque ,_nbBalle,simulation);
 					simulation.listePersonnages.Add (chateau);
 				} else {
 					JeuDefenceTower.Ennemi ennemi = (JeuDefenceTower.Ennemi)fabrique.CreerPersonnage(_id, type, nom,pv, etat, zone,null);
@@ -93,7 +93,8 @@ namespace ProjetDesignPattern
 			foreach (XPathNavigator tempZone in nodeZones)
 			{
 				string x = tempZone.SelectSingleNode("x")==null ? string.Empty : tempZone.SelectSingleNode("x").Value;
-				string y = tempZone.SelectSingleNode("y")==null ? string.Empty : tempZone.SelectSingleNode("y").Value;
+                string y = tempZone.SelectSingleNode("y") == null ? string.Empty : tempZone.SelectSingleNode("y").Value;
+                string nomImage = tempZone.SelectSingleNode("x") == null ? string.Empty : tempZone.SelectSingleNode("nomImage").Value;
 				string idZone = tempZone.GetAttribute("idzone","")==null ? string.Empty : tempZone.GetAttribute("idzone","");
 
 
@@ -102,7 +103,7 @@ namespace ProjetDesignPattern
 				int _y = Convert.ToInt32 (y);
 
 				ZoneAbstraite zone = fabrique.CreerZone (_idZone, null, null, _x, _y);
-                ((ZoneDT)zone).nomImageZone = "z" + x + y;
+                ((ZoneDT)zone).nomImageZone = nomImage;
 				simulation.listeZones.Add (zone);
 			}
 		}

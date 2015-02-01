@@ -1,0 +1,1165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Simulation nom="ma premier partie d'echec">
+	<Jeu typeJeu="JeuDefenceTower">
+	<!-- Constantes propre au jeu faut-il vraiment les mètre ici ? --> 
+	<PVmin></PVmin>
+	<PVMax></PVMax>
+	<zones>
+		<!--ligne 1-->
+		<zone idzone="1"><!--donner un id-->
+			<x>0</x> 
+			<y>1</y>
+			<nomImage>z01</nomImage>
+		</zone>
+		<zone idzone="2"><!--donner un id-->
+			<x>1</x> 
+			<y>1</y>
+			<nomImage>z11</nomImage>
+		</zone>
+		<zone idzone="3"><!--donner un id-->
+			<x>2</x> 
+			<y>1</y>
+			<nomImage>z21</nomImage>
+		</zone>
+		<zone idzone="4"><!--donner un id-->
+			<x>3</x> 
+			<y>1</y>
+			<nomImage>z31</nomImage>
+		</zone>
+		<zone idzone="5"><!--donner un id-->
+			<x>4</x> 
+			<y>1</y>
+			<nomImage>z41</nomImage>
+		</zone>
+		<zone idzone="6"><!--donner un id-->
+			<x>5</x> 
+			<y>1</y>
+			<nomImage>z51</nomImage>
+		</zone>
+		<zone idzone="7"><!--donner un id-->
+			<x>6</x> 
+			<y>1</y>
+			<nomImage>z61</nomImage>
+		</zone>
+		<zone idzone="8"><!--donner un id-->
+			<x>7</x> 
+			<y>1</y>
+			<nomImage>z71</nomImage>
+		</zone>
+		<zone idzone="9"><!--donner un id-->
+			<x>8</x> 
+			<y>1</y>
+			<nomImage>z81</nomImage>
+		</zone>
+		<zone idzone="10"><!--donner un id-->
+			<x>9</x> 
+			<y>1</y>
+			<nomImage>z91</nomImage>
+		</zone>
+		<!--ligne 2-->
+		<zone idzone="11"><!--donner un id-->
+			<x>0</x> 
+			<y>2</y>
+			<nomImage>z02</nomImage>
+		</zone>
+		<zone idzone="12"><!--donner un id-->
+			<x>1</x> 
+			<y>2</y>
+			<nomImage>z12</nomImage>
+		</zone>
+		<zone idzone="13"><!--donner un id-->
+			<x>2</x> 
+			<y>2</y>
+			<nomImage>z22</nomImage>
+		</zone>
+		<zone idzone="14"><!--donner un id-->
+			<x>3</x> 
+			<y>2</y>
+			<nomImage>z32</nomImage>
+		</zone>
+		<zone idzone="15"><!--donner un id-->
+			<x>4</x> 
+			<y>2</y>
+			<nomImage>z42</nomImage>
+		</zone>
+		<zone idzone="16"><!--donner un id-->
+			<x>5</x> 
+			<y>2</y>
+			<nomImage>z52</nomImage>
+		</zone>
+		<zone idzone="17"><!--donner un id-->
+			<x>6</x> 
+			<y>2</y>
+			<nomImage>z62</nomImage>
+		</zone>
+		<zone idzone="18"><!--donner un id-->
+			<x>7</x> 
+			<y>2</y>
+			<nomImage>z72</nomImage>
+		</zone>
+		<zone idzone="19"><!--donner un id-->
+			<x>8</x> 
+			<y>2</y>
+			<nomImage>z82</nomImage>
+		</zone>
+		<zone idzone="20"><!--donner un id-->
+			<x>9</x> 
+			<y>2</y>
+			<nomImage>z92</nomImage>
+		</zone>
+		<!--ligne 3-->
+		<zone idzone="21"><!--donner un id-->
+			<x>0</x> 
+			<y>3</y>
+			<nomImage>z03</nomImage>
+		</zone>
+		<zone idzone="22"><!--donner un id-->
+			<x>1</x> 
+			<y>3</y>
+			<nomImage>z13</nomImage>
+		</zone>
+		<zone idzone="23"><!--donner un id-->
+			<x>2</x> 
+			<y>3</y>
+			<nomImage>z23</nomImage>
+		</zone>
+		<zone idzone="24"><!--donner un id-->
+			<x>3</x> 
+			<y>3</y>
+			<nomImage>z33</nomImage>
+		</zone>
+		<zone idzone="25"><!--donner un id-->
+			<x>4</x> 
+			<y>3</y>
+			<nomImage>z43</nomImage>
+		</zone>
+		<zone idzone="26"><!--donner un id-->
+			<x>5</x> 
+			<y>3</y>
+			<nomImage>z53</nomImage>
+		</zone>
+		<zone idzone="27"><!--donner un id-->
+			<x>6</x> 
+			<y>3</y>
+			<nomImage>z63</nomImage>
+		</zone>
+		<zone idzone="28"><!--donner un id-->
+			<x>7</x> 
+			<y>3</y>
+			<nomImage>z73</nomImage>
+		</zone>
+		<zone idzone="29"><!--donner un id-->
+			<x>8</x> 
+			<y>3</y>
+			<nomImage>z83</nomImage>
+		</zone>
+		<zone idzone="30"><!--donner un id-->
+			<x>9</x> 
+			<y>3</y>
+			<nomImage>z93</nomImage>
+		</zone>
+		<!--ligne 4-->
+		<zone idzone="31"><!--donner un id-->
+			<x>0</x> 
+			<y>4</y>
+			<nomImage>z04</nomImage>
+		</zone>
+		<zone idzone="32"><!--donner un id-->
+			<x>1</x> 
+			<y>4</y>
+			<nomImage>z14</nomImage>
+		</zone>
+		<zone idzone="33"><!--donner un id-->
+			<x>2</x> 
+			<y>4</y>
+			<nomImage>z24</nomImage>
+		</zone>
+		<zone idzone="34"><!--donner un id-->
+			<x>3</x> 
+			<y>4</y>
+			<nomImage>z34</nomImage>
+		</zone>
+		<zone idzone="35"><!--donner un id-->
+			<x>4</x> 
+			<y>4</y>
+			<nomImage>z44</nomImage>
+		</zone>
+		<zone idzone="36"><!--donner un id-->
+			<x>5</x> 
+			<y>4</y>
+			<nomImage>z54</nomImage>
+		</zone>
+		<zone idzone="37"><!--donner un id-->
+			<x>6</x> 
+			<y>4</y>
+			<nomImage>z64</nomImage>
+		</zone>
+		<zone idzone="38"><!--donner un id-->
+			<x>7</x> 
+			<y>4</y>
+			<nomImage>z74</nomImage>
+		</zone>
+		<zone idzone="39"><!--donner un id-->
+			<x>8</x> 
+			<y>4</y>
+			<nomImage>z84</nomImage>
+		</zone>
+		<zone idzone="40"><!--donner un id-->
+			<x>9</x> 
+			<y>4</y>
+			<nomImage>z94</nomImage>
+		</zone>
+		<!--ligne 5-->
+		<zone idzone="41"><!--donner un id-->
+			<x>0</x> 
+			<y>5</y>
+			<nomImage>z05</nomImage>
+		</zone>
+		<zone idzone="42"><!--donner un id-->
+			<x>1</x> 
+			<y>5</y>
+			<nomImage>z15</nomImage>
+		</zone>
+		<zone idzone="43"><!--donner un id-->
+			<x>2</x> 
+			<y>5</y>
+			<nomImage>z25</nomImage>
+		</zone>
+		<zone idzone="44"><!--donner un id-->
+			<x>3</x> 
+			<y>5</y>
+			<nomImage>z35</nomImage>
+		</zone>
+		<zone idzone="45"><!--donner un id-->
+			<x>4</x> 
+			<y>5</y>
+			<nomImage>z45</nomImage>
+		</zone>
+		<zone idzone="46"><!--donner un id-->
+			<x>5</x> 
+			<y>5</y>
+			<nomImage>z55</nomImage>
+		</zone>
+		<zone idzone="47"><!--donner un id-->
+			<x>6</x> 
+			<y>5</y>
+			<nomImage>z65</nomImage>
+		</zone>
+		<zone idzone="48"><!--donner un id-->
+			<x>7</x> 
+			<y>5</y>
+			<nomImage>z75</nomImage>
+		</zone>
+		<zone idzone="49"><!--donner un id-->
+			<x>8</x> 
+			<y>5</y>
+			<nomImage>z85</nomImage>
+		</zone>
+		<zone idzone="50"><!--donner un id-->
+			<x>9</x> 
+			<y>5</y>
+			<nomImage>z95</nomImage>
+		</zone>
+		<!--ligne 6-->
+		<zone idzone="51"><!--donner un id-->
+			<x>0</x> 
+			<y>6</y>
+			<nomImage>z06</nomImage>
+		</zone>
+		<zone idzone="52"><!--donner un id-->
+			<x>1</x> 
+			<y>6</y>
+			<nomImage>z16</nomImage>
+		</zone>
+		<zone idzone="53"><!--donner un id-->
+			<x>2</x> 
+			<y>6</y>
+			<nomImage>z26</nomImage>
+		</zone>
+		<zone idzone="54"><!--donner un id-->
+			<x>3</x> 
+			<y>6</y>
+			<nomImage>z36</nomImage>
+		</zone>
+		<zone idzone="55"><!--donner un id-->
+			<x>4</x> 
+			<y>6</y>
+			<nomImage>z46</nomImage>
+		</zone>
+		<zone idzone="56"><!--donner un id-->
+			<x>5</x> 
+			<y>6</y>
+			<nomImage>z56</nomImage>
+		</zone>
+		<zone idzone="57"><!--donner un id-->
+			<x>6</x> 
+			<y>6</y>
+			<nomImage>z66</nomImage>
+		</zone>
+		<zone idzone="58"><!--donner un id-->
+			<x>7</x> 
+			<y>6</y>
+			<nomImage>z76</nomImage>
+		</zone>
+		<zone idzone="59"><!--donner un id-->
+			<x>8</x> 
+			<y>6</y>
+			<nomImage>z86</nomImage>
+		</zone>
+		<zone idzone="60"><!--donner un id-->
+			<x>9</x> 
+			<y>6</y>
+			<nomImage>z96</nomImage>
+		</zone>
+		<!--ligne 7-->
+		<zone idzone="61"><!--donner un id-->
+			<x>0</x> 
+			<y>7</y>
+			<nomImage>z07</nomImage>
+		</zone>
+		<zone idzone="62"><!--donner un id-->
+			<x>1</x> 
+			<y>7</y>
+			<nomImage>z17</nomImage>
+		</zone>
+		<zone idzone="63"><!--donner un id-->
+			<x>2</x> 
+			<y>7</y>
+			<nomImage>z27</nomImage>
+		</zone>
+		<zone idzone="64"><!--donner un id-->
+			<x>3</x> 
+			<y>7</y>
+			<nomImage>z37</nomImage>
+		</zone>
+		<zone idzone="65"><!--donner un id-->
+			<x>4</x> 
+			<y>7</y>
+			<nomImage>z47</nomImage>
+		</zone>
+		<zone idzone="66"><!--donner un id-->
+			<x>5</x> 
+			<y>7</y>
+			<nomImage>z57</nomImage>
+		</zone>
+		<zone idzone="67"><!--donner un id-->
+			<x>6</x> 
+			<y>7</y>
+			<nomImage>z67</nomImage>
+		</zone>
+		<zone idzone="68"><!--donner un id-->
+			<x>7</x> 
+			<y>7</y>
+			<nomImage>z77</nomImage>
+		</zone>
+		<zone idzone="69"><!--donner un id-->
+			<x>8</x> 
+			<y>7</y>
+			<nomImage>z87</nomImage>
+		</zone>
+		<zone idzone="70"><!--donner un id-->
+			<x>9</x> 
+			<y>7</y>
+			<nomImage>z97</nomImage>
+		</zone>
+		<!--ligne 8-->
+		<zone idzone="71"><!--donner un id-->
+			<x>0</x> 
+			<y>8</y>
+			<nomImage>z08</nomImage>
+		</zone>
+		<zone idzone="72"><!--donner un id-->
+			<x>1</x> 
+			<y>8</y>
+			<nomImage>z18</nomImage>
+		</zone>
+		<zone idzone="73"><!--donner un id-->
+			<x>2</x> 
+			<y>8</y>
+			<nomImage>z28</nomImage>
+		</zone>
+		<zone idzone="74"><!--donner un id-->
+			<x>3</x> 
+			<y>8</y>
+			<nomImage>z38</nomImage>
+		</zone>
+		<zone idzone="75"><!--donner un id-->
+			<x>4</x> 
+			<y>8</y>
+			<nomImage>z48</nomImage>
+		</zone>
+		<zone idzone="76"><!--donner un id-->
+			<x>5</x> 
+			<y>8</y>
+			<nomImage>z58</nomImage>
+		</zone>
+		<zone idzone="77"><!--donner un id-->
+			<x>6</x> 
+			<y>8</y>
+			<nomImage>z68</nomImage>
+		</zone>
+		<zone idzone="78"><!--donner un id-->
+			<x>7</x> 
+			<y>8</y>
+			<nomImage>z78</nomImage>
+		</zone>
+		<zone idzone="79"><!--donner un id-->
+			<x>8</x> 
+			<y>8</y>
+			<nomImage>z88</nomImage>
+		</zone>
+		<zone idzone="80"><!--donner un id-->
+			<x>9</x> 
+			<y>8</y>
+			<nomImage>z98</nomImage>
+		</zone>
+		<!--ligne 9-->
+		<zone idzone="81"><!--donner un id-->
+			<x>0</x> 
+			<y>9</y>
+			<nomImage>z09</nomImage>
+		</zone>
+		<zone idzone="82"><!--donner un id-->
+			<x>1</x> 
+			<y>9</y>
+			<nomImage>z19</nomImage>
+		</zone>
+		<zone idzone="83"><!--donner un id-->
+			<x>2</x> 
+			<y>9</y>
+			<nomImage>z29</nomImage>
+		</zone>
+		<zone idzone="84"><!--donner un id-->
+			<x>3</x> 
+			<y>9</y>
+			<nomImage>z39</nomImage>
+		</zone>
+		<zone idzone="85"><!--donner un id-->
+			<x>4</x> 
+			<y>9</y>
+			<nomImage>z49</nomImage>
+		</zone>
+		<zone idzone="86"><!--donner un id-->
+			<x>5</x> 
+			<y>9</y>
+			<nomImage>z59</nomImage>
+		</zone>
+		<zone idzone="87"><!--donner un id-->
+			<x>6</x> 
+			<y>9</y>
+			<nomImage>z69</nomImage>
+		</zone>
+		<zone idzone="88"><!--donner un id-->
+			<x>7</x> 
+			<y>9</y>
+			<nomImage>z79</nomImage>
+		</zone>
+		<zone idzone="89"><!--donner un id-->
+			<x>8</x> 
+			<y>9</y>
+			<nomImage>z89</nomImage>
+		</zone>
+		<zone idzone="90"><!--donner un id-->
+			<x>9</x> 
+			<y>9</y>
+			<nomImage>z99</nomImage>
+		</zone>
+		<!--ligne 10-->
+		<zone idzone="91"><!--donner un id-->
+			<x>0</x> 
+			<y>9</y>
+			<nomImage>z09</nomImage>
+		</zone>
+		<zone idzone="92"><!--donner un id-->
+			<x>1</x> 
+			<y>9</y>
+			<nomImage>z19</nomImage>
+		</zone>
+		<zone idzone="93"><!--donner un id-->
+			<x>2</x> 
+			<y>9</y>
+			<nomImage>z29</nomImage>
+		</zone>
+		<zone idzone="94"><!--donner un id-->
+			<x>3</x> 
+			<y>9</y>
+			<nomImage>z39</nomImage>
+		</zone>
+		<zone idzone="95"><!--donner un id-->
+			<x>4</x> 
+			<y>9</y>
+			<nomImage>z49</nomImage>
+		</zone>
+		<zone idzone="96"><!--donner un id-->
+			<x>5</x> 
+			<y>9</y>
+			<nomImage>z59</nomImage>
+		</zone>
+		<zone idzone="97"><!--donner un id-->
+			<x>6</x> 
+			<y>9</y>
+			<nomImage>z69</nomImage>
+		</zone>
+		<zone idzone="98"><!--donner un id-->
+			<x>7</x> 
+			<y>9</y>
+			<nomImage>z79</nomImage>
+		</zone>
+		<zone idzone="99"><!--donner un id-->
+			<x>8</x> 
+			<y>9</y>
+			<nomImage>z89</nomImage>
+		</zone>
+		<zone idzone="100"><!--donner un id-->
+			<x>9</x> 
+			<y>9</y>
+			<nomImage>z99</nomImage>
+		</zone>
+		<!--ligne 0-->
+		<zone idzone="101"><!--donner un id-->
+			<x>0</x> 
+			<y>0</y>
+			<nomImage>z00</nomImage>
+		</zone>
+		<zone idzone="102"><!--donner un id-->
+			<x>1</x> 
+			<y>0</y>
+			<nomImage>z10</nomImage>
+		</zone>
+		<zone idzone="103"><!--donner un id-->
+			<x>2</x> 
+			<y>0</y>
+			<nomImage>z20</nomImage>
+		</zone>
+		<zone idzone="104"><!--donner un id-->
+			<x>3</x> 
+			<y>0</y>
+			<nomImage>z30</nomImage>
+		</zone>
+		<zone idzone="105"><!--donner un id-->
+			<x>4</x> 
+			<y>0</y>
+			<nomImage>z40</nomImage>
+		</zone>
+		<zone idzone="106"><!--donner un id-->
+			<x>5</x> 
+			<y>0</y>
+			<nomImage>z50</nomImage>
+		</zone>
+		<zone idzone="107"><!--donner un id-->
+			<x>6</x> 
+			<y>0</y>
+			<nomImage>z60</nomImage>
+		</zone>
+		<zone idzone="108"><!--donner un id-->
+			<x>7</x> 
+			<y>0</y>
+			<nomImage>z70</nomImage>
+		</zone>
+		<zone idzone="109"><!--donner un id-->
+			<x>8</x> 
+			<y>0</y>
+			<nomImage>z80</nomImage>
+		</zone>
+		<zone idzone="110"><!--donner un id-->
+			<x>9</x> 
+			<y>0</y>
+			<nomImage>z90</nomImage>
+		</zone>
+		<!--ligne 10-->
+		<zone idzone="111"><!--donner un id-->
+			<x>0</x> 
+			<y>10</y>
+			<nomImage>z010</nomImage>
+		</zone>
+		<zone idzone="112"><!--donner un id-->
+			<x>1</x> 
+			<y>10</y>
+			<nomImage>z110</nomImage>
+		</zone>
+		<zone idzone="113"><!--donner un id-->
+			<x>2</x> 
+			<y>10</y>
+			<nomImage>z210</nomImage>
+		</zone>
+		<zone idzone="114"><!--donner un id-->
+			<x>3</x> 
+			<y>10</y>
+			<nomImage>z310</nomImage>
+		</zone>
+		<zone idzone="115"><!--donner un id-->
+			<x>4</x> 
+			<y>10</y>
+			<nomImage>z410</nomImage>
+		</zone>
+		<zone idzone="116"><!--donner un id-->
+			<x>5</x> 
+			<y>10</y>
+			<nomImage>z510</nomImage>
+		</zone>
+		<zone idzone="117"><!--donner un id-->
+			<x>6</x> 
+			<y>10</y>
+			<nomImage>z610</nomImage>
+		</zone>
+		<zone idzone="118"><!--donner un id-->
+			<x>7</x> 
+			<y>10</y>
+			<nomImage>z710</nomImage>
+		</zone>
+		<zone idzone="119"><!--donner un id-->
+			<x>8</x> 
+			<y>10</y>
+			<nomImage>z810</nomImage>
+		</zone>
+		<zone idzone="120"><!--donner un id-->
+			<x>9</x> 
+			<y>10</y>
+			<nomImage>z910</nomImage>
+		</zone>
+		<!--chateau-->
+		<zone idzone="121"><!--donner un id-->
+			<x>10</x> 
+			<y>1</y>
+			<nomImage>chateau</nomImage>
+		</zone>
+	</zones>
+	<Access><!-- Liste de toutes les zones pouvant êtres accessible par la zone-->
+		<acces>
+			<depart>1</depart> <!-- idZone-->
+			<arrivee>2</arrivee> <!-- idZone-->
+		</acces>
+		<acces>
+			<depart>2</depart>
+			<arrivee>3</arrivee>
+		</acces>
+		<acces>
+			<depart>3</depart>
+			<arrivee>4</arrivee>
+		</acces>
+		<acces>
+			<depart>4</depart>
+			<arrivee>5</arrivee>
+		</acces>
+		<acces>
+			<depart>5</depart>
+			<arrivee>6</arrivee>
+		</acces>
+		<acces>
+			<depart>6</depart>
+			<arrivee>7</arrivee>
+		</acces>
+		<acces>
+			<depart>7</depart>
+			<arrivee>8</arrivee>
+		</acces>
+		<acces>
+			<depart>8</depart>
+			<arrivee>9</arrivee>
+		</acces>
+		<acces>
+			<depart>9</depart>
+			<arrivee>10</arrivee>
+		</acces>
+		<acces>
+			<depart>10</depart>
+			<arrivee>121</arrivee>
+		</acces>
+				<acces>
+			<depart>11</depart> <!-- idZone-->
+			<arrivee>12</arrivee> <!-- idZone-->
+		</acces>
+		<acces>
+			<depart>12</depart>
+			<arrivee>13</arrivee>
+		</acces>
+		<acces>
+			<depart>13</depart>
+			<arrivee>14</arrivee>
+		</acces>
+		<acces>
+			<depart>14</depart>
+			<arrivee>15</arrivee>
+		</acces>
+		<acces>
+			<depart>15</depart>
+			<arrivee>16</arrivee>
+		</acces>
+		<acces>
+			<depart>16</depart>
+			<arrivee>17</arrivee>
+		</acces>
+		<acces>
+			<depart>17</depart>
+			<arrivee>18</arrivee>
+		</acces>
+		<acces>
+			<depart>18</depart>
+			<arrivee>19</arrivee>
+		</acces>
+		<acces>
+			<depart>19</depart>
+			<arrivee>20</arrivee>
+		</acces>
+		<acces>
+			<depart>20</depart>
+			<arrivee>121</arrivee>
+		</acces>
+		<acces>
+			<depart>21</depart> <!-- idZone-->
+			<arrivee>22</arrivee> <!-- idZone-->
+		</acces>
+		<acces>
+			<depart>22</depart>
+			<arrivee>23</arrivee>
+		</acces>
+		<acces>
+			<depart>23</depart>
+			<arrivee>24</arrivee>
+		</acces>
+		<acces>
+			<depart>24</depart>
+			<arrivee>25</arrivee>
+		</acces>
+		<acces>
+			<depart>25</depart>
+			<arrivee>26</arrivee>
+		</acces>
+		<acces>
+			<depart>26</depart>
+			<arrivee>27</arrivee>
+		</acces>
+		<acces>
+			<depart>27</depart>
+			<arrivee>28</arrivee>
+		</acces>
+		<acces>
+			<depart>28</depart>
+			<arrivee>29</arrivee>
+		</acces>
+		<acces>
+			<depart>29</depart>
+			<arrivee>30</arrivee>
+		</acces>
+		<acces>
+			<depart>30</depart>
+			<arrivee>121</arrivee>
+		</acces>		<acces>
+			<depart>31</depart> <!-- idZone-->
+			<arrivee>32</arrivee> <!-- idZone-->
+		</acces>
+		<acces>
+			<depart>32</depart>
+			<arrivee>33</arrivee>
+		</acces>
+		<acces>
+			<depart>33</depart>
+			<arrivee>34</arrivee>
+		</acces>
+		<acces>
+			<depart>34</depart>
+			<arrivee>35</arrivee>
+		</acces>
+		<acces>
+			<depart>35</depart>
+			<arrivee>36</arrivee>
+		</acces>
+		<acces>
+			<depart>36</depart>
+			<arrivee>37</arrivee>
+		</acces>
+		<acces>
+			<depart>37</depart>
+			<arrivee>38</arrivee>
+		</acces>
+		<acces>
+			<depart>38</depart>
+			<arrivee>39</arrivee>
+		</acces>
+		<acces>
+			<depart>39</depart>
+			<arrivee>40</arrivee>
+		</acces>
+		<acces>
+			<depart>40</depart>
+			<arrivee>121</arrivee>
+		</acces>
+				<acces>
+			<depart>41</depart> <!-- idZone-->
+			<arrivee>42</arrivee> <!-- idZone-->
+		</acces>
+		<acces>
+			<depart>42</depart>
+			<arrivee>43</arrivee>
+		</acces>
+		<acces>
+			<depart>43</depart>
+			<arrivee>44</arrivee>
+		</acces>
+		<acces>
+			<depart>44</depart>
+			<arrivee>45</arrivee>
+		</acces>
+		<acces>
+			<depart>45</depart>
+			<arrivee>46</arrivee>
+		</acces>
+		<acces>
+			<depart>46</depart>
+			<arrivee>47</arrivee>
+		</acces>
+		<acces>
+			<depart>47</depart>
+			<arrivee>48</arrivee>
+		</acces>
+		<acces>
+			<depart>48</depart>
+			<arrivee>49</arrivee>
+		</acces>
+		<acces>
+			<depart>49</depart>
+			<arrivee>50</arrivee>
+		</acces>
+		<acces>
+			<depart>50</depart>
+			<arrivee>121</arrivee>
+		</acces>
+		<acces>
+			<depart>51</depart> <!-- idZone-->
+			<arrivee>52</arrivee> <!-- idZone-->
+		</acces>
+		<acces>
+			<depart>52</depart>
+			<arrivee>53</arrivee>
+		</acces>
+		<acces>
+			<depart>53</depart>
+			<arrivee>54</arrivee>
+		</acces>
+		<acces>
+			<depart>54</depart>
+			<arrivee>55</arrivee>
+		</acces>
+		<acces>
+			<depart>55</depart>
+			<arrivee>56</arrivee>
+		</acces>
+		<acces>
+			<depart>56</depart>
+			<arrivee>57</arrivee>
+		</acces>
+		<acces>
+			<depart>57</depart>
+			<arrivee>58</arrivee>
+		</acces>
+		<acces>
+			<depart>58</depart>
+			<arrivee>59</arrivee>
+		</acces>
+		<acces>
+			<depart>59</depart>
+			<arrivee>60</arrivee>
+		</acces>
+		<acces>
+			<depart>60</depart>
+			<arrivee>121</arrivee>
+		</acces>
+		<acces>
+			<depart>61</depart> <!-- idZone-->
+			<arrivee>62</arrivee> <!-- idZone-->
+		</acces>
+		<acces>
+			<depart>62</depart>
+			<arrivee>63</arrivee>
+		</acces>
+		<acces>
+			<depart>63</depart>
+			<arrivee>64</arrivee>
+		</acces>
+		<acces>
+			<depart>64</depart>
+			<arrivee>65</arrivee>
+		</acces>
+		<acces>
+			<depart>65</depart>
+			<arrivee>66</arrivee>
+		</acces>
+		<acces>
+			<depart>66</depart>
+			<arrivee>67</arrivee>
+		</acces>
+		<acces>
+			<depart>67</depart>
+			<arrivee>68</arrivee>
+		</acces>
+		<acces>
+			<depart>68</depart>
+			<arrivee>69</arrivee>
+		</acces>
+		<acces>
+			<depart>69</depart>
+			<arrivee>70</arrivee>
+		</acces>
+		<acces>
+			<depart>70</depart>
+			<arrivee>121</arrivee>
+		</acces>
+				<acces>
+			<depart>71</depart> <!-- idZone-->
+			<arrivee>72</arrivee> <!-- idZone-->
+		</acces>
+		<acces>
+			<depart>72</depart>
+			<arrivee>73</arrivee>
+		</acces>
+		<acces>
+			<depart>73</depart>
+			<arrivee>74</arrivee>
+		</acces>
+		<acces>
+			<depart>74</depart>
+			<arrivee>75</arrivee>
+		</acces>
+		<acces>
+			<depart>75</depart>
+			<arrivee>76</arrivee>
+		</acces>
+		<acces>
+			<depart>76</depart>
+			<arrivee>77</arrivee>
+		</acces>
+		<acces>
+			<depart>77</depart>
+			<arrivee>78</arrivee>
+		</acces>
+		<acces>
+			<depart>78</depart>
+			<arrivee>79</arrivee>
+		</acces>
+		<acces>
+			<depart>79</depart>
+			<arrivee>80</arrivee>
+		</acces>
+		<acces>
+			<depart>80</depart>
+			<arrivee>121</arrivee>
+		</acces>
+				<acces>
+			<depart>81</depart> <!-- idZone-->
+			<arrivee>82</arrivee> <!-- idZone-->
+		</acces>
+		<acces>
+			<depart>82</depart>
+			<arrivee>83</arrivee>
+		</acces>
+		<acces>
+			<depart>83</depart>
+			<arrivee>84</arrivee>
+		</acces>
+		<acces>
+			<depart>84</depart>
+			<arrivee>85</arrivee>
+		</acces>
+		<acces>
+			<depart>85</depart>
+			<arrivee>86</arrivee>
+		</acces>
+		<acces>
+			<depart>86</depart>
+			<arrivee>87</arrivee>
+		</acces>
+		<acces>
+			<depart>87</depart>
+			<arrivee>88</arrivee>
+		</acces>
+		<acces>
+			<depart>88</depart>
+			<arrivee>89</arrivee>
+		</acces>
+		<acces>
+			<depart>89</depart>
+			<arrivee>90</arrivee>
+		</acces>
+		<acces>
+			<depart>90</depart>
+			<arrivee>121</arrivee>
+		</acces>		
+		<acces>
+			<depart>91</depart> <!-- idZone-->
+			<arrivee>92</arrivee> <!-- idZone-->
+		</acces>
+		<acces>
+			<depart>92</depart>
+			<arrivee>93</arrivee>
+		</acces>
+		<acces>
+			<depart>93</depart>
+			<arrivee>94</arrivee>
+		</acces>
+		<acces>
+			<depart>94</depart>
+			<arrivee>95</arrivee>
+		</acces>
+		<acces>
+			<depart>95</depart>
+			<arrivee>96</arrivee>
+		</acces>
+		<acces>
+			<depart>96</depart>
+			<arrivee>97</arrivee>
+		</acces>
+		<acces>
+			<depart>97</depart>
+			<arrivee>98</arrivee>
+		</acces>
+		<acces>
+			<depart>98</depart>
+			<arrivee>99</arrivee>
+		</acces>
+		<acces>
+			<depart>99</depart>
+			<arrivee>100</arrivee>
+		</acces>
+		<acces>
+			<depart>100</depart>
+			<arrivee>121</arrivee>
+		</acces>
+		<acces>
+			<depart>101</depart> <!-- idZone-->
+			<arrivee>102</arrivee> <!-- idZone-->
+		</acces>
+		<acces>
+			<depart>102</depart>
+			<arrivee>103</arrivee>
+		</acces>
+		<acces>
+			<depart>103</depart>
+			<arrivee>104</arrivee>
+		</acces>
+		<acces>
+			<depart>104</depart>
+			<arrivee>105</arrivee>
+		</acces>
+		<acces>
+			<depart>105</depart>
+			<arrivee>106</arrivee>
+		</acces>
+		<acces>
+			<depart>106</depart>
+			<arrivee>107</arrivee>
+		</acces>
+		<acces>
+			<depart>107</depart>
+			<arrivee>108</arrivee>
+		</acces>
+		<acces>
+			<depart>108</depart>
+			<arrivee>109</arrivee>
+		</acces>
+		<acces>
+			<depart>109</depart>
+			<arrivee>110</arrivee>
+		</acces>
+		<acces>
+			<depart>110</depart>
+			<arrivee>121</arrivee>
+		</acces>		
+		<acces>
+			<depart>111</depart> <!-- idZone-->
+			<arrivee>112</arrivee> <!-- idZone-->
+		</acces>
+		<acces>
+			<depart>112</depart>
+			<arrivee>113</arrivee>
+		</acces>
+		<acces>
+			<depart>113</depart>
+			<arrivee>114</arrivee>
+		</acces>
+		<acces>
+			<depart>114</depart>
+			<arrivee>115</arrivee>
+		</acces>
+		<acces>
+			<depart>115</depart>
+			<arrivee>116</arrivee>
+		</acces>
+		<acces>
+			<depart>116</depart>
+			<arrivee>117</arrivee>
+		</acces>
+		<acces>
+			<depart>117</depart>
+			<arrivee>118</arrivee>
+		</acces>
+		<acces>
+			<depart>118</depart>
+			<arrivee>119</arrivee>
+		</acces>
+		<acces>
+			<depart>119</depart>
+			<arrivee>120</arrivee>
+		</acces>
+		<acces>
+			<depart>120</depart>
+			<arrivee>121</arrivee>
+		</acces>		
+	</Access>
+	<!-- COMMENTER CAR C EST UNE SIMULATION DU JEU D ECHEC, il n'y a pas d'objet pour le jeu d'echec 
+	<objets> Pour la simulation du jeu trafic, il peut y avoir un obstacle sur la zone 
+		<objet>
+			<nom>objet 1</nom>
+			<zone>1</zone>--><!-- idZone -->
+		<!-- </objet>
+		<objet>
+			<nom>objet 2</nom>
+			<zone>2</zone>
+		</objet>
+	</objets>-->
+	<Personnages>
+		<Personnage idPersonnage="1">
+			<!-- IMPORTANT LE CHATEAU DOIT TOUJOURS S'APPELER Chateau -->
+			<nom>Chateau</nom>
+			<pv>10</pv>
+			<type>chateau</type>
+			<etat>10</etat>
+			<zonePresent>11</zonePresent> <!-- Emplacement du personnage lors de la sauvegarde, si c'est une nouvelle partie c'est ça zone de départ-->
+			<attaque>10</attaque>
+			<nbBalles>10</nbBalles>
+		</Personnage>
+		<Personnage idPersonnage="2">
+			<nom>ennemi 1</nom>
+			<pv>10</pv>
+			<type>ennemi</type>
+			<etat>1</etat>
+			<zonePresent>1</zonePresent> <!-- Emplacement du personnage lors de la sauvegarde, si c'est une nouvelle partie c'est ça zone de départ-->
+			<attaque>1</attaque>
+		</Personnage>
+		<Personnage idPersonnage="3">
+			<nom>ennemi 2</nom>
+			<pv>10</pv>
+			<type>ennemi</type>
+			<etat>1</etat>
+			<zonePresent>11</zonePresent> <!-- Emplacement du personnage lors de la sauvegarde, si c'est une nouvelle partie c'est ça zone de départ-->
+			<attaque>1</attaque>
+		</Personnage>
+		<Personnage idPersonnage="4">
+			<nom>ennemi 3</nom>
+			<pv>10</pv>
+			<type>ennemi</type>
+			<etat>1</etat>
+			<zonePresent>21</zonePresent> <!-- Emplacement du personnage lors de la sauvegarde, si c'est une nouvelle partie c'est ça zone de départ-->
+			<attaque>1</attaque>
+		</Personnage>
+		<Personnage idPersonnage="5">
+			<nom>ennemi 4</nom>
+			<pv>10</pv>
+			<type>ennemi</type>
+			<etat>1</etat>
+			<zonePresent>31</zonePresent> <!-- Emplacement du personnage lors de la sauvegarde, si c'est une nouvelle partie c'est ça zone de départ-->
+			<attaque>1</attaque>
+		</Personnage>
+	</Personnages>
+	</Jeu>
+</Simulation>

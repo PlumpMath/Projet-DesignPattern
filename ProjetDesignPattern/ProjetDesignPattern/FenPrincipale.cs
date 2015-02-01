@@ -31,15 +31,15 @@ namespace ProjetDesignPattern
         private void m_oWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             MessageBox.Show("C'est la fin du jeu");
-            if (jeu.Nom == "Defence Tower")
+            if (jeu.Nom == "JeuDefenceTower")
             {
                 ((ModuleIHMDT)jeu.ModuleIHM).ihm.Close();
             }
-            if (jeu.Nom == "Simulation traffic")
+            if (jeu.Nom == "JeuSimulationTrafic")
             {
                 ((ModuleIHM_Trafic)jeu.ModuleIHM).ihm.Close();
             }
-            if (jeu.Nom == "Simulation echec")
+            if (jeu.Nom == "JeuEchecs")
             {
                 ((ModuleIHM_Echecs)jeu.ModuleIHM).ihm.Close();
             }
@@ -66,7 +66,7 @@ namespace ProjetDesignPattern
 
         private void button1_Click(object sender, EventArgs e)
         {
-            jeu = new Simulation("Defence Tower",1000);
+            jeu = new Simulation("JeuDefenceTower", 1000);
             jeu.fab = new FabriqueJeuDT();
             jeu.ModuleIHM = new ModuleIHMDT(jeu);
             jeu.ModuleIHM.jeu = jeu;
@@ -163,7 +163,7 @@ namespace ProjetDesignPattern
             //jeu.listeZones.Add(zonechateau);
 
             Chateau chateau = (Chateau)jeu.fab.CreerPersonnage(1, "chateau", "chateau","", "10", zonechateau,null);
-            chateau.initChateau(10, 10,10);
+            chateau.initChateau(10, 10,10,jeu);
             Ennemi ennemi = (Ennemi)jeu.fab.CreerPersonnage(2,"ennemi","ennemi1","","1", zone1,null);
             ennemi.initEnnemi(chateau, 10, 1);
             zone1.attacherEnnemi(ennemi);
@@ -190,8 +190,8 @@ namespace ProjetDesignPattern
 
         private void button3_Click(object sender, EventArgs e)
         {
-            
-            jeu = new Simulation("Simulation traffic",250);
+
+            jeu = new Simulation("JeuSimulationTrafic", 250);
             jeu.fab = new FabriqueSimuTrafic();
             jeu.ModuleIHM = new ModuleIHM_Trafic(jeu);
             jeu.ModuleIHM.jeu = jeu;
@@ -251,7 +251,7 @@ namespace ProjetDesignPattern
 
         private void button2_Click(object sender, EventArgs e)
 		{
-			jeu = new Simulation ("Simulation echec",1000);
+            jeu = new Simulation("JeuEchecs", 1000);
 			jeu.fab = new FabriqueJeuEchecs ();
 			jeu.ModuleIHM = new ModuleIHM_Echecs ();
 			jeu.ModuleIHM.jeu = jeu;
